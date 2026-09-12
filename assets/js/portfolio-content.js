@@ -54,6 +54,7 @@
       var featured = document.querySelector("#featured-project");
       var grid = document.querySelector("#project-grid");
       var profile = content.profile || {};
+      var contact = content.contact || {};
       var featuredProject = content.featured_project || {};
 
       if (intro) {
@@ -85,6 +86,25 @@
       if (grid && Array.isArray(content.projects)) {
         grid.replaceChildren();
         content.projects.forEach(function (project) { grid.appendChild(createProject(project)); });
+      }
+
+      var location = document.querySelector("[data-contact-location]");
+      var phone = document.querySelector("[data-contact-phone]");
+      var email = document.querySelector("[data-contact-email]");
+      var github = document.querySelector("[data-contact-github]");
+      setText(location, contact.location);
+      if (phone && contact.phone) {
+        phone.href = "tel:" + contact.phone.replace(/[^\d+]/g, "");
+        setText(phone, contact.phone);
+      }
+      if (email && contact.email) {
+        email.href = "mailto:" + contact.email;
+        setText(email, contact.email);
+      }
+      if (github && contact.github_url) {
+        github.href = contact.github_url;
+        github.target = "_blank";
+        github.rel = "noopener noreferrer";
       }
     })
     .catch(function (error) {
