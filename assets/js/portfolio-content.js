@@ -51,7 +51,7 @@
     })
     .then(function (content) {
       var intro = document.querySelector("[data-portfolio-intro]");
-      var featured = document.querySelector("#featured-project");
+      var featured = document.querySelector("[data-featured-project]");
       var grid = document.querySelector("#project-grid");
       var profile = content.profile || {};
       var contact = content.contact || {};
