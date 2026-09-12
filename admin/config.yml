@@ -1,0 +1,56 @@
+backend:
+  name: github
+  repo: segunoluyi/portfolio
+  branch: main
+  base_url: https://segun-portfolio-cms-auth.coolshegs10.workers.dev
+  auth_endpoint: /auth
+
+site_url: https://segunoluyi.github.io/portfolio/
+display_url: https://segunoluyi.github.io/portfolio/
+media_folder: images/uploads
+public_folder: images/uploads
+
+collections:
+  - name: portfolio_content
+    label: Portfolio Content
+    files:
+      - name: portfolio
+        label: Portfolio Site Content
+        file: content/portfolio.json
+        fields:
+          - label: Profile
+            name: profile
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Headline, name: headline, widget: string }
+              - { label: Summary, name: summary, widget: text }
+              - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
+              - { label: LinkedIn label, name: linkedin_label, widget: string, required: false }
+          - label: Featured project
+            name: featured_project
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Summary, name: summary, widget: text }
+              - { label: Image, name: image, widget: image, required: false }
+              - { label: Project or case-study URL, name: url, widget: string, required: false }
+              - { label: Button label, name: button_label, widget: string, required: false }
+          - label: Project cards
+            name: projects
+            widget: list
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+              - { label: Title, name: title, widget: string }
+              - { label: Summary, name: summary, widget: text }
+              - { label: Image, name: image, widget: image, required: false }
+              - { label: Project or case-study URL, name: url, widget: string, required: false }
+              - { label: Button label, name: button_label, widget: string, required: false }
+          - label: Contact details
+            name: contact
+            widget: object
+            fields:
+              - { label: Location, name: location, widget: string, required: false }
+              - { label: Phone, name: phone, widget: string, required: false }
+              - { label: Email, name: email, widget: string, required: false }
+              - { label: GitHub URL, name: github_url, widget: string, required: false }

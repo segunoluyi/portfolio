@@ -1,0 +1,40 @@
+{
+  "profile": {
+    "name": "Segun Oluyi",
+    "headline": "Data Analyst with a business-writing background",
+    "summary": "Skilled in Python, SQL, Excel/Google Sheets, Power BI, Tableau, and R.",
+    "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
+    "linkedin_label": "LinkedIn"
+  },
+  "featured_project": {
+    "title": "Customer Complaints Analysis in Power BI",
+    "summary": "This interactive Customer Complaints dashboard analyzes complaint trends to highlight service performance and risk areas, helping stakeholders understand what is happening and how effectively issues are being resolved.",
+    "image": "images/customer-complaints-dashboard.png",
+    "url": "https://oluyisegun.medium.com/customer-complaints-analysis-in-power-bi-an-end-to-end-dashboard-case-study-35546161ba95",
+    "button_label": "View Documentation"
+  },
+  "projects": [
+    {
+      "eyebrow": "In progress",
+      "title": "Business Plans & Strategy",
+      "summary": "Selected, confidentiality-safe business planning and strategy case studies are being prepared.",
+      "image": "images/pic02.jpg",
+      "url": "",
+      "button_label": "Coming soon"
+    },
+    {
+      "eyebrow": "In progress",
+      "title": "Data Analytics & BI",
+      "summary": "More Excel, SQL, and Power BI case studies are being prepared.",
+      "image": "images/pic03.jpg",
+      "url": "",
+      "button_label": "Coming soon"
+    }
+  ],
+  "contact": {
+    "location": "Lagos, Nigeria",
+    "phone": "+2348153051701",
+    "email": "oluyisegun@gmail.com",
+    "github_url": "https://github.com/segunoluyi"
+  }
+}
