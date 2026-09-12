@@ -21,10 +21,12 @@
     eyebrow.className = "date";
     eyebrow.textContent = project.eyebrow || "Project";
     titleLink.href = project.url || "#";
+    if (project.url) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
     titleLink.textContent = project.title || "Untitled project";
     heading.appendChild(titleLink);
     header.append(eyebrow, heading);
     imageLink.href = project.url || "#";
+    if (project.url) { imageLink.target = "_blank"; imageLink.rel = "noopener noreferrer"; }
     imageLink.className = "image fit";
     image.src = project.image || "images/pic02.jpg";
     image.alt = project.title || "Portfolio project";
@@ -32,6 +34,7 @@
     summary.textContent = project.summary || "";
     actions.className = "actions special";
     button.href = project.url || "#";
+    if (project.url) { button.target = "_blank"; button.rel = "noopener noreferrer"; }
     button.className = "button";
     button.textContent = project.button_label || "View project";
     if (!project.url) button.setAttribute("aria-disabled", "true");
@@ -72,11 +75,11 @@
         var articleImageLink = featured.querySelector(".image.main");
         var description = featured.querySelector("p");
         var articleButton = featured.querySelector(".button.large");
-        if (title) { title.href = featuredProject.url || "#"; setText(title, featuredProject.title); }
+        if (title) { title.href = featuredProject.url || "#"; if (featuredProject.url) { title.target = "_blank"; title.rel = "noopener noreferrer"; } setText(title, featuredProject.title); }
         if (articleImage) { articleImage.src = featuredProject.image || articleImage.src; articleImage.alt = featuredProject.title || "Featured project"; }
-        if (articleImageLink) articleImageLink.href = featuredProject.url || "#";
+        if (articleImageLink) { articleImageLink.href = featuredProject.url || "#"; if (featuredProject.url) { articleImageLink.target = "_blank"; articleImageLink.rel = "noopener noreferrer"; } }
         setText(description, featuredProject.summary);
-        if (articleButton) { articleButton.href = featuredProject.url || "#"; setText(articleButton, featuredProject.button_label || "View project"); }
+        if (articleButton) { articleButton.href = featuredProject.url || "#"; if (featuredProject.url) { articleButton.target = "_blank"; articleButton.rel = "noopener noreferrer"; } setText(articleButton, featuredProject.button_label || "View project"); }
       }
 
       if (grid && Array.isArray(content.projects)) {
