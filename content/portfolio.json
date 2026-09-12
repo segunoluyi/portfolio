@@ -9,7 +9,7 @@
   "featured_project": {
     "title": "Customer Complaints Analysis in Power BI",
     "summary": "This interactive Customer Complaints dashboard analyzes complaint trends to highlight service performance and risk areas, helping stakeholders understand what is happening and how effectively issues are being resolved.",
-    "image": "images/customer-complaints-dashboard.png",
+    "image": "images/uploads/overview-page.png",
     "url": "https://oluyisegun.medium.com/customer-complaints-analysis-in-power-bi-an-end-to-end-dashboard-case-study-35546161ba95",
     "button_label": "View Documentation"
   },
