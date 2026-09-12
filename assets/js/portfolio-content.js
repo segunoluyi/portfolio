@@ -53,6 +53,8 @@
       var intro = document.querySelector("[data-portfolio-intro]");
       var featured = document.querySelector("[data-featured-project]");
       var grid = document.querySelector("#project-grid");
+      var insightsGrid = document.querySelector("#insights-grid");
+      var skillsGrid = document.querySelector("[data-skills-grid]");
       var profile = content.profile || {};
       var contact = content.contact || {};
       var featuredProject = content.featured_project || {};
@@ -86,6 +88,20 @@
       if (grid && Array.isArray(content.projects)) {
         grid.replaceChildren();
         content.projects.forEach(function (project) { grid.appendChild(createProject(project)); });
+      }
+
+      if (insightsGrid && Array.isArray(content.insights)) {
+        insightsGrid.replaceChildren();
+        content.insights.forEach(function (insight) { insightsGrid.appendChild(createProject(insight)); });
+      }
+
+      if (skillsGrid && Array.isArray(content.skills)) {
+        skillsGrid.replaceChildren();
+        content.skills.forEach(function (skill) {
+          var item = document.createElement("li");
+          item.textContent = skill;
+          skillsGrid.appendChild(item);
+        });
       }
 
       var location = document.querySelector("[data-contact-location]");

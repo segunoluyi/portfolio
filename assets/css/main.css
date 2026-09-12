@@ -4698,3 +4698,32 @@ input, select, textarea {
   object-fit: cover;
   border-radius: 50%; /* remove this if you don’t want a circle */
 }
+
+/* Portfolio skills grid */
+.skills-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 0;
+}
+
+.skills-grid li {
+  border: solid 2px #eeeeee;
+  color: #212931;
+  font-family: Merriweather, Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+  padding: 1.35rem 1rem;
+  text-align: left;
+}
+
+@media screen and (max-width: 980px) {
+  .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}

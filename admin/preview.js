@@ -23,9 +23,11 @@
     .portfolio-preview__card-content { padding: 18px; }
     .portfolio-preview__card h3 { margin: 8px 0 10px; font-size: 19px; }
     .portfolio-preview__card p { font-size: 14px; }
+    .portfolio-preview__skills { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; list-style: none; margin: 0; padding: 0; }
+    .portfolio-preview__skills li { border: 1px solid #d9e0e6; padding: 14px; font-family: Georgia, serif; font-size: 14px; }
     .portfolio-preview__contact { background: #f4f7f9; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; font-size: 13px; }
     .portfolio-preview__label { display: block; color: #667684; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 5px; }
-    @media (max-width: 620px) { .portfolio-preview__grid, .portfolio-preview__contact { grid-template-columns: 1fr; } .portfolio-preview__section, .portfolio-preview__hero { padding: 28px 22px; } }
+    @media (max-width: 620px) { .portfolio-preview__grid, .portfolio-preview__contact { grid-template-columns: 1fr; } .portfolio-preview__skills { grid-template-columns: repeat(2, minmax(0, 1fr)); } .portfolio-preview__section, .portfolio-preview__hero { padding: 28px 22px; } }
   `, { raw: true });
 
   function value(object, key, fallback) {
@@ -39,6 +41,8 @@
       var featured = data.get("featured_project");
       var contact = data.get("contact");
       var projects = data.get("projects");
+      var insights = data.get("insights");
+      var skills = data.get("skills");
       var getAsset = this.props.getAsset;
       var h = window.h;
 
@@ -57,6 +61,23 @@
             h("span", { className: "portfolio-preview__button" }, value(project, "button_label", "View project"))
           ])
         ]);
+      }).toArray() : [];
+
+      var insightCards = insights ? insights.map(function (insight, index) {
+        var insightImage = value(insight, "image");
+        return h("article", { className: "portfolio-preview__card", key: index }, [
+          image(insightImage, "portfolio-preview__image"),
+          h("div", { className: "portfolio-preview__card-content" }, [
+            h("span", { className: "portfolio-preview__eyebrow" }, value(insight, "eyebrow", "Insight")),
+            h("h3", {}, value(insight, "title", "Untitled insight")),
+            h("p", {}, value(insight, "summary")),
+            h("span", { className: "portfolio-preview__button" }, value(insight, "button_label", "Read article"))
+          ])
+        ]);
+      }).toArray() : [];
+
+      var skillItems = skills ? skills.map(function (skill, index) {
+        return h("li", { key: index }, skill);
       }).toArray() : [];
 
       return h("main", { className: "portfolio-preview" }, [
@@ -80,6 +101,14 @@
         h("section", { className: "portfolio-preview__section" }, [
           h("h2", { className: "portfolio-preview__section-title" }, "Project cards"),
           h("div", { className: "portfolio-preview__grid" }, cards)
+        ]),
+        h("section", { className: "portfolio-preview__section" }, [
+          h("h2", { className: "portfolio-preview__section-title" }, "Insights"),
+          h("div", { className: "portfolio-preview__grid" }, insightCards)
+        ]),
+        h("section", { className: "portfolio-preview__section" }, [
+          h("h2", { className: "portfolio-preview__section-title" }, "Skills"),
+          h("ul", { className: "portfolio-preview__skills" }, skillItems)
         ]),
         h("footer", { className: "portfolio-preview__section portfolio-preview__contact" }, [
           h("div", {}, [h("span", { className: "portfolio-preview__label" }, "Location"), value(contact, "location")]),

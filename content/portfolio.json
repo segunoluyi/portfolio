@@ -31,6 +31,34 @@
       "button_label": "Coming soon"
     }
   ],
+  "insights": [
+    {
+      "eyebrow": "Power BI case study",
+      "title": "Customer Complaints Analysis in Power BI",
+      "summary": "A walkthrough of the customer complaints dashboard, the questions it answers, and the decisions it helps support.",
+      "image": "images/uploads/overview-page.png",
+      "url": "https://oluyisegun.medium.com/customer-complaints-analysis-in-power-bi-an-end-to-end-dashboard-case-study-35546161ba95",
+      "button_label": "Read article"
+    }
+  ],
+  "skills": [
+    "Data Analysis",
+    "Microsoft Excel",
+    "Google Sheets",
+    "Power BI",
+    "Power Query",
+    "DAX",
+    "SQL",
+    "Python",
+    "Data Cleaning",
+    "Data Transformation",
+    "Data Visualization",
+    "Dashboard Development",
+    "Business Research",
+    "Financial Modelling",
+    "Business Writing",
+    "Insight Generation"
+  ],
   "contact": {
     "location": "Ikeja, Lagos, Nigeria",
     "phone": "+2348153051701",
