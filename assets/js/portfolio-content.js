@@ -17,16 +17,17 @@
     var actions = document.createElement("ul");
     var action = document.createElement("li");
     var button = document.createElement("a");
+    var opensExternally = /^https?:\/\//i.test(project.url || "");
 
     eyebrow.className = "date";
     eyebrow.textContent = project.eyebrow || "Project";
     titleLink.href = project.url || "#";
-    if (project.url) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
+    if (opensExternally) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
     titleLink.textContent = project.title || "Untitled project";
     heading.appendChild(titleLink);
     header.append(eyebrow, heading);
     imageLink.href = project.url || "#";
-    if (project.url) { imageLink.target = "_blank"; imageLink.rel = "noopener noreferrer"; }
+    if (opensExternally) { imageLink.target = "_blank"; imageLink.rel = "noopener noreferrer"; }
     imageLink.className = "image fit";
     image.src = project.image || "images/pic02.jpg";
     image.alt = project.title || "Portfolio project";
@@ -34,7 +35,7 @@
     summary.textContent = project.summary || "";
     actions.className = "actions special";
     button.href = project.url || "#";
-    if (project.url) { button.target = "_blank"; button.rel = "noopener noreferrer"; }
+    if (opensExternally) { button.target = "_blank"; button.rel = "noopener noreferrer"; }
     button.className = "button";
     button.textContent = project.button_label || "View project";
     if (!project.url) button.setAttribute("aria-disabled", "true");

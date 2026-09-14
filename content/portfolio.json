@@ -18,8 +18,9 @@
       "eyebrow": "Business Plan Case Study",
       "title": "Marina Villa TCI: Business Plan Sample",
       "summary": "A confidentiality-safe business plan sample prepared for a property-development concept. The public portfolio version focuses on the planning approach and professional deliverables, without exposing sensitive source material.",
-      "button_label": "Case study coming soon",
-      "image": "images/uploads/marina-villa-tci-cover-img.png"
+      "button_label": "Read case study",
+      "image": "images/uploads/marina-villa-tci-cover-img.png",
+      "url": "case-studies/marina-villa-tci.html"
     }
   ],
   "insights": [
