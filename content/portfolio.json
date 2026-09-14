@@ -23,6 +23,57 @@
       "url": "case-studies/marina-villa-tci.html"
     }
   ],
+  "samples": [
+    {
+      "title": "ABC Fishing Company",
+      "industry": "Agriculture & Food Supply",
+      "summary": "Business-plan sample for an agriculture and food-supply concept.",
+      "url": "https://drive.google.com/file/d/14ydC1o0_0-G9vl4a1MlWtqnSeU-U5HDy/view?usp=drivesdk",
+      "button_label": "View sample"
+    },
+    {
+      "title": "Blue Hills Restaurant",
+      "industry": "Hospitality & Food Service",
+      "summary": "Business-plan sample for a restaurant and hospitality concept.",
+      "url": "https://drive.google.com/file/d/1IiiRjVzbGmQbDIDCLUoIsOpgg1fo-X3q/view?usp=drivesdk",
+      "button_label": "View sample"
+    },
+    {
+      "title": "Marina Villa TCI",
+      "industry": "Real Estate & Property Development",
+      "summary": "Business-plan sample for a fictionalised vacation-rental development concept.",
+      "url": "https://drive.google.com/file/d/1Jdif3JRWuU27oMtmjgAdcnxfk1PpotPq/view?usp=drivesdk",
+      "button_label": "View sample"
+    },
+    {
+      "title": "SRDL",
+      "industry": "Real Estate & Property Development",
+      "summary": "Business-plan sample for a property-development concept.",
+      "url": "https://drive.google.com/file/d/1fKuvBwh7H2wwfkYvOUUu6OJK99XbKtPM/view?usp=drivesdk",
+      "button_label": "View sample"
+    },
+    {
+      "title": "XYZ Cannabis",
+      "industry": "Cannabis",
+      "summary": "Business-plan sample for a cannabis-sector concept.",
+      "url": "https://drive.google.com/file/d/1ZVCSuuMHxbc5neIIfyJ71Qh5LAJd13Ah/view?usp=drivesdk",
+      "button_label": "View sample"
+    },
+    {
+      "title": "XYZ Fintech",
+      "industry": "Financial Services & Fintech",
+      "summary": "Business-plan sample for a financial-technology concept.",
+      "url": "https://drive.google.com/file/d/1yJv9eaXSnQyLGPC-xIDA3Lx1XkJ-sl7D/view?usp=drivesdk",
+      "button_label": "View sample"
+    },
+    {
+      "title": "XYZ Restaurant",
+      "industry": "Hospitality & Food Service",
+      "summary": "Business-plan sample for a restaurant concept.",
+      "url": "https://drive.google.com/file/d/1wT43j647TxzafDWkXRCWj8_7xSUgXZFn/view?usp=drivesdk",
+      "button_label": "View sample"
+    }
+  ],
   "insights": [
     {
       "eyebrow": "Power BI case study",

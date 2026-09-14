@@ -41,6 +41,7 @@
       var featured = data.get("featured_project");
       var contact = data.get("contact");
       var projects = data.get("projects");
+      var samples = data.get("samples");
       var insights = data.get("insights");
       var skills = data.get("skills");
       var getAsset = this.props.getAsset;
@@ -76,6 +77,17 @@
         ]);
       }).toArray() : [];
 
+      var sampleCards = samples ? samples.map(function (sample, index) {
+        return h("article", { className: "portfolio-preview__card", key: index }, [
+          h("div", { className: "portfolio-preview__card-content" }, [
+            h("span", { className: "portfolio-preview__eyebrow" }, value(sample, "industry", "Business plan sample")),
+            h("h3", {}, value(sample, "title", "Untitled sample")),
+            h("p", {}, value(sample, "summary")),
+            h("span", { className: "portfolio-preview__button" }, value(sample, "button_label", "View sample"))
+          ])
+        ]);
+      }).toArray() : [];
+
       var skillItems = skills ? skills.map(function (skill, index) {
         return h("li", { key: index }, skill);
       }).toArray() : [];
@@ -101,6 +113,10 @@
         h("section", { className: "portfolio-preview__section" }, [
           h("h2", { className: "portfolio-preview__section-title" }, "Project cards"),
           h("div", { className: "portfolio-preview__grid" }, cards)
+        ]),
+        h("section", { className: "portfolio-preview__section" }, [
+          h("h2", { className: "portfolio-preview__section-title" }, "Samples library"),
+          h("div", { className: "portfolio-preview__grid" }, sampleCards)
         ]),
         h("section", { className: "portfolio-preview__section" }, [
           h("h2", { className: "portfolio-preview__section-title" }, "Insights"),

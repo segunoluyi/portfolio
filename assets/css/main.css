@@ -4727,3 +4727,56 @@ input, select, textarea {
 @media screen and (max-width: 480px) {
   .skills-grid { grid-template-columns: 1fr; }
 }
+
+/* Portfolio samples library */
+.sample-cover {
+  align-items: flex-start;
+  background: linear-gradient(135deg, #182735, #34546d);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 12rem;
+  padding: 2rem;
+}
+
+.sample-cover span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+}
+
+.sample-cover strong {
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.sample-filters {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr);
+  margin: 0 0 1rem;
+}
+
+.sample-results {
+  color: #717981;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sample-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.sample-pagination .button[disabled] { opacity: 0.45; }
+
+@media screen and (max-width: 736px) {
+  .sample-filters { grid-template-columns: 1fr; }
+}

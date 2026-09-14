@@ -46,6 +46,15 @@ collections:
               - { label: Image, name: image, widget: image, required: false }
               - { label: Project or case-study URL, name: url, widget: string, required: false }
               - { label: Button label, name: button_label, widget: string, required: false }
+          - label: Samples library
+            name: samples
+            widget: list
+            fields:
+              - { label: Sample title, name: title, widget: string }
+              - { label: Industry, name: industry, widget: string, hint: "Used by the Filter by industry menu" }
+              - { label: Short public summary, name: summary, widget: text }
+              - { label: Google Drive sample URL, name: url, widget: string }
+              - { label: Button label, name: button_label, widget: string, required: false }
           - label: Insights
             name: insights
             widget: list

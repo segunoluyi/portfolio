@@ -45,6 +45,47 @@
     return article;
   }
 
+  function createSample(sample) {
+    var article = document.createElement("article");
+    var header = document.createElement("header");
+    var industry = document.createElement("span");
+    var heading = document.createElement("h2");
+    var titleLink = document.createElement("a");
+    var cover = document.createElement("div");
+    var coverType = document.createElement("span");
+    var coverTitle = document.createElement("strong");
+    var summary = document.createElement("p");
+    var actions = document.createElement("ul");
+    var action = document.createElement("li");
+    var button = document.createElement("a");
+    var url = sample.url || "#";
+
+    industry.className = "date";
+    industry.textContent = sample.industry || "Business plan sample";
+    titleLink.href = url;
+    if (sample.url) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
+    titleLink.textContent = sample.title || "Untitled sample";
+    heading.appendChild(titleLink);
+    header.append(industry, heading);
+
+    cover.className = "sample-cover";
+    coverType.textContent = "Business plan sample";
+    coverTitle.textContent = sample.title || "Sample";
+    cover.append(coverType, coverTitle);
+
+    summary.textContent = sample.summary || "";
+    actions.className = "actions special";
+    button.className = "button";
+    button.href = url;
+    button.textContent = sample.button_label || "View sample";
+    if (sample.url) { button.target = "_blank"; button.rel = "noopener noreferrer"; }
+    else { button.setAttribute("aria-disabled", "true"); }
+    action.appendChild(button);
+    actions.appendChild(action);
+    article.append(header, cover, summary, actions);
+    return article;
+  }
+
   fetch("content/portfolio.json", { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("Portfolio content could not be loaded.");
@@ -54,6 +95,7 @@
       var intro = document.querySelector("[data-portfolio-intro]");
       var featured = document.querySelector("[data-featured-project]");
       var grid = document.querySelector("#project-grid");
+      var samplePreviewGrid = document.querySelector("#sample-preview-grid");
       var insightsGrid = document.querySelector("#insights-grid");
       var skillsGrid = document.querySelector("[data-skills-grid]");
       var profile = content.profile || {};
@@ -89,6 +131,11 @@
       if (grid && Array.isArray(content.projects)) {
         grid.replaceChildren();
         content.projects.forEach(function (project) { grid.appendChild(createProject(project)); });
+      }
+
+      if (samplePreviewGrid && Array.isArray(content.samples)) {
+        samplePreviewGrid.replaceChildren();
+        content.samples.slice(0, 3).forEach(function (sample) { samplePreviewGrid.appendChild(createSample(sample)); });
       }
 
       if (insightsGrid && Array.isArray(content.insights)) {
