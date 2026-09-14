@@ -3605,6 +3605,21 @@ input, select, textarea {
 
 /* Nav */
 
+	/* Portfolio architecture: the home navigation is intentionally above the
+	   introductory hero. Other pages retain the template's header + nav order. */
+	#header.top-header {
+		height: 9rem;
+		padding-bottom: 1.5rem;
+	}
+
+	#nav.top-navigation {
+		margin: 0 auto;
+	}
+
+	#nav.top-navigation + #intro {
+		padding-top: 6rem;
+	}
+
 	#nav {
 		color: #ffffff;
 		display: -moz-flex;
