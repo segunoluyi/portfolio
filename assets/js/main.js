@@ -255,4 +255,22 @@
 
 		}
 
+	// Back to top.
+	var backToTop = document.createElement('button');
+	backToTop.type = 'button';
+	backToTop.className = 'back-to-top';
+	backToTop.setAttribute('aria-label', 'Back to top');
+	backToTop.innerHTML = '<span class="icon solid fa-arrow-up" aria-hidden="true"></span>';
+	document.body.appendChild(backToTop);
+
+	var toggleBackToTop = function() {
+		backToTop.classList.toggle('is-visible', window.scrollY > 500);
+	};
+
+	window.addEventListener('scroll', toggleBackToTop, { passive: true });
+	backToTop.addEventListener('click', function() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	});
+	toggleBackToTop();
+
 })(jQuery);
