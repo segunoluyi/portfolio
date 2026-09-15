@@ -27,15 +27,6 @@ collections:
               - { label: Summary, name: summary, widget: text }
               - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
               - { label: LinkedIn label, name: linkedin_label, widget: string, required: false }
-          - label: Featured project
-            name: featured_project
-            widget: object
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Summary, name: summary, widget: text }
-              - { label: Image, name: image, widget: image, required: false }
-              - { label: Project or case-study URL, name: url, widget: string, required: false }
-              - { label: Button label, name: button_label, widget: string, required: false }
           - label: Project cards
             name: projects
             widget: list
@@ -46,6 +37,7 @@ collections:
               - { label: Image, name: image, widget: image, required: false }
               - { label: Project or case-study URL, name: url, widget: string, required: false }
               - { label: Button label, name: button_label, widget: string, required: false }
+              - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
           - label: Samples library
             name: samples
             widget: list
@@ -55,6 +47,7 @@ collections:
               - { label: Short public summary, name: summary, widget: text }
               - { label: Google Drive sample URL, name: url, widget: string }
               - { label: Button label, name: button_label, widget: string, required: false }
+              - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
           - label: Insights
             name: insights
             widget: list

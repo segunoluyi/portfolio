@@ -97,7 +97,14 @@
   fetch("../content/portfolio.json", { cache: "no-store" })
     .then(function (response) { if (!response.ok) throw new Error("Samples could not be loaded."); return response.json(); })
     .then(function (content) {
-      allSamples = Array.isArray(content.samples) ? content.samples : [];
+      allSamples = (Array.isArray(content.samples) ? content.samples : []).map(function (item, index) { return { item: item, index: index }; }).sort(function (firstEntry, secondEntry) {
+        var firstDate = Date.parse(firstEntry.item.published_at || "");
+        var secondDate = Date.parse(secondEntry.item.published_at || "");
+        if (!isNaN(firstDate) && !isNaN(secondDate)) return secondDate - firstDate;
+        if (!isNaN(firstDate)) return -1;
+        if (!isNaN(secondDate)) return 1;
+        return secondEntry.index - firstEntry.index;
+      }).map(function (entry) { return entry.item; });
       Array.from(new Set(allSamples.map(function (sample) { return sample.industry; }).filter(Boolean))).sort().forEach(function (industry) {
         var option = document.createElement("option");
         option.value = industry;

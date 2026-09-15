@@ -5,6 +5,19 @@
     if (element && value) element.textContent = value;
   }
 
+  function newestFirst(items) {
+    return items.map(function (item, index) { return { item: item, index: index }; }).sort(function (firstEntry, secondEntry) {
+      var first = firstEntry.item;
+      var second = secondEntry.item;
+      var firstDate = Date.parse(first.published_at || "");
+      var secondDate = Date.parse(second.published_at || "");
+      if (!isNaN(firstDate) && !isNaN(secondDate)) return secondDate - firstDate;
+      if (!isNaN(firstDate)) return -1;
+      if (!isNaN(secondDate)) return 1;
+      return secondEntry.index - firstEntry.index;
+    }).map(function (entry) { return entry.item; });
+  }
+
   function createProject(project) {
     var article = document.createElement("article");
     var header = document.createElement("header");
@@ -93,7 +106,6 @@
     })
     .then(function (content) {
       var intro = document.querySelector("[data-portfolio-intro]");
-      var featured = document.querySelector("[data-featured-project]");
       var grid = document.querySelector("#project-grid");
       var samplePreviewGrid = document.querySelector("#sample-preview-grid");
       var insightsGrid = document.querySelector("#insights-grid");
@@ -101,7 +113,6 @@
 	  var projectCardsSection = document.querySelector("[data-project-cards-section]");
       var profile = content.profile || {};
       var contact = content.contact || {};
-      var featuredProject = content.featured_project || {};
 
       if (intro) {
         var introHeading = intro.querySelector("h1");
@@ -116,29 +127,16 @@
         }
       }
 
-      if (featured) {
-        var title = featured.querySelector("h2 a");
-        var articleImage = featured.querySelector(".image.main img");
-        var articleImageLink = featured.querySelector(".image.main");
-        var description = featured.querySelector("p");
-        var articleButton = featured.querySelector(".button.large");
-        if (title) { title.href = featuredProject.url || "#"; if (featuredProject.url) { title.target = "_blank"; title.rel = "noopener noreferrer"; } setText(title, featuredProject.title); }
-        if (articleImage) { articleImage.src = featuredProject.image || articleImage.src; articleImage.alt = featuredProject.title || "Featured project"; }
-        if (articleImageLink) { articleImageLink.href = featuredProject.url || "#"; if (featuredProject.url) { articleImageLink.target = "_blank"; articleImageLink.rel = "noopener noreferrer"; } }
-        setText(description, featuredProject.summary);
-        if (articleButton) { articleButton.href = featuredProject.url || "#"; if (featuredProject.url) { articleButton.target = "_blank"; articleButton.rel = "noopener noreferrer"; } setText(articleButton, featuredProject.button_label || "View project"); }
-      }
-
       if (grid && Array.isArray(content.projects)) {
         grid.replaceChildren();
-        content.projects.forEach(function (project) { grid.appendChild(createProject(project)); });
+        newestFirst(content.projects).slice(0, 6).forEach(function (project) { grid.appendChild(createProject(project)); });
 		if (projectCardsSection) projectCardsSection.hidden = content.projects.length === 0;
 		grid.hidden = content.projects.length === 0;
       }
 
       if (samplePreviewGrid && Array.isArray(content.samples)) {
         samplePreviewGrid.replaceChildren();
-		content.samples.slice(0, 6).forEach(function (sample) { samplePreviewGrid.appendChild(createSample(sample)); });
+        newestFirst(content.samples).slice(0, 6).forEach(function (sample) { samplePreviewGrid.appendChild(createSample(sample)); });
       }
 
       if (insightsGrid && Array.isArray(content.insights)) {
