@@ -13,7 +13,38 @@
     "url": "https://oluyisegun.medium.com/customer-complaints-analysis-in-power-bi-an-end-to-end-dashboard-case-study-35546161ba95",
     "button_label": "View Documentation"
   },
-  "projects": [],
+  "projects": [
+    {
+      "title": "SuperStore Sales Analysis ",
+      "eyebrow": "Microsoft Excel ",
+      "summary": "Test SuperStore Sales Analysis "
+    },
+    {
+      "title": "Walmart Sales Analysis ",
+      "eyebrow": "Microsoft Excel & SQL ",
+      "summary": "Test Walmart Sales Analysis "
+    },
+    {
+      "eyebrow": "Microsoft Excel, SQL & Power BI ",
+      "title": "HR Attrititon ",
+      "summary": "Tests HR Attrititon "
+    },
+    {
+      "eyebrow": "SQL & Power BI ",
+      "title": "Netflix Analysis ",
+      "summary": "Test Netflix Analysis "
+    },
+    {
+      "eyebrow": "Microsoft Excel, SQL  & Python ",
+      "title": "Churn Rate ",
+      "summary": "Test Churn Rate "
+    },
+    {
+      "eyebrow": "Python & ML ",
+      "title": "Recommendation Systems",
+      "summary": "Test Recommendation Systems"
+    }
+  ],
   "samples": [
     {
       "title": "ABC Fishing Company",
