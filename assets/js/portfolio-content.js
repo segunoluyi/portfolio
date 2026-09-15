@@ -98,6 +98,7 @@
       var samplePreviewGrid = document.querySelector("#sample-preview-grid");
       var insightsGrid = document.querySelector("#insights-grid");
       var skillsGrid = document.querySelector("[data-skills-grid]");
+	  var projectCardsSection = document.querySelector("[data-project-cards-section]");
       var profile = content.profile || {};
       var contact = content.contact || {};
       var featuredProject = content.featured_project || {};
@@ -131,11 +132,13 @@
       if (grid && Array.isArray(content.projects)) {
         grid.replaceChildren();
         content.projects.forEach(function (project) { grid.appendChild(createProject(project)); });
+		if (projectCardsSection) projectCardsSection.hidden = content.projects.length === 0;
+		grid.hidden = content.projects.length === 0;
       }
 
       if (samplePreviewGrid && Array.isArray(content.samples)) {
         samplePreviewGrid.replaceChildren();
-        content.samples.slice(0, 3).forEach(function (sample) { samplePreviewGrid.appendChild(createSample(sample)); });
+		content.samples.slice(0, 6).forEach(function (sample) { samplePreviewGrid.appendChild(createSample(sample)); });
       }
 
       if (insightsGrid && Array.isArray(content.insights)) {

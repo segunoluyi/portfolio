@@ -3726,6 +3726,12 @@ input, select, textarea {
 					padding: 0 2rem;
 				}
 
+				#nav ul.links li > span {
+					display: block;
+					font-size: 0.8rem;
+					padding: 0 2rem;
+				}
+
 					#nav ul.links li a:hover {
 						color: inherit !important;
 						background-color: rgba(255, 255, 255, 0.1);
@@ -3735,7 +3741,8 @@ input, select, textarea {
 					background-color: #ffffff;
 				}
 
-					#nav ul.links li.active a {
+					#nav ul.links li.active a,
+					#nav ul.links li.active span {
 						color: #1e252d;
 					}
 
@@ -4795,7 +4802,7 @@ input, select, textarea {
   border-radius: 50%;
   bottom: 1.5rem;
   box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.22);
-  color: #ffffff;
+  color: #aebbc6;
   cursor: pointer;
   display: flex;
   font-size: 1rem;
@@ -4816,7 +4823,7 @@ input, select, textarea {
 .back-to-top:hover,
 .back-to-top:focus {
   background: #18bfef;
-  color: #ffffff;
+  color: #212931;
 }
 
 .back-to-top.is-visible {
