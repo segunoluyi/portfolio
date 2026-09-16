@@ -107,11 +107,13 @@
     .then(function (content) {
       var intro = document.querySelector("[data-portfolio-intro]");
       var grid = document.querySelector("#project-grid");
+      var about = document.querySelector("[data-about]");
       var samplePreviewGrid = document.querySelector("#sample-preview-grid");
       var insightsGrid = document.querySelector("#insights-grid");
       var skillsGrid = document.querySelector("[data-skills-grid]");
 	  var projectCardsSection = document.querySelector("[data-project-cards-section]");
       var profile = content.profile || {};
+      var aboutContent = content.about || {};
       var contact = content.contact || {};
 
       if (intro) {
@@ -125,6 +127,13 @@
           linkedIn.textContent = profile.linkedin_label || "LinkedIn";
           introParagraph.appendChild(linkedIn);
         }
+      }
+
+      if (about) {
+        var aboutHeading = about.querySelector("h2");
+        var aboutSummary = about.querySelector("p");
+        setText(aboutHeading, aboutContent.heading);
+        setText(aboutSummary, aboutContent.summary);
       }
 
       if (grid && Array.isArray(content.projects)) {

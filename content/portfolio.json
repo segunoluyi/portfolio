@@ -1,10 +1,14 @@
 {
   "profile": {
     "name": "Segun Oluyi",
-    "headline": "Data Analyst with a business-writing background",
-    "summary": "Skilled in Python, SQL, Excel/Google Sheets, Power BI, Tableau, and R.",
+    "headline": "Data & Business Analyst",
+    "summary": "Turning complex data and business questions into clear, decision-ready insights.",
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
     "linkedin_label": "LinkedIn"
+  },
+  "about": {
+    "heading": "Analysis that supports practical decisions.",
+    "summary": "I turn complex data and business questions into clear analysis, useful recommendations, and decision-ready communication. My work brings together data analysis, business research, planning, and professional documentation."
   },
   "projects": [
     {

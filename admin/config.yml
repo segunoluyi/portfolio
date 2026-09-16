@@ -27,6 +27,12 @@ collections:
               - { label: Summary, name: summary, widget: text }
               - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
               - { label: LinkedIn label, name: linkedin_label, widget: string, required: false }
+          - label: About section
+            name: about
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Summary, name: summary, widget: text }
           - label: Project cards
             name: projects
             widget: list
