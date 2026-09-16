@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var pageSize = 12;
+  var pageSize = 6;
   var currentPage = 1;
   var allSamples = [];
   var grid = document.querySelector("#samples-grid");

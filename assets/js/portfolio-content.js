@@ -150,7 +150,7 @@
 
       if (insightsGrid && Array.isArray(content.insights)) {
         insightsGrid.replaceChildren();
-        content.insights.forEach(function (insight) { insightsGrid.appendChild(createProject(insight)); });
+        newestFirst(content.insights).slice(0, 6).forEach(function (insight) { insightsGrid.appendChild(createProject(insight)); });
       }
 
       if (skillsGrid && Array.isArray(content.skills)) {

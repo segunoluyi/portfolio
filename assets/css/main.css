@@ -4794,6 +4794,16 @@ input, select, textarea {
 
 .sample-pagination .button[disabled] { opacity: 0.45; }
 
+/* Keep each homepage collection's action close to its cards, before the next divider. */
+#main > .collection-actions {
+  border-top: 0;
+  padding: 2.5rem 4rem 6rem;
+}
+
+@media screen and (max-width: 736px) {
+  #main > .collection-actions { padding: 2rem 2rem 4rem; }
+}
+
 /* Portfolio card typography */
 #main > #projects,
 #main > #samples,

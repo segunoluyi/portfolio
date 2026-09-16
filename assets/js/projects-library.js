@@ -4,6 +4,8 @@
   var currentPage = 1;
   var allProjects = [];
   var grid = document.querySelector("#projects-grid");
+  var searchInput = document.querySelector("#project-search");
+  var projectFilter = document.querySelector("#project-filter");
   var resultsLabel = document.querySelector("#project-results");
   var pagination = document.querySelector("#project-pagination");
 
@@ -26,7 +28,7 @@
     title.textContent = project.title || "Untitled project";
     imageLink.href = project.url || "#";
     imageLink.className = "image fit";
-    image.src = project.image || "../images/pic02.jpg";
+    image.src = project.image ? (project.image.indexOf("images/") === 0 ? "../" + project.image : project.image) : "../images/pic02.jpg";
     image.alt = project.title || "Portfolio project";
     imageLink.appendChild(image);
     button.href = project.url || "#";
@@ -44,18 +46,31 @@
     return button;
   }
 
+  function getFilteredProjects() {
+    var term = (searchInput.value || "").trim().toLowerCase();
+    var area = projectFilter.value;
+    return allProjects.filter(function (project) {
+      var haystack = [project.title, project.eyebrow, project.summary].join(" ").toLowerCase();
+      return (!area || project.eyebrow === area) && (!term || haystack.indexOf(term) !== -1);
+    });
+  }
+
   function render() {
-    var totalPages = Math.max(1, Math.ceil(allProjects.length / pageSize));
+    var filtered = getFilteredProjects();
+    var totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
     currentPage = Math.min(currentPage, totalPages);
     grid.replaceChildren();
-    allProjects.slice((currentPage - 1) * pageSize, currentPage * pageSize).forEach(function (project) { grid.appendChild(createProjectCard(project)); });
-    resultsLabel.textContent = allProjects.length + (allProjects.length === 1 ? " project" : " projects") + " shown";
+    filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize).forEach(function (project) { grid.appendChild(createProjectCard(project)); });
+    resultsLabel.textContent = filtered.length + (filtered.length === 1 ? " project" : " projects") + " shown";
     pagination.replaceChildren();
     if (totalPages > 1) { pagination.appendChild(makeButton("Previous", Math.max(1, currentPage - 1), currentPage === 1)); for (var page = 1; page <= totalPages; page += 1) pagination.appendChild(makeButton(String(page), page, page === currentPage)); pagination.appendChild(makeButton("Next", Math.min(totalPages, currentPage + 1), currentPage === totalPages)); }
   }
 
   fetch("../content/portfolio.json", { cache: "no-store" }).then(function (response) { if (!response.ok) throw new Error(); return response.json(); }).then(function (content) {
     allProjects = (Array.isArray(content.projects) ? content.projects : []).map(function (item, index) { return { item: item, index: index }; }).sort(function (firstEntry, secondEntry) { var firstDate = Date.parse(firstEntry.item.published_at || ""); var secondDate = Date.parse(secondEntry.item.published_at || ""); if (!isNaN(firstDate) && !isNaN(secondDate)) return secondDate - firstDate; if (!isNaN(firstDate)) return -1; if (!isNaN(secondDate)) return 1; return secondEntry.index - firstEntry.index; }).map(function (entry) { return entry.item; });
+    Array.from(new Set(allProjects.map(function (project) { return project.eyebrow; }).filter(Boolean))).sort().forEach(function (area) { var option = document.createElement("option"); option.value = area; option.textContent = area; projectFilter.appendChild(option); });
+    searchInput.addEventListener("input", function () { currentPage = 1; render(); });
+    projectFilter.addEventListener("change", function () { currentPage = 1; render(); });
     render();
   }).catch(function () { resultsLabel.textContent = "Projects could not be loaded."; });
 }());
