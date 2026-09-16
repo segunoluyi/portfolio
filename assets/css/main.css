@@ -4796,8 +4796,9 @@ input, select, textarea {
 
 /* Section dividers and portfolio card typography */
 #main > .post.featured .section-divider {
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
