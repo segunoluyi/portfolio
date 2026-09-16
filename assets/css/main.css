@@ -4801,6 +4801,11 @@ input, select, textarea {
   text-transform: uppercase;
 }
 
+#main > .post.featured .section-divider:before,
+#main > .post.featured .section-divider:after {
+  display: none;
+}
+
 #main .compact-grid > article h2,
 #main #insights-grid > article h2 {
   font-size: 1.15rem;
