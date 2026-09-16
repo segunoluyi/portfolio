@@ -4794,19 +4794,7 @@ input, select, textarea {
 
 .sample-pagination .button[disabled] { opacity: 0.45; }
 
-/* Section dividers and portfolio card typography */
-#main > .post.featured .section-divider {
-  font-size: 1rem;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-#main > .post.featured .section-divider:before,
-#main > .post.featured .section-divider:after {
-  display: none;
-}
-
+/* Portfolio card typography */
 #main .compact-grid > article h2,
 #main #insights-grid > article h2 {
   font-size: 1.15rem;
