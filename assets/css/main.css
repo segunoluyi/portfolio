@@ -4795,6 +4795,15 @@ input, select, textarea {
 .sample-pagination .button[disabled] { opacity: 0.45; }
 
 /* Portfolio card typography */
+#main > #projects,
+#main > #samples,
+#main > #insights,
+#main > #project-grid,
+#main > #sample-preview-grid,
+#main > #insights-grid {
+  border-top: 0;
+}
+
 #main .compact-grid > article h2,
 #main #insights-grid > article h2 {
   font-size: 1.15rem;
