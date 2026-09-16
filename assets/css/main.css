@@ -4804,6 +4804,47 @@ input, select, textarea {
   border-top: 0;
 }
 
+/* Keep collection headings aligned with About without stacking two blocks of padding. */
+#main > #projects,
+#main > #samples,
+#main > #insights {
+  padding: 8rem 8rem 2rem;
+}
+
+#main > #project-grid,
+#main > #sample-preview-grid,
+#main > #insights-grid {
+  padding: 0 4rem 4rem;
+}
+
+@media screen and (max-width: 1280px) {
+  #main > #projects,
+  #main > #samples,
+  #main > #insights {
+    padding: 6rem 4rem 2rem;
+  }
+
+  #main > #project-grid,
+  #main > #sample-preview-grid,
+  #main > #insights-grid {
+    padding: 0 2rem 3rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #main > #projects,
+  #main > #samples,
+  #main > #insights {
+    padding: 4rem 2rem 1.5rem;
+  }
+
+  #main > #project-grid,
+  #main > #sample-preview-grid,
+  #main > #insights-grid {
+    padding: 0 0 2rem;
+  }
+}
+
 #main .compact-grid > article h2,
 #main #insights-grid > article h2 {
   font-size: 1.15rem;
