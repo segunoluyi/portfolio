@@ -80,7 +80,7 @@
       var sampleCards = samples ? samples.map(function (sample, index) {
         return h("article", { className: "portfolio-preview__card", key: index }, [
           h("div", { className: "portfolio-preview__card-content" }, [
-            h("span", { className: "portfolio-preview__eyebrow" }, value(sample, "industry", "Business plan sample")),
+            h("span", { className: "portfolio-preview__eyebrow" }, [value(sample, "content_type", "Work sample"), value(sample, "industry")].filter(Boolean).join(" · ")),
             h("h3", {}, value(sample, "title", "Untitled sample")),
             h("p", {}, value(sample, "summary")),
             h("span", { className: "portfolio-preview__button" }, value(sample, "button_label", "View sample"))
@@ -115,7 +115,7 @@
           h("div", { className: "portfolio-preview__grid" }, cards)
         ]),
         h("section", { className: "portfolio-preview__section" }, [
-          h("h2", { className: "portfolio-preview__section-title" }, "Samples library"),
+          h("h2", { className: "portfolio-preview__section-title" }, "Work samples"),
           h("div", { className: "portfolio-preview__grid" }, sampleCards)
         ]),
         h("section", { className: "portfolio-preview__section" }, [

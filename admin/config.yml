@@ -44,11 +44,12 @@ collections:
               - { label: Project or case-study URL, name: url, widget: string, required: false }
               - { label: Button label, name: button_label, widget: string, required: false }
               - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
-          - label: Samples library
+          - label: Work samples library
             name: samples
             widget: list
             fields:
               - { label: Sample title, name: title, widget: string }
+              - { label: Document type, name: content_type, widget: select, options: ["Business plan", "Proposal", "Pitch deck", "Market research", "Financial model", "Other work sample"], required: false, hint: "Used by the document-type filter and card label" }
               - { label: Industry, name: industry, widget: string, hint: "Used by the Filter by industry menu" }
               - { label: Short public summary, name: summary, widget: text }
               - { label: Google Drive sample URL, name: url, widget: string }

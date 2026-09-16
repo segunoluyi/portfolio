@@ -74,7 +74,7 @@
     var url = sample.url || "#";
 
     industry.className = "date";
-    industry.textContent = sample.industry || "Business plan sample";
+    industry.textContent = sample.industry || "Work sample";
     titleLink.href = url;
     if (sample.url) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
     titleLink.textContent = sample.title || "Untitled sample";
@@ -82,7 +82,7 @@
     header.append(industry, heading);
 
     cover.className = "sample-cover";
-    coverType.textContent = "Business plan sample";
+    coverType.textContent = sample.content_type || "Work sample";
     coverTitle.textContent = sample.title || "Sample";
     cover.append(coverType, coverTitle);
 

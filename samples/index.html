@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <title>Business Plan Samples | Segun Oluyi</title>
+    <title>Work Samples | Segun Oluyi</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="A filterable library of confidentiality-safe business-plan samples by Segun Oluyi." />
-    <meta property="og:title" content="Business Plan Samples | Segun Oluyi" />
-    <meta property="og:description" content="A filterable library of confidentiality-safe business-plan samples." />
+    <meta name="description" content="A filterable library of confidentiality-safe work samples, including business plans, proposals, pitch decks, and research." />
+    <meta property="og:title" content="Work Samples | Segun Oluyi" />
+    <meta property="og:description" content="A filterable library of confidentiality-safe professional work samples." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://segunoluyi.github.io/portfolio/samples/" />
     <link rel="canonical" href="https://segunoluyi.github.io/portfolio/samples/" />
@@ -18,7 +18,7 @@
     <div id="wrapper">
       <nav id="nav" class="top-navigation">
         <ul class="links">
-          <li><a href="../index.html#intro">Home</a></li>
+          <li><a href="../">Home</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../projects/index.html">Projects</a></li>
           <li class="active"><span aria-current="page">Samples</span></li>
@@ -36,8 +36,8 @@
       <div id="main">
         <section class="post">
           <header class="major">
-            <h1>Business-plan samples</h1>
-            <p>Browse selected, confidentiality-safe business-plan samples by industry. Each document opens in Google Drive.</p>
+            <h1>Work samples</h1>
+            <p>Browse selected, confidentiality-safe business plans, proposals, pitch decks, research, and other professional documents. Each item opens at its approved public destination.</p>
           </header>
 
           <div class="box library-note">
@@ -47,7 +47,11 @@
           <form class="sample-filters" onsubmit="return false;">
             <div class="field">
               <label for="sample-search">Search samples</label>
-              <input id="sample-search" type="search" placeholder="Search by title, industry, or topic" />
+              <input id="sample-search" type="search" placeholder="Search by title, type, industry, or topic" />
+            </div>
+            <div class="field">
+              <label for="document-type-filter">Document type</label>
+              <select id="document-type-filter"><option value="">Filter by document type</option></select>
             </div>
             <div class="field">
               <label for="industry-filter">Industry</label>
@@ -56,7 +60,7 @@
           </form>
 
           <p id="sample-results" class="sample-results" aria-live="polite">Loading samples...</p>
-          <section class="posts compact-grid" id="samples-grid" aria-label="Business-plan samples"></section>
+          <section class="posts compact-grid" id="samples-grid" aria-label="Work samples"></section>
           <nav id="sample-pagination" class="sample-pagination" aria-label="Sample pages"></nav>
         </section>
       </div>

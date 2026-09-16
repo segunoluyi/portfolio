@@ -4773,7 +4773,7 @@ input, select, textarea {
 .sample-filters {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr);
+  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(10rem, 1fr));
   margin: 0 0 1rem;
 }
 
