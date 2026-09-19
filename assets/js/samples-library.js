@@ -27,9 +27,7 @@
 
     industry.className = "date";
     industry.textContent = sample.industry || "Work sample";
-    link.href = sample.url || "#";
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
+    link.href = sample.slug ? sample.slug + "/" : "#";
     link.textContent = sample.title || "Untitled sample";
     heading.appendChild(link);
     header.append(industry, heading);
@@ -42,9 +40,7 @@
     summary.textContent = sample.summary || "";
     actions.className = "actions special";
     button.className = "button";
-    button.href = sample.url || "#";
-    button.target = "_blank";
-    button.rel = "noopener noreferrer";
+    button.href = sample.slug ? sample.slug + "/" : "#";
     button.textContent = sample.button_label || "View sample";
     action.appendChild(button);
     actions.appendChild(action);

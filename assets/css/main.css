@@ -4794,6 +4794,29 @@ input, select, textarea {
 
 .sample-pagination .button[disabled] { opacity: 0.45; }
 
+/* Lightweight per-sample pages keep one document easy to share without duplicating a full case study. */
+.sample-detail-cover {
+  margin: 0 auto 2.5rem;
+  max-width: 42rem;
+  min-height: 15rem;
+}
+
+.sample-facts {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto 2.5rem;
+  max-width: 42rem;
+}
+
+.sample-facts div { border-top: solid 2px #eeeeee; padding-top: 1rem; }
+.sample-facts dt { color: #717981; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.sample-facts dd { margin: 0.45rem 0 0; }
+
+@media screen and (max-width: 736px) {
+  .sample-facts { grid-template-columns: 1fr; }
+}
+
 /* Keep each homepage collection's action close to its cards, before the next divider. */
 #main > .collection-actions {
   border-top: 0;

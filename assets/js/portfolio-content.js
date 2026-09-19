@@ -71,12 +71,11 @@
     var actions = document.createElement("ul");
     var action = document.createElement("li");
     var button = document.createElement("a");
-    var url = sample.url || "#";
+    var detailUrl = sample.slug ? "samples/" + sample.slug + "/" : "samples/";
 
     industry.className = "date";
     industry.textContent = sample.industry || "Work sample";
-    titleLink.href = url;
-    if (sample.url) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
+    titleLink.href = detailUrl;
     titleLink.textContent = sample.title || "Untitled sample";
     heading.appendChild(titleLink);
     header.append(industry, heading);
@@ -89,10 +88,9 @@
     summary.textContent = sample.summary || "";
     actions.className = "actions special";
     button.className = "button";
-    button.href = url;
+    button.href = detailUrl;
     button.textContent = sample.button_label || "View sample";
-    if (sample.url) { button.target = "_blank"; button.rel = "noopener noreferrer"; }
-    else { button.setAttribute("aria-disabled", "true"); }
+    if (!sample.slug) button.setAttribute("aria-disabled", "true");
     action.appendChild(button);
     actions.appendChild(action);
     article.append(header, cover, summary, actions);

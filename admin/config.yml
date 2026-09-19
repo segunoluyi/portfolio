@@ -49,11 +49,12 @@ collections:
             widget: list
             fields:
               - { label: Sample title, name: title, widget: string }
+              - { label: Page slug, name: slug, widget: string, required: true, hint: "The clean page address, for example abc-fishing-company. Use lowercase letters, numbers, and hyphens only." }
               - { label: Document type, name: content_type, widget: select, options: ["Business plan", "Proposal", "Pitch deck", "Market research", "Financial model", "Other work sample"], required: false, hint: "Used by the document-type filter and card label" }
               - { label: Industry, name: industry, widget: string, hint: "Used by the Filter by industry menu" }
               - { label: Short public summary, name: summary, widget: text }
               - { label: Google Drive sample URL, name: url, widget: string }
-              - { label: Button label, name: button_label, widget: string, required: false }
+              - { label: Card button label, name: button_label, widget: string, required: false, hint: "Use a label such as View details. The detail page has its own View document button." }
               - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
           - label: Insights
             name: insights
