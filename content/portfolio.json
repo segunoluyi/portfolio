@@ -69,6 +69,22 @@
     },
     {
       "content_type": "Business plan",
+      "summary": "This confidentiality-safe sample develops a two-villa vacation-rental concept for the Turks and Caicos Islands. It defines the guest segments, property offer, market position, operating model, marketing strategy, and financial plan needed to move the development from concept to funding discussion. It demonstrates end-to-end property and hospitality planning.",
+      "button_label": "View details",
+      "case_study_url": "../../case-studies/marina-villa-tci.html",
+      "slug": "marina-villa-tci",
+      "url": "https://drive.google.com/file/d/1Jdif3JRWuU27oMtmjgAdcnxfk1PpotPq/view?usp=drivesdk",
+      "key_deliverables": [
+        "Guest segmentation and market positioning",
+        "Property offer, operations, and marketing strategy",
+        "Development funding and financial plan"
+      ],
+      "work_demonstrates": "How a vacation-rental concept can be structured for market entry, operations, and investment discussion.",
+      "title": "Marina Villa TCI",
+      "industry": "Real Estate & Property Development"
+    },
+    {
+      "content_type": "Business plan",
       "summary": "This confidentiality-safe sample was developed for a client in the Turks and Caicos Islands. It shows how market demand, customer segments, operational capacity, and funding requirements can be brought together in a financing-ready seafood business plan. It demonstrates research, commercial planning, operational strategy, and financial modelling.",
       "button_label": "View details",
       "slug": "abc-fishing-company",
@@ -99,19 +115,18 @@
     },
     {
       "content_type": "Business plan",
-      "summary": "This confidentiality-safe sample develops a two-villa vacation-rental concept for the Turks and Caicos Islands. It defines the guest segments, property offer, market position, operating model, marketing strategy, and financial plan needed to move the development from concept to funding discussion. It demonstrates end-to-end property and hospitality planning.",
+      "summary": "This demonstration sample develops a regulated indoor cannabis cultivation venture in Massachusetts. It joins licensing and compliance considerations with cultivation operations, target-market analysis, go-to-market planning, and multi-year financial forecasts. It demonstrates planning for a complex, regulation-led market.",
       "button_label": "View details",
-      "case_study_url": "../../case-studies/marina-villa-tci.html",
-      "slug": "marina-villa-tci",
-      "url": "https://drive.google.com/file/d/1Jdif3JRWuU27oMtmjgAdcnxfk1PpotPq/view?usp=drivesdk",
+      "slug": "xyz-cannabis",
+      "url": "https://drive.google.com/file/d/1ZVCSuuMHxbc5neIIfyJ71Qh5LAJd13Ah/view?usp=drivesdk",
       "key_deliverables": [
-        "Guest segmentation and market positioning",
-        "Property offer, operations, and marketing strategy",
-        "Development funding and financial plan"
+        "Licensing and compliance considerations",
+        "Cultivation operations and product model",
+        "Market strategy and financial forecasts"
       ],
-      "work_demonstrates": "How a vacation-rental concept can be structured for market entry, operations, and investment discussion.",
-      "title": "Marina Villa TCI",
-      "industry": "Real Estate & Property Development"
+      "work_demonstrates": "How regulation, operations, market strategy, and financial planning can be addressed together in an emerging sector.",
+      "title": "XYZ Cannabis",
+      "industry": "Cannabis"
     },
     {
       "content_type": "Business plan",
@@ -127,21 +142,6 @@
       "work_demonstrates": "How housing need, development delivery, sustainability, and financial planning can be brought into one proposal.",
       "title": "SRDL",
       "industry": "Real Estate & Property Development"
-    },
-    {
-      "content_type": "Business plan",
-      "summary": "This demonstration sample develops a regulated indoor cannabis cultivation venture in Massachusetts. It joins licensing and compliance considerations with cultivation operations, target-market analysis, go-to-market planning, and multi-year financial forecasts. It demonstrates planning for a complex, regulation-led market.",
-      "button_label": "View details",
-      "slug": "xyz-cannabis",
-      "url": "https://drive.google.com/file/d/1ZVCSuuMHxbc5neIIfyJ71Qh5LAJd13Ah/view?usp=drivesdk",
-      "key_deliverables": [
-        "Licensing and compliance considerations",
-        "Cultivation operations and product model",
-        "Market strategy and financial forecasts"
-      ],
-      "work_demonstrates": "How regulation, operations, market strategy, and financial planning can be addressed together in an emerging sector.",
-      "title": "XYZ Cannabis",
-      "industry": "Cannabis"
     },
     {
       "content_type": "Business plan",
