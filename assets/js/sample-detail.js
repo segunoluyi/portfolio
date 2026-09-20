@@ -9,6 +9,8 @@
   var coverType = document.querySelector("[data-sample-cover-type]");
   var coverTitle = document.querySelector("[data-sample-cover-title]");
   var documentLink = document.querySelector("[data-sample-document-link]");
+  var caseStudyAction = document.querySelector("[data-sample-case-study-action]");
+  var caseStudyLink = document.querySelector("[data-sample-case-study-link]");
   var message = document.querySelector("[data-sample-message]");
 
   fetch("../../content/portfolio.json", { cache: "no-store" })
@@ -29,6 +31,10 @@
         documentLink.href = sample.url;
         documentLink.target = "_blank";
         documentLink.rel = "noopener noreferrer";
+      }
+      if (caseStudyAction && caseStudyLink && sample.case_study_url) {
+        caseStudyLink.href = sample.case_study_url;
+        caseStudyAction.hidden = false;
       }
     })
     .catch(function () {

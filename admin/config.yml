@@ -54,6 +54,7 @@ collections:
               - { label: Industry, name: industry, widget: string, hint: "Used by the Filter by industry menu" }
               - { label: Short public summary, name: summary, widget: text }
               - { label: Google Drive sample URL, name: url, widget: string }
+              - { label: Flagship case-study URL, name: case_study_url, widget: string, required: false, hint: "Optional. Use only when this sample also has a longer portfolio case study." }
               - { label: Card button label, name: button_label, widget: string, required: false, hint: "Use a label such as View details. The detail page has its own View document button." }
               - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
           - label: Insights
