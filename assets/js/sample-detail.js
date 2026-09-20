@@ -8,10 +8,21 @@
   var summary = document.querySelector("[data-sample-summary]");
   var coverType = document.querySelector("[data-sample-cover-type]");
   var coverTitle = document.querySelector("[data-sample-cover-title]");
+  var coverImage = document.querySelector("[data-sample-cover-image]");
+  var coverFallback = document.querySelector("[data-sample-cover-fallback]");
+  var deliverablesSection = document.querySelector("[data-sample-deliverables-section]");
+  var demonstrates = document.querySelector("[data-sample-demonstrates]");
+  var deliverables = document.querySelector("[data-sample-deliverables]");
   var documentLink = document.querySelector("[data-sample-document-link]");
   var caseStudyAction = document.querySelector("[data-sample-case-study-action]");
   var caseStudyLink = document.querySelector("[data-sample-case-study-link]");
   var message = document.querySelector("[data-sample-message]");
+
+  function imageUrl(value) {
+    if (!value) return "";
+    if (/^(?:https?:|data:|\/)/i.test(value)) return value;
+    return "../../" + value.replace(/^\.\//, "");
+  }
 
   fetch("../../content/portfolio.json", { cache: "no-store" })
     .then(function (response) { if (!response.ok) throw new Error("Sample could not be loaded."); return response.json(); })
@@ -27,6 +38,25 @@
       if (summary) summary.textContent = sample.summary || "";
       if (coverType) coverType.textContent = sample.content_type || "Work sample";
       if (coverTitle) coverTitle.textContent = sample.title || "Work sample";
+      if (coverImage && sample.cover_image) {
+        coverImage.src = imageUrl(sample.cover_image);
+        coverImage.alt = sample.cover_alt || (sample.title || "Work sample") + " document cover";
+        coverImage.hidden = false;
+        if (coverFallback) coverFallback.hidden = true;
+      }
+      if (deliverablesSection && Array.isArray(sample.key_deliverables) && sample.key_deliverables.length) {
+        if (demonstrates) demonstrates.textContent = sample.work_demonstrates || "";
+        if (deliverables) {
+          deliverables.replaceChildren();
+          sample.key_deliverables.forEach(function (item) {
+            var entry = document.createElement("li");
+            entry.textContent = item;
+            deliverables.appendChild(entry);
+          });
+        }
+        deliverablesSection.hidden = false;
+      }
+      if (message && sample.disclosure) message.textContent = sample.disclosure;
       if (documentLink && sample.url) {
         documentLink.href = sample.url;
         documentLink.target = "_blank";

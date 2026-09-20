@@ -65,8 +65,6 @@
     var heading = document.createElement("h2");
     var titleLink = document.createElement("a");
     var cover = document.createElement("div");
-    var coverType = document.createElement("span");
-    var coverTitle = document.createElement("strong");
     var summary = document.createElement("p");
     var actions = document.createElement("ul");
     var action = document.createElement("li");
@@ -81,9 +79,20 @@
     header.append(industry, heading);
 
     cover.className = "sample-cover";
-    coverType.textContent = sample.content_type || "Work sample";
-    coverTitle.textContent = sample.title || "Sample";
-    cover.append(coverType, coverTitle);
+    if (sample.cover_image) {
+      var image = document.createElement("img");
+      image.src = sample.cover_image;
+      image.alt = sample.cover_alt || (sample.title || "Work sample") + " document cover";
+      image.loading = "lazy";
+      cover.classList.add("has-image");
+      cover.appendChild(image);
+    } else {
+      var coverType = document.createElement("span");
+      var coverTitle = document.createElement("strong");
+      coverType.textContent = sample.content_type || "Work sample";
+      coverTitle.textContent = sample.title || "Sample";
+      cover.append(coverType, coverTitle);
+    }
 
     summary.textContent = sample.summary || "";
     actions.className = "actions special";
