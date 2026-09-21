@@ -20,6 +20,7 @@
     .portfolio-preview__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
     .portfolio-preview__card { border: 1px solid #d9e0e6; }
     .portfolio-preview__card .portfolio-preview__image { height: 145px; }
+    .portfolio-preview__sample-image { background: #ffffff; object-fit: contain; }
     .portfolio-preview__card-content { padding: 18px; }
     .portfolio-preview__card h3 { margin: 8px 0 10px; font-size: 19px; }
     .portfolio-preview__card p { font-size: 14px; }
@@ -79,6 +80,7 @@
 
       var sampleCards = samples ? samples.map(function (sample, index) {
         return h("article", { className: "portfolio-preview__card", key: index }, [
+          image(value(sample, "cover_image"), "portfolio-preview__image portfolio-preview__sample-image"),
           h("div", { className: "portfolio-preview__card-content" }, [
             h("span", { className: "portfolio-preview__eyebrow" }, [value(sample, "content_type", "Work sample"), value(sample, "industry")].filter(Boolean).join(" · ")),
             h("h3", {}, value(sample, "title", "Untitled sample")),

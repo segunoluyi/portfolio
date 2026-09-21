@@ -4771,6 +4771,7 @@ input, select, textarea {
 }
 
 .sample-cover.has-image {
+  background: #ffffff;
   padding: 0;
 }
 
@@ -4778,7 +4779,7 @@ input, select, textarea {
   display: block;
   height: 100%;
   min-height: inherit;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 }
 
