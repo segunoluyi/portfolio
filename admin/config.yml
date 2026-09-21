@@ -54,7 +54,8 @@ collections:
               - { label: Industry, name: industry, widget: string, hint: "Used by the Filter by industry menu" }
               - { label: Cover image, name: cover_image, widget: image, required: false, hint: "Upload a compressed JPG or WebP cover from the approved public edition. This appears on the card and the left side of the detail page." }
               - { label: Cover-image description, name: cover_alt, widget: string, required: false, hint: "Describe the cover for people using screen readers." }
-              - { label: Public project summary, name: summary, widget: text, hint: "Write 3 to 4 concise lines explaining the real work, context, and value without private details." }
+              - { label: Card summary, name: summary, widget: text, hint: "Write one concise sentence for the Work Samples card. Readers can open the detail page for the fuller story." }
+              - { label: Detailed public overview, name: detail_summary, widget: text, required: false, hint: "Write 3 to 4 concise lines for the individual detail page. Keep private information out." }
               - { label: What this work demonstrates, name: work_demonstrates, widget: text, required: false, hint: "One concise sentence describing the capability this sample shows." }
               - label: Key deliverables
                 name: key_deliverables

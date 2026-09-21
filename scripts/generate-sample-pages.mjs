@@ -20,6 +20,7 @@ function createPage(sample) {
   const type = escapeHtml(sample.content_type || "Work sample");
   const industry = escapeHtml(sample.industry || "");
   const summary = escapeHtml(sample.summary || "");
+  const detailSummary = escapeHtml(sample.detail_summary || sample.summary || "");
   const slug = escapeHtml(sample.slug);
   const canonical = "https://segunoluyi.github.io/portfolio/samples/" + slug + "/";
 
@@ -30,9 +31,9 @@ function createPage(sample) {
     "    <title>" + title + " | Segun Oluyi</title>",
     "    <meta charset=\"utf-8\" />",
     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" />",
-    "    <meta name=\"description\" content=\"" + summary + "\" />",
+    "    <meta name=\"description\" content=\"" + detailSummary + "\" />",
     "    <meta property=\"og:title\" content=\"" + title + " | Segun Oluyi\" />",
-    "    <meta property=\"og:description\" content=\"" + summary + "\" />",
+    "    <meta property=\"og:description\" content=\"" + detailSummary + "\" />",
     "    <meta property=\"og:type\" content=\"article\" />",
     "    <meta property=\"og:url\" content=\"" + canonical + "\" />",
     "    <link rel=\"canonical\" href=\"" + canonical + "\" />",
@@ -72,7 +73,7 @@ function createPage(sample) {
     "              <header class=\"major sample-detail-header\">",
     "                <span class=\"date\" data-sample-type>" + type + "</span>",
     "                <h1 data-sample-title>" + title + "</h1>",
-    "                <p data-sample-summary>" + summary + "</p>",
+    "                <p data-sample-summary>" + detailSummary + "</p>",
     "              </header>",
     "              <dl class=\"sample-facts\">",
     "                <div><dt>Document type</dt><dd data-sample-type>" + type + "</dd></div>",

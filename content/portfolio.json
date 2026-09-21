@@ -54,7 +54,7 @@
   "samples": [
     {
       "content_type": "Business plan",
-      "summary": "This demonstration sample turns a family-style, multi-cuisine restaurant concept into a complete operating and growth plan. It covers market opportunity, customer segments, menu positioning, service operations, marketing, and financial forecasts. It demonstrates how a hospitality idea can be prepared for practical decision-making and funding conversations.",
+      "summary": "A family-style, multi-cuisine restaurant plan covering market opportunity, service operations, marketing, and financial forecasts.",
       "button_label": "View details",
       "slug": "xyz-restaurant",
       "url": "https://drive.google.com/file/d/1wT43j647TxzafDWkXRCWj8_7xSUgXZFn/view?usp=drivesdk",
@@ -65,11 +65,13 @@
       ],
       "work_demonstrates": "How a food-service concept can be translated into an operational and financially grounded business plan.",
       "title": "XYZ Restaurant",
-      "industry": "Hospitality & Food Service"
+      "industry": "Hospitality & Food Service",
+      "detail_summary": "This demonstration sample turns a family-style, multi-cuisine restaurant concept into a complete operating and growth plan. It covers market opportunity, customer segments, menu positioning, service operations, marketing, and financial forecasts. It demonstrates how a hospitality idea can be prepared for practical decision-making and funding conversations.",
+      "disclosure": "This demonstration sample is adapted from prior planning work. Company names, people, location details, and selected financial assumptions are illustrative."
     },
     {
       "content_type": "Business plan",
-      "summary": "This confidentiality-safe sample develops a two-villa vacation-rental concept for the Turks and Caicos Islands. It defines the guest segments, property offer, market position, operating model, marketing strategy, and financial plan needed to move the development from concept to funding discussion. It demonstrates end-to-end property and hospitality planning.",
+      "summary": "A two-villa vacation-rental plan for the Turks and Caicos Islands, covering guest segments, positioning, operations, and funding.",
       "button_label": "View details",
       "case_study_url": "../../case-studies/marina-villa-tci.html",
       "slug": "marina-villa-tci",
@@ -81,11 +83,13 @@
       ],
       "work_demonstrates": "How a vacation-rental concept can be structured for market entry, operations, and investment discussion.",
       "title": "Marina Villa TCI",
-      "industry": "Real Estate & Property Development"
+      "industry": "Real Estate & Property Development",
+      "detail_summary": "This confidentiality-safe sample develops a two-villa vacation-rental concept for the Turks and Caicos Islands. It defines the guest segments, property offer, market position, operating model, marketing strategy, and financial plan needed to move the development from concept to funding discussion. It demonstrates end-to-end property and hospitality planning.",
+      "disclosure": "This public portfolio edition is adapted from prior planning work. Client names, property details, contact information, and selected assumptions have been replaced or anonymised."
     },
     {
       "content_type": "Business plan",
-      "summary": "This confidentiality-safe sample was developed for a client in the Turks and Caicos Islands. It shows how market demand, customer segments, operational capacity, and funding requirements can be brought together in a financing-ready seafood business plan. It demonstrates research, commercial planning, operational strategy, and financial modelling.",
+      "summary": "A financing-ready seafood business plan developed for a client in the Turks and Caicos Islands, covering market demand, capacity, operations, and funding.",
       "button_label": "View details",
       "slug": "abc-fishing-company",
       "url": "https://drive.google.com/file/d/14ydC1o0_0-G9vl4a1MlWtqnSeU-U5HDy/view?usp=drivesdk",
@@ -96,11 +100,13 @@
       ],
       "work_demonstrates": "How research, operations planning, and funding requirements can be connected in a practical seafood business plan.",
       "title": "ABC Fishing Company",
-      "industry": "Agriculture & Food Supply"
+      "industry": "Agriculture & Food Supply",
+      "detail_summary": "This confidentiality-safe sample was developed for a client in the Turks and Caicos Islands. It shows how market demand, customer segments, operational capacity, and funding requirements can be brought together in a financing-ready seafood business plan. It demonstrates research, commercial planning, operational strategy, and financial modelling.",
+      "disclosure": "This public portfolio edition is based on approved work for a Turks and Caicos client. Names, contact details, supplier and competitor information, and selected financial assumptions have been anonymised."
     },
     {
       "content_type": "Business plan",
-      "summary": "This confidentiality-safe sample presents a restaurant concept designed for the Turks and Caicos market. It brings together customer research, local-cuisine positioning, site and operations planning, marketing, staffing, and financial forecasts. It demonstrates how a hospitality idea can be shaped into a practical, investor-ready plan.",
+      "summary": "A Turks and Caicos restaurant plan connecting local-cuisine positioning, guest needs, operations, and financial forecasts.",
       "button_label": "View details",
       "slug": "blue-hills-restaurant",
       "url": "https://drive.google.com/file/d/1IiiRjVzbGmQbDIDCLUoIsOpgg1fo-X3q/view?usp=drivesdk",
@@ -111,11 +117,13 @@
       ],
       "work_demonstrates": "How market context, guest experience, operations, and financial planning can shape a hospitality concept.",
       "title": "Blue Hills Restaurant",
-      "industry": "Hospitality & Food Service"
+      "industry": "Hospitality & Food Service",
+      "detail_summary": "This confidentiality-safe sample presents a restaurant concept designed for the Turks and Caicos market. It brings together customer research, local-cuisine positioning, site and operations planning, marketing, staffing, and financial forecasts. It demonstrates how a hospitality idea can be shaped into a practical, investor-ready plan.",
+      "disclosure": "This public portfolio edition uses approved market context while client names, site details, personnel information, and selected financial assumptions remain anonymised."
     },
     {
       "content_type": "Business plan",
-      "summary": "This demonstration sample develops a regulated indoor cannabis cultivation venture in Massachusetts. It joins licensing and compliance considerations with cultivation operations, target-market analysis, go-to-market planning, and multi-year financial forecasts. It demonstrates planning for a complex, regulation-led market.",
+      "summary": "A regulated indoor cannabis cultivation plan for Massachusetts, combining licensing, operations, market strategy, and financial forecasts.",
       "button_label": "View details",
       "slug": "xyz-cannabis",
       "url": "https://drive.google.com/file/d/1ZVCSuuMHxbc5neIIfyJ71Qh5LAJd13Ah/view?usp=drivesdk",
@@ -126,11 +134,13 @@
       ],
       "work_demonstrates": "How regulation, operations, market strategy, and financial planning can be addressed together in an emerging sector.",
       "title": "XYZ Cannabis",
-      "industry": "Cannabis"
+      "industry": "Cannabis",
+      "detail_summary": "This demonstration sample develops a regulated indoor cannabis cultivation venture in Massachusetts. It joins licensing and compliance considerations with cultivation operations, target-market analysis, go-to-market planning, and multi-year financial forecasts. It demonstrates planning for a complex, regulation-led market.",
+      "disclosure": "This demonstration sample is adapted from prior planning work. Company names, people, assumptions, and selected operational details are illustrative."
     },
     {
       "content_type": "Business plan",
-      "summary": "This public sample sets out a two-phase sustainable housing development in the Caribbean for long-term renters and first-time homeowners. It connects housing needs, property mix, sustainability features, site planning, delivery strategy, and multi-year financial forecasts. It demonstrates how a complex real-estate proposal can be organised for financing and execution.",
+      "summary": "A two-phase sustainable housing proposal for the Caribbean, combining property mix, delivery strategy, sustainability, and financial forecasts.",
       "button_label": "View details",
       "slug": "srdl",
       "url": "https://drive.google.com/file/d/1fKuvBwh7H2wwfkYvOUUu6OJK99XbKtPM/view?usp=drivesdk",
@@ -141,11 +151,13 @@
       ],
       "work_demonstrates": "How housing need, development delivery, sustainability, and financial planning can be brought into one proposal.",
       "title": "SRDL",
-      "industry": "Real Estate & Property Development"
+      "industry": "Real Estate & Property Development",
+      "detail_summary": "This public sample sets out a two-phase sustainable housing development in the Caribbean for long-term renters and first-time homeowners. It connects housing needs, property mix, sustainability features, site planning, delivery strategy, and multi-year financial forecasts. It demonstrates how a complex real-estate proposal can be organised for financing and execution.",
+      "disclosure": "This public portfolio edition is provided for demonstration. Company names, project locations, personnel information, and selected assumptions are illustrative or anonymised."
     },
     {
       "content_type": "Business plan",
-      "summary": "This public sample outlines a mobile-first fintech concept for lower-cost cross-border payments between Africa and its diaspora. It brings together user research, remittance-market analysis, product architecture, security, growth strategy, and funding forecasts. It demonstrates strategic planning for a technology-led financial service.",
+      "summary": "A mobile-first cross-border payments plan for Africa and its diaspora, linking user needs, product strategy, security, and growth.",
       "button_label": "View details",
       "slug": "xyz-fintech",
       "url": "https://drive.google.com/file/d/1yJv9eaXSnQyLGPC-xIDA3Lx1XkJ-sl7D/view?usp=drivesdk",
@@ -156,7 +168,9 @@
       ],
       "work_demonstrates": "How customer needs, product strategy, operational readiness, and finance can be aligned for a fintech venture.",
       "title": "XYZ Fintech",
-      "industry": "Financial Services & Fintech"
+      "industry": "Financial Services & Fintech",
+      "detail_summary": "This public sample outlines a mobile-first fintech concept for lower-cost cross-border payments between Africa and its diaspora. It brings together user research, remittance-market analysis, product architecture, security, growth strategy, and funding forecasts. It demonstrates strategic planning for a technology-led financial service.",
+      "disclosure": "This public portfolio edition is based on earlier client work in Nigeria. Client names, financial data, product details, and selected assumptions have been anonymised or replaced."
     }
   ],
   "insights": [

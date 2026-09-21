@@ -35,7 +35,7 @@
       if (title) title.textContent = sample.title || "Work sample";
       if (type) type.textContent = sample.content_type || "Work sample";
       if (industry) industry.textContent = sample.industry || "";
-      if (summary) summary.textContent = sample.summary || "";
+      if (summary) summary.textContent = sample.detail_summary || sample.summary || "";
       if (coverType) coverType.textContent = sample.content_type || "Work sample";
       if (coverTitle) coverTitle.textContent = sample.title || "Work sample";
       if (coverImage && sample.cover_image) {
