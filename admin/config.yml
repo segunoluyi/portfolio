@@ -52,6 +52,7 @@ collections:
               - { label: Page slug, name: slug, widget: string, required: true, hint: "The clean page address, for example abc-fishing-company. Use lowercase letters, numbers, and hyphens only." }
               - { label: Document type, name: content_type, widget: select, options: ["Business plan", "Proposal", "Pitch deck", "Market research", "Financial model", "Other work sample"], required: false, hint: "Used by the document-type filter and card label" }
               - { label: Industry, name: industry, widget: string, hint: "Used by the Filter by industry menu" }
+              - { label: Public PDF link, name: url, widget: string, hint: "Paste the Google Drive link for the approved public PDF. The View document button uses this link." }
               - { label: Cover image, name: cover_image, widget: image, required: false, hint: "Upload a compressed JPG or WebP cover from the approved public edition. This appears on the card and the left side of the detail page." }
               - { label: Cover-image description, name: cover_alt, widget: string, required: false, hint: "Describe the cover for people using screen readers." }
               - { label: Card summary, name: summary, widget: text, hint: "Write one concise sentence for the Work Samples card. Readers can open the detail page for the fuller story." }
@@ -63,11 +64,7 @@ collections:
                 required: false
                 field: { label: Deliverable, name: deliverable, widget: string }
                 hint: "Use 3 to 5 short items, such as Market research and segmentation."
-              - { label: Public disclosure, name: disclosure, widget: text, required: false, hint: "Optional. Use this for a sample-specific confidentiality or attribution note." }
-              - { label: Google Drive sample URL, name: url, widget: string }
-              - { label: Flagship case-study URL, name: case_study_url, widget: string, required: false, hint: "Optional. Use only when this sample also has a longer portfolio case study." }
-              - { label: Card button label, name: button_label, widget: string, required: false, hint: "Use a label such as View details. The detail page has its own View document button." }
-              - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
+              - { label: Confidentiality note, name: disclosure, widget: text, required: false, hint: "Optional. Add only when this sample needs a specific privacy or attribution note." }
           - label: Insights
             name: insights
             widget: list
