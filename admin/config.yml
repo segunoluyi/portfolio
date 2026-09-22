@@ -64,7 +64,6 @@ collections:
                 required: false
                 field: { label: Deliverable, name: deliverable, widget: string }
                 hint: "Use 3 to 5 short items, such as Market research and segmentation."
-              - { label: Confidentiality note, name: disclosure, widget: text, required: false, hint: "Optional. Add only when this sample needs a specific privacy or attribution note." }
           - label: Insights
             name: insights
             widget: list

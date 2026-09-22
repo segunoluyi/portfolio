@@ -16,7 +16,6 @@
   var documentLink = document.querySelector("[data-sample-document-link]");
   var caseStudyAction = document.querySelector("[data-sample-case-study-action]");
   var caseStudyLink = document.querySelector("[data-sample-case-study-link]");
-  var message = document.querySelector("[data-sample-message]");
 
   function imageUrl(value) {
     if (!value) return "";
@@ -43,6 +42,8 @@
         coverImage.alt = sample.cover_alt || (sample.title || "Work sample") + " document cover";
         coverImage.hidden = false;
         if (coverFallback) coverFallback.hidden = true;
+      } else if (coverFallback) {
+        coverFallback.hidden = false;
       }
       if (deliverablesSection && Array.isArray(sample.key_deliverables) && sample.key_deliverables.length) {
         if (demonstrates) demonstrates.textContent = sample.work_demonstrates || "";
@@ -56,7 +57,6 @@
         }
         deliverablesSection.hidden = false;
       }
-      if (message && sample.disclosure) message.textContent = sample.disclosure;
       if (documentLink && sample.url) {
         documentLink.href = sample.url;
         documentLink.target = "_blank";
@@ -69,7 +69,6 @@
     })
     .catch(function () {
       if (title) title.textContent = "Sample unavailable";
-      if (message) message.textContent = "This sample page is not available at the moment. Please return to the Work Samples Library.";
       if (documentLink) documentLink.hidden = true;
     });
 }());
