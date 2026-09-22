@@ -20,7 +20,7 @@ On the homepage, **Samples** always goes to `/samples/`. The sample preview is a
 ## Content rules
 
 - Add a document-led, confidentiality-cleared example to the **Samples library** first.
-- Create a dedicated **case study** only when there is a useful public story about the problem, method, evidence and result.
+- Keep every public work sample in the **Samples library**. Do not create a separate case-study page for a sample.
 - Keep raw and client-sensitive files outside the public repository. Only public-safe PDFs and their approved Drive links belong in the Samples library.
 - The homepage displays three sample previews; the library handles the full collection and paginates automatically after twelve cards.
 

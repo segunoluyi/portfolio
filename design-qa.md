@@ -29,7 +29,7 @@ No actionable P0, P1, or P2 differences remain for the agreed adaptation. The ab
 
 **Open Questions**
 
-None for this layout. A later flagship case study can add its own richer content without changing the standard sample template.
+None for this layout. Every public document remains in the Work Samples library; no separate sample case-study route is used.
 
 **Implementation Checklist**
 

@@ -13,8 +13,6 @@
   var deliverablesSection = document.querySelector("[data-sample-deliverables-section]");
   var deliverables = document.querySelector("[data-sample-deliverables]");
   var documentLink = document.querySelector("[data-sample-document-link]");
-  var caseStudyAction = document.querySelector("[data-sample-case-study-action]");
-  var caseStudyLink = document.querySelector("[data-sample-case-study-link]");
 
   function imageUrl(value) {
     if (!value) return "";
@@ -59,10 +57,6 @@
         documentLink.href = sample.url;
         documentLink.target = "_blank";
         documentLink.rel = "noopener noreferrer";
-      }
-      if (caseStudyAction && caseStudyLink && sample.case_study_url) {
-        caseStudyLink.href = sample.case_study_url;
-        caseStudyAction.hidden = false;
       }
     })
     .catch(function () {

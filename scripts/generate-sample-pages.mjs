@@ -92,7 +92,6 @@ function createPage(sample) {
     "                </dl>",
     "                <ul class=\"actions sample-detail-actions\">",
     "                  <li><a class=\"button primary\" data-sample-document-link href=\"#\">View document</a></li>",
-    "                  <li data-sample-case-study-action hidden><a class=\"button\" data-sample-case-study-link href=\"#\">Read full case study</a></li>",
     "                  <li><a class=\"button\" href=\"../\">Back to work samples</a></li>",
     "                </ul>",
     "              </div>",
