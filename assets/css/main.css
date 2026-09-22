@@ -4929,6 +4929,11 @@ input, select, textarea {
   width: 100%;
 }
 
+.sample-detail-cover-image[hidden],
+.sample-detail-cover[hidden] {
+  display: none !important;
+}
+
 .sample-detail-cover {
   align-items: center;
   background: #f1f3f4;
@@ -4967,19 +4972,21 @@ input, select, textarea {
   margin: 0.45rem 0 0;
 }
 
-.sample-detail-actions {
+.sample-detail-card ul.actions.sample-detail-actions {
   display: grid;
   gap: 0.75rem;
   margin: 0;
   padding: 0 1.5rem 1.5rem;
+  width: 100%;
 }
 
-.sample-detail-actions li {
+.sample-detail-card ul.actions.sample-detail-actions > li {
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
-.sample-detail-actions .button {
+.sample-detail-card .sample-detail-actions .button {
   display: block;
   text-align: center;
   width: 100%;
