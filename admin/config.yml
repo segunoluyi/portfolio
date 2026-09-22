@@ -53,17 +53,16 @@ collections:
               - { label: Document type, name: content_type, widget: select, options: ["Business plan", "Proposal", "Pitch deck", "Market research", "Financial model", "Other work sample"], required: false, hint: "Used by the document-type filter and card label" }
               - { label: Industry, name: industry, widget: string, hint: "Used by the Filter by industry menu" }
               - { label: Public PDF link, name: url, widget: string, hint: "Paste the Google Drive link for the approved public PDF. The View document button uses this link." }
-              - { label: Cover image, name: cover_image, widget: image, required: false, hint: "Upload a compressed JPG or WebP cover from the approved public edition. This appears on the card and the left side of the detail page." }
+              - { label: Cover image, name: cover_image, widget: image, required: false, hint: "Upload a compressed JPG or WebP cover from the approved public edition. This appears on the card and in the detail-page sidebar." }
               - { label: Cover-image description, name: cover_alt, widget: string, required: false, hint: "Describe the cover for people using screen readers." }
               - { label: Card summary, name: summary, widget: text, hint: "Write one concise sentence for the Work Samples card. Readers can open the detail page for the fuller story." }
-              - { label: Detailed public overview, name: detail_summary, widget: text, required: false, hint: "Write 3 to 4 concise lines for the individual detail page. Keep private information out." }
-              - { label: What this work demonstrates, name: work_demonstrates, widget: text, required: false, hint: "One concise sentence describing the capability this sample shows." }
-              - label: Key deliverables
+              - { label: About this sample, name: detail_summary, widget: text, required: false, hint: "Write 2 to 4 short sentences for the Overview panel. Keep private information out." }
+              - label: What this work covers
                 name: key_deliverables
                 widget: list
                 required: false
-                field: { label: Deliverable, name: deliverable, widget: string }
-                hint: "Use 3 to 5 short items, such as Market research and segmentation."
+                field: { label: Coverage point, name: deliverable, widget: string }
+                hint: "Use 3 to 5 short bullet points, such as Market research and customer segmentation."
           - label: Insights
             name: insights
             widget: list

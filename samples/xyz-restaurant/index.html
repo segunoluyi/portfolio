@@ -34,34 +34,42 @@
       </nav>
       <div id="main">
         <section class="post sample-detail">
-          <header class="sample-detail-intro">
+          <header class="sample-detail-page-header">
+            <span class="sample-detail-eyebrow">Work sample</span>
             <h1 data-sample-title>XYZ Restaurant</h1>
-            <dl class="sample-facts sample-detail-facts">
-              <div><dt>Document type</dt><dd data-sample-type>Business plan</dd></div>
-              <div><dt>Industry</dt><dd data-sample-industry>Hospitality &amp; Food Service</dd></div>
-            </dl>
           </header>
-          <div class="sample-detail-layout">
-            <div class="sample-detail-media">
-              <img class="sample-detail-cover-image" data-sample-cover-image alt="" hidden />
-              <div class="sample-cover sample-detail-cover" data-sample-cover-fallback hidden>
-                <span data-sample-cover-type>Business plan</span>
-                <strong data-sample-cover-title>XYZ Restaurant</strong>
-              </div>
-            </div>
-            <div class="sample-detail-content">
-              <p class="sample-detail-summary" data-sample-summary>This demonstration sample turns a family-style, multi-cuisine restaurant concept into a complete operating and growth plan. It covers market opportunity, customer segments, menu positioning, service operations, marketing, and financial forecasts. It demonstrates how a hospitality idea can be prepared for practical decision-making and funding conversations.</p>
+          <div class="sample-detail-shell">
+            <article class="sample-detail-overview" id="overview">
+              <nav class="sample-detail-tabs" aria-label="Sample details"><a href="#overview" aria-current="page">Overview</a></nav>
+              <section class="sample-detail-about">
+                <h2>About this sample</h2>
+                <p class="sample-detail-summary" data-sample-summary>This demonstration sample turns a family-style, multi-cuisine restaurant concept into a complete operating and growth plan. It covers market opportunity, customer segments, menu positioning, service operations, marketing, and financial forecasts. It demonstrates how a hospitality idea can be prepared for practical decision-making and funding conversations.</p>
+              </section>
               <section class="sample-deliverables" data-sample-deliverables-section hidden>
                 <h2>What this work covers</h2>
-                <p data-sample-demonstrates></p>
                 <ul data-sample-deliverables></ul>
               </section>
-              <ul class="actions special sample-detail-actions">
-                <li><a class="button primary" data-sample-document-link href="#">View document</a></li>
-                <li data-sample-case-study-action hidden><a class="button" data-sample-case-study-link href="#">Read full case study</a></li>
-                <li><a class="button" href="../">Back to work samples</a></li>
-              </ul>
-            </div>
+            </article>
+            <aside class="sample-detail-sidebar">
+              <div class="sample-detail-card">
+                <div class="sample-detail-media">
+                  <img class="sample-detail-cover-image" data-sample-cover-image alt="" hidden />
+                  <div class="sample-cover sample-detail-cover" data-sample-cover-fallback hidden>
+                    <span data-sample-cover-type>Business plan</span>
+                    <strong data-sample-cover-title>XYZ Restaurant</strong>
+                  </div>
+                </div>
+                <dl class="sample-facts sample-detail-facts">
+                  <div><dt>Document type</dt><dd data-sample-type>Business plan</dd></div>
+                  <div><dt>Industry</dt><dd data-sample-industry>Hospitality &amp; Food Service</dd></div>
+                </dl>
+                <ul class="actions sample-detail-actions">
+                  <li><a class="button primary" data-sample-document-link href="#">View document</a></li>
+                  <li data-sample-case-study-action hidden><a class="button" data-sample-case-study-link href="#">Read full case study</a></li>
+                  <li><a class="button" href="../">Back to work samples</a></li>
+                </ul>
+              </div>
+            </aside>
           </div>
         </section>
       </div>

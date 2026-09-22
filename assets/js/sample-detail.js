@@ -11,7 +11,6 @@
   var coverImage = document.querySelector("[data-sample-cover-image]");
   var coverFallback = document.querySelector("[data-sample-cover-fallback]");
   var deliverablesSection = document.querySelector("[data-sample-deliverables-section]");
-  var demonstrates = document.querySelector("[data-sample-demonstrates]");
   var deliverables = document.querySelector("[data-sample-deliverables]");
   var documentLink = document.querySelector("[data-sample-document-link]");
   var caseStudyAction = document.querySelector("[data-sample-case-study-action]");
@@ -46,7 +45,6 @@
         coverFallback.hidden = false;
       }
       if (deliverablesSection && Array.isArray(sample.key_deliverables) && sample.key_deliverables.length) {
-        if (demonstrates) demonstrates.textContent = sample.work_demonstrates || "";
         if (deliverables) {
           deliverables.replaceChildren();
           sample.key_deliverables.forEach(function (item) {
