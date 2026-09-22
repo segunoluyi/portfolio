@@ -4771,16 +4771,18 @@ input, select, textarea {
 }
 
 .sample-cover.has-image {
-  background: #ffffff;
-  padding: 0;
+	background: #ffffff;
+	aspect-ratio: 3 / 4;
+	overflow: hidden;
+	padding: 0;
 }
 
 .sample-cover.has-image img {
-  display: block;
-  height: 100%;
-  min-height: inherit;
-  object-fit: contain;
-  width: 100%;
+	display: block;
+	height: 100%;
+	min-height: 0;
+	object-fit: contain;
+	width: 100%;
 }
 
 .sample-filters {
