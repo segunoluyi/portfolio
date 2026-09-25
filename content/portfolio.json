@@ -122,6 +122,7 @@
       "button_label": "View details",
       "slug": "xyz-cannabis",
       "url": "https://drive.google.com/file/d/1ZVCSuuMHxbc5neIIfyJ71Qh5LAJd13Ah/view?usp=drivesdk",
+      "cover_image": "images/uploads/xyz-cannabis-cover-.png",
       "key_deliverables": [
         "Licensing and compliance considerations",
         "Cultivation operations and product model",
