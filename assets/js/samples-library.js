@@ -1,6 +1,13 @@
 (function () {
   "use strict";
 
+  // GitHub Pages can retain a previous CMS response briefly. Use one revision per page load so new content and cover uploads stay paired.
+  var contentRevision = String(Date.now());
+  function versionedUrl(value) {
+    if (!value || /^data:/i.test(value)) return value;
+    return value + (value.indexOf("?") === -1 ? "?v=" : "&v=") + contentRevision;
+  }
+
   var pageSize = 6;
   var currentPage = 1;
   var allSamples = [];
@@ -33,7 +40,7 @@
     cover.className = "sample-cover";
     if (sample.cover_image) {
       var image = document.createElement("img");
-      image.src = /^(?:https?:|data:|\/)/i.test(sample.cover_image) ? sample.cover_image : "../" + sample.cover_image.replace(/^\.\//, "");
+      image.src = versionedUrl(/^(?:https?:|data:|\/)/i.test(sample.cover_image) ? sample.cover_image : "../" + sample.cover_image.replace(/^\.\//, ""));
       image.alt = sample.cover_alt || (sample.title || "Work sample") + " document cover";
       image.loading = "lazy";
       cover.classList.add("has-image");
@@ -101,7 +108,7 @@
     }
   }
 
-  fetch("../content/portfolio.json", { cache: "no-store" })
+  fetch("../content/portfolio.json?cb=" + contentRevision, { cache: "no-store" })
     .then(function (response) { if (!response.ok) throw new Error("Samples could not be loaded."); return response.json(); })
     .then(function (content) {
       allSamples = (Array.isArray(content.samples) ? content.samples : []).map(function (item, index) { return { item: item, index: index }; }).sort(function (firstEntry, secondEntry) {

@@ -1,6 +1,13 @@
 (function () {
   "use strict";
 
+  // GitHub Pages can retain a previous CMS response briefly. Use one revision per page load so new content and cover uploads stay paired.
+  var contentRevision = String(Date.now());
+  function versionedUrl(value) {
+    if (!value || /^data:/i.test(value)) return value;
+    return value + (value.indexOf("?") === -1 ? "?v=" : "&v=") + contentRevision;
+  }
+
   var slug = document.body.getAttribute("data-sample-slug");
   var title = document.querySelector("[data-sample-title]");
   var type = document.querySelector("[data-sample-type]");
@@ -20,7 +27,7 @@
     return "../../" + value.replace(/^\.\//, "");
   }
 
-  fetch("../../content/portfolio.json", { cache: "no-store" })
+  fetch("../../content/portfolio.json?cb=" + contentRevision, { cache: "no-store" })
     .then(function (response) { if (!response.ok) throw new Error("Sample could not be loaded."); return response.json(); })
     .then(function (content) {
       var samples = Array.isArray(content.samples) ? content.samples : [];
@@ -35,7 +42,7 @@
       if (coverType) coverType.textContent = sample.content_type || "Work sample";
       if (coverTitle) coverTitle.textContent = sample.title || "Work sample";
       if (coverImage && sample.cover_image) {
-        coverImage.src = imageUrl(sample.cover_image);
+        coverImage.src = versionedUrl(imageUrl(sample.cover_image));
         coverImage.alt = sample.cover_alt || (sample.title || "Work sample") + " document cover";
         coverImage.hidden = false;
         if (coverFallback) coverFallback.hidden = true;

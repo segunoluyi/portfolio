@@ -1,5 +1,12 @@
 (function () {
   "use strict";
+
+  // GitHub Pages can retain a previous CMS response briefly. Use one revision per page load so new content and cover uploads stay paired.
+  var contentRevision = String(Date.now());
+  function versionedUrl(value) {
+    if (!value || /^data:/i.test(value)) return value;
+    return value + (value.indexOf("?") === -1 ? "?v=" : "&v=") + contentRevision;
+  }
   var pageSize = 6;
   var currentPage = 1;
   var allProjects = [];
@@ -28,7 +35,7 @@
     title.textContent = project.title || "Untitled project";
     imageLink.href = project.url || "#";
     imageLink.className = "image fit";
-    image.src = project.image ? (project.image.indexOf("images/") === 0 ? "../" + project.image : project.image) : "../images/pic02.jpg";
+    image.src = versionedUrl(project.image ? (project.image.indexOf("images/") === 0 ? "../" + project.image : project.image) : "../images/pic02.jpg");
     image.alt = project.title || "Portfolio project";
     imageLink.appendChild(image);
     button.href = project.url || "#";
@@ -66,7 +73,7 @@
     if (totalPages > 1) { pagination.appendChild(makeButton("Previous", Math.max(1, currentPage - 1), currentPage === 1)); for (var page = 1; page <= totalPages; page += 1) pagination.appendChild(makeButton(String(page), page, page === currentPage)); pagination.appendChild(makeButton("Next", Math.min(totalPages, currentPage + 1), currentPage === totalPages)); }
   }
 
-  fetch("../content/portfolio.json", { cache: "no-store" }).then(function (response) { if (!response.ok) throw new Error(); return response.json(); }).then(function (content) {
+  fetch("../content/portfolio.json?cb=" + contentRevision, { cache: "no-store" }).then(function (response) { if (!response.ok) throw new Error(); return response.json(); }).then(function (content) {
     allProjects = (Array.isArray(content.projects) ? content.projects : []).map(function (item, index) { return { item: item, index: index }; }).sort(function (firstEntry, secondEntry) { var firstDate = Date.parse(firstEntry.item.published_at || ""); var secondDate = Date.parse(secondEntry.item.published_at || ""); if (!isNaN(firstDate) && !isNaN(secondDate)) return secondDate - firstDate; if (!isNaN(firstDate)) return -1; if (!isNaN(secondDate)) return 1; return secondEntry.index - firstEntry.index; }).map(function (entry) { return entry.item; });
     Array.from(new Set(allProjects.map(function (project) { return project.eyebrow; }).filter(Boolean))).sort().forEach(function (area) { var option = document.createElement("option"); option.value = area; option.textContent = area; projectFilter.appendChild(option); });
     searchInput.addEventListener("input", function () { currentPage = 1; render(); });

@@ -1,6 +1,13 @@
 (function () {
   "use strict";
 
+  // GitHub Pages can retain a previous CMS response briefly. Use one revision per page load so new content and cover uploads stay paired.
+  var contentRevision = String(Date.now());
+  function versionedUrl(value) {
+    if (!value || /^data:/i.test(value)) return value;
+    return value + (value.indexOf("?") === -1 ? "?v=" : "&v=") + contentRevision;
+  }
+
   function setText(element, value) {
     if (element && value) element.textContent = value;
   }
@@ -42,7 +49,7 @@
     imageLink.href = project.url || "#";
     if (opensExternally) { imageLink.target = "_blank"; imageLink.rel = "noopener noreferrer"; }
     imageLink.className = "image fit";
-    image.src = project.image || "images/pic02.jpg";
+    image.src = versionedUrl(project.image || "images/pic02.jpg");
     image.alt = project.title || "Portfolio project";
     imageLink.appendChild(image);
     summary.textContent = project.summary || "";
@@ -81,7 +88,7 @@
     cover.className = "sample-cover";
     if (sample.cover_image) {
       var image = document.createElement("img");
-      image.src = sample.cover_image;
+      image.src = versionedUrl(sample.cover_image);
       image.alt = sample.cover_alt || (sample.title || "Work sample") + " document cover";
       image.loading = "lazy";
       cover.classList.add("has-image");
@@ -106,7 +113,7 @@
     return article;
   }
 
-  fetch("content/portfolio.json", { cache: "no-store" })
+  fetch("content/portfolio.json?cb=" + contentRevision, { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("Portfolio content could not be loaded.");
       return response.json();
