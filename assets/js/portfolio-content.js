@@ -1,11 +1,11 @@
 (function () {
   "use strict";
 
-  // GitHub Pages can retain a previous CMS response briefly. Use one revision per page load so new content and cover uploads stay paired.
+  // Fetch CMS content fresh, but keep image URLs stable so browsers can reuse cached covers.
   var contentRevision = String(Date.now());
   function versionedUrl(value) {
     if (!value || /^data:/i.test(value)) return value;
-    return value + (value.indexOf("?") === -1 ? "?v=" : "&v=") + contentRevision;
+    return value;
   }
 
   function setText(element, value) {
