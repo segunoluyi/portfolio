@@ -192,7 +192,8 @@
   "site": {
     "url": "https://segunoluyi.github.io/portfolio/",
     "year": "2026",
-    "favicon": "assets/favicon.svg"
+    "favicon": "assets/favicon.svg",
+    "background_overlay": "rgba(0, 0, 0, 0.1)"
   },
   "newsletter": {
     "enabled": false,
