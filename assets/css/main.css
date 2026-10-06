@@ -3396,9 +3396,11 @@ input, select, textarea {
 		#intro .hero-title {
 			display: block;
 			font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
-			font-size: 0.75rem;
+			font-size: 1.05rem;
 			font-weight: 700;
-			letter-spacing: 0.16em;
+			letter-spacing: 0.12em;
+			line-height: 1.3;
+			margin: 0;
 			text-transform: uppercase;
 		}
 
@@ -3526,7 +3528,7 @@ input, select, textarea {
 				}
 
 				#intro .hero-title {
-					font-size: 0.68rem;
+					font-size: 0.95rem;
 				}
 
 				#intro .hero-focus {
@@ -5337,7 +5339,7 @@ input, select, textarea {
   }
 
   #intro .hero-title {
-    font-size: 0.64rem;
+    font-size: 0.9rem;
     letter-spacing: 0.13em;
   }
 
