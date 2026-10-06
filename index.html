@@ -15,7 +15,7 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://segunoluyi.github.io/portfolio/" />
 		<link rel="canonical" href="https://segunoluyi.github.io/portfolio/" />
-		<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" data-site-favicon href="assets/favicon.svg" type="image/svg+xml" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -32,7 +32,7 @@
 							<li><a href="#projects" class="scrolly">Projects</a></li>
 							<li><a href="#samples" class="scrolly">Samples</a></li>
 							<li><a href="#insights" class="scrolly">Insights</a></li>
-							<li><a href="#skills" class="scrolly">Skills</a></li>
+							<li><a href="#services" class="scrolly">Services</a></li>
 							<li><a href="#footer" class="scrolly">Contact</a></li>
 						</ul>
 						<ul class="icons">
@@ -44,11 +44,10 @@
 
 				<!-- Intro -->
 					<div id="intro" data-portfolio-intro>
-						<div class="image avatar"><img src="images/Segun Oluyi 1.png" alt="Segun Oluyi" /></div>
+						<div class="image avatar"><img data-hero-image src="images/Segun Oluyi 1.png" alt="Segun Oluyi" /></div>
 						<span class="hero-title" data-hero-title>Data &amp; Business Analyst</span>
 						<h1 data-hero-name>Hi, I’m Segun Oluyi.</h1>
-						<p class="hero-focus" data-hero-focus>Analytics · Business Planning · Training</p>
-						<p class="hero-summary" data-hero-summary>I help teams turn data, market research, and operational questions into clear insights, practical plans, and decision-ready work.</p>
+												<p class="hero-summary" data-hero-summary>I help teams turn data, research, and business questions into clear insights and practical decisions.</p>
 						<ul class="actions hero-actions">
 							<li><a data-hero-email href="mailto:oluyisegun@gmail.com" class="button primary icon solid fa-envelope">Email me</a></li>
 							<li><a data-hero-cv href="#" class="button icon solid fa-download disabled" aria-disabled="true" title="A public CV link will be added soon.">Download CV</a></li>
@@ -59,7 +58,7 @@
 					<div id="main">
 						<article class="post featured" id="about" data-about>
 							<header class="major">
-								<span class="date">About</span>
+								<span class="date" data-about-label>How I help</span>
 								<h2>Analysis that supports practical decisions.</h2>
 								<p>I turn complex data and business questions into clear analysis, useful recommendations, and decision-ready communication.</p>
 							</header>
@@ -128,20 +127,21 @@
 						<ul class="actions special collection-actions">
 							<li><a href="insights/index.html" class="button">View all insights</a></li>
 						</ul>
-
-						<article class="post featured" id="skills">
+						<article class="post featured" id="services" data-services>
 							<header class="major">
-								<span class="date">Skills</span>
-								<h2>My analytics, business, and presentation skills.</h2>
-								<p>A practical mix of tools and methods used to turn questions into useful evidence and clear communication.</p>
+								<span class="date" data-services-label>Services</span>
+								<h2 data-services-heading>Work that helps decisions move forward.</h2>
+								<p data-services-summary>Choose a focused engagement or start with the business question you need to make clearer.</p>
 							</header>
-							<ul class="skills-grid" data-skills-grid aria-label="Skills list">
-								<li>Data Analysis</li>
-							</ul>
+							<div class="service-grid" data-services-grid aria-label="Services">
+								<article><h3>Data analysis and dashboards</h3><p>Make performance, customer, and operational data clear and usable.</p></article>
+								<article><h3>Business research and planning</h3><p>Turn opportunities, market questions, and business ideas into structured plans.</p></article>
+								<article><h3>Training and practical documentation</h3><p>Create clear learning materials, guides, and systems people can use with confidence.</p></article>
+							</div>
+							<ul class="actions special service-action"><li><a href="#footer" class="button scrolly">Start a conversation</a></li></ul>
 						</article>
 
-
-					</div>
+</div>
 
 				<!-- Footer -->
 					<footer id="footer">

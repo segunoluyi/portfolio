@@ -65,6 +65,16 @@
     return article;
   }
 
+  function createService(service) {
+    var article = document.createElement("article");
+    var heading = document.createElement("h3");
+    var summary = document.createElement("p");
+    heading.textContent = service.title || "Service";
+    summary.textContent = service.summary || "";
+    article.append(heading, summary);
+    return article;
+  }
+
   function createSample(sample) {
     var article = document.createElement("article");
     var header = document.createElement("header");
@@ -124,8 +134,10 @@
       var about = document.querySelector("[data-about]");
       var samplePreviewGrid = document.querySelector("#sample-preview-grid");
       var insightsGrid = document.querySelector("#insights-grid");
-      var skillsGrid = document.querySelector("[data-skills-grid]");
-	  var projectCardsSection = document.querySelector("[data-project-cards-section]");
+      var servicesSection = document.querySelector("[data-services]");
+      var servicesGrid = document.querySelector("[data-services-grid]");
+      var projectCardsSection = document.querySelector("[data-project-cards-section]");
+      var site = content.site || {};
       var profile = content.profile || {};
       var aboutContent = content.about || {};
       var contact = content.contact || {};
@@ -133,15 +145,18 @@
       if (intro) {
         var heroTitle = intro.querySelector("[data-hero-title]");
         var heroName = intro.querySelector("[data-hero-name]");
-        var heroFocus = intro.querySelector("[data-hero-focus]");
+        var heroImage = intro.querySelector("[data-hero-image]");
         var heroSummary = intro.querySelector("[data-hero-summary]");
         var heroEmail = intro.querySelector("[data-hero-email]");
         var heroCv = intro.querySelector("[data-hero-cv]");
         setText(heroTitle, profile.primary_title || profile.headline);
         setText(heroName, profile.name ? "Hi, I’m " + profile.name + "." : "Hi, I’m Segun Oluyi.");
-        setText(heroFocus, profile.focus_areas);
         setText(heroSummary, profile.summary);
-        if (heroEmail && contact.email) heroEmail.href = "mailto:" + contact.email;
+        if (heroImage && profile.headshot) {
+          heroImage.src = versionedUrl(profile.headshot);
+          heroImage.alt = profile.headshot_alt || (profile.name ? "Professional headshot of " + profile.name : "Professional headshot");
+        }
+        if (heroEmail && contact.email) heroEmail.href = "mailto:" + contact.email + "?subject=Portfolio%20enquiry";
         if (heroCv && profile.cv_url) {
           heroCv.href = profile.cv_url;
           heroCv.removeAttribute("aria-disabled");
@@ -150,9 +165,14 @@
         }
       }
 
+      var favicon = document.querySelector("[data-site-favicon]");
+      if (favicon && site.favicon) favicon.href = versionedUrl(site.favicon);
+
       if (about) {
+        var aboutLabel = about.querySelector("[data-about-label]");
         var aboutHeading = about.querySelector("h2");
         var aboutSummary = about.querySelector("p");
+        setText(aboutLabel, aboutContent.label);
         setText(aboutHeading, aboutContent.heading);
         setText(aboutSummary, aboutContent.summary);
       }
@@ -174,13 +194,19 @@
         newestFirst(content.insights).slice(0, 6).forEach(function (insight) { insightsGrid.appendChild(createProject(insight)); });
       }
 
-      if (skillsGrid && Array.isArray(content.skills)) {
-        skillsGrid.replaceChildren();
-        content.skills.forEach(function (skill) {
-          var item = document.createElement("li");
-          item.textContent = skill;
-          skillsGrid.appendChild(item);
-        });
+      if (servicesSection) {
+        var services = content.services || {};
+        var servicesLabel = servicesSection.querySelector("[data-services-label]");
+        var servicesHeading = servicesSection.querySelector("[data-services-heading]");
+        var servicesSummary = servicesSection.querySelector("[data-services-summary]");
+        setText(servicesLabel, services.label);
+        setText(servicesHeading, services.heading);
+        setText(servicesSummary, services.summary);
+        if (servicesGrid && Array.isArray(services.items)) {
+          servicesGrid.replaceChildren();
+          services.items.forEach(function (service) { servicesGrid.appendChild(createService(service)); });
+          servicesSection.hidden = services.items.length === 0;
+        }
       }
 
       var location = document.querySelector("[data-contact-location]");

@@ -3,15 +3,17 @@
     "name": "Segun Oluyi",
     "headline": "Data & Business Analyst",
     "primary_title": "Data & Business Analyst",
-    "focus_areas": "Analytics · Business Planning · Training",
-    "summary": "I help teams turn data, market research, and operational questions into clear insights, practical plans, and decision-ready work.",
+    "summary": "I help teams turn data, research, and business questions into clear insights and practical decisions.",
     "cv_url": "",
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
-    "linkedin_label": "LinkedIn"
+    "linkedin_label": "LinkedIn",
+    "headshot": "images/Segun Oluyi 1.png",
+    "headshot_alt": "Professional headshot of Segun Oluyi"
   },
   "about": {
-    "heading": "Analysis that supports practical decisions.",
-    "summary": "I turn complex data and business questions into clear analysis, useful recommendations, and decision-ready communication. My work brings together data analysis, business research, planning, and professional documentation."
+    "heading": "From questions to practical next steps.",
+    "summary": "I combine analysis, research, and clear communication to help teams understand what is happening, decide what matters, and move work forward.",
+    "label": "How I help"
   },
   "projects": [
     {
@@ -178,28 +180,34 @@
       "button_label": "Read article"
     }
   ],
-  "skills": [
-    "Data Analysis",
-    "Microsoft Excel",
-    "Google Sheets",
-    "Power BI",
-    "Power Query",
-    "DAX",
-    "SQL",
-    "Python",
-    "Data Cleaning",
-    "Data Transformation",
-    "Data Visualization",
-    "Dashboard Development",
-    "Business Research",
-    "Financial Modelling",
-    "Business Writing",
-    "Insight Generation"
-  ],
   "contact": {
     "location": "Ikeja, Lagos, Nigeria",
     "phone": "+2348153051701",
     "email": "oluyisegun@gmail.com",
     "github_url": "https://github.com/segunoluyi"
+  },
+  "site": {
+    "url": "https://segunoluyi.github.io/portfolio/",
+    "year": "2026",
+    "favicon": "assets/favicon.svg"
+  },
+  "services": {
+    "label": "Services",
+    "heading": "Work that helps decisions move forward.",
+    "summary": "Choose a focused engagement or start with the business question you need to make clearer.",
+    "items": [
+      {
+        "title": "Data analysis and dashboards",
+        "summary": "Make performance, customer, and operational data clear and usable."
+      },
+      {
+        "title": "Business research and planning",
+        "summary": "Turn opportunities, market questions, and business ideas into structured plans."
+      },
+      {
+        "title": "Training and practical documentation",
+        "summary": "Create clear learning materials, guides, and systems people can use with confidence."
+      }
+    ]
   }
 }

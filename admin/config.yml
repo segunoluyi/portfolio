@@ -18,29 +18,51 @@ collections:
         label: Portfolio Site Content
         file: content/portfolio.json
         fields:
+          - label: Site settings
+            name: site
+            widget: object
+            fields:
+              - { label: Live site URL, name: url, widget: string, required: false }
+              - { label: Browser tab icon, name: favicon, widget: image, required: false, hint: "Upload a square PNG, SVG, or ICO. This controls the small icon in browser tabs." }
+              - { label: Copyright year, name: year, widget: string, required: false }
           - label: Profile
             name: profile
             widget: object
             fields:
               - { label: Name, name: name, widget: string }
-              - { label: Primary professional title, name: primary_title, widget: string, hint: "Use one clear identity, for example Data & Business Analyst." }
-              - { label: Supporting focus areas, name: focus_areas, widget: string, required: false, hint: "Use up to three connected strengths, separated by dots. For example Analytics · Business Planning · Training." }
-              - { label: Value statement, name: summary, widget: text, hint: "State who you help, what you help them work through, and the useful outcome." }
+              - { label: Professional headshot, name: headshot, widget: image, required: false, hint: "Upload the portrait shown at the top of the homepage." }
+              - { label: Headshot description, name: headshot_alt, widget: string, required: false, hint: "Briefly describe the portrait for screen-reader users." }
+              - { label: Primary professional title, name: primary_title, widget: string, required: false }
+              - { label: Value statement, name: summary, widget: text, required: false, hint: "Use one short sentence that says who you help and the practical outcome." }
               - { label: Public CV PDF URL, name: cv_url, widget: string, required: false, hint: "Paste a public PDF link when ready. Leave blank to keep the Download CV button unavailable." }
-              - { label: Legacy headline, name: headline, widget: string, required: false, hint: "Retained for older content only. Use Primary professional title for the homepage." }
+              - { label: Legacy headline, name: headline, widget: string, required: false }
               - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
               - { label: LinkedIn label, name: linkedin_label, widget: string, required: false }
           - label: About section
             name: about
             widget: object
             fields:
+              - { label: Section label, name: label, widget: string, required: false }
               - { label: Heading, name: heading, widget: string }
               - { label: Summary, name: summary, widget: text }
+          - label: Services section
+            name: services
+            widget: object
+            fields:
+              - { label: Section label, name: label, widget: string, required: false }
+              - { label: Heading, name: heading, widget: string }
+              - { label: Introduction, name: summary, widget: text }
+              - label: Service cards
+                name: items
+                widget: list
+                fields:
+                  - { label: Service title, name: title, widget: string }
+                  - { label: Service description, name: summary, widget: text }
           - label: Project cards
             name: projects
             widget: list
             fields:
-              - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+              - { label: Category or tool, name: eyebrow, widget: string, required: false }
               - { label: Title, name: title, widget: string }
               - { label: Summary, name: summary, widget: text }
               - { label: Image, name: image, widget: image, required: false }
@@ -52,20 +74,19 @@ collections:
             widget: list
             fields:
               - { label: Sample title, name: title, widget: string }
-              - { label: Page slug, name: slug, widget: string, required: true, hint: "The clean page address, for example abc-fishing-company. Use lowercase letters, numbers, and hyphens only." }
-              - { label: Document type, name: content_type, widget: select, options: ["Business plan", "Proposal", "Pitch deck", "Market research", "Financial model", "Other work sample"], required: false, hint: "Used by the document-type filter and card label" }
-              - { label: Industry, name: industry, widget: string, hint: "Used by the Filter by industry menu" }
-              - { label: Public PDF link, name: url, widget: string, hint: "Paste the Google Drive link for the approved public PDF. The View document button uses this link." }
-              - { label: Cover image, name: cover_image, widget: image, required: false, hint: "Upload a compressed JPG or WebP cover from the approved public edition. This appears on the card and in the detail-page sidebar." }
-              - { label: Cover-image description, name: cover_alt, widget: string, required: false, hint: "Describe the cover for people using screen readers." }
-              - { label: Card summary, name: summary, widget: text, hint: "Write one concise sentence for the Work Samples card. Readers can open the detail page for the fuller story." }
-              - { label: About this sample, name: detail_summary, widget: text, required: false, hint: "Write 2 to 4 short sentences for the Overview panel. Keep private information out." }
+              - { label: Page slug, name: slug, widget: string, required: true }
+              - { label: Document type, name: content_type, widget: select, options: ["Business plan", "Proposal", "Pitch deck", "Market research", "Financial model", "Other work sample"], required: false }
+              - { label: Industry, name: industry, widget: string, required: false }
+              - { label: Public document URL, name: url, widget: string }
+              - { label: Cover image, name: cover_image, widget: image, required: false }
+              - { label: Cover-image description, name: cover_alt, widget: string, required: false }
+              - { label: Card summary, name: summary, widget: text }
+              - { label: About this sample, name: detail_summary, widget: text, required: false }
               - label: What this work covers
                 name: key_deliverables
                 widget: list
                 required: false
                 field: { label: Coverage point, name: deliverable, widget: string }
-                hint: "Use 3 to 5 short bullet points, such as Market research and customer segmentation."
           - label: Insights
             name: insights
             widget: list
@@ -77,10 +98,6 @@ collections:
               - { label: Article URL, name: url, widget: string, required: false }
               - { label: Button label, name: button_label, widget: string, required: false }
               - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
-          - label: Skills
-            name: skills
-            widget: list
-            field: { label: Skill, name: skill, widget: string }
           - label: Contact details
             name: contact
             widget: object

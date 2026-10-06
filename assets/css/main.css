@@ -5214,3 +5214,48 @@ input, select, textarea {
   #main .posts.compact-grid > article:nth-child(n) { border-top-width: 2px; }
   #main .posts.compact-grid > article:first-child { border-top-width: 0; }
 }
+
+/* Homepage hierarchy: keep the introduction balanced in the available viewport. */
+#intro {
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  min-height: calc(100vh - 3.75rem);
+  padding: 6rem 4rem 5.5rem;
+}
+
+#intro .hero-summary { max-width: 43rem; }
+
+.service-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.service-grid article {
+  border: solid 1px #e2e5e7;
+  padding: 2rem;
+}
+
+.service-grid h3 {
+  color: #212931;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-bottom: 0.8rem;
+}
+
+.service-grid p { margin: 0; }
+.service-action { margin-top: 2.5rem; }
+
+@media screen and (max-width: 980px) {
+  #intro { min-height: calc(90vh - 3rem); padding: 5rem 4rem; }
+  .service-grid { grid-template-columns: 1fr; }
+}
+
+@media screen and (max-width: 736px) {
+  #intro { min-height: auto; padding: 5rem 2rem; }
+  .service-grid article { padding: 1.5rem; }
+}
