@@ -4460,6 +4460,10 @@ input, select, textarea {
 		}
 
 	/* CMS-driven contact grid */
+	[data-newsletter][hidden] {
+		display: none !important;
+	}
+
 	#footer > section.split.contact.footer-grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
