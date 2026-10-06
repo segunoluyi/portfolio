@@ -5313,3 +5313,36 @@ input, select, textarea {
   #intro { min-height: auto; padding: 5rem 2rem; }
   .service-grid article { padding: 1.5rem; }
 }
+
+/* Make the portrait and name fit consistently on real narrow phones and browser emulators. */
+@media screen and (max-width: 480px) {
+  #intro {
+    min-height: auto;
+    padding: 4rem 1.25rem 3.5rem;
+  }
+
+  #intro .image.avatar {
+    height: min(78vw, 18.75rem);
+    width: min(78vw, 18.75rem);
+  }
+
+  #intro h1 {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+    letter-spacing: 0.045em;
+    line-height: 1.02;
+    margin: 1.25rem 0 0.75rem;
+    max-width: 100%;
+  }
+
+  #intro .hero-title {
+    font-size: 0.64rem;
+    letter-spacing: 0.13em;
+  }
+
+  #intro .hero-summary {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin-top: 1.25rem;
+    max-width: 23rem;
+  }
+}
