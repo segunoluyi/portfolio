@@ -1,15 +1,15 @@
 {
   "profile": {
-    "name": "Segun Oluyi",
-    "headline": "Data & Business Analyst",
-    "primary_title": "Data & Business Analyst",
+    "cv_url": "https://drive.google.com/file/d/1BaDUblM7iSyFp3uGmfgBD5LCAyz2ljDJ/view?usp=sharing",
+    "headshot_alt": "Professional headshot of Segun Oluyi",
     "summary": "I help teams turn data, research, and business questions into clear insights and practical decisions.",
-    "cv_url": "",
+    "cv_label": "Download CV",
+    "name": "Segun Oluyi",
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
     "linkedin_label": "LinkedIn",
+    "headline": "Data & Business Analyst",
     "headshot": "images/Segun Oluyi 1.png",
-    "headshot_alt": "Professional headshot of Segun Oluyi",
-    "cv_label": "Download CV"
+    "primary_title": "Data & Business Analyst"
   },
   "about": {
     "heading": "From questions to practical next steps.",
