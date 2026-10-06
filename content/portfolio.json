@@ -8,13 +8,13 @@
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
     "linkedin_label": "LinkedIn",
     "headline": "Data & Business Analyst",
-    "headshot": "images/uploads/my-headshot-round-7.png",
+    "headshot": "images/uploads/segun-oluyi-profile-pics.png",
     "primary_title": "Data & Business Analyst"
   },
   "about": {
-    "label": "How I help",
-    "heading": "From data and questions to clear next steps.",
-    "summary": "I combine analysis, business research, planning, and clear documentation to help teams understand what matters, decide what to do, and move work forward."
+    "heading": "From questions to practical next steps.",
+    "summary": "I combine analysis, research, and clear communication to help teams understand what is happening, decide what matters, and move work forward.",
+    "label": "How I help"
   },
   "projects": [
     {
@@ -192,9 +192,7 @@
   "site": {
     "url": "https://segunoluyi.github.io/portfolio/",
     "year": "2026",
-    "favicon": "assets/favicon.svg",
-    "background_image": "images/bg.jpg",
-    "background_overlay": "rgba(0, 0, 0, 0.1)"
+    "favicon": "assets/favicon.svg"
   },
   "newsletter": {
     "enabled": false,
