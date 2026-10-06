@@ -12,6 +12,11 @@
     if (element && value) element.textContent = value;
   }
 
+  function cssUrl(value) {
+    if (!value) return "";
+    return 'url("' + String(value).replace(/["\\\r\n]/g, "").replace(/ /g, "%20") + '")';
+  }
+
   function newestFirst(items) {
     return items.map(function (item, index) { return { item: item, index: index }; }).sort(function (firstEntry, secondEntry) {
       var first = firstEntry.item;
@@ -169,6 +174,10 @@
 
       var favicon = document.querySelector("[data-site-favicon]");
       if (favicon && site.favicon) favicon.href = versionedUrl(site.favicon);
+
+      var background = document.querySelector("#wrapper > .bg");
+      if (background && site.background_image) background.style.setProperty("--portfolio-background-image", cssUrl(versionedUrl(site.background_image)));
+      if (background && site.background_overlay) background.style.setProperty("--portfolio-background-overlay", site.background_overlay);
 
       if (about) {
         var aboutLabel = about.querySelector("[data-about-label]");

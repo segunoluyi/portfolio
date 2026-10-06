@@ -23,6 +23,16 @@ collections:
             widget: object
             fields:
               - { label: Live site URL, name: url, widget: string, required: false }
+              - { label: Homepage background image, name: background_image, widget: image, required: false, hint: "Upload a wide landscape image. It appears behind the homepage and should be at least 1920 pixels wide." }
+              - label: Background overlay
+                name: background_overlay
+                widget: select
+                required: false
+                hint: "Controls how dark the background appears behind white text."
+                options:
+                  - { label: Soft dark overlay, value: "rgba(0, 0, 0, 0.1)" }
+                  - { label: Medium dark overlay, value: "rgba(0, 0, 0, 0.35)" }
+                  - { label: Strong dark overlay, value: "rgba(0, 0, 0, 0.55)" }
               - { label: Browser tab icon, name: favicon, widget: image, required: false, hint: "Upload a square PNG, SVG, or ICO. This controls the small icon in browser tabs." }
               - { label: Copyright year, name: year, widget: string, required: false }
           - label: Profile
