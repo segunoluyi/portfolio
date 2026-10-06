@@ -3386,8 +3386,18 @@ input, select, textarea {
 				}
 
 		#intro h1 {
-			font-size: 5rem;
+			font-size: 4.5rem;
 			line-height: 1;
+			margin: 0.35rem 0 0.85rem 0;
+		}
+
+		#intro .hero-title {
+			display: block;
+			font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+			font-size: 0.75rem;
+			font-weight: 700;
+			letter-spacing: 0.16em;
+			text-transform: uppercase;
 		}
 
 		#intro p {
@@ -3396,6 +3406,35 @@ input, select, textarea {
 			margin-top: -0.25rem;
 			text-align: center;
 		}
+
+		#intro .hero-focus {
+			font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+			font-size: 0.85rem;
+			font-style: normal;
+			font-weight: 600;
+			letter-spacing: 0.12em;
+			margin: 0;
+			text-transform: uppercase;
+		}
+
+		#intro .hero-summary {
+			font-size: 1.2rem;
+			line-height: 1.7;
+			margin: 1.5rem auto 0;
+			max-width: 46rem;
+		}
+
+		#intro .hero-actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.75rem;
+			justify-content: center;
+			margin: 2rem 0 0;
+		}
+
+			#intro .hero-actions li {
+				padding: 0;
+			}
 
 		#intro + #header {
 			margin-top: -20rem;
@@ -3484,9 +3523,30 @@ input, select, textarea {
 					margin-top: 0rem;
 				}
 
-				#intro .actions {
-					display: none;
+				#intro .hero-title {
+					font-size: 0.68rem;
 				}
+
+				#intro .hero-focus {
+					font-size: 0.72rem;
+					letter-spacing: 0.08em;
+				}
+
+				#intro .hero-summary {
+					font-size: 1rem;
+					line-height: 1.6;
+				}
+
+				#intro .hero-actions {
+					align-items: stretch;
+					flex-direction: column;
+					margin-top: 1.5rem;
+					width: 100%;
+				}
+
+					#intro .hero-actions .button {
+						width: 100%;
+					}
 
 		}
 

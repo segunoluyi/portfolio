@@ -131,15 +131,22 @@
       var contact = content.contact || {};
 
       if (intro) {
-        var introHeading = intro.querySelector("h1");
-        var introParagraph = intro.querySelector("p");
-        if (introHeading) introHeading.innerHTML = (profile.name || "Segun Oluyi") + "<br />Portfolio";
-        if (introParagraph) {
-          introParagraph.replaceChildren(document.createTextNode([profile.headline, profile.summary].filter(Boolean).join(" ") + " "));
-          var linkedIn = document.createElement("a");
-          linkedIn.href = profile.linkedin_url || "#";
-          linkedIn.textContent = profile.linkedin_label || "LinkedIn";
-          introParagraph.appendChild(linkedIn);
+        var heroTitle = intro.querySelector("[data-hero-title]");
+        var heroName = intro.querySelector("[data-hero-name]");
+        var heroFocus = intro.querySelector("[data-hero-focus]");
+        var heroSummary = intro.querySelector("[data-hero-summary]");
+        var heroEmail = intro.querySelector("[data-hero-email]");
+        var heroCv = intro.querySelector("[data-hero-cv]");
+        setText(heroTitle, profile.primary_title || profile.headline);
+        setText(heroName, profile.name ? "Hi, I’m " + profile.name + "." : "Hi, I’m Segun Oluyi.");
+        setText(heroFocus, profile.focus_areas);
+        setText(heroSummary, profile.summary);
+        if (heroEmail && contact.email) heroEmail.href = "mailto:" + contact.email;
+        if (heroCv && profile.cv_url) {
+          heroCv.href = profile.cv_url;
+          heroCv.removeAttribute("aria-disabled");
+          heroCv.removeAttribute("title");
+          heroCv.classList.remove("disabled");
         }
       }
 

@@ -23,8 +23,11 @@ collections:
             widget: object
             fields:
               - { label: Name, name: name, widget: string }
-              - { label: Headline, name: headline, widget: string }
-              - { label: Summary, name: summary, widget: text }
+              - { label: Primary professional title, name: primary_title, widget: string, hint: "Use one clear identity, for example Data & Business Analyst." }
+              - { label: Supporting focus areas, name: focus_areas, widget: string, required: false, hint: "Use up to three connected strengths, separated by dots. For example Analytics · Business Planning · Training." }
+              - { label: Value statement, name: summary, widget: text, hint: "State who you help, what you help them work through, and the useful outcome." }
+              - { label: Public CV PDF URL, name: cv_url, widget: string, required: false, hint: "Paste a public PDF link when ready. Leave blank to keep the Download CV button unavailable." }
+              - { label: Legacy headline, name: headline, widget: string, required: false, hint: "Retained for older content only. Use Primary professional title for the homepage." }
               - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
               - { label: LinkedIn label, name: linkedin_label, widget: string, required: false }
           - label: About section

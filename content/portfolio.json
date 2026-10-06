@@ -2,7 +2,10 @@
   "profile": {
     "name": "Segun Oluyi",
     "headline": "Data & Business Analyst",
-    "summary": "Turning complex data and business questions into clear, decision-ready insights.",
+    "primary_title": "Data & Business Analyst",
+    "focus_areas": "Analytics · Business Planning · Training",
+    "summary": "I help teams turn data, market research, and operational questions into clear insights, practical plans, and decision-ready work.",
+    "cv_url": "",
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
     "linkedin_label": "LinkedIn"
   },
