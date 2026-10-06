@@ -34,6 +34,7 @@ collections:
               - { label: Headshot description, name: headshot_alt, widget: string, required: false, hint: "Briefly describe the portrait for screen-reader users." }
               - { label: Primary professional title, name: primary_title, widget: string, required: false }
               - { label: Value statement, name: summary, widget: text, required: false, hint: "Use one short sentence that says who you help and the practical outcome." }
+              - { label: CV button label, name: cv_label, widget: string, required: false, hint: "For example: Download CV." }
               - { label: Public CV PDF URL, name: cv_url, widget: string, required: false, hint: "Paste a public PDF link when ready. Leave blank to keep the Download CV button unavailable." }
               - { label: Legacy headline, name: headline, widget: string, required: false }
               - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
@@ -45,19 +46,6 @@ collections:
               - { label: Section label, name: label, widget: string, required: false }
               - { label: Heading, name: heading, widget: string }
               - { label: Summary, name: summary, widget: text }
-          - label: Services section
-            name: services
-            widget: object
-            fields:
-              - { label: Section label, name: label, widget: string, required: false }
-              - { label: Heading, name: heading, widget: string }
-              - { label: Introduction, name: summary, widget: text }
-              - label: Service cards
-                name: items
-                widget: list
-                fields:
-                  - { label: Service title, name: title, widget: string }
-                  - { label: Service description, name: summary, widget: text }
           - label: Project cards
             name: projects
             widget: list
@@ -105,4 +93,16 @@ collections:
               - { label: Location, name: location, widget: string, required: false }
               - { label: Phone, name: phone, widget: string, required: false }
               - { label: Email, name: email, widget: string, required: false }
+              - { label: Main contact button label, name: primary_cta_label, widget: string, required: false, hint: "For example: Email me, Message me, or Book a call." }
+              - { label: Main contact button URL, name: primary_cta_url, widget: string, required: false, hint: "Paste a complete link. You can use a Gmail compose link, a WhatsApp wa.me link, a booking link, or mailto:address@example.com." }
               - { label: GitHub URL, name: github_url, widget: string, required: false }
+          - label: Newsletter and update list
+            name: newsletter
+            widget: object
+            fields:
+              - { label: Show this section, name: enabled, widget: boolean, required: false, default: false, hint: "Turn this on only after you have created a real opt-in form or hosted signup page." }
+              - { label: Section label, name: label, widget: string, required: false }
+              - { label: Heading, name: heading, widget: string, required: false }
+              - { label: Description, name: summary, widget: text, required: false }
+              - { label: Hosted signup page URL, name: subscribe_url, widget: string, required: false, hint: "Paste the public signup-page URL from MailerLite or your chosen email provider. The button opens the provider's secure form." }
+              - { label: Button label, name: button_label, widget: string, required: false }

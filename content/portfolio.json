@@ -8,7 +8,8 @@
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
     "linkedin_label": "LinkedIn",
     "headshot": "images/Segun Oluyi 1.png",
-    "headshot_alt": "Professional headshot of Segun Oluyi"
+    "headshot_alt": "Professional headshot of Segun Oluyi",
+    "cv_label": "Download CV"
   },
   "about": {
     "heading": "From questions to practical next steps.",
@@ -184,30 +185,21 @@
     "location": "Ikeja, Lagos, Nigeria",
     "phone": "+2348153051701",
     "email": "oluyisegun@gmail.com",
-    "github_url": "https://github.com/segunoluyi"
+    "github_url": "https://github.com/segunoluyi",
+    "primary_cta_label": "Email me",
+    "primary_cta_url": "https://mail.google.com/mail/?view=cm&fs=1&to=oluyisegun@gmail.com&su=Portfolio%20enquiry"
   },
   "site": {
     "url": "https://segunoluyi.github.io/portfolio/",
     "year": "2026",
     "favicon": "assets/favicon.svg"
   },
-  "services": {
-    "label": "Services",
-    "heading": "Work that helps decisions move forward.",
-    "summary": "Choose a focused engagement or start with the business question you need to make clearer.",
-    "items": [
-      {
-        "title": "Data analysis and dashboards",
-        "summary": "Make performance, customer, and operational data clear and usable."
-      },
-      {
-        "title": "Business research and planning",
-        "summary": "Turn opportunities, market questions, and business ideas into structured plans."
-      },
-      {
-        "title": "Training and practical documentation",
-        "summary": "Create clear learning materials, guides, and systems people can use with confidence."
-      }
-    ]
+  "newsletter": {
+    "enabled": false,
+    "label": "Portfolio updates",
+    "heading": "Get updates when new work is published.",
+    "summary": "Join the email list for new case studies, work samples, and practical resources.",
+    "subscribe_url": "",
+    "button_label": "Join the update list"
   }
 }

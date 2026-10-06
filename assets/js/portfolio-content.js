@@ -65,16 +65,6 @@
     return article;
   }
 
-  function createService(service) {
-    var article = document.createElement("article");
-    var heading = document.createElement("h3");
-    var summary = document.createElement("p");
-    heading.textContent = service.title || "Service";
-    summary.textContent = service.summary || "";
-    article.append(heading, summary);
-    return article;
-  }
-
   function createSample(sample) {
     var article = document.createElement("article");
     var header = document.createElement("header");
@@ -134,8 +124,7 @@
       var about = document.querySelector("[data-about]");
       var samplePreviewGrid = document.querySelector("#sample-preview-grid");
       var insightsGrid = document.querySelector("#insights-grid");
-      var servicesSection = document.querySelector("[data-services]");
-      var servicesGrid = document.querySelector("[data-services-grid]");
+      var newsletterSection = document.querySelector("[data-newsletter]");
       var projectCardsSection = document.querySelector("[data-project-cards-section]");
       var site = content.site || {};
       var profile = content.profile || {};
@@ -156,7 +145,20 @@
           heroImage.src = versionedUrl(profile.headshot);
           heroImage.alt = profile.headshot_alt || (profile.name ? "Professional headshot of " + profile.name : "Professional headshot");
         }
-        if (heroEmail && contact.email) heroEmail.href = "mailto:" + contact.email + "?subject=Portfolio%20enquiry";
+        if (heroEmail) {
+          var emailLink = contact.primary_cta_url || (contact.email ? "mailto:" + contact.email + "?subject=Portfolio%20enquiry" : "");
+          if (emailLink) {
+            heroEmail.href = emailLink;
+            setText(heroEmail, contact.primary_cta_label || "Email me");
+            if (/^https?:\/\//i.test(emailLink)) {
+              heroEmail.target = "_blank";
+              heroEmail.rel = "noopener noreferrer";
+            } else {
+              heroEmail.removeAttribute("target");
+            }
+          }
+        }
+        setText(heroCv, profile.cv_label || "Download CV");
         if (heroCv && profile.cv_url) {
           heroCv.href = profile.cv_url;
           heroCv.removeAttribute("aria-disabled");
@@ -194,18 +196,18 @@
         newestFirst(content.insights).slice(0, 6).forEach(function (insight) { insightsGrid.appendChild(createProject(insight)); });
       }
 
-      if (servicesSection) {
-        var services = content.services || {};
-        var servicesLabel = servicesSection.querySelector("[data-services-label]");
-        var servicesHeading = servicesSection.querySelector("[data-services-heading]");
-        var servicesSummary = servicesSection.querySelector("[data-services-summary]");
-        setText(servicesLabel, services.label);
-        setText(servicesHeading, services.heading);
-        setText(servicesSummary, services.summary);
-        if (servicesGrid && Array.isArray(services.items)) {
-          servicesGrid.replaceChildren();
-          services.items.forEach(function (service) { servicesGrid.appendChild(createService(service)); });
-          servicesSection.hidden = services.items.length === 0;
+      if (newsletterSection) {
+        var newsletter = content.newsletter || {};
+        var newsletterLink = newsletterSection.querySelector("[data-newsletter-link]");
+        setText(newsletterSection.querySelector("[data-newsletter-label]"), newsletter.label);
+        setText(newsletterSection.querySelector("[data-newsletter-heading]"), newsletter.heading);
+        setText(newsletterSection.querySelector("[data-newsletter-summary]"), newsletter.summary);
+        if (newsletter.enabled && newsletter.subscribe_url) {
+          newsletterSection.hidden = false;
+          newsletterLink.href = newsletter.subscribe_url;
+          newsletterLink.target = "_blank";
+          newsletterLink.rel = "noopener noreferrer";
+          setText(newsletterLink, newsletter.button_label || "Join the update list");
         }
       }
 
