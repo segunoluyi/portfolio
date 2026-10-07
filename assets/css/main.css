@@ -5197,7 +5197,7 @@ input, select, textarea {
   letter-spacing: 0.1em;
 }
 
-/* Compact three-column portfolio grids */
+/* Compact portfolio grids */
 #main .posts.compact-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5217,12 +5217,68 @@ input, select, textarea {
 #main .posts.compact-grid .sample-cover { min-height: 8.5rem; padding: 1.25rem; }
 #main .posts.compact-grid .sample-cover strong { font-size: 1.15rem; }
 
+/* Work samples use smaller, left-aligned cards so four fit across wider screens. */
+#main #sample-preview-grid {
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+#main #sample-preview-grid > article {
+  align-items: stretch;
+  border: solid 1px #e2e5e7;
+  border-radius: 0.2rem;
+  box-shadow: 0 0.35rem 1rem rgba(33, 41, 49, 0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem 1.15rem 1.15rem;
+  text-align: left;
+}
+
+#main #sample-preview-grid > article:nth-child(n) {
+  border-left-width: 1px;
+  border-top-width: 1px;
+}
+
+#main #sample-preview-grid > article header,
+#main #sample-preview-grid > article p,
+#main #sample-preview-grid > article .actions {
+  text-align: left;
+}
+
+#main #sample-preview-grid > article h2 {
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+#main #sample-preview-grid > article p {
+  font-size: 0.87rem;
+  line-height: 1.5;
+  margin: 0.9rem 0 1.15rem;
+}
+
+#main #sample-preview-grid .sample-cover.has-image {
+  height: clamp(11rem, 17vw, 14rem);
+  aspect-ratio: auto;
+}
+
+#main #sample-preview-grid > article .actions {
+  margin: auto 0 0;
+}
+
+#main #sample-preview-grid > article .actions .button {
+  font-size: 0.64rem;
+  padding: 0 1rem;
+}
+
 @media screen and (max-width: 980px) {
   #main .posts.compact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   #main .posts.compact-grid > article:nth-child(3n + 1) { border-left-width: 2px; }
   #main .posts.compact-grid > article:nth-child(-n + 3) { border-top-width: 2px; }
   #main .posts.compact-grid > article:nth-child(2n + 1) { border-left-width: 0; }
   #main .posts.compact-grid > article:nth-child(-n + 2) { border-top-width: 0; }
+
+  #main #sample-preview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* Back to top */
@@ -5271,6 +5327,8 @@ input, select, textarea {
   #main .posts.compact-grid > article { border-left-width: 0; padding: 2rem; }
   #main .posts.compact-grid > article:nth-child(n) { border-top-width: 2px; }
   #main .posts.compact-grid > article:first-child { border-top-width: 0; }
+  #main #sample-preview-grid { grid-template-columns: 1fr; }
+  #main #sample-preview-grid .sample-cover.has-image { height: 17rem; }
 }
 
 /* Homepage hierarchy: keep the introduction balanced in the available viewport. */
