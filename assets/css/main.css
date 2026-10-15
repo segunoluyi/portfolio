@@ -5642,7 +5642,8 @@ body,
 
 
 /* Final hero layout override. */
-#nav.top-navigation { align-items:center; display:flex; gap:.75rem; line-height:normal; padding:.65rem clamp(1.5rem,6vw,7rem); padding-left:calc(max(0px, (100vw - 90rem) / 2) + clamp(1.5rem,6vw,7rem)); }
+#nav.top-navigation { align-items:center; display:flex; gap:.75rem; line-height:normal; padding:.65rem clamp(1.5rem,6vw,7rem); }
+@media screen and (min-width:90rem) { #nav.top-navigation { padding-left:calc(50vw - 45rem + clamp(1.5rem,6vw,7rem)); } }
 #nav .nav-brand { align-items:center; border-bottom:0; color:var(--portfolio-text); display:inline-flex; flex:0 0 auto; font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:.76rem; font-weight:800; margin-right:auto; text-transform:none; }
 #nav .nav-brand:hover { background:transparent; color:var(--portfolio-accent) !important; }
 #nav .nav-brand-logo { align-items:center; background:var(--portfolio-text); border-radius:50%; color:var(--portfolio-surface); display:inline-flex; font-size:.55rem; height:2.2rem; justify-content:center; letter-spacing:.04em; overflow:hidden; width:2.2rem; }
