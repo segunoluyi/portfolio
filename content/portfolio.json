@@ -196,7 +196,24 @@
     "github_url": "https://github.com/segunoluyi",
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
     "primary_cta_label": "Email me",
-    "primary_cta_url": "https://mail.google.com/mail/?view=cm&fs=1&to=oluyisegun@gmail.com&su=Portfolio%20enquiry"
+    "primary_cta_url": "https://mail.google.com/mail/?view=cm&fs=1&to=oluyisegun@gmail.com&su=Portfolio%20enquiry",
+    "social_links": [
+      {
+        "platform": "email",
+        "url": "https://mail.google.com/mail/?view=cm&fs=1&to=oluyisegun@gmail.com&su=Portfolio%20enquiry",
+        "label": "Email"
+      },
+      {
+        "platform": "linkedin",
+        "url": "https://www.linkedin.com/in/segun-oluyi/",
+        "label": "LinkedIn"
+      },
+      {
+        "platform": "github",
+        "url": "https://github.com/segunoluyi",
+        "label": "GitHub"
+      }
+    ]
   },
   "site": {
     "url": "https://segunoluyi.github.io/portfolio/",

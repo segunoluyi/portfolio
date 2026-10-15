@@ -140,6 +140,58 @@
     return article;
   }
 
+  var socialPlatforms = {
+    email: { icon: "solid fa-envelope", label: "Email" },
+    linkedin: { icon: "brands fa-linkedin-in", label: "LinkedIn" },
+    github: { icon: "brands fa-github", label: "GitHub" },
+    instagram: { icon: "brands fa-instagram", label: "Instagram" },
+    x: { icon: "brands fa-twitter", label: "X" },
+    facebook: { icon: "brands fa-facebook-f", label: "Facebook" },
+    youtube: { icon: "brands fa-youtube", label: "YouTube" },
+    whatsapp: { icon: "brands fa-whatsapp", label: "WhatsApp" },
+    medium: { icon: "brands fa-medium", label: "Medium" },
+    website: { icon: "solid fa-link", label: "Website" }
+  };
+
+  function socialLinks(contact, profile) {
+    if (Array.isArray(contact.social_links) && contact.social_links.length) {
+      return contact.social_links.filter(function (link) {
+        return link && link.url && socialPlatforms[link.platform];
+      }).slice(0, 5);
+    }
+    return [
+      { platform: "email", url: contact.primary_cta_url || (contact.email ? "mailto:" + contact.email : ""), label: contact.primary_cta_label || "Email" },
+      { platform: "linkedin", url: contact.linkedin_url || profile.linkedin_url || "" },
+      { platform: "github", url: contact.github_url || "" }
+    ].filter(function (link) { return link.url; });
+  }
+
+  function renderSocialLinks(container, links) {
+    if (!container) return;
+    container.replaceChildren();
+    links.forEach(function (link) {
+      var details = socialPlatforms[link.platform];
+      if (!details) return;
+      var item = document.createElement("li");
+      var anchor = document.createElement("a");
+      var label = link.label || details.label;
+      anchor.href = link.url;
+      anchor.className = "icon " + details.icon;
+      anchor.setAttribute("aria-label", label);
+      anchor.title = label;
+      if (/^https?:\/\//i.test(link.url)) {
+        anchor.target = "_blank";
+        anchor.rel = "noopener noreferrer";
+      }
+      var text = document.createElement("span");
+      text.className = "label";
+      text.textContent = label;
+      anchor.appendChild(text);
+      item.appendChild(anchor);
+      container.appendChild(item);
+    });
+  }
+
   fetch("content/portfolio.json?cb=" + contentRevision, { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("Portfolio content could not be loaded.");
@@ -166,11 +218,9 @@
         var heroKicker = intro.querySelector("[data-hero-kicker]");
         var heroImage = intro.querySelector("[data-hero-image]");
         var heroSummary = intro.querySelector("[data-hero-summary]");
-        var heroEmail = intro.querySelector("[data-hero-email]");
+        var heroSocialLinks = intro.querySelector("[data-hero-social-links]");
         var heroCv = intro.querySelector("[data-hero-cv]");
         var heroProjects = intro.querySelector("[data-hero-projects]");
-        var heroLinkedin = intro.querySelector("[data-hero-linkedin]");
-        var heroGithub = intro.querySelector("[data-hero-github]");
         setText(heroTitle, profile.primary_title || profile.headline);
         setText(heroName, profile.name || "Segun Oluyi");
         setText(heroKicker, profile.hero_kicker);
@@ -180,20 +230,7 @@
           heroImage.src = versionedUrl(profile.headshot);
           heroImage.alt = profile.headshot_alt || (profile.name ? "Professional headshot of " + profile.name : "Professional headshot");
         }
-        if (heroEmail) {
-          var emailLink = contact.primary_cta_url || (contact.email ? "mailto:" + contact.email + "?subject=Portfolio%20enquiry" : "");
-          if (emailLink) {
-            heroEmail.href = emailLink;
-            heroEmail.setAttribute("aria-label", contact.primary_cta_label || "Email");
-            heroEmail.setAttribute("title", contact.primary_cta_label || "Email");
-            if (/^https?:\/\//i.test(emailLink)) {
-              heroEmail.target = "_blank";
-              heroEmail.rel = "noopener noreferrer";
-            } else {
-              heroEmail.removeAttribute("target");
-            }
-          }
-        }
+        renderSocialLinks(heroSocialLinks, socialLinks(contact, profile));
         setText(heroCv, profile.cv_label || "Download CV");
         if (heroCv && profile.cv_url) {
           heroCv.href = profile.cv_url;
@@ -203,14 +240,13 @@
           heroCv.removeAttribute("title");
           heroCv.classList.remove("disabled");
         }
-        if (heroLinkedin && (contact.linkedin_url || profile.linkedin_url)) {
-          heroLinkedin.href = contact.linkedin_url || profile.linkedin_url;
-        }
-        if (heroGithub && contact.github_url) heroGithub.href = contact.github_url;
       }
 
       var favicon = document.querySelector("[data-site-favicon]");
-      if (favicon && site.favicon) favicon.href = versionedUrl(site.favicon);
+      if (favicon && site.favicon) {
+        favicon.href = versionedUrl(site.favicon) + "?v=" + encodeURIComponent(contentRevision);
+        favicon.type = /\.svg(?:$|\?)/i.test(site.favicon) ? "image/svg+xml" : "image/png";
+      }
       document.querySelectorAll("[data-site-brand-logo]").forEach(function (image) {
          var fallback = image.parentElement.querySelector("[data-site-brand-mark]");
          if (site.brand_logo) {
@@ -265,6 +301,8 @@
           setText(newsletterLink, newsletter.button_label || "Join the update list");
         }
       }
+
+      renderSocialLinks(document.querySelector("[data-footer-social-links]"), socialLinks(contact, profile));
 
       var location = document.querySelector("[data-contact-location]");
       var phone = document.querySelector("[data-contact-phone]");

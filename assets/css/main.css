@@ -5672,7 +5672,7 @@ body,
 #intro .hero-actions { align-items:center; display:flex; flex-wrap:wrap; gap:.85rem; margin:0; }
 #intro .hero-actions li { padding:0; }
 #intro .hero-actions .button { border-radius:999px; min-width:10rem; text-align:center; }
-#intro .hero-contact-actions { display:flex; gap:.85rem; margin:2rem 0 0; }
+#intro .hero-contact-actions { display:flex; flex-wrap:wrap; gap:.85rem; margin:2rem 0 0; }
 #intro .hero-contact-actions li { padding-left:0; }
 #intro .hero-contact-actions a.icon:before { align-items:center; border:1px solid var(--portfolio-border); border-radius:50%; color:var(--portfolio-text); display:inline-flex; height:2.55rem; justify-content:center; transition:border-color .2s ease,color .2s ease; width:2.55rem; }
 #intro .hero-contact-actions a.icon:hover:before { border-color:var(--portfolio-accent); color:var(--portfolio-accent); }

@@ -120,8 +120,31 @@ collections:
               - { label: Email, name: email, widget: string, required: false }
               - { label: Main contact button label, name: primary_cta_label, widget: string, required: false, hint: "For example: Email me, Message me, or Book a call." }
               - { label: Main contact button URL, name: primary_cta_url, widget: string, required: false, hint: "Paste a complete link. You can use a Gmail compose link, a WhatsApp wa.me link, a booking link, or mailto:address@example.com." }
-              - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
-              - { label: GitHub URL, name: github_url, widget: string, required: false }
+              - label: Social links
+                name: social_links
+                widget: list
+                required: false
+                max: 5
+                hint: "Add up to five icons. Leave this list blank to use the existing email, LinkedIn, and GitHub links."
+                fields:
+                  - label: Icon
+                    name: platform
+                    widget: select
+                    options:
+                      - { label: Email, value: "email" }
+                      - { label: LinkedIn, value: "linkedin" }
+                      - { label: GitHub, value: "github" }
+                      - { label: Instagram, value: "instagram" }
+                      - { label: X, value: "x" }
+                      - { label: Facebook, value: "facebook" }
+                      - { label: YouTube, value: "youtube" }
+                      - { label: WhatsApp, value: "whatsapp" }
+                      - { label: Medium, value: "medium" }
+                      - { label: Website, value: "website" }
+                  - { label: Link URL, name: url, widget: string, hint: "Paste the complete link, for example https://www.linkedin.com/in/your-name/" }
+                  - { label: Accessible label, name: label, widget: string, required: false, hint: "Optional. Used when someone hovers or uses a screen reader." }
+              - { label: Legacy LinkedIn URL, name: linkedin_url, widget: string, required: false, hint: "Used only when no Social links have been added above." }
+              - { label: Legacy GitHub URL, name: github_url, widget: string, required: false, hint: "Used only when no Social links have been added above." }
           - label: Newsletter and update list
             name: newsletter
             widget: object
