@@ -5660,7 +5660,7 @@ body,
 #nav.top-navigation ul.links li a:hover { border-bottom-color:var(--portfolio-accent); color:var(--portfolio-accent) !important; }
 .theme-toggle, #nav .theme-toggle, #nav .theme-toggle [data-theme-toggle-label] { box-shadow:none; color:var(--portfolio-text) !important; flex:0 0 auto; font-size:.52rem; gap:.28rem; height:2rem; line-height:2rem; margin-left:.35rem; min-width:0; padding:0 .6rem; position:static; right:auto; top:auto; }
 #intro, #nav.top-navigation + #intro { align-items:center; display:flex; min-height:min(43rem,calc(100vh - 4.5rem)); padding:clamp(3.5rem,8vw,7rem) 0; text-align:left; }
-#intro .hero-shell { align-items:center; box-sizing:border-box; display:grid; gap:clamp(2.5rem,7vw,8rem); grid-template-columns:minmax(0,1.12fr) minmax(16rem,.72fr); margin:0 auto; max-width:90rem; padding-left:clamp(1.5rem,6vw,7rem); padding-right:clamp(1.5rem,6vw,7rem); width:100%; }
+#intro .hero-shell { align-items:center; box-sizing:border-box; display:grid; gap:clamp(1.5rem,3vw,3.5rem); grid-template-columns:minmax(0,1.12fr) minmax(16rem,.72fr); margin:0 auto; max-width:90rem; padding-left:clamp(1.5rem,6vw,7rem); padding-right:clamp(1.5rem,6vw,7rem); width:100%; }
 #intro .hero-content { max-width:42rem; }
 #intro .hero-kicker { background:rgba(22,125,147,.08); border:1px solid rgba(22,125,147,.25); border-radius:999px; color:var(--portfolio-text); display:table; font-family:"Montserrat","Plus Jakarta Sans","Segoe UI",sans-serif; font-size:1rem; font-weight:300; letter-spacing:5px; line-height:normal; margin-bottom:1.5rem; padding:6px 20px; text-transform:uppercase; }
 #intro h1 { font-size:clamp(3rem,6vw,5.6rem); letter-spacing:-.02em; line-height:.98; margin:0 0 1rem; max-width:12ch; text-transform:uppercase; }
