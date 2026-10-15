@@ -5650,6 +5650,8 @@ body,
 #nav .nav-brand-logo img { display:block; height:100%; object-fit:contain; width:100%; }
 :root[data-theme="dark"] #nav .nav-brand-logo img { filter:brightness(0) invert(1); opacity:.92; }
 #nav .nav-brand-mark { align-items:center; display:inline-flex; height:100%; justify-content:center; width:100%; }
+#nav .nav-brand-logo img[hidden],
+#nav .nav-brand-mark[hidden] { display:none; }
 #nav.top-navigation ul.links { flex:0 1 auto; }
 #nav.top-navigation ul.links li,
 #nav.top-navigation ul.links li.active,
