@@ -36,37 +36,59 @@
     var eyebrow = document.createElement("span");
     var heading = document.createElement("h2");
     var titleLink = document.createElement("a");
-    var imageLink = document.createElement("a");
-    var image = document.createElement("img");
+    var media = document.createElement("div");
     var summary = document.createElement("p");
     var actions = document.createElement("ul");
-    var action = document.createElement("li");
-    var button = document.createElement("a");
+    var actionLinks = [
+      { url: project.case_study_url || project.url, label: project.case_study_label || project.button_label || "View case study" },
+      { url: project.live_url, label: "Live dashboard" },
+      { url: project.github_url, label: "View on GitHub" }
+    ];
     var opensExternally = /^https?:\/\//i.test(project.url || "");
 
+    article.className = "project-card";
     eyebrow.className = "date";
     eyebrow.textContent = project.eyebrow || "Project";
-    titleLink.href = project.url || "#";
-    if (opensExternally) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
+    titleLink.href = project.case_study_url || project.url || "#";
+    if (opensExternally && (project.case_study_url || project.url)) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
+    if (!(project.case_study_url || project.url)) titleLink.removeAttribute("href");
     titleLink.textContent = project.title || "Untitled project";
     heading.appendChild(titleLink);
     header.append(eyebrow, heading);
-    imageLink.href = project.url || "#";
-    if (opensExternally) { imageLink.target = "_blank"; imageLink.rel = "noopener noreferrer"; }
-    imageLink.className = "image fit";
-    image.src = versionedUrl(project.image || "images/pic02.jpg");
-    image.alt = project.title || "Portfolio project";
-    imageLink.appendChild(image);
+
+    media.className = "project-card-media";
+    if (project.image) {
+      var image = document.createElement("img");
+      image.src = versionedUrl(project.image);
+      image.alt = project.image_alt || (project.title || "Portfolio project") + " cover image";
+      image.loading = "lazy";
+      media.appendChild(image);
+    } else {
+      var placeholder = document.createElement("span");
+      placeholder.textContent = project.status || "Project documentation in preparation";
+      media.classList.add("project-card-placeholder");
+      media.appendChild(placeholder);
+    }
     summary.textContent = project.summary || "";
-    actions.className = "actions special";
-    button.href = project.url || "#";
-    if (opensExternally) { button.target = "_blank"; button.rel = "noopener noreferrer"; }
-    button.className = "button";
-    button.textContent = project.button_label || "View project";
-    if (!project.url) button.setAttribute("aria-disabled", "true");
-    action.appendChild(button);
-    actions.appendChild(action);
-    article.append(header, imageLink, summary, actions);
+    actions.className = "actions project-card-actions";
+    actionLinks.filter(function (item) { return item.url; }).forEach(function (item) {
+      var action = document.createElement("li");
+      var button = document.createElement("a");
+      button.href = item.url;
+      button.className = "button small";
+      button.textContent = item.label;
+      if (/^https?:\/\//i.test(item.url)) { button.target = "_blank"; button.rel = "noopener noreferrer"; }
+      action.appendChild(button);
+      actions.appendChild(action);
+    });
+    if (Array.isArray(project.tools) && project.tools.length) {
+      var tools = document.createElement("ul");
+      tools.className = "project-card-tools";
+      project.tools.forEach(function (tool) { var item = document.createElement("li"); item.textContent = tool; tools.appendChild(item); });
+      article.append(header, media, summary, tools, actions);
+    } else {
+      article.append(header, media, summary, actions);
+    }
     return article;
   }
 
@@ -136,6 +158,8 @@
       var aboutContent = content.about || {};
       var contact = content.contact || {};
 
+      if (window.portfolioTheme) window.portfolioTheme.applyDefault(site.default_theme);
+
       if (intro) {
         var heroTitle = intro.querySelector("[data-hero-title]");
         var heroName = intro.querySelector("[data-hero-name]");
@@ -174,10 +198,6 @@
 
       var favicon = document.querySelector("[data-site-favicon]");
       if (favicon && site.favicon) favicon.href = versionedUrl(site.favicon);
-
-      var background = document.querySelector("#wrapper > .bg");
-      if (background && site.background_image) background.style.setProperty("--portfolio-background-image", cssUrl(versionedUrl(site.background_image)));
-      if (background && site.background_overlay) background.style.setProperty("--portfolio-background-overlay", site.background_overlay);
 
       if (about) {
         var aboutLabel = about.querySelector("[data-about-label]");

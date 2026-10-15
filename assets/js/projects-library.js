@@ -22,27 +22,53 @@
     var eyebrow = document.createElement("span");
     var heading = document.createElement("h2");
     var title = document.createElement("a");
-    var imageLink = document.createElement("a");
-    var image = document.createElement("img");
+    var media = document.createElement("div");
     var summary = document.createElement("p");
     var actions = document.createElement("ul");
-    var item = document.createElement("li");
-    var button = document.createElement("a");
-    var external = /^https?:\/\//i.test(project.url || "");
+    var links = [
+      { url: project.case_study_url || project.url, label: project.case_study_label || project.button_label || "View case study" },
+      { url: project.live_url, label: "Live dashboard" },
+      { url: project.github_url, label: "View on GitHub" }
+    ];
+    var primaryUrl = project.case_study_url || project.url;
+    var external = /^https?:\/\//i.test(primaryUrl || "");
+    article.className = "project-card";
     eyebrow.className = "date";
     eyebrow.textContent = project.eyebrow || "Project";
-    title.href = project.url || "#";
+    title.href = primaryUrl || "#";
+    if (!primaryUrl) title.removeAttribute("href");
     title.textContent = project.title || "Untitled project";
-    imageLink.href = project.url || "#";
-    imageLink.className = "image fit";
-    image.src = versionedUrl(project.image ? (project.image.indexOf("images/") === 0 ? "../" + project.image : project.image) : "../images/pic02.jpg");
-    image.alt = project.title || "Portfolio project";
-    imageLink.appendChild(image);
-    button.href = project.url || "#";
-    button.className = "button";
-    button.textContent = project.button_label || "View project";
-    if (external) [title, imageLink, button].forEach(function (link) { link.target = "_blank"; link.rel = "noopener noreferrer"; });
-    heading.appendChild(title); header.append(eyebrow, heading); summary.textContent = project.summary || ""; item.appendChild(button); actions.className = "actions special"; actions.appendChild(item); article.append(header, imageLink, summary, actions);
+    if (external) { title.target = "_blank"; title.rel = "noopener noreferrer"; }
+    media.className = "project-card-media";
+    if (project.image) {
+      var image = document.createElement("img");
+      image.src = versionedUrl(project.image.indexOf("images/") === 0 ? "../" + project.image : project.image);
+      image.alt = project.image_alt || (project.title || "Portfolio project") + " cover image";
+      image.loading = "lazy";
+      media.appendChild(image);
+    } else {
+      var placeholder = document.createElement("span");
+      placeholder.textContent = project.status || "Project documentation in preparation";
+      media.classList.add("project-card-placeholder");
+      media.appendChild(placeholder);
+    }
+    heading.appendChild(title); header.append(eyebrow, heading); summary.textContent = project.summary || "";
+    actions.className = "actions project-card-actions";
+    links.filter(function (link) { return link.url; }).forEach(function (link) {
+      var item = document.createElement("li");
+      var button = document.createElement("a");
+      button.href = link.url;
+      button.className = "button small";
+      button.textContent = link.label;
+      if (/^https?:\/\//i.test(link.url)) { button.target = "_blank"; button.rel = "noopener noreferrer"; }
+      item.appendChild(button); actions.appendChild(item);
+    });
+    if (Array.isArray(project.tools) && project.tools.length) {
+      var tools = document.createElement("ul");
+      tools.className = "project-card-tools";
+      project.tools.forEach(function (tool) { var toolItem = document.createElement("li"); toolItem.textContent = tool; tools.appendChild(toolItem); });
+      article.append(header, media, summary, tools, actions);
+    } else article.append(header, media, summary, actions);
     return article;
   }
 
@@ -74,6 +100,7 @@
   }
 
   fetch("../content/portfolio.json?cb=" + contentRevision, { cache: "no-store" }).then(function (response) { if (!response.ok) throw new Error(); return response.json(); }).then(function (content) {
+    if (window.portfolioTheme) window.portfolioTheme.applyDefault((content.site || {}).default_theme);
     allProjects = (Array.isArray(content.projects) ? content.projects : []).map(function (item, index) { return { item: item, index: index }; }).sort(function (firstEntry, secondEntry) { var firstDate = Date.parse(firstEntry.item.published_at || ""); var secondDate = Date.parse(secondEntry.item.published_at || ""); if (!isNaN(firstDate) && !isNaN(secondDate)) return secondDate - firstDate; if (!isNaN(firstDate)) return -1; if (!isNaN(secondDate)) return 1; return secondEntry.index - firstEntry.index; }).map(function (entry) { return entry.item; });
     Array.from(new Set(allProjects.map(function (project) { return project.eyebrow; }).filter(Boolean))).sort().forEach(function (area) { var option = document.createElement("option"); option.value = area; option.textContent = area; projectFilter.appendChild(option); });
     searchInput.addEventListener("input", function () { currentPage = 1; render(); });

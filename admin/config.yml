@@ -23,16 +23,14 @@ collections:
             widget: object
             fields:
               - { label: Live site URL, name: url, widget: string, required: false }
-              - { label: Homepage background image, name: background_image, widget: image, required: false, hint: "Upload a wide landscape image. It appears behind the homepage and should be at least 1920 pixels wide." }
-              - label: Background overlay
-                name: background_overlay
+              - label: Default colour theme
+                name: default_theme
                 widget: select
                 required: false
-                hint: "Controls how dark the background appears behind white text."
+                hint: "Sets the first theme visitors see. They can still switch between light and dark on the site."
                 options:
-                  - { label: Soft dark overlay, value: "rgba(0, 0, 0, 0.1)" }
-                  - { label: Medium dark overlay, value: "rgba(0, 0, 0, 0.35)" }
-                  - { label: Strong dark overlay, value: "rgba(0, 0, 0, 0.55)" }
+                  - { label: Light, value: "light" }
+                  - { label: Dark, value: "dark" }
               - { label: Browser tab icon, name: favicon, widget: image, required: false, hint: "Upload a square PNG, SVG, or ICO. This controls the small icon in browser tabs." }
               - { label: Copyright year, name: year, widget: string, required: false }
           - label: Profile
@@ -64,8 +62,19 @@ collections:
               - { label: Title, name: title, widget: string }
               - { label: Summary, name: summary, widget: text }
               - { label: Image, name: image, widget: image, required: false }
+              - { label: Image description, name: image_alt, widget: string, required: false, hint: "Describe the project cover for screen-reader users." }
+              - { label: Project status, name: status, widget: string, required: false, hint: "Use only when the project has no cover or public link yet, for example: Documentation in preparation." }
+              - label: Tools used
+                name: tools
+                widget: list
+                required: false
+                field: { label: Tool, name: tool, widget: string }
               - { label: Project or case-study URL, name: url, widget: string, required: false }
               - { label: Button label, name: button_label, widget: string, required: false }
+              - { label: Case-study URL, name: case_study_url, widget: string, required: false, hint: "Optional. If supplied, this becomes the primary card link." }
+              - { label: Case-study button label, name: case_study_label, widget: string, required: false }
+              - { label: Live dashboard URL, name: live_url, widget: string, required: false }
+              - { label: GitHub repository URL, name: github_url, widget: string, required: false }
               - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
           - label: Work samples library
             name: samples
