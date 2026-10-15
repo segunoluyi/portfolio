@@ -5703,3 +5703,52 @@ body,
 @media screen and (max-width:1100px) { #nav.top-navigation ul.links li a { font-size:.67rem; padding-left:.55rem; padding-right:.55rem; } #nav .nav-brand-name { display:none; } }
 @media screen and (max-width:980px) { #nav.top-navigation { display:none; } #intro, #nav.top-navigation + #intro { min-height:auto; padding-top:6rem; } }
 @media screen and (max-width:736px) { #intro .hero-shell { gap:2.5rem; grid-template-columns:1fr; } #intro .hero-content { order:2; } #intro .hero-visual { justify-self:start; order:1; } #intro .image.avatar { box-shadow:none; height:min(64vw,19rem); width:min(64vw,19rem); } #intro .hero-kicker { font-size:.72rem; letter-spacing:2.8px; padding:5px 12px; } #intro h1 { font-size:clamp(2.7rem,13vw,4rem); max-width:11ch; } #intro .hero-actions .button, #intro .hero-actions li { width:100%; } }
+
+/* One shared page edge: the hero, content collections, footer, and navigation follow it. */
+:root { --portfolio-page-gutter: clamp(7rem, 9vw, 10rem); }
+
+#nav.top-navigation { padding-left:var(--portfolio-page-gutter); padding-right:var(--portfolio-page-gutter); }
+#intro .hero-shell { padding-left:var(--portfolio-page-gutter); padding-right:var(--portfolio-page-gutter); }
+
+#main > .post,
+#main > #projects,
+#main > #samples,
+#main > #insights,
+#main > #project-grid,
+#main > #sample-preview-grid,
+#main > #insights-grid,
+#main > .collection-actions {
+  margin-left:0;
+  margin-right:0;
+  max-width:none;
+  padding-left:var(--portfolio-page-gutter);
+  padding-right:var(--portfolio-page-gutter);
+}
+
+#main > #projects,
+#main > #samples,
+#main > #insights { padding-top:8rem; padding-bottom:2rem; }
+#main > #project-grid,
+#main > #sample-preview-grid,
+#main > #insights-grid { padding-top:0; padding-bottom:4rem; }
+#main > .collection-actions { padding-top:2.5rem; padding-bottom:6rem; }
+
+#footer > section { padding-left:var(--portfolio-page-gutter); padding-right:var(--portfolio-page-gutter); }
+#footer > section.split > section,
+#footer > section.split > section:first-child,
+#footer > section.split > section:last-child { padding-left:var(--portfolio-page-gutter); padding-right:var(--portfolio-page-gutter); }
+
+@media screen and (max-width:980px) {
+  :root { --portfolio-page-gutter:clamp(2rem, 6vw, 4rem); }
+}
+
+@media screen and (max-width:736px) {
+  :root { --portfolio-page-gutter:2rem; }
+  #main > #projects,
+  #main > #samples,
+  #main > #insights { padding-top:4rem; padding-bottom:1.5rem; }
+  #main > #project-grid,
+  #main > #sample-preview-grid,
+  #main > #insights-grid { padding-bottom:2rem; }
+  #main > .collection-actions { padding-top:2rem; padding-bottom:4rem; }
+}
