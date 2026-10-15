@@ -4,6 +4,8 @@
     "headshot_alt": "Professional headshot of Segun Oluyi",
     "summary": "I help businesses turn data, research, and business questions into clear insights and practical decisions.",
     "cv_label": "Download CV",
+    "projects_label": "View projects",
+    "hero_kicker": "Data, research and practical decisions",
     "name": "Segun Oluyi",
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
     "linkedin_label": "LinkedIn",
@@ -188,11 +190,14 @@
     "phone": "+2348153051701",
     "email": "oluyisegun@gmail.com",
     "github_url": "https://github.com/segunoluyi",
+    "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
     "primary_cta_label": "Email me",
     "primary_cta_url": "https://mail.google.com/mail/?view=cm&fs=1&to=oluyisegun@gmail.com&su=Portfolio%20enquiry"
   },
   "site": {
     "url": "https://segunoluyi.github.io/portfolio/",
+    "brand_mark": "SO",
+    "brand_name": "Segun Oluyi",
     "year": "2026",
     "favicon": "assets/favicon.svg",
     "default_theme": "light"

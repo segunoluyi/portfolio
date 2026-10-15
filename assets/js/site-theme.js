@@ -13,6 +13,9 @@
     document.body.appendChild(toggle);
   }
 
+  var navigation = document.querySelector("#nav");
+  if (navigation && !navigation.contains(toggle)) navigation.appendChild(toggle);
+
   function normaliseTheme(value) {
     return value === "dark" ? "dark" : "light";
   }

@@ -23,6 +23,8 @@ collections:
             widget: object
             fields:
               - { label: Live site URL, name: url, widget: string, required: false }
+              - { label: Brand mark or initials, name: brand_mark, widget: string, required: false, hint: "A short mark shown at the top left, for example: SO." }
+              - { label: Brand name, name: brand_name, widget: string, required: false, hint: "The name beside the mark in the top navigation." }
               - label: Default colour theme
                 name: default_theme
                 widget: select
@@ -38,11 +40,13 @@ collections:
             widget: object
             fields:
               - { label: Name, name: name, widget: string }
+              - { label: Hero introduction line, name: hero_kicker, widget: string, required: false, hint: "A short line above your name on the homepage." }
               - { label: Professional headshot, name: headshot, widget: image, required: false, hint: "Upload the portrait shown at the top of the homepage." }
               - { label: Headshot description, name: headshot_alt, widget: string, required: false, hint: "Briefly describe the portrait for screen-reader users." }
               - { label: Primary professional title, name: primary_title, widget: string, required: false }
               - { label: Value statement, name: summary, widget: text, required: false, hint: "Use one short sentence that says who you help and the practical outcome." }
               - { label: CV button label, name: cv_label, widget: string, required: false, hint: "For example: Download CV." }
+              - { label: Projects button label, name: projects_label, widget: string, required: false, hint: "For example: View projects." }
               - { label: Public CV PDF URL, name: cv_url, widget: string, required: false, hint: "Paste a public PDF link when ready. Leave blank to keep the Download CV button unavailable." }
               - { label: Legacy headline, name: headline, widget: string, required: false }
               - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
@@ -114,6 +118,7 @@ collections:
               - { label: Email, name: email, widget: string, required: false }
               - { label: Main contact button label, name: primary_cta_label, widget: string, required: false, hint: "For example: Email me, Message me, or Book a call." }
               - { label: Main contact button URL, name: primary_cta_url, widget: string, required: false, hint: "Paste a complete link. You can use a Gmail compose link, a WhatsApp wa.me link, a booking link, or mailto:address@example.com." }
+              - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
               - { label: GitHub URL, name: github_url, widget: string, required: false }
           - label: Newsletter and update list
             name: newsletter

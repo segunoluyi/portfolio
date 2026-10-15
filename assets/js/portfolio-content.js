@@ -163,13 +163,19 @@
       if (intro) {
         var heroTitle = intro.querySelector("[data-hero-title]");
         var heroName = intro.querySelector("[data-hero-name]");
+        var heroKicker = intro.querySelector("[data-hero-kicker]");
         var heroImage = intro.querySelector("[data-hero-image]");
         var heroSummary = intro.querySelector("[data-hero-summary]");
         var heroEmail = intro.querySelector("[data-hero-email]");
         var heroCv = intro.querySelector("[data-hero-cv]");
+        var heroProjects = intro.querySelector("[data-hero-projects]");
+        var heroLinkedin = intro.querySelector("[data-hero-linkedin]");
+        var heroGithub = intro.querySelector("[data-hero-github]");
         setText(heroTitle, profile.primary_title || profile.headline);
         setText(heroName, profile.name ? "Hi, I’m " + profile.name + "." : "Hi, I’m Segun Oluyi.");
+        setText(heroKicker, profile.hero_kicker);
         setText(heroSummary, profile.summary);
+        setText(heroProjects, profile.projects_label || "View projects");
         if (heroImage && profile.headshot) {
           heroImage.src = versionedUrl(profile.headshot);
           heroImage.alt = profile.headshot_alt || (profile.name ? "Professional headshot of " + profile.name : "Professional headshot");
@@ -194,10 +200,16 @@
           heroCv.removeAttribute("title");
           heroCv.classList.remove("disabled");
         }
+        if (heroLinkedin && (contact.linkedin_url || profile.linkedin_url)) {
+          heroLinkedin.href = contact.linkedin_url || profile.linkedin_url;
+        }
+        if (heroGithub && contact.github_url) heroGithub.href = contact.github_url;
       }
 
       var favicon = document.querySelector("[data-site-favicon]");
       if (favicon && site.favicon) favicon.href = versionedUrl(site.favicon);
+      document.querySelectorAll("[data-site-brand-mark]").forEach(function (element) { setText(element, site.brand_mark); });
+      document.querySelectorAll("[data-site-brand-name]").forEach(function (element) { setText(element, site.brand_name || profile.name); });
 
       if (about) {
         var aboutLabel = about.querySelector("[data-about-label]");
