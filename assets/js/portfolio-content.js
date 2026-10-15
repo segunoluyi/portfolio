@@ -8,6 +8,11 @@
     return value;
   }
 
+  function refreshedUrl(value) {
+    if (!value || /^data:/i.test(value)) return value;
+    return versionedUrl(value) + (value.indexOf("?") === -1 ? "?" : "&") + "v=" + encodeURIComponent(contentRevision);
+  }
+
   function setText(element, value) {
     if (element && value) element.textContent = value;
   }
@@ -244,13 +249,13 @@
 
       var favicon = document.querySelector("[data-site-favicon]");
       if (favicon && site.favicon) {
-        favicon.href = versionedUrl(site.favicon) + "?v=" + encodeURIComponent(contentRevision);
+        favicon.href = refreshedUrl(site.favicon);
         favicon.type = /\.svg(?:$|\?)/i.test(site.favicon) ? "image/svg+xml" : "image/png";
       }
       document.querySelectorAll("[data-site-brand-logo]").forEach(function (image) {
          var fallback = image.parentElement.querySelector("[data-site-brand-mark]");
          if (site.brand_logo) {
-           image.src = versionedUrl(site.brand_logo);
+           image.src = refreshedUrl(site.brand_logo);
            image.alt = site.brand_logo_alt || (site.brand_name ? site.brand_name + " logo" : "Portfolio logo");
            image.hidden = false;
            if (fallback) fallback.hidden = true;
