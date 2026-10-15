@@ -4,12 +4,12 @@
     "headshot_alt": "Professional headshot of Segun Oluyi",
     "summary": "I help businesses turn data, research, and business questions into clear insights and practical decisions.",
     "cv_label": "Download CV",
-    "projects_label": "View projects",
-    "hero_kicker": "Data • Research • Business Strategy",
     "name": "Segun Oluyi",
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
+    "projects_label": "View projects",
     "linkedin_label": "LinkedIn",
     "headline": "Data & Business Analyst",
+    "hero_kicker": "Data • Research • Business Strategy",
     "headshot": "images/uploads/segun-oluyi-profile-pics.png",
     "primary_title": "Data & Business Analyst"
   },
@@ -20,15 +20,19 @@
   },
   "projects": [
     {
-      "eyebrow": "Power BI case study",
-      "title": "Customer Complaints Analysis in Power BI",
-      "summary": "This interactive Customer Complaints dashboard analyzes complaint trends to highlight service performance and risk areas, helping stakeholders understand what is happening and how effectively issues are being resolved.",
-      "image": "images/uploads/overview-page.png",
+      "published_at": "2026-09-15",
       "image_alt": "Overview of the Customer Complaints dashboard in Power BI",
-      "tools": ["Power BI", "Data analysis", "Dashboard design"],
-      "url": "https://oluyisegun.medium.com/customer-complaints-analysis-in-power-bi-an-end-to-end-dashboard-case-study-35546161ba95",
+      "summary": "This interactive Customer Complaints dashboard analyzes complaint trends to highlight service performance and risk areas, helping stakeholders understand what is happening and how effectively issues are being resolved.",
       "button_label": "View Documentation",
-      "published_at": "2026-09-15"
+      "eyebrow": "Power BI case study",
+      "url": "https://oluyisegun.medium.com/customer-complaints-analysis-in-power-bi-an-end-to-end-dashboard-case-study-35546161ba95",
+      "title": "Customer Complaints Analysis in Power BI",
+      "image": "images/uploads/overview-page.png",
+      "tools": [
+        "Power BI",
+        "Data analysis",
+        "Dashboard design"
+      ]
     },
     {
       "title": "SuperStore Sales Analysis ",
@@ -197,7 +201,7 @@
   "site": {
     "url": "https://segunoluyi.github.io/portfolio/",
     "brand_mark": "LOGO",
-    "brand_logo": "",
+    "brand_logo": "images/uploads/segun-oluyi-logo.png",
     "brand_logo_alt": "",
     "brand_name": "Segun Oluyi",
     "year": "2026",
