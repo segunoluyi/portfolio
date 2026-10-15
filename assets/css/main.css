@@ -5666,6 +5666,23 @@ body,
 #intro .hero-contact-actions a.icon:hover:before { border-color:var(--portfolio-accent); color:var(--portfolio-accent); }
 #intro .hero-visual { justify-self:end; }
 #intro .image.avatar { box-shadow:1.25rem 1.25rem 0 var(--portfolio-surface-soft); height:clamp(15rem,28vw,25rem); margin:0; width:clamp(15rem,28vw,25rem); }
+#intro .hero-content,
+#intro .hero-content .hero-kicker,
+#intro .hero-content h1,
+#intro .hero-content .hero-title,
+#intro .hero-content .hero-summary,
+#intro .hero-content .hero-contact-actions { text-align:left; }
+#intro .hero-content .hero-summary { margin-left:0; margin-right:0; text-align:left; }
+#intro .hero-content .hero-actions,
+#intro .hero-content .hero-contact-actions { justify-content:flex-start; }
+#main > .post.featured,
+#main > .post.featured header.major,
+#main > .post.featured header.major p,
+#main > .post.featured .date,
+#main > .collection-actions { text-align:left; }
+#main > .post.featured header.major > .date:after { display:none; }
+/* Defensive guard for browser sessions that retained the former scroll state. */
+#intro.hidden { opacity:1 !important; pointer-events:auto !important; transform:none !important; visibility:visible !important; }
 @media screen and (max-width:1100px) { #nav.top-navigation ul.links li a { font-size:.67rem; padding-left:.55rem; padding-right:.55rem; } #nav .nav-brand-name { display:none; } }
 @media screen and (max-width:980px) { #nav.top-navigation { display:none; } #intro, #nav.top-navigation + #intro { min-height:auto; padding-top:6rem; } }
 @media screen and (max-width:736px) { #intro .hero-shell { gap:2.5rem; grid-template-columns:1fr; } #intro .hero-content { order:2; } #intro .hero-visual { justify-self:start; order:1; } #intro .image.avatar { box-shadow:.8rem .8rem 0 var(--portfolio-surface-soft); height:min(64vw,19rem); width:min(64vw,19rem); } #intro h1 { font-size:clamp(2.7rem,13vw,4rem); max-width:11ch; } #intro .hero-actions .button, #intro .hero-actions li { width:100%; } }
