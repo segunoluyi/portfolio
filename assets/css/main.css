@@ -5733,6 +5733,7 @@ body,
 #main > #insights-grid { padding-top:0; padding-bottom:4rem; }
 #main > .collection-actions { padding-top:2.5rem; padding-bottom:6rem; }
 
+#footer { margin:0; max-width:none; width:100%; }
 #footer > section.split.contact.footer-grid { padding-left:var(--portfolio-page-gutter); padding-right:var(--portfolio-page-gutter); }
 #footer > section.split.contact.footer-grid > section { padding-left:0; padding-right:0; }
 
