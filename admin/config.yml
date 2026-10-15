@@ -23,8 +23,10 @@ collections:
             widget: object
             fields:
               - { label: Live site URL, name: url, widget: string, required: false }
-              - { label: Brand mark or initials, name: brand_mark, widget: string, required: false, hint: "A short mark shown at the top left, for example: SO." }
-              - { label: Brand name, name: brand_name, widget: string, required: false, hint: "The name beside the mark in the top navigation." }
+              - { label: Logo image, name: brand_logo, widget: image, required: false, hint: "Upload a square PNG or SVG, at least 160 × 160 pixels. It appears alone at the top left." }
+              - { label: Logo description, name: brand_logo_alt, widget: string, required: false, hint: "Briefly describe your logo for screen-reader users." }
+              - { label: Logo placeholder text, name: brand_mark, widget: string, required: false, hint: "Shown only until a logo image is uploaded, for example: LOGO." }
+              - { label: Brand name, name: brand_name, widget: string, required: false, hint: "Used as the logo description when one is not written above." }
               - label: Default colour theme
                 name: default_theme
                 widget: select

@@ -5642,24 +5642,25 @@ body,
 
 
 /* Final hero layout override. */
-#nav.top-navigation { align-items:center; display:flex; gap:.75rem; line-height:normal; padding:.65rem clamp(1.25rem,4vw,4rem); }
-#nav .nav-brand { align-items:center; border-bottom:0; color:var(--portfolio-text); display:inline-flex; flex:0 0 auto; font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:.76rem; font-weight:800; gap:.65rem; letter-spacing:.02em; margin-right:auto; text-transform:none; }
+#nav.top-navigation { align-items:center; display:flex; gap:.75rem; line-height:normal; padding:.65rem clamp(1.5rem,6vw,7rem); }
+#nav .nav-brand { align-items:center; border-bottom:0; color:var(--portfolio-text); display:inline-flex; flex:0 0 auto; font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:.76rem; font-weight:800; margin-right:auto; text-transform:none; }
 #nav .nav-brand:hover { background:transparent; color:var(--portfolio-accent) !important; }
-#nav .nav-brand-mark { align-items:center; background:var(--portfolio-text); border-radius:50%; color:var(--portfolio-surface); display:inline-flex; font-size:.62rem; height:2.2rem; justify-content:center; letter-spacing:.04em; width:2.2rem; }
+#nav .nav-brand-logo { align-items:center; background:var(--portfolio-text); border-radius:50%; color:var(--portfolio-surface); display:inline-flex; font-size:.55rem; height:2.2rem; justify-content:center; letter-spacing:.04em; overflow:hidden; width:2.2rem; }
+#nav .nav-brand-logo img { display:block; height:100%; object-fit:cover; width:100%; }
+#nav .nav-brand-mark { align-items:center; display:inline-flex; height:100%; justify-content:center; width:100%; }
 #nav.top-navigation ul.links { flex:0 1 auto; }
 #nav.top-navigation ul.links li a { padding:.75rem .85rem; }
-#nav.top-navigation ul.icons { margin-left:.15rem; }
-.theme-toggle { box-shadow:none; flex:0 0 auto; margin-left:.4rem; position:static; right:auto; top:auto; }
-#intro, #nav.top-navigation + #intro { align-items:center; display:flex; min-height:min(43rem,calc(100vh - 4.5rem)); padding:clamp(3.5rem,8vw,7rem) clamp(1.5rem,7vw,8rem); text-align:left; }
-#intro .hero-shell { align-items:center; display:grid; gap:clamp(2.5rem,7vw,8rem); grid-template-columns:minmax(0,1.12fr) minmax(16rem,.72fr); margin:0 auto; max-width:84rem; width:100%; }
+.theme-toggle, #nav .theme-toggle, #nav .theme-toggle [data-theme-toggle-label] { box-shadow:none; color:var(--portfolio-text) !important; flex:0 0 auto; margin-left:.4rem; position:static; right:auto; top:auto; }
+#intro, #nav.top-navigation + #intro { align-items:center; display:flex; min-height:min(43rem,calc(100vh - 4.5rem)); padding:clamp(3.5rem,8vw,7rem) 0; text-align:left; }
+#intro .hero-shell { align-items:center; box-sizing:border-box; display:grid; gap:clamp(2.5rem,7vw,8rem); grid-template-columns:minmax(0,1.12fr) minmax(16rem,.72fr); margin:0 auto; max-width:90rem; padding-left:clamp(1.5rem,6vw,7rem); padding-right:clamp(1.5rem,6vw,7rem); width:100%; }
 #intro .hero-content { max-width:42rem; }
 #intro .hero-kicker { color:var(--portfolio-accent); display:block; font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:.68rem; font-weight:800; letter-spacing:.12em; margin-bottom:1.4rem; text-transform:uppercase; }
-#intro h1 { font-size:clamp(3rem,6vw,5.6rem); letter-spacing:-.02em; line-height:.98; margin:0 0 1rem; max-width:12ch; }
+#intro h1 { font-size:clamp(3rem,6vw,5.6rem); letter-spacing:-.02em; line-height:.98; margin:0 0 1rem; max-width:12ch; text-transform:uppercase; }
 #intro .hero-title { color:var(--portfolio-text); font-size:clamp(1.12rem,2.1vw,1.55rem); font-weight:700; letter-spacing:.02em; line-height:1.3; margin:0; text-transform:none; }
 #intro .hero-summary { font-family:Merriweather,Georgia,serif; font-size:clamp(1rem,1.45vw,1.18rem); font-style:normal; line-height:1.65; margin:1.5rem 0 2rem; max-width:36rem; }
 #intro .hero-actions { align-items:center; display:flex; flex-wrap:wrap; gap:.85rem; margin:0; }
 #intro .hero-actions li { padding:0; }
-#intro .hero-actions .button { min-width:10rem; text-align:center; }
+#intro .hero-actions .button { border-radius:999px; min-width:10rem; text-align:center; }
 #intro .hero-contact-actions { display:flex; gap:.85rem; margin:2rem 0 0; }
 #intro .hero-contact-actions li { padding-left:0; }
 #intro .hero-contact-actions a.icon:before { align-items:center; border:1px solid var(--portfolio-border); border-radius:50%; color:var(--portfolio-text); display:inline-flex; height:2.55rem; justify-content:center; transition:border-color .2s ease,color .2s ease; width:2.55rem; }

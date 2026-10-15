@@ -172,7 +172,7 @@
         var heroLinkedin = intro.querySelector("[data-hero-linkedin]");
         var heroGithub = intro.querySelector("[data-hero-github]");
         setText(heroTitle, profile.primary_title || profile.headline);
-        setText(heroName, profile.name ? "Hi, I’m " + profile.name + "." : "Hi, I’m Segun Oluyi.");
+        setText(heroName, profile.name || "Segun Oluyi");
         setText(heroKicker, profile.hero_kicker);
         setText(heroSummary, profile.summary);
         setText(heroProjects, profile.projects_label || "View projects");
@@ -184,7 +184,8 @@
           var emailLink = contact.primary_cta_url || (contact.email ? "mailto:" + contact.email + "?subject=Portfolio%20enquiry" : "");
           if (emailLink) {
             heroEmail.href = emailLink;
-            setText(heroEmail, contact.primary_cta_label || "Email me");
+            heroEmail.setAttribute("aria-label", contact.primary_cta_label || "Email");
+            heroEmail.setAttribute("title", contact.primary_cta_label || "Email");
             if (/^https?:\/\//i.test(emailLink)) {
               heroEmail.target = "_blank";
               heroEmail.rel = "noopener noreferrer";
@@ -208,8 +209,19 @@
 
       var favicon = document.querySelector("[data-site-favicon]");
       if (favicon && site.favicon) favicon.href = versionedUrl(site.favicon);
+      document.querySelectorAll("[data-site-brand-logo]").forEach(function (image) {
+         var fallback = image.parentElement.querySelector("[data-site-brand-mark]");
+         if (site.brand_logo) {
+           image.src = versionedUrl(site.brand_logo);
+           image.alt = site.brand_logo_alt || (site.brand_name ? site.brand_name + " logo" : "Portfolio logo");
+           image.hidden = false;
+           if (fallback) fallback.hidden = true;
+         } else {
+           image.hidden = true;
+           if (fallback) fallback.hidden = false;
+         }
+       });
       document.querySelectorAll("[data-site-brand-mark]").forEach(function (element) { setText(element, site.brand_mark); });
-      document.querySelectorAll("[data-site-brand-name]").forEach(function (element) { setText(element, site.brand_name || profile.name); });
 
       if (about) {
         var aboutLabel = about.querySelector("[data-about-label]");
