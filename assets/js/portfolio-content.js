@@ -197,6 +197,8 @@
         setText(heroCv, profile.cv_label || "Download CV");
         if (heroCv && profile.cv_url) {
           heroCv.href = profile.cv_url;
+          heroCv.target = "_blank";
+          heroCv.rel = "noopener noreferrer";
           heroCv.removeAttribute("aria-disabled");
           heroCv.removeAttribute("title");
           heroCv.classList.remove("disabled");
