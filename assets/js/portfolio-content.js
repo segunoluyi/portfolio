@@ -44,31 +44,30 @@
 
   function createProject(project) {
     var article = document.createElement("article");
-    var header = document.createElement("header");
+    var content = document.createElement("div");
     var eyebrow = document.createElement("span");
     var heading = document.createElement("h2");
     var titleLink = document.createElement("a");
     var media = document.createElement("div");
     var summary = document.createElement("p");
-    var actions = document.createElement("ul");
+    var overlay = document.createElement("div");
+    var actions = document.createElement("div");
     var actionLinks = [
-      { url: project.case_study_url || project.url, label: project.case_study_label || project.button_label || "View case study" },
-      { url: project.live_url, label: "Live dashboard" },
-      { url: project.github_url, label: "View on GitHub" }
+      { url: project.case_study_url || project.url, label: project.case_study_label || "View case study" },
+      { url: project.project_url || project.live_url || project.github_url, label: project.project_label || "View project" }
     ];
     var opensExternally = /^https?:\/\//i.test(project.url || "");
 
-    article.className = "project-card";
-    eyebrow.className = "date";
+    article.className = "project-card showcase-project-card";
+    content.className = "project-card-content";
+    eyebrow.className = "project-card-eyebrow";
     eyebrow.textContent = project.eyebrow || "Project";
     titleLink.href = project.case_study_url || project.url || "#";
     if (opensExternally && (project.case_study_url || project.url)) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
     if (!(project.case_study_url || project.url)) titleLink.removeAttribute("href");
     titleLink.textContent = project.title || "Untitled project";
     heading.appendChild(titleLink);
-    header.append(eyebrow, heading);
-
-    media.className = "project-card-media";
+    media.className = "project-card-media project-card-visual";
     if (project.image) {
       var image = document.createElement("img");
       image.src = versionedUrl(project.image);
@@ -81,26 +80,29 @@
       media.classList.add("project-card-placeholder");
       media.appendChild(placeholder);
     }
-    summary.textContent = project.summary || "";
-    actions.className = "actions project-card-actions";
+    actions.className = "project-card-overlay-actions";
     actionLinks.filter(function (item) { return item.url; }).forEach(function (item) {
-      var action = document.createElement("li");
       var button = document.createElement("a");
       button.href = item.url;
-      button.className = "button small";
+      button.className = "button small project-card-overlay-button";
       button.textContent = item.label;
       if (/^https?:\/\//i.test(item.url)) { button.target = "_blank"; button.rel = "noopener noreferrer"; }
-      action.appendChild(button);
-      actions.appendChild(action);
+      actions.appendChild(button);
     });
+    if (actions.children.length) {
+      overlay.className = "project-card-overlay";
+      overlay.appendChild(actions);
+      media.appendChild(overlay);
+    }
+    summary.textContent = project.summary || "";
+    content.append(eyebrow, heading, summary);
     if (Array.isArray(project.tools) && project.tools.length) {
       var tools = document.createElement("ul");
       tools.className = "project-card-tools";
       project.tools.forEach(function (tool) { var item = document.createElement("li"); item.textContent = tool; tools.appendChild(item); });
-      article.append(header, media, summary, tools, actions);
-    } else {
-      article.append(header, media, summary, actions);
+      content.appendChild(tools);
     }
+    article.append(media, content);
     return article;
   }
 

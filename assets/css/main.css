@@ -5833,3 +5833,14 @@ body,
 .projects-page .sample-pagination { margin-top:2.5rem; }
 @media screen and (max-width:1100px) { .projects-showcase-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media screen and (max-width:736px) { .projects-page { padding-bottom:4rem !important; } .projects-page .project-page-header { padding:4.5rem 0 1.8rem; } .projects-showcase-grid { gap:1.25rem; grid-template-columns:1fr; } .showcase-project-card .project-card-visual { height:14rem; } .project-card-overlay { opacity:1; pointer-events:none; } .project-card-overlay-actions { display:none; } .showcase-project-card .project-card-content { padding:1.35rem; } }
+
+/* The home-page preview uses the same gallery component as the Projects page. */
+#projects { background:var(--portfolio-page); padding:7rem 0 2.25rem !important; }
+#projects .major { margin:0 auto; max-width:1200px; text-align:left; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
+#projects .section-divider { border:0 !important; color:var(--portfolio-text); display:block; font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:clamp(2.6rem,5vw,4.6rem); font-weight:800; letter-spacing:-.06em; line-height:1; margin:0; padding:0 0 1.2rem; position:relative; text-align:left; text-transform:none; }
+#projects .section-divider::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.25rem; left:0; position:absolute; width:4.5rem; }
+#project-grid { display:grid !important; gap:2rem !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important; margin:0 auto !important; max-width:1200px; padding:0 0 4rem !important; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
+#project-grid > .showcase-project-card { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1.25rem; box-shadow:0 1rem 2.2rem rgba(15,32,42,.1); display:flex; flex-direction:column; overflow:hidden; padding:0; }
+#project-grid > .showcase-project-card:hover { border-color:color-mix(in srgb,var(--portfolio-accent) 45%,var(--portfolio-border)); box-shadow:0 1.5rem 3rem rgba(15,32,42,.18); transform:translateY(-.6rem); }
+@media screen and (max-width:1100px) { #project-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; } }
+@media screen and (max-width:736px) { #projects { padding:4.5rem 0 1.8rem !important; } #projects .major, #project-grid { width:calc(100% - (var(--portfolio-page-gutter) * 2)); } #project-grid { gap:1.25rem !important; grid-template-columns:1fr !important; padding-bottom:3rem !important; } }
