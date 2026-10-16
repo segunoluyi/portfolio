@@ -28,7 +28,7 @@
     // one link opens the finished project, dashboard, or repository.
     var links = [
       { url: project.case_study_url || project.url, label: project.case_study_label || "View case study" },
-      { url: project.project_url || project.live_url || project.github_url, label: project.project_label || "View project" }
+      { url: project.github_url || project.project_url || project.live_url, label: project.project_label || (project.github_url ? "GitHub repo" : "View project") }
     ];
     var primaryUrl = project.case_study_url || project.url;
     var external = /^https?:\/\//i.test(primaryUrl || "");

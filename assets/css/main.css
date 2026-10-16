@@ -5802,37 +5802,39 @@ body,
 .about-page-actions .button { border-radius:999px; }
 
 /* Projects gallery: image-led cards with focused hover actions. */
-.projects-page { background:var(--portfolio-page); margin:0 auto; max-width:960px !important; padding:0 0 6rem !important; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
+.projects-page { background:var(--portfolio-page); margin:0 auto; max-width:1080px !important; padding:0 0 6rem !important; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
 .projects-page .project-page-header { margin:0; max-width:38rem; padding:5rem 0 2rem; text-align:left; }
 .projects-page .project-page-header > span { color:var(--portfolio-accent); display:block; font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:.68rem; font-weight:800; letter-spacing:.16em; margin-bottom:.9rem; text-transform:uppercase; }
 .projects-page .project-page-header h1 { color:var(--portfolio-text); font-size:2.8rem; letter-spacing:-.045em; line-height:1; margin:0; padding-bottom:1rem; position:relative; text-align:left; }
 .projects-page .project-page-header h1::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.25rem; left:0; position:absolute; width:4.5rem; }
 .projects-page .project-page-header p { color:var(--portfolio-muted); font-size:1.06rem; line-height:1.7; margin:1.5rem 0 0; max-width:38rem; text-align:left; }
 .projects-page .project-results { color:var(--portfolio-muted); font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:.7rem; font-weight:800; letter-spacing:.12em; margin:0 0 1.25rem; text-transform:uppercase; }
-.projects-showcase-grid { display:grid; gap:2rem; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; max-width:960px; }
-.projects-showcase-grid > .showcase-project-card { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1.25rem; box-shadow:0 1rem 2.2rem rgba(15,32,42,.1); display:flex; flex-direction:column; min-width:0; overflow:hidden; padding:0; text-align:left; transition:border-color .3s ease,box-shadow .3s ease,transform .35s cubic-bezier(.2,.8,.2,1); }
-.projects-showcase-grid > .showcase-project-card:hover { border-color:color-mix(in srgb,var(--portfolio-accent) 45%,var(--portfolio-border)); box-shadow:0 1.5rem 3rem rgba(15,32,42,.18); transform:translateY(-.6rem); }
-.showcase-project-card .project-card-visual { background:var(--portfolio-surface-soft); border-radius:1.2rem 1.2rem 0 0; height:12.5rem; margin:0; overflow:hidden; position:relative; width:100%; }
-.showcase-project-card .project-card-visual img { border-radius:inherit; display:block; height:100%; object-fit:cover; transition:transform .55s ease; width:100%; }
-.showcase-project-card:hover .project-card-visual img { transform:scale(1.08); }
+.projects-showcase-grid { align-items:stretch; display:grid; gap:2rem; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; max-width:1080px; }
+.projects-showcase-grid > .showcase-project-card { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1.25rem; box-shadow:0 1rem 2.2rem rgba(15,32,42,.1); display:flex; flex-direction:column; height:100%; min-width:0; overflow:hidden; padding:0; text-align:left; transition:border-color .45s ease,box-shadow .5s ease,transform .5s cubic-bezier(.2,.75,.25,1); }
+.projects-showcase-grid > .showcase-project-card:hover { border-color:transparent; box-shadow:0 1.25rem 2.8rem rgba(15,32,42,.15),0 0 1.15rem color-mix(in srgb,var(--portfolio-accent) 20%,transparent); transform:translateY(-.35rem); }
+.showcase-project-card .project-card-visual { background:var(--portfolio-surface-soft); border-radius:0; height:12.5rem; margin:0; overflow:hidden; position:relative; width:100%; }
+.showcase-project-card .project-card-visual img { border-radius:0; display:block; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.2,.75,.25,1); width:100%; }
+.showcase-project-card:hover .project-card-visual img { transform:scale(1.04); }
 .showcase-project-card .project-card-placeholder { align-items:center; background:linear-gradient(135deg,var(--portfolio-surface-soft),var(--portfolio-surface)); color:var(--portfolio-muted); display:flex; font-size:.65rem; justify-content:center; line-height:1.5; padding:2rem; }
-.project-card-overlay { align-items:center; backdrop-filter:blur(.35rem); background:color-mix(in srgb,var(--portfolio-page) 88%,transparent); display:flex; inset:0; justify-content:center; opacity:0; padding:1.5rem; position:absolute; transition:opacity .3s ease; }
+.project-card-overlay { align-items:center; backdrop-filter:blur(.35rem); background:color-mix(in srgb,var(--portfolio-page) 86%,transparent); display:flex; inset:0; justify-content:center; opacity:0; padding:1.5rem; position:absolute; transition:opacity .4s ease; }
 .showcase-project-card:hover .project-card-overlay, .showcase-project-card:focus-within .project-card-overlay { opacity:1; }
-.project-card-overlay-actions { align-items:center; display:flex; flex-direction:column; gap:.7rem; transform:translateY(.9rem); transition:transform .3s ease; width:min(100%,14rem); }
+.project-card-overlay-actions { align-items:center; display:flex; flex-direction:column; gap:.6rem; transform:translateY(.55rem); transition:transform .45s cubic-bezier(.2,.75,.25,1); width:min(100%,12rem); }
 .showcase-project-card:hover .project-card-overlay-actions, .showcase-project-card:focus-within .project-card-overlay-actions { transform:translateY(0); }
-.project-card-overlay-button.button { background:var(--portfolio-accent); border-color:var(--portfolio-accent); border-radius:999px; color:#fff !important; font-size:.62rem; letter-spacing:.08em; min-width:100%; padding:0 .9rem; text-align:center; }
-.project-card-overlay-button.button:nth-child(n+2) { background:transparent; border-color:color-mix(in srgb,#fff 65%,transparent); color:#fff !important; }
+.project-card-overlay-button.button { background:color-mix(in srgb,var(--portfolio-accent) 28%,#fff); border-color:transparent; border-radius:999px; color:#17313a !important; font-size:.52rem; height:2rem; letter-spacing:.08em; line-height:1.9rem; min-width:7.5rem; padding:0 .8rem; text-align:center; transition:background-color .25s ease,box-shadow .3s ease,color .25s ease,transform .25s ease; }
+.project-card-overlay-button.button:hover,.project-card-overlay-button.button:focus-visible { background:color-mix(in srgb,var(--portfolio-accent) 72%,#fff); box-shadow:0 0 .75rem color-mix(in srgb,var(--portfolio-accent) 42%,transparent); color:#fff !important; transform:translateY(-1px); }
+.project-card-overlay-button.button:nth-child(n+2) { background:color-mix(in srgb,var(--portfolio-surface) 82%,transparent); border-color:color-mix(in srgb,var(--portfolio-accent) 48%,var(--portfolio-border)); color:var(--portfolio-text) !important; }
+.project-card-overlay-button.button:nth-child(n+2):hover,.project-card-overlay-button.button:nth-child(n+2):focus-visible { background:color-mix(in srgb,var(--portfolio-accent) 24%,var(--portfolio-surface)); border-color:transparent; box-shadow:0 0 .65rem color-mix(in srgb,var(--portfolio-accent) 32%,transparent); color:var(--portfolio-text) !important; }
 .showcase-project-card .project-card-content { display:flex; flex:1; flex-direction:column; padding:1.65rem; }
 .showcase-project-card .project-card-eyebrow { color:var(--portfolio-accent); display:block; font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:.65rem; font-weight:800; letter-spacing:.11em; line-height:1.4; margin-bottom:.65rem; text-transform:uppercase; }
 .showcase-project-card h2 { font-size:1.2rem !important; letter-spacing:-.025em; line-height:1.24 !important; margin:0 !important; }
 .showcase-project-card h2 a { color:var(--portfolio-text); text-decoration:none; }
 .showcase-project-card h2 a:hover { color:var(--portfolio-accent); }
 .showcase-project-card .project-card-content > p { color:var(--portfolio-muted); font-size:.9rem; line-height:1.65; margin:1rem 0 1.25rem; }
-.showcase-project-card .project-card-tools { gap:.45rem; margin:auto 0 0; }
-.showcase-project-card .project-card-tools li { background:color-mix(in srgb,var(--portfolio-accent) 10%,var(--portfolio-surface)); border:1px solid color-mix(in srgb,var(--portfolio-accent) 20%,var(--portfolio-border)); color:var(--portfolio-accent); font-size:.61rem; padding:.3rem .56rem; }
+.showcase-project-card .project-card-tools { gap:.3rem; margin:auto 0 0; }
+.showcase-project-card .project-card-tools li { background:color-mix(in srgb,var(--portfolio-accent) 10%,var(--portfolio-surface)); border:1px solid color-mix(in srgb,var(--portfolio-accent) 20%,var(--portfolio-border)); color:var(--portfolio-accent); font-size:.5rem; line-height:1.15; padding:.22rem .42rem; white-space:nowrap; }
 .projects-page .sample-pagination { margin-top:2.5rem; }
 @media screen and (max-width:1100px) { .projects-showcase-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media screen and (max-width:736px) { .projects-page { padding-bottom:4rem !important; } .projects-page .project-page-header { padding:4.5rem 0 1.8rem; } .projects-showcase-grid { gap:1.25rem; grid-template-columns:1fr; } .showcase-project-card .project-card-visual { height:14rem; } .project-card-overlay { opacity:1; pointer-events:none; } .project-card-overlay-actions { display:none; } .showcase-project-card .project-card-content { padding:1.35rem; } }
+@media screen and (max-width:736px) { .projects-page { padding-bottom:4rem !important; } .projects-page .project-page-header { padding:4.5rem 0 1.8rem; } .projects-showcase-grid { gap:1.25rem; grid-template-columns:1fr; } .showcase-project-card .project-card-visual { height:14rem; } .project-card-overlay { opacity:1; pointer-events:auto; } .project-card-overlay-actions { display:flex; transform:none; } .showcase-project-card .project-card-content { padding:1.35rem; } }
 
 /* The home-page preview uses the same gallery component as the Projects page. */
 #projects { background:var(--portfolio-page); padding:5rem 0 2rem !important; }
@@ -5841,7 +5843,9 @@ body,
 #main > #projects.post.featured header.major > .date.section-divider::before { border:0 !important; content:none !important; display:none !important; }
 #main > #projects.post.featured header.major > .date.section-divider::after { background:var(--portfolio-accent) !important; border:0 !important; border-radius:99px; bottom:0 !important; content:""; display:block !important; height:.25rem; left:0 !important; position:absolute; right:auto !important; top:auto !important; width:4.5rem !important; }
 #main > #project-grid { display:grid !important; gap:2rem !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important; margin-left:auto !important; margin-right:auto !important; max-width:1080px !important; padding:0 0 4rem !important; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
-#project-grid > .showcase-project-card { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1.25rem; box-shadow:0 1rem 2.2rem rgba(15,32,42,.1); display:flex; flex-direction:column; overflow:hidden; padding:0; }
-#project-grid > .showcase-project-card:hover { border-color:color-mix(in srgb,var(--portfolio-accent) 45%,var(--portfolio-border)); box-shadow:0 1.5rem 3rem rgba(15,32,42,.18); transform:translateY(-.6rem); }
+#project-grid > .showcase-project-card { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1.25rem; box-shadow:0 1rem 2.2rem rgba(15,32,42,.1); display:flex; flex-direction:column; height:100%; overflow:hidden; padding:0; transition:border-color .45s ease,box-shadow .5s ease,transform .5s cubic-bezier(.2,.75,.25,1); }
+#project-grid > .showcase-project-card:hover { border-color:transparent; box-shadow:0 1.25rem 2.8rem rgba(15,32,42,.15),0 0 1.15rem color-mix(in srgb,var(--portfolio-accent) 20%,transparent); transform:translateY(-.35rem); }
+#main > .collection-actions .button { background:transparent; border-color:var(--portfolio-border); border-radius:999px; color:var(--portfolio-text) !important; font-size:.58rem; height:2.35rem; line-height:2.2rem; padding:0 1.15rem; transition:background-color .25s ease,border-color .25s ease,color .25s ease; }
+#main > .collection-actions .button:hover,#main > .collection-actions .button:focus-visible { background:color-mix(in srgb,var(--portfolio-accent) 9%,var(--portfolio-surface)); border-color:var(--portfolio-accent); box-shadow:none; color:var(--portfolio-accent) !important; transform:none; }
 @media screen and (max-width:1100px) { #main > #project-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; } }
 @media screen and (max-width:736px) { #projects { padding:4.5rem 0 1.8rem !important; } #projects .major, #project-grid { width:calc(100% - (var(--portfolio-page-gutter) * 2)); } #project-grid { gap:1.25rem !important; grid-template-columns:1fr !important; padding-bottom:3rem !important; } }

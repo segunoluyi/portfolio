@@ -78,10 +78,10 @@ collections:
               - { label: Legacy project or case-study URL, name: url, widget: string, required: false, hint: "Existing cards can keep using this as their case-study link. New cards should use the two fields below." }
               - { label: Case-study URL, name: case_study_url, widget: string, required: false, hint: "First hover button: View case study." }
               - { label: Case-study button label, name: case_study_label, widget: string, required: false, hint: "Optional. Defaults to View case study." }
-              - { label: Project URL, name: project_url, widget: string, required: false, hint: "Second hover button: a live dashboard, project page, or repository." }
-              - { label: Project button label, name: project_label, widget: string, required: false, hint: "Optional. Defaults to View project." }
-              - { label: Live dashboard URL, name: live_url, widget: string, required: false, hint: "Used as the project link when Project URL is blank." }
-              - { label: GitHub repository URL, name: github_url, widget: string, required: false, hint: "Used as the project link when Project URL and Live dashboard URL are blank." }
+              - { label: GitHub repository URL, name: github_url, widget: string, required: false, hint: "Second hover button: GitHub repo. Paste the repository for this specific project." }
+              - { label: Project URL, name: project_url, widget: string, required: false, hint: "Used for the second hover button when no GitHub repository is provided." }
+              - { label: Project button label, name: project_label, widget: string, required: false, hint: "Optional. Defaults to GitHub repo when a repository URL is provided, otherwise View project." }
+              - { label: Live dashboard URL, name: live_url, widget: string, required: false, hint: "Used for the second hover button when both GitHub repository and Project URL are blank." }
               - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
           - label: Work samples library
             name: samples

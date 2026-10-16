@@ -54,17 +54,18 @@
     var actions = document.createElement("div");
     var actionLinks = [
       { url: project.case_study_url || project.url, label: project.case_study_label || "View case study" },
-      { url: project.project_url || project.live_url || project.github_url, label: project.project_label || "View project" }
+      { url: project.github_url || project.project_url || project.live_url, label: project.project_label || (project.github_url ? "GitHub repo" : "View project") }
     ];
-    var opensExternally = /^https?:\/\//i.test(project.url || "");
+    var primaryUrl = project.case_study_url || project.url;
+    var opensExternally = /^https?:\/\//i.test(primaryUrl || "");
 
     article.className = "project-card showcase-project-card";
     content.className = "project-card-content";
     eyebrow.className = "project-card-eyebrow";
     eyebrow.textContent = project.eyebrow || "Project";
-    titleLink.href = project.case_study_url || project.url || "#";
-    if (opensExternally && (project.case_study_url || project.url)) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
-    if (!(project.case_study_url || project.url)) titleLink.removeAttribute("href");
+    titleLink.href = primaryUrl || "#";
+    if (opensExternally && primaryUrl) { titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; }
+    if (!primaryUrl) titleLink.removeAttribute("href");
     titleLink.textContent = project.title || "Untitled project";
     heading.appendChild(titleLink);
     media.className = "project-card-media project-card-visual";
