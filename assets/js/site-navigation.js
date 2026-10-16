@@ -63,8 +63,10 @@
     .then(function (response) { return response.ok ? response.json() : null; })
     .then(function (content) {
       var site = content && content.site ? content.site : {};
-      var image = nav.querySelector("[data-site-brand-logo]");
-      var fallback = nav.querySelector("[data-site-brand-mark]");
+      // main.js may move the shared navigation into its responsive panel.
+      // Look from the document so the CMS logo is applied in either location.
+      var image = document.querySelector("[data-site-brand-logo]");
+      var fallback = document.querySelector("[data-site-brand-mark]");
       var favicon = document.querySelector("[data-site-favicon]");
       if (site.brand_logo && image) {
         image.src = pageUrl(site.brand_logo) + "?v=" + Date.now();
