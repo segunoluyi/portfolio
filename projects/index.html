@@ -29,23 +29,14 @@
       </nav>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme"><span class="icon solid fa-moon" aria-hidden="true"></span><span data-theme-toggle-label>Dark theme</span></button>
       <div id="main">
-        <section class="post">
-          <header class="major">
-            <h1>Data and business projects</h1>
-            <p>Selected analytical, business, and technical projects. Newer work appears first.</p>
+        <section class="post projects-page">
+          <header class="project-page-header">
+            <span>Selected work</span>
+            <h1>Projects</h1>
+            <p>Data, business, and analytical work shaped into clear findings and practical decisions.</p>
           </header>
-          <form class="sample-filters" onsubmit="return false;">
-            <div class="field">
-              <label for="project-search">Search projects</label>
-              <input id="project-search" type="search" placeholder="Search by title, tool, or topic" />
-            </div>
-            <div class="field">
-              <label for="project-filter">Tool or area</label>
-              <select id="project-filter"><option value="">Filter by tool or area</option></select>
-            </div>
-          </form>
-          <p id="project-results" class="sample-results" aria-live="polite">Loading projects...</p>
-          <section class="posts compact-grid" id="projects-grid" aria-label="Portfolio projects"></section>
+          <p id="project-results" class="project-results" aria-live="polite">Loading projects...</p>
+          <section class="projects-showcase-grid" id="projects-grid" aria-label="Portfolio projects"></section>
           <nav id="project-pagination" class="sample-pagination" aria-label="Project pages"></nav>
         </section>
       </div>
