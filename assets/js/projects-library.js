@@ -24,10 +24,11 @@
     var summary = document.createElement("p");
     var overlay = document.createElement("div");
     var actions = document.createElement("div");
+    // Keep the hover treatment purposeful: one link explains the work and
+    // one link opens the finished project, dashboard, or repository.
     var links = [
-      { url: project.case_study_url || project.url, label: project.case_study_label || project.button_label || "View case study" },
-      { url: project.live_url, label: "Live dashboard" },
-      { url: project.github_url, label: "View on GitHub" }
+      { url: project.case_study_url || project.url, label: project.case_study_label || "View case study" },
+      { url: project.project_url || project.live_url || project.github_url, label: project.project_label || "View project" }
     ];
     var primaryUrl = project.case_study_url || project.url;
     var external = /^https?:\/\//i.test(primaryUrl || "");

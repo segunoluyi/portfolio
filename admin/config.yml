@@ -75,12 +75,13 @@ collections:
                 widget: list
                 required: false
                 field: { label: Tool, name: tool, widget: string }
-              - { label: Project or case-study URL, name: url, widget: string, required: false }
-              - { label: Button label, name: button_label, widget: string, required: false }
-              - { label: Case-study URL, name: case_study_url, widget: string, required: false, hint: "Optional. If supplied, this becomes the primary card link." }
-              - { label: Case-study button label, name: case_study_label, widget: string, required: false }
-              - { label: Live dashboard URL, name: live_url, widget: string, required: false }
-              - { label: GitHub repository URL, name: github_url, widget: string, required: false }
+              - { label: Legacy project or case-study URL, name: url, widget: string, required: false, hint: "Existing cards can keep using this as their case-study link. New cards should use the two fields below." }
+              - { label: Case-study URL, name: case_study_url, widget: string, required: false, hint: "First hover button: View case study." }
+              - { label: Case-study button label, name: case_study_label, widget: string, required: false, hint: "Optional. Defaults to View case study." }
+              - { label: Project URL, name: project_url, widget: string, required: false, hint: "Second hover button: a live dashboard, project page, or repository." }
+              - { label: Project button label, name: project_label, widget: string, required: false, hint: "Optional. Defaults to View project." }
+              - { label: Live dashboard URL, name: live_url, widget: string, required: false, hint: "Used as the project link when Project URL is blank." }
+              - { label: GitHub repository URL, name: github_url, widget: string, required: false, hint: "Used as the project link when Project URL and Live dashboard URL are blank." }
               - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
           - label: Work samples library
             name: samples
