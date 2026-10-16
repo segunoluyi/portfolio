@@ -5752,3 +5752,51 @@ body,
   #main > .collection-actions { padding-top:2rem; padding-bottom:4rem; }
   #footer > section.split.contact.footer-grid > section { padding-left:0; padding-right:0; }
 }
+
+/* Dedicated About page: a clear page label and readable long-form introduction. */
+#main > .post.featured.about-page {
+  min-height:calc(100vh - 4.5rem);
+  padding-bottom:clamp(5rem, 10vw, 9rem);
+  padding-top:clamp(6rem, 10vw, 10rem);
+}
+
+#main > .post.featured.about-page header.major {
+  margin:0;
+  max-width:52rem;
+  text-align:left;
+}
+
+.about-page-eyebrow {
+  color:var(--portfolio-accent);
+  display:block;
+  font-family:"Montserrat", "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  font-size:.78rem;
+  font-weight:300;
+  letter-spacing:.22em;
+  margin-bottom:1.25rem;
+  text-transform:uppercase;
+}
+
+#main > .post.featured.about-page h1 {
+  font-size:clamp(2.8rem, 5vw, 5rem);
+  line-height:1.04;
+  margin:0;
+  max-width:14ch;
+  text-transform:none;
+}
+
+.about-page-copy {
+  margin-top:2.5rem;
+  max-width:52rem;
+}
+
+.about-page-copy p {
+  color:var(--portfolio-muted) !important;
+  font-family:Merriweather, Georgia, serif;
+  font-size:clamp(1rem, 1.35vw, 1.15rem);
+  line-height:1.85;
+  margin:0 0 1.35rem;
+}
+
+.about-page-actions { margin:2.5rem 0 0; }
+.about-page-actions .button { border-radius:999px; }

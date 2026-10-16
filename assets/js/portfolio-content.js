@@ -3,6 +3,13 @@
 
   // Fetch CMS content fresh, but keep image URLs stable so browsers can reuse cached covers.
   var contentRevision = String(Date.now());
+  var documentRoot = document.documentElement;
+  var contentPath = documentRoot.getAttribute("data-content-path") || "content/portfolio.json";
+  var assetPrefix = documentRoot.getAttribute("data-asset-prefix") || "";
+  function assetUrl(value) {
+    if (!value || /^(?:[a-z]+:|\/)/i.test(value)) return value;
+    return assetPrefix + value;
+  }
   function versionedUrl(value) {
     if (!value || /^data:/i.test(value)) return value;
     return value;
@@ -197,7 +204,7 @@
     });
   }
 
-  fetch("content/portfolio.json?cb=" + contentRevision, { cache: "no-store" })
+  fetch(contentPath + (contentPath.indexOf("?") === -1 ? "?" : "&") + "cb=" + contentRevision, { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("Portfolio content could not be loaded.");
       return response.json();
@@ -232,7 +239,7 @@
         setText(heroSummary, profile.summary);
         setText(heroProjects, profile.projects_label || "View projects");
         if (heroImage && profile.headshot) {
-          heroImage.src = versionedUrl(profile.headshot);
+          heroImage.src = versionedUrl(assetUrl(profile.headshot));
           heroImage.alt = profile.headshot_alt || (profile.name ? "Professional headshot of " + profile.name : "Professional headshot");
         }
         renderSocialLinks(heroSocialLinks, socialLinks(contact, profile));
@@ -249,13 +256,13 @@
 
       var favicon = document.querySelector("[data-site-favicon]");
       if (favicon && site.favicon) {
-        favicon.href = refreshedUrl(site.favicon);
+        favicon.href = refreshedUrl(assetUrl(site.favicon));
         favicon.type = /\.svg(?:$|\?)/i.test(site.favicon) ? "image/svg+xml" : "image/png";
       }
       document.querySelectorAll("[data-site-brand-logo]").forEach(function (image) {
          var fallback = image.parentElement.querySelector("[data-site-brand-mark]");
          if (site.brand_logo) {
-           image.src = refreshedUrl(site.brand_logo);
+           image.src = refreshedUrl(assetUrl(site.brand_logo));
            image.alt = site.brand_logo_alt || (site.brand_name ? site.brand_name + " logo" : "Portfolio logo");
            image.hidden = false;
            if (fallback) fallback.hidden = true;
@@ -268,11 +275,18 @@
 
       if (about) {
         var aboutLabel = about.querySelector("[data-about-label]");
-        var aboutHeading = about.querySelector("h2");
-        var aboutSummary = about.querySelector("p");
+        var aboutHeading = about.querySelector("h1, h2");
+        var aboutSummary = about.querySelector("[data-about-summary]");
         setText(aboutLabel, aboutContent.label);
         setText(aboutHeading, aboutContent.heading);
-        setText(aboutSummary, aboutContent.summary);
+        if (aboutSummary) {
+          aboutSummary.replaceChildren();
+          String(aboutContent.summary || "").split(/\n\s*\n/).filter(Boolean).forEach(function (paragraphText) {
+            var paragraph = document.createElement("p");
+            paragraph.textContent = paragraphText.trim();
+            aboutSummary.appendChild(paragraph);
+          });
+        }
       }
 
       if (grid && Array.isArray(content.projects)) {
