@@ -105,7 +105,7 @@ collections:
                 widget: list
                 field: { label: Point, name: point, widget: string }
               - { label: Order or contact URL, name: url, widget: string, required: false, hint: "Paste the exact service destination. Leave blank to use the main contact button. Use a public freelance package URL only when the offer and price are ready." }
-              - { label: Button label, name: button_label, widget: string, required: false, default: "Discuss this service" }
+              - { label: Button label, name: button_label, widget: string, required: false, default: "Discuss Project" }
           - label: Work samples library
             name: samples
             widget: list
