@@ -75,14 +75,37 @@ collections:
                 widget: list
                 required: false
                 field: { label: Tool, name: tool, widget: string }
-              - { label: Legacy project or case-study URL, name: url, widget: string, required: false, hint: "Existing cards can keep using this as their case-study link. New cards should use the two fields below." }
-              - { label: Case-study URL, name: case_study_url, widget: string, required: false, hint: "First hover button: View case study." }
-              - { label: Case-study button label, name: case_study_label, widget: string, required: false, hint: "Optional. Defaults to View case study." }
-              - { label: GitHub repository URL, name: github_url, widget: string, required: false, hint: "Second hover button: GitHub repo. Paste the repository for this specific project." }
-              - { label: Project URL, name: project_url, widget: string, required: false, hint: "Used for the second hover button when no GitHub repository is provided." }
-              - { label: Project button label, name: project_label, widget: string, required: false, hint: "Optional. Defaults to GitHub repo when a repository URL is provided, otherwise View project." }
-              - { label: Live dashboard URL, name: live_url, widget: string, required: false, hint: "Used for the second hover button when both GitHub repository and Project URL are blank." }
+              - { label: Legacy documentation URL, name: url, widget: string, required: false, hint: "Existing cards can keep using this for documentation. New projects should use the GitHub repository field." }
+              - { label: Alternative documentation URL, name: case_study_url, widget: string, required: false, hint: "Use when the documentation is hosted somewhere other than GitHub." }
+              - { label: Documentation button label, name: case_study_label, widget: string, required: false, hint: "Optional. Defaults to View documentation when there is no GitHub repository." }
+              - { label: GitHub repository URL, name: github_url, widget: string, required: false, hint: "First hover button: View repo. Use this for the README and supporting project files." }
+              - { label: Published project URL, name: project_url, widget: string, required: false, hint: "Second hover button: View project. Use for the platform where visitors can interact with the finished work." }
+              - { label: Project button label, name: project_label, widget: string, required: false, hint: "Optional. Examples: View dashboard, Open app, View report, View workbook." }
+              - { label: Live project URL, name: live_url, widget: string, required: false, hint: "Preferred published destination, such as Power BI Service, Tableau Public, Streamlit, GitHub Pages, or a public workbook." }
               - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
+          - label: Services
+            name: services
+            widget: list
+            required: false
+            hint: "Services shown on the homepage. Each card can link to email, LinkedIn, a booking page, Fiverr, Upwork, Contra, or another ordering channel."
+            fields:
+              - { label: Service title, name: title, widget: string }
+              - label: Icon
+                name: icon
+                widget: select
+                required: false
+                options:
+                  - { label: Data chart, value: "fa-chart-bar" }
+                  - { label: Dashboard, value: "fa-desktop" }
+                  - { label: Research, value: "fa-search" }
+                  - { label: Document, value: "fa-file-alt" }
+                  - { label: Training, value: "fa-chalkboard-teacher" }
+              - label: Service points
+                name: points
+                widget: list
+                field: { label: Point, name: point, widget: string }
+              - { label: Order or contact URL, name: url, widget: string, required: false, hint: "Paste the exact service destination. Leave blank to use the main contact button." }
+              - { label: Button label, name: button_label, widget: string, required: false, default: "Request service" }
           - label: Work samples library
             name: samples
             widget: list

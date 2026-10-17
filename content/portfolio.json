@@ -232,5 +232,62 @@
     "summary": "Join the email list for new case studies, work samples, and practical resources.",
     "subscribe_url": "",
     "button_label": "Join the update list"
-  }
+  },
+  "services": [
+    {
+      "title": "Data Analysis & Reporting",
+      "icon": "fa-chart-bar",
+      "points": [
+        "Excel, SQL, and Power BI analysis",
+        "KPI reporting and performance reviews",
+        "Clear findings and recommendations"
+      ],
+      "url": "mailto:oluyisegun@gmail.com?subject=Data%20analysis%20service",
+      "button_label": "Request service"
+    },
+    {
+      "title": "Power BI Dashboards",
+      "icon": "fa-desktop",
+      "points": [
+        "Interactive report development",
+        "Data modelling and DAX measures",
+        "Dashboard redesign and documentation"
+      ],
+      "url": "mailto:oluyisegun@gmail.com?subject=Power%20BI%20dashboard%20service",
+      "button_label": "Request service"
+    },
+    {
+      "title": "Research & Business Insight",
+      "icon": "fa-search",
+      "points": [
+        "Market and competitor research",
+        "Business-question investigation",
+        "Decision-ready insight reports"
+      ],
+      "url": "mailto:oluyisegun@gmail.com?subject=Research%20and%20business%20insight%20service",
+      "button_label": "Request service"
+    },
+    {
+      "title": "Business Plans & Proposals",
+      "icon": "fa-file-alt",
+      "points": [
+        "Business and operational planning",
+        "Market, strategy, and financial sections",
+        "Investor and funding-ready documents"
+      ],
+      "url": "mailto:oluyisegun@gmail.com?subject=Business%20plan%20or%20proposal%20service",
+      "button_label": "Request service"
+    },
+    {
+      "title": "Analytics Training",
+      "icon": "fa-chalkboard-teacher",
+      "points": [
+        "Excel and Power BI instruction",
+        "Practical learning materials",
+        "Team and cohort-based delivery"
+      ],
+      "url": "mailto:oluyisegun@gmail.com?subject=Analytics%20training%20service",
+      "button_label": "Request service"
+    }
+  ]
 }

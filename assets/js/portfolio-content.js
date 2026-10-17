@@ -26,7 +26,7 @@
 
   function cssUrl(value) {
     if (!value) return "";
-    return 'url("' + String(value).replace(/["\\\r\n]/g, "").replace(/ /g, "%20") + '")';
+    return 'url("' + String(value).replace(/["\\\n]/g, "").replace(/ /g, "%20") + '")';
   }
 
   function newestFirst(items) {
@@ -52,11 +52,13 @@
     var summary = document.createElement("p");
     var overlay = document.createElement("div");
     var actions = document.createElement("div");
+    var documentationUrl = project.github_url || project.case_study_url || project.url;
+    var liveProjectUrl = project.live_url || project.project_url;
     var actionLinks = [
-      { url: project.case_study_url || project.url, label: project.case_study_label || "View case study" },
-      { url: project.github_url || project.project_url || project.live_url, label: project.project_label || (project.github_url ? "GitHub repo" : "View project") }
+      { url: documentationUrl, label: project.github_url ? "View repo" : (project.case_study_label || project.button_label || "View documentation") },
+      { url: liveProjectUrl, label: project.project_label || "View project" }
     ];
-    var primaryUrl = project.case_study_url || project.url;
+    var primaryUrl = documentationUrl;
     var opensExternally = /^https?:\/\//i.test(primaryUrl || "");
 
     article.className = "project-card showcase-project-card";
@@ -155,6 +157,24 @@
     return article;
   }
 
+  function createService(service, contact) {
+    var article = document.createElement("article");
+    var icon = document.createElement("span");
+    var heading = document.createElement("h3");
+    var points = document.createElement("ul");
+    var link = document.createElement("a");
+    article.className = "service-card";
+    icon.className = "service-icon icon solid " + (service.icon || "fa-check");
+    heading.textContent = service.title || "Service";
+    (Array.isArray(service.points) ? service.points : []).forEach(function (point) { var item = document.createElement("li"); item.textContent = point; points.appendChild(item); });
+    link.className = "service-link";
+    link.href = service.url || contact.primary_cta_url || (contact.email ? "mailto:" + contact.email : "#footer");
+    link.textContent = service.button_label || "Request service";
+    if (/^https?:\/\//i.test(link.href)) { link.target = "_blank"; link.rel = "noopener noreferrer"; }
+    article.append(icon, heading, points, link);
+    return article;
+  }
+
   var socialPlatforms = {
     email: { icon: "solid fa-envelope", label: "Email" },
     linkedin: { icon: "brands fa-linkedin-in", label: "LinkedIn" },
@@ -218,12 +238,18 @@
       var about = document.querySelector("[data-about]");
       var samplePreviewGrid = document.querySelector("#sample-preview-grid");
       var insightsGrid = document.querySelector("#insights-grid");
+      var servicesGrid = document.querySelector("[data-services-grid]");
       var newsletterSection = document.querySelector("[data-newsletter]");
       var projectCardsSection = document.querySelector("[data-project-cards-section]");
       var site = content.site || {};
       var profile = content.profile || {};
       var aboutContent = content.about || {};
       var contact = content.contact || {};
+
+      if (servicesGrid && Array.isArray(content.services) && content.services.length) {
+        servicesGrid.replaceChildren();
+        content.services.forEach(function (service) { servicesGrid.appendChild(createService(service, contact)); });
+      }
 
       if (window.portfolioTheme) window.portfolioTheme.applyDefault(site.default_theme);
 

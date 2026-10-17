@@ -20,24 +20,25 @@
 
   function createSampleCard(sample) {
     var article = document.createElement("article");
-    var header = document.createElement("header");
+    var content = document.createElement("div");
     var industry = document.createElement("span");
     var heading = document.createElement("h2");
     var link = document.createElement("a");
     var cover = document.createElement("div");
     var summary = document.createElement("p");
-    var actions = document.createElement("ul");
-    var action = document.createElement("li");
-    var button = document.createElement("a");
+    var overlay = document.createElement("div");
+    var actions = document.createElement("div");
+    var detailUrl = sample.slug ? sample.slug + "/" : "#";
 
-    industry.className = "date";
+    article.className = "project-card showcase-project-card sample-showcase-card";
+    content.className = "project-card-content";
+    industry.className = "project-card-eyebrow";
     industry.textContent = sample.industry || "Work sample";
-    link.href = sample.slug ? sample.slug + "/" : "#";
+    link.href = detailUrl;
     link.textContent = sample.title || "Untitled sample";
     heading.appendChild(link);
-    header.append(industry, heading);
 
-    cover.className = "sample-cover";
+    cover.className = "project-card-media project-card-visual sample-cover";
     if (sample.cover_image) {
       var image = document.createElement("img");
       image.src = versionedUrl(/^(?:https?:|data:|\/)/i.test(sample.cover_image) ? sample.cover_image : "../" + sample.cover_image.replace(/^\.\//, ""));
@@ -54,13 +55,29 @@
     }
 
     summary.textContent = sample.summary || "";
-    actions.className = "actions special";
-    button.className = "button";
-    button.href = sample.slug ? sample.slug + "/" : "#";
-    button.textContent = sample.button_label || "View sample";
-    action.appendChild(button);
-    actions.appendChild(action);
-    article.append(header, cover, summary, actions);
+    actions.className = "project-card-overlay-actions";
+    [{ url: detailUrl, label: "View details" }, { url: sample.url, label: sample.button_label || "View document" }].filter(function (item) { return item.url; }).forEach(function (item) {
+      var button = document.createElement("a");
+      button.className = "button small project-card-overlay-button";
+      button.href = item.url;
+      button.textContent = item.label;
+      if (/^https?:\/\//i.test(item.url)) { button.target = "_blank"; button.rel = "noopener noreferrer"; }
+      actions.appendChild(button);
+    });
+    overlay.className = "project-card-overlay";
+    overlay.appendChild(actions);
+    cover.appendChild(overlay);
+    summary.textContent = sample.summary || "";
+    content.append(industry, heading, summary);
+    if (sample.content_type) {
+      var tags = document.createElement("ul");
+      tags.className = "project-card-tools";
+      var tag = document.createElement("li");
+      tag.textContent = sample.content_type;
+      tags.appendChild(tag);
+      content.appendChild(tags);
+    }
+    article.append(cover, content);
     return article;
   }
 

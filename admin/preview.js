@@ -81,13 +81,13 @@
 
       var projectCards = projects ? projects.map(function (project, index) {
         var projectImage = value(project, "image");
-        var caseStudyUrl = value(project, "case_study_url") || value(project, "url");
+        var caseStudyUrl = value(project, "github_url") || value(project, "case_study_url") || value(project, "url");
         var githubUrl = value(project, "github_url");
-        var projectUrl = githubUrl || value(project, "project_url") || value(project, "live_url");
+        var projectUrl = value(project, "live_url") || value(project, "project_url");
         var tools = listValues(project.get("tools"));
         var actionItems = [];
-        if (caseStudyUrl) actionItems.push(h("span", { className:"portfolio-preview__button", key:"case" }, value(project, "case_study_label", "View case study")));
-        if (projectUrl) actionItems.push(h("span", { className:"portfolio-preview__button portfolio-preview__button--secondary", key:"project" }, value(project, "project_label", githubUrl ? "GitHub repo" : "View project")));
+        if (caseStudyUrl) actionItems.push(h("span", { className:"portfolio-preview__button", key:"case" }, githubUrl ? "View repo" : value(project, "case_study_label", "View documentation")));
+        if (projectUrl) actionItems.push(h("span", { className:"portfolio-preview__button portfolio-preview__button--secondary", key:"project" }, value(project, "project_label", "View project")));
         var mediaChildren = [projectImage ? image(projectImage) : h("span", { className:"portfolio-preview__placeholder" }, value(project, "status", "Project documentation in preparation"))];
         if (actionItems.length) mediaChildren.push(h("div", { className:"portfolio-preview__overlay" }, h("div", { className:"portfolio-preview__actions" }, actionItems)));
         return h("article", { className:"portfolio-preview__card", key:index }, [

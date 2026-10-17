@@ -26,11 +26,13 @@
     var actions = document.createElement("div");
     // Keep the hover treatment purposeful: one link explains the work and
     // one link opens the finished project, dashboard, or repository.
+    var documentationUrl = project.github_url || project.case_study_url || project.url;
+    var liveProjectUrl = project.live_url || project.project_url;
     var links = [
-      { url: project.case_study_url || project.url, label: project.case_study_label || "View case study" },
-      { url: project.github_url || project.project_url || project.live_url, label: project.project_label || (project.github_url ? "GitHub repo" : "View project") }
+      { url: documentationUrl, label: project.github_url ? "View repo" : (project.case_study_label || project.button_label || "View documentation") },
+      { url: liveProjectUrl, label: project.project_label || "View project" }
     ];
-    var primaryUrl = project.case_study_url || project.url;
+    var primaryUrl = documentationUrl;
     var external = /^https?:\/\//i.test(primaryUrl || "");
 
     article.className = "project-card showcase-project-card";
