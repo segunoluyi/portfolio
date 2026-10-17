@@ -5918,6 +5918,9 @@ body, input, select, textarea, button,
 #samples-grid .sample-cover.has-image { aspect-ratio:auto; background:var(--portfolio-surface-soft); height:11rem; min-height:0; }
 #samples-grid .sample-cover.has-image img { height:100%; object-fit:cover; width:100%; }
 
+@media screen and (max-width:1100px) {
+  .service-overview,.services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
 @media screen and (max-width:980px) {
   .services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .workflow-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
