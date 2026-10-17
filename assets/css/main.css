@@ -5866,7 +5866,7 @@ body, input, select, textarea, button,
 }
 
 #nav.top-navigation { box-sizing:border-box; margin:0; max-width:none; padding:.65rem max(1.5rem,calc((100% - 1080px)/2)); width:100%; }
-#intro, #nav.top-navigation + #intro { min-height:calc(100vh - 4rem); padding:6rem 0 5rem; }
+#intro, #nav.top-navigation + #intro { min-height:calc(86vh - 4rem); padding:4rem 0; }
 #intro .hero-shell { gap:clamp(2rem,4vw,4rem); grid-template-columns:minmax(0,1.2fr) minmax(16rem,.8fr); padding:0; }
 #intro .hero-kicker { font-size:.72rem; letter-spacing:3.6px; margin-bottom:1.25rem; padding:5px 14px; }
 #intro h1 { font-size:clamp(3rem,4.2vw,4rem); line-height:1.05; margin-bottom:.8rem; max-width:none; white-space:nowrap; }
@@ -5878,16 +5878,17 @@ body, input, select, textarea, button,
 .home-section-header { margin:0 auto 2.5rem; max-width:42rem; text-align:center; }
 .home-section-header > span { color:var(--portfolio-accent); display:block; font-size:.63rem; font-weight:700; letter-spacing:.15em; margin-bottom:.55rem; text-transform:uppercase; }
 .home-section-header h2 { font-size:2rem; letter-spacing:-.035em; margin:0 0 .85rem; text-transform:none; }
-.home-section-header p { color:var(--portfolio-muted); font-size:.85rem; line-height:1.65; margin:0; }
-.services-grid { display:grid; gap:1.1rem; grid-template-columns:repeat(3,minmax(0,1fr)); }
+.home-section-header p { color:var(--portfolio-muted); font-size:.85rem; font-style:normal; line-height:1.65; margin:0; text-align:center; }
+.services-grid { display:grid; gap:1.25rem; grid-template-columns:repeat(2,minmax(0,1fr)); }
 .service-card { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1rem; box-shadow:var(--portfolio-shadow); display:flex; flex-direction:column; min-height:20rem; padding:1.55rem; transition:border-color .4s ease,box-shadow .45s ease,transform .45s ease; }
 .service-card:hover { border-color:color-mix(in srgb,var(--portfolio-accent) 55%,var(--portfolio-border)); box-shadow:0 1rem 2rem rgba(15,32,42,.12),0 0 .8rem color-mix(in srgb,var(--portfolio-accent) 16%,transparent); transform:translateY(-.25rem); }
 .service-icon { align-items:center; background:var(--portfolio-surface-soft); border:1px solid var(--portfolio-border); border-radius:.7rem; color:var(--portfolio-accent); display:flex; height:2.3rem; justify-content:center; margin-bottom:1.2rem; width:2.3rem; }
 .service-card h3 { font-size:1rem; letter-spacing:-.01em; margin:0 0 1rem; text-transform:none; }
 .service-card ul { color:var(--portfolio-muted); font-size:.76rem; line-height:1.65; margin:0 0 1.3rem; padding-left:1rem; }
 .service-card li { margin-bottom:.55rem; }
-.service-link { border-bottom:1px solid var(--portfolio-accent); color:var(--portfolio-accent); font-size:.64rem; font-weight:700; letter-spacing:.08em; margin-top:auto; padding-bottom:.2rem; text-transform:uppercase; width:max-content; }
-.service-platforms { align-items:center; display:flex; gap:.7rem; justify-content:center; margin-top:2rem; }
+.service-link { align-items:center; background:color-mix(in srgb,var(--portfolio-accent) 12%,var(--portfolio-surface)); border:1px solid color-mix(in srgb,var(--portfolio-accent) 45%,var(--portfolio-border)); border-radius:999px; color:var(--portfolio-accent); display:inline-flex; font-size:.66rem; font-weight:700; justify-content:center; letter-spacing:.04em; margin-top:auto; min-height:2.4rem; padding:.45rem 1rem; text-decoration:none; transition:background-color .25s ease,border-color .25s ease,color .25s ease; width:max-content; }
+.service-link:hover,.service-link:focus-visible { background:var(--portfolio-accent); border-color:var(--portfolio-accent); color:#fff !important; }
+.service-platforms { align-items:center; display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; margin-top:2rem; }
 .service-platforms p { font-size:.76rem; margin:0 .3rem 0 0; }
 .workflow-section { padding-top:3rem; }
 .workflow-grid { counter-reset:step; display:grid; gap:1.25rem; grid-template-columns:repeat(4,minmax(0,1fr)); list-style:none; margin:0; padding:0; }

@@ -87,7 +87,7 @@ collections:
             name: services
             widget: list
             required: false
-            hint: "Services shown on the homepage. Each card can link to email, LinkedIn, a booking page, Fiverr, Upwork, Contra, or another ordering channel."
+            hint: "Four homepage service cards, displayed in two columns on desktop. Each card can link to email or a verified booking or freelance profile. Only add a pricing link when its packages are published and current."
             fields:
               - { label: Service title, name: title, widget: string }
               - label: Icon
@@ -104,8 +104,8 @@ collections:
                 name: points
                 widget: list
                 field: { label: Point, name: point, widget: string }
-              - { label: Order or contact URL, name: url, widget: string, required: false, hint: "Paste the exact service destination. Leave blank to use the main contact button." }
-              - { label: Button label, name: button_label, widget: string, required: false, default: "Request service" }
+              - { label: Order or contact URL, name: url, widget: string, required: false, hint: "Paste the exact service destination. Leave blank to use the main contact button. Use a public freelance package URL only when the offer and price are ready." }
+              - { label: Button label, name: button_label, widget: string, required: false, default: "Discuss this service" }
           - label: Work samples library
             name: samples
             widget: list

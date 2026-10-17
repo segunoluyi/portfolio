@@ -239,55 +239,44 @@
       "icon": "fa-chart-bar",
       "points": [
         "Excel, SQL, and Power BI analysis",
-        "KPI reporting and performance reviews",
-        "Clear findings and recommendations"
+        "Interactive Power BI dashboards, data modelling, and DAX",
+        "KPI reports, findings, and practical recommendations"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Data%20analysis%20service",
-      "button_label": "Request service"
+      "button_label": "Discuss this service"
     },
     {
-      "title": "Power BI Dashboards",
-      "icon": "fa-desktop",
-      "points": [
-        "Interactive report development",
-        "Data modelling and DAX measures",
-        "Dashboard redesign and documentation"
-      ],
-      "url": "mailto:oluyisegun@gmail.com?subject=Power%20BI%20dashboard%20service",
-      "button_label": "Request service"
-    },
-    {
-      "title": "Research & Business Insight",
+      "title": "Market Research & Business Insight",
       "icon": "fa-search",
       "points": [
         "Market and competitor research",
-        "Business-question investigation",
+        "Opportunity and business-question investigation",
         "Decision-ready insight reports"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Research%20and%20business%20insight%20service",
-      "button_label": "Request service"
+      "button_label": "Discuss this service"
     },
     {
-      "title": "Business Plans & Proposals",
+      "title": "Business Planning & Development",
       "icon": "fa-file-alt",
       "points": [
-        "Business and operational planning",
-        "Market, strategy, and financial sections",
-        "Investor and funding-ready documents"
+        "Business plans, proposals, and operational planning",
+        "Market, strategy, and financial projections",
+        "Funding documents and development recommendations"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Business%20plan%20or%20proposal%20service",
-      "button_label": "Request service"
+      "button_label": "Discuss this service"
     },
     {
-      "title": "Analytics Training",
+      "title": "Training & Workshops",
       "icon": "fa-chalkboard-teacher",
       "points": [
-        "Excel and Power BI instruction",
-        "Practical learning materials",
-        "Team and cohort-based delivery"
+        "Excel, Power BI, and practical analytics instruction",
+        "Research, business planning, and communication skills",
+        "Workshops, learning materials, and cohort delivery"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Analytics%20training%20service",
-      "button_label": "Request service"
+      "button_label": "Discuss this service"
     }
   ]
 }
