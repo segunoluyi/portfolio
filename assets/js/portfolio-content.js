@@ -157,13 +157,14 @@
     return article;
   }
 
-  function createService(service, contact) {
+  function createService(service, contact, index) {
     var article = document.createElement("article");
     var icon = document.createElement("span");
     var heading = document.createElement("h3");
     var points = document.createElement("ul");
     var link = document.createElement("a");
     article.className = "service-card";
+    article.id = "service-" + (index + 1);
     icon.className = "service-icon icon solid " + (service.icon || "fa-check");
     heading.textContent = service.title || "Service";
     (Array.isArray(service.points) ? service.points : []).forEach(function (point) { var item = document.createElement("li"); item.textContent = point; points.appendChild(item); });
@@ -173,6 +174,17 @@
     if (/^https?:\/\//i.test(link.href)) { link.target = "_blank"; link.rel = "noopener noreferrer"; }
     article.append(icon, heading, points, link);
     return article;
+  }
+
+  function createServiceOverviewItem(service, index) {
+    var link = document.createElement("a");
+    var label = document.createElement("strong");
+    var detail = document.createElement("span");
+    link.href = "#service-" + (index + 1);
+    label.textContent = service.overview_label || service.title || "Service";
+    detail.textContent = service.overview_detail || "Explore service";
+    link.append(label, detail);
+    return link;
   }
 
   var socialPlatforms = {
@@ -239,6 +251,7 @@
       var samplePreviewGrid = document.querySelector("#sample-preview-grid");
       var insightsGrid = document.querySelector("#insights-grid");
       var servicesGrid = document.querySelector("[data-services-grid]");
+      var serviceOverview = document.querySelector("[data-service-overview]");
       var newsletterSection = document.querySelector("[data-newsletter]");
       var projectCardsSection = document.querySelector("[data-project-cards-section]");
       var site = content.site || {};
@@ -248,7 +261,11 @@
 
       if (servicesGrid && Array.isArray(content.services) && content.services.length) {
         servicesGrid.replaceChildren();
-        content.services.forEach(function (service) { servicesGrid.appendChild(createService(service, contact)); });
+        if (serviceOverview) serviceOverview.replaceChildren();
+        content.services.forEach(function (service, index) {
+          servicesGrid.appendChild(createService(service, contact, index));
+          if (serviceOverview) serviceOverview.appendChild(createServiceOverviewItem(service, index));
+        });
       }
 
       if (window.portfolioTheme) window.portfolioTheme.applyDefault(site.default_theme);

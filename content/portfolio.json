@@ -236,6 +236,8 @@
   "services": [
     {
       "title": "Data Analysis & Reporting",
+      "overview_label": "Data & BI",
+      "overview_detail": "Reports + dashboards",
       "icon": "fa-chart-bar",
       "points": [
         "Excel, SQL, and Power BI analysis",
@@ -243,10 +245,12 @@
         "KPI reports, findings, and practical recommendations"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Data%20analysis%20service",
-      "button_label": "Discuss Project"
+      "button_label": "Request Analysis"
     },
     {
       "title": "Market Research & Business Insight",
+      "overview_label": "Market Research",
+      "overview_detail": "Evidence + insight",
       "icon": "fa-search",
       "points": [
         "Market and competitor research",
@@ -254,10 +258,12 @@
         "Decision-ready insight reports"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Research%20and%20business%20insight%20service",
-      "button_label": "Discuss Project"
+      "button_label": "Discuss Research"
     },
     {
       "title": "Business Planning & Development",
+      "overview_label": "Business Planning",
+      "overview_detail": "Plans + proposals",
       "icon": "fa-file-alt",
       "points": [
         "Business plans, proposals, and operational planning",
@@ -265,10 +271,12 @@
         "Funding documents and development recommendations"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Business%20plan%20or%20proposal%20service",
-      "button_label": "Discuss Project"
+      "button_label": "Discuss Your Plan"
     },
     {
       "title": "Training & Workshops",
+      "overview_label": "Training",
+      "overview_detail": "Workshops + skills",
       "icon": "fa-chalkboard-teacher",
       "points": [
         "Excel, Power BI, and practical analytics instruction",
@@ -276,7 +284,7 @@
         "Workshops, learning materials, and cohort delivery"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Analytics%20training%20service",
-      "button_label": "Discuss Project"
+      "button_label": "Arrange Training"
     }
   ]
 }
