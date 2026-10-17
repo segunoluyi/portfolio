@@ -87,7 +87,7 @@ collections:
             name: services
             widget: list
             required: false
-            hint: "Four homepage service cards, displayed in two columns on desktop. Each card can link to email or a verified booking or freelance profile. Only add a pricing link when its packages are published and current."
+            hint: "Homepage service cards display three across on desktop and wrap to the next row. Each card can link to email or a verified booking or freelance profile. Only add a pricing link when its packages are published and current."
             fields:
               - { label: Service title, name: title, widget: string }
               - label: Icon
