@@ -17,9 +17,9 @@
   var pages = [
     { label: "Home", path: "", activePath: "" },
     { label: "About", path: "about/", activePath: "about/" },
-    { label: "Projects", path: "#projects", activePath: "projects/" },
-    { label: "Samples", path: "#samples", activePath: "samples/" },
-    { label: "Insights", path: "#insights", activePath: "insights/" },
+    { label: "Projects", path: "projects/", activePath: "projects/" },
+    { label: "Samples", path: "samples/", activePath: "samples/" },
+    { label: "Insights", path: "insights/", activePath: "insights/" },
     { label: "Contact", path: "#footer", activePath: null }
   ];
 
@@ -38,7 +38,7 @@
   pages.forEach(function (page) {
     var item = document.createElement("li");
     var link = document.createElement("a");
-    var current = page.activePath && isCurrent(page.activePath);
+    var current = page.activePath !== null && isCurrent(page.activePath);
     link.href = pageUrl(page.path);
     link.textContent = page.label;
     if (current) {

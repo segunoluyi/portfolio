@@ -5852,7 +5852,6 @@ body, input, select, textarea, button,
   font-family:"Montserrat","Segoe UI",sans-serif;
 }
 
-#nav.top-navigation,
 #intro .hero-shell,
 #main > .home-section,
 #main > #insights,
@@ -5866,11 +5865,11 @@ body, input, select, textarea, button,
   width:calc(100% - 3rem);
 }
 
-#nav, #nav.top-navigation { padding-left:max(1.5rem,calc((100% - 1080px)/2)); padding-right:max(1.5rem,calc((100% - 1080px)/2)); }
-#intro, #nav.top-navigation + #intro { min-height:42rem; padding:6rem 0 5rem; }
-#intro .hero-shell { gap:5rem; grid-template-columns:minmax(0,1.12fr) minmax(18rem,.72fr); }
+#nav.top-navigation { box-sizing:border-box; margin:0; max-width:none; padding:.65rem max(1.5rem,calc((100% - 1080px)/2)); width:100%; }
+#intro, #nav.top-navigation + #intro { min-height:calc(100vh - 4rem); padding:6rem 0 5rem; }
+#intro .hero-shell { gap:clamp(2rem,4vw,4rem); grid-template-columns:minmax(0,1.2fr) minmax(16rem,.8fr); padding:0; }
 #intro .hero-kicker { font-size:.72rem; letter-spacing:3.6px; margin-bottom:1.25rem; padding:5px 14px; }
-#intro h1 { font-size:clamp(3rem,5vw,4.25rem); line-height:1; margin-bottom:.8rem; }
+#intro h1 { font-size:clamp(3rem,4.2vw,4rem); line-height:1.05; margin-bottom:.8rem; max-width:none; white-space:nowrap; }
 #intro .hero-title { font-size:1.12rem; }
 #intro .hero-summary { font-size:.92rem; line-height:1.7; margin:1.25rem 0 1.7rem; max-width:34rem; }
 #intro .image.avatar { height:min(27vw,19rem); width:min(27vw,19rem); }
@@ -5916,9 +5915,11 @@ body, input, select, textarea, button,
   #samples-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media screen and (max-width:736px) {
-  #nav.top-navigation,#intro .hero-shell,#main > .home-section,#main > #insights,#main > #insights-grid,#main > .collection-actions,#footer > .footer-grid { width:calc(100% - 2.5rem); }
+  #intro .hero-shell,#main > .home-section,#main > #insights,#main > #insights-grid,#main > .collection-actions,#footer > .footer-grid { width:calc(100% - 2.5rem); }
+  #nav.top-navigation { padding-left:1.25rem; padding-right:1.25rem; }
   #intro,#nav.top-navigation + #intro { padding:4rem 0; }
   #intro .hero-shell { gap:2rem; grid-template-columns:1fr; }
+  #intro h1 { white-space:normal; }
   #intro .image.avatar { height:min(62vw,17rem); width:min(62vw,17rem); }
   .services-grid,.workflow-grid,#samples-grid { grid-template-columns:1fr; }
   .service-card { min-height:0; }
