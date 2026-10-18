@@ -236,8 +236,6 @@
   "services": [
     {
       "title": "Data Analysis & Reporting",
-      "overview_label": "Data & BI",
-      "overview_detail": "Reports + dashboards",
       "icon": "fa-chart-bar",
       "points": [
         "Excel, SQL, and Power BI analysis",
@@ -249,8 +247,6 @@
     },
     {
       "title": "Market Research & Business Insight",
-      "overview_label": "Market Research",
-      "overview_detail": "Evidence + insight",
       "icon": "fa-search",
       "points": [
         "Market and competitor research",
@@ -262,8 +258,6 @@
     },
     {
       "title": "Business Planning & Development",
-      "overview_label": "Business Planning",
-      "overview_detail": "Plans + proposals",
       "icon": "fa-file-alt",
       "points": [
         "Business plans, proposals, and operational planning",
@@ -275,8 +269,6 @@
     },
     {
       "title": "Training & Workshops",
-      "overview_label": "Training",
-      "overview_detail": "Workshops + skills",
       "icon": "fa-chalkboard-teacher",
       "points": [
         "Excel, Power BI, and practical analytics instruction",

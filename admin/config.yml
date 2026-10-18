@@ -90,8 +90,6 @@ collections:
             hint: "Homepage service cards display three across on desktop and wrap to the next row. Each card can link to email or a verified booking or freelance profile. Only add a pricing link when its packages are published and current."
             fields:
               - { label: Service title, name: title, widget: string }
-              - { label: Overview tile title, name: overview_label, widget: string, required: false, hint: "Short label shown in the row above Services. Defaults to the service title." }
-              - { label: Overview tile detail, name: overview_detail, widget: string, required: false, hint: "Brief supporting line for the overview tile." }
               - label: Icon
                 name: icon
                 widget: select

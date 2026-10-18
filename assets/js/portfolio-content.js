@@ -176,15 +176,32 @@
     return article;
   }
 
-  function createServiceOverviewItem(service, index) {
+  function createServiceOverviewItem(labelText, detailText, href) {
     var link = document.createElement("a");
     var label = document.createElement("strong");
     var detail = document.createElement("span");
-    link.href = "#service-" + (index + 1);
-    label.textContent = service.overview_label || service.title || "Service";
-    detail.textContent = service.overview_detail || "Explore service";
+    link.href = href;
+    label.textContent = labelText;
+    detail.textContent = detailText;
     link.append(label, detail);
     return link;
+  }
+
+  function renderServiceOverview(container, content) {
+    if (!container) return;
+    var documented = (Array.isArray(content.projects) ? content.projects : []).filter(function (project) {
+      return Boolean(project.github_url || project.case_study_url || project.url);
+    }).length;
+    var planSamples = (Array.isArray(content.samples) ? content.samples : []).filter(function (sample) {
+      return sample.content_type === "Business plan" && Boolean(sample.url || sample.slug);
+    }).length;
+    var services = Array.isArray(content.services) ? content.services.length : 0;
+    container.replaceChildren(
+      createServiceOverviewItem(documented + (documented === 1 ? " CASE STUDY" : " CASE STUDIES"), "DOCUMENTED PROJECT WORK", "projects/"),
+      createServiceOverviewItem(planSamples + " PLAN SAMPLES", "BUSINESS PLANNING WORK", "samples/"),
+      createServiceOverviewItem(services + " SERVICE AREAS", "ANALYSIS TO TRAINING", "#services"),
+      createServiceOverviewItem("INSIGHT DELIVERY", "DATA → DECISIONS", "#process")
+    );
   }
 
   var socialPlatforms = {
@@ -261,12 +278,11 @@
 
       if (servicesGrid && Array.isArray(content.services) && content.services.length) {
         servicesGrid.replaceChildren();
-        if (serviceOverview) serviceOverview.replaceChildren();
         content.services.forEach(function (service, index) {
           servicesGrid.appendChild(createService(service, contact, index));
-          if (serviceOverview) serviceOverview.appendChild(createServiceOverviewItem(service, index));
         });
       }
+      renderServiceOverview(serviceOverview, content);
 
       if (window.portfolioTheme) window.portfolioTheme.applyDefault(site.default_theme);
 
