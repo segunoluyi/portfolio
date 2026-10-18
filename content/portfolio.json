@@ -233,6 +233,22 @@
     "subscribe_url": "",
     "button_label": "Join the update list"
   },
+  "home_highlights": [
+    { "source": "documented_projects", "caption": "DOCUMENTED PROJECT WORK", "url": "projects/" },
+    { "source": "plan_samples", "caption": "BUSINESS PLANNING WORK", "url": "samples/" },
+    { "source": "service_areas", "caption": "ANALYSIS TO TRAINING", "url": "#services" },
+    { "source": "custom", "label_override": "INSIGHT DELIVERY", "caption": "DATA → DECISIONS", "url": "#process" }
+  ],
+  "workflow": {
+    "label": "From question to delivery",
+    "heading": "How I work",
+    "steps": [
+      { "title": "Understand", "description": "Clarify the business problem, audience, evidence, and success criteria." },
+      { "title": "Prepare", "description": "Gather, clean, organise, and validate the required data or research." },
+      { "title": "Analyse", "description": "Find patterns, test assumptions, and build the required report or document." },
+      { "title": "Deliver", "description": "Communicate the findings, recommendations, files, and next actions clearly." }
+    ]
+  },
   "services": [
     {
       "title": "Data Analysis & Reporting",

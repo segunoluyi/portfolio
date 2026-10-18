@@ -83,6 +83,39 @@ collections:
               - { label: Project button label, name: project_label, widget: string, required: false, hint: "Optional. Examples: View dashboard, Open app, View report, View workbook." }
               - { label: Live project URL, name: live_url, widget: string, required: false, hint: "Preferred published destination, such as Power BI Service, Tableau Public, Streamlit, GitHub Pages, or a public workbook." }
               - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
+          - label: Homepage highlights
+            name: home_highlights
+            widget: list
+            required: false
+            max: 4
+            hint: "The four small tiles above Services. The first three values can count published content automatically; use a custom label only when you have verified the figure or claim."
+            fields:
+              - label: Value source
+                name: source
+                widget: select
+                options:
+                  - { label: Documented projects, value: "documented_projects" }
+                  - { label: Linked business-plan samples, value: "plan_samples" }
+                  - { label: Service areas, value: "service_areas" }
+                  - { label: Custom text or verified figure, value: "custom" }
+              - { label: Custom value or override, name: label_override, widget: string, required: false, hint: "Leave blank to use the automatic count. If you enter a number, check the evidence first and update it when your work changes." }
+              - { label: Small caption, name: caption, widget: string }
+              - { label: Tile destination, name: url, widget: string, required: false, hint: "Use a page path such as projects/ or samples/, or a section link such as #process." }
+          - label: How I work
+            name: workflow
+            widget: object
+            required: false
+            fields:
+              - { label: Section label, name: label, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - label: Four steps
+                name: steps
+                widget: list
+                min: 4
+                max: 4
+                fields:
+                  - { label: Step title, name: title, widget: string }
+                  - { label: Step description, name: description, widget: text }
           - label: Services
             name: services
             widget: list

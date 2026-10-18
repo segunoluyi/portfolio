@@ -196,12 +196,42 @@
       return sample.content_type === "Business plan" && Boolean(sample.url || sample.slug);
     }).length;
     var services = Array.isArray(content.services) ? content.services.length : 0;
-    container.replaceChildren(
-      createServiceOverviewItem(documented + (documented === 1 ? " CASE STUDY" : " CASE STUDIES"), "DOCUMENTED PROJECT WORK", "projects/"),
-      createServiceOverviewItem(planSamples + " PLAN SAMPLES", "BUSINESS PLANNING WORK", "samples/"),
-      createServiceOverviewItem(services + " SERVICE AREAS", "ANALYSIS TO TRAINING", "#services"),
-      createServiceOverviewItem("INSIGHT DELIVERY", "DATA → DECISIONS", "#process")
-    );
+    var defaults = [
+      { source: "documented_projects", caption: "DOCUMENTED PROJECT WORK", url: "projects/" },
+      { source: "plan_samples", caption: "BUSINESS PLANNING WORK", url: "samples/" },
+      { source: "service_areas", caption: "ANALYSIS TO TRAINING", url: "#services" },
+      { source: "custom", label_override: "INSIGHT DELIVERY", caption: "DATA → DECISIONS", url: "#process" }
+    ];
+    var highlights = Array.isArray(content.home_highlights) && content.home_highlights.length ? content.home_highlights : defaults;
+    container.replaceChildren();
+    highlights.slice(0, 4).forEach(function (item) {
+      var automaticLabel = "";
+      if (item.source === "documented_projects") automaticLabel = documented + (documented === 1 ? " CASE STUDY" : " CASE STUDIES");
+      if (item.source === "plan_samples") automaticLabel = planSamples + (planSamples === 1 ? " PLAN SAMPLE" : " PLAN SAMPLES");
+      if (item.source === "service_areas") automaticLabel = services + (services === 1 ? " SERVICE AREA" : " SERVICE AREAS");
+      container.appendChild(createServiceOverviewItem(item.label_override || automaticLabel || "PORTFOLIO", item.caption || "", item.url || "#services"));
+    });
+  }
+
+  function renderWorkflow(workflow) {
+    var section = document.querySelector("[data-workflow]");
+    if (!section || !workflow) return;
+    setText(section.querySelector("[data-workflow-label]"), workflow.label);
+    setText(section.querySelector("[data-workflow-heading]"), workflow.heading);
+    var list = section.querySelector("[data-workflow-steps]");
+    if (!list || !Array.isArray(workflow.steps) || workflow.steps.length !== 4) return;
+    list.replaceChildren();
+    workflow.steps.forEach(function (step, index) {
+      var item = document.createElement("li");
+      var number = document.createElement("strong");
+      var title = document.createElement("h3");
+      var description = document.createElement("p");
+      number.textContent = String(index + 1).padStart(2, "0");
+      title.textContent = step.title || "Step";
+      description.textContent = step.description || "";
+      item.append(number, title, description);
+      list.appendChild(item);
+    });
   }
 
   var socialPlatforms = {
@@ -283,6 +313,7 @@
         });
       }
       renderServiceOverview(serviceOverview, content);
+      renderWorkflow(content.workflow);
 
       if (window.portfolioTheme) window.portfolioTheme.applyDefault(site.default_theme);
 
