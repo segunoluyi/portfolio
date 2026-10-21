@@ -218,6 +218,7 @@
     if (!section || !workflow) return;
     setText(section.querySelector("[data-workflow-label]"), workflow.label);
     setText(section.querySelector("[data-workflow-heading]"), workflow.heading);
+    setText(section.querySelector("[data-workflow-subtitle]"), workflow.subtitle);
     var list = section.querySelector("[data-workflow-steps]");
     if (!list || !Array.isArray(workflow.steps) || workflow.steps.length !== 4) return;
     list.replaceChildren();

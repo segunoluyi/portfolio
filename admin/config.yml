@@ -59,6 +59,7 @@ collections:
             fields:
               - { label: Section label, name: label, widget: string, required: false }
               - { label: Heading, name: heading, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string, required: false }
               - { label: Summary, name: summary, widget: text }
           - label: Project cards
             name: projects

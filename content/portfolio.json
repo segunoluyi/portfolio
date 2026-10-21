@@ -241,58 +241,59 @@
   ],
   "workflow": {
     "label": "From question to delivery",
-    "heading": "How I work",
+    "heading": "How I Work",
+    "subtitle": "A structured approach to understanding challenges and delivering practical solutions.",
     "steps": [
-      { "title": "Understand", "description": "Clarify the business problem, audience, evidence, and success criteria." },
-      { "title": "Prepare", "description": "Gather, clean, organise, and validate the required data or research." },
-      { "title": "Analyse", "description": "Find patterns, test assumptions, and build the required report or document." },
-      { "title": "Deliver", "description": "Communicate the findings, recommendations, files, and next actions clearly." }
+      { "title": "Understand", "description": "Define goals, challenges, and project requirements." },
+      { "title": "Plan", "description": "Agree on the approach, scope, and deliverables." },
+      { "title": "Execute", "description": "Research, analyse, and develop the solution." },
+      { "title": "Deliver", "description": "Present results, recommendations, and next steps." }
     ]
   },
   "services": [
     {
-      "title": "Data Analysis & Reporting",
+      "title": "Business Intelligence & Data Analytics",
       "icon": "fa-chart-bar",
       "points": [
-        "Excel, SQL, and Power BI analysis",
-        "Interactive Power BI dashboards, data modelling, and DAX",
-        "KPI reports, findings, and practical recommendations"
+        "Data cleaning, analysis & reporting",
+        "Interactive dashboards & KPI tracking",
+        "Trend analysis & data storytelling"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Data%20analysis%20service",
-      "button_label": "Request Analysis"
+      "button_label": "Explore BI Services"
     },
     {
-      "title": "Market Research & Business Insight",
+      "title": "Market Research & Business Analysis",
       "icon": "fa-search",
       "points": [
-        "Market and competitor research",
-        "Opportunity and business-question investigation",
-        "Decision-ready insight reports"
+        "Market & competitor research",
+        "Business needs & opportunity analysis",
+        "Research insights & recommendations"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Research%20and%20business%20insight%20service",
-      "button_label": "Discuss Research"
+      "button_label": "Explore Research"
     },
     {
       "title": "Business Planning & Development",
       "icon": "fa-file-alt",
       "points": [
-        "Business plans, proposals, and operational planning",
-        "Market, strategy, and financial projections",
-        "Funding documents and development recommendations"
+        "Business plans & feasibility studies",
+        "Financial projections & modelling",
+        "Business strategy & growth planning"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Business%20plan%20or%20proposal%20service",
-      "button_label": "Discuss Your Plan"
+      "button_label": "Explore Planning"
     },
     {
       "title": "Training & Workshops",
       "icon": "fa-chalkboard-teacher",
       "points": [
-        "Excel, Power BI, and practical analytics instruction",
-        "Research, business planning, and communication skills",
-        "Workshops, learning materials, and cohort delivery"
+        "Excel, Power BI & SQL training",
+        "Corporate & team workshops",
+        "Project-based learning & mentorship"
       ],
       "url": "mailto:oluyisegun@gmail.com?subject=Analytics%20training%20service",
-      "button_label": "Arrange Training"
+      "button_label": "Explore Training"
     }
   ]
 }
