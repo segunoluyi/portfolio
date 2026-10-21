@@ -5867,7 +5867,7 @@ body, input, select, textarea, button,
 
 #nav.top-navigation { box-sizing:border-box; margin:0; max-width:none; padding:.65rem max(1.5rem,calc((100% - 1080px)/2)); width:100%; }
 #nav.top-navigation ul.links { margin-left:auto; }
-#nav.top-navigation ul.links li a { font-size:.84rem; letter-spacing:.02em; padding:.7rem .48rem; }
+#nav.top-navigation ul.links li a { font-size:.84rem; letter-spacing:.02em; padding:.7rem .9rem; }
 #nav.top-navigation .theme-toggle { height:2rem; justify-content:center; margin-left:.45rem; padding:0; width:2rem; }
 #nav.top-navigation .theme-toggle [data-theme-toggle-label] { display:none; }
 #intro, #nav.top-navigation + #intro { min-height:calc(86vh - 4rem); padding:4rem 0; }
@@ -5939,6 +5939,7 @@ body, input, select, textarea, button,
 #samples-grid .sample-cover.has-image img { height:100%; object-fit:cover; width:100%; }
 
 @media screen and (max-width:1100px) {
+  #nav.top-navigation ul.links li a { padding-left:.65rem; padding-right:.65rem; }
   .service-overview,.services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media screen and (max-width:980px) {
