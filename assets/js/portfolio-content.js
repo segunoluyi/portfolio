@@ -197,10 +197,10 @@
     }).length;
     var services = Array.isArray(content.services) ? content.services.length : 0;
     var defaults = [
-      { source: "documented_projects", caption: "DOCUMENTED PROJECT WORK", url: "projects/" },
-      { source: "plan_samples", caption: "BUSINESS PLANNING WORK", url: "samples/" },
-      { source: "service_areas", caption: "ANALYSIS TO TRAINING", url: "#services" },
-      { source: "custom", label_override: "INSIGHT DELIVERY", caption: "DATA → DECISIONS", url: "#process" }
+      { source: "custom", label_override: "13 PLANS & PROPOSALS", caption: "CLIENT PLANNING WORK", url: "samples/" },
+      { source: "custom", label_override: "10+ COHORTS", caption: "TRAINING & WORKSHOPS", url: "#services" },
+      { source: "custom", label_override: "10+ DASHBOARDS", caption: "POWER BI REPORTING WORK", url: "projects/" },
+      { source: "plan_samples", caption: "PUBLIC WORK SAMPLES", url: "samples/" }
     ];
     var highlights = Array.isArray(content.home_highlights) && content.home_highlights.length ? content.home_highlights : defaults;
     container.replaceChildren();
