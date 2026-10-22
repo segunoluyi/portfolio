@@ -469,12 +469,6 @@
       renderSocialLinks(document.querySelector("[data-footer-social-links]"), socialLinks(contact, profile));
       setText(document.querySelector("[data-footer-tagline]"), profile.headline || profile.primary_title);
       setText(document.querySelector("[data-footer-heading]"), contact.footer_heading);
-      setText(document.querySelector("[data-footer-message]"), contact.footer_message);
-      var footerEmailButton = document.querySelector("[data-footer-email-button]");
-      if (footerEmailButton && contact.email) {
-        footerEmailButton.href = "mailto:" + contact.email + "?subject=Portfolio%20enquiry";
-        setText(footerEmailButton, contact.footer_button_label || contact.primary_cta_label || "Email me");
-      }
 
       var location = document.querySelector("[data-contact-location]");
       var phone = document.querySelector("[data-contact-phone]");

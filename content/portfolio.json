@@ -190,16 +190,14 @@
     }
   ],
   "contact": {
-    "location": "Remote, worldwide. ",
+    "location": "Lagos, Nigeria",
     "phone": "+2348153051701",
     "email": "oluyisegun@gmail.com",
     "github_url": "https://github.com/segunoluyi",
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
     "primary_cta_label": "Email me",
     "primary_cta_url": "https://mail.google.com/mail/?view=cm&fs=1&to=oluyisegun@gmail.com&su=Portfolio%20enquiry",
-    "footer_heading": "Let's work together",
-    "footer_message": "Tell me what you are working on, and I will get back to you.",
-    "footer_button_label": "Email me",
+    "footer_heading": "Contact",
     "social_links": [
       {
         "platform": "email",

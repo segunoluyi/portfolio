@@ -5947,20 +5947,22 @@ body, input, select, textarea, button,
 /* Footer columns use the same palette in both themes. */
 #footer > section.split.contact.footer-grid.footer-columns { border:0; display:grid; gap:clamp(1.5rem,3vw,3rem); grid-template-columns:1.15fr .85fr 1fr 1.25fr; margin:0 auto; max-width:1080px; padding:4rem 0; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
 #footer > section.split.contact.footer-grid.footer-columns > section { border:0; min-width:0; padding:0; }
-#footer > section.split.contact.footer-grid.footer-columns > section:last-child { background:var(--portfolio-surface-soft); border:1px solid var(--portfolio-border); border-radius:.8rem; padding:1.25rem; }
 #footer .footer-brand { color:var(--portfolio-text); display:inline-block; font-size:1.8rem; font-weight:800; letter-spacing:-.07em; line-height:1; margin-bottom:1rem; text-decoration:none; }
 #footer .footer-brand:hover { color:var(--portfolio-accent); }
 #footer .footer-columns h3 { color:var(--portfolio-text); font-size:.9rem; font-weight:800; letter-spacing:.04em; margin:0 0 1.1rem; text-transform:none; }
 #footer .footer-columns p { color:var(--portfolio-muted); font-size:.86rem; line-height:1.6; margin:0 0 1rem; overflow-wrap:anywhere; }
 #footer .footer-columns .footer-links { list-style:none; margin:0; padding:0; }
 #footer .footer-columns .footer-links li { margin:0 0 .7rem; padding:0; }
-#footer .footer-columns .footer-links a { color:var(--portfolio-muted); font-size:.86rem; text-decoration:none; }
-#footer .footer-columns .footer-links a:hover { color:var(--portfolio-accent); }
+#footer .footer-columns .footer-links a { border-bottom:0 !important; color:var(--portfolio-muted); font-size:.86rem; text-decoration:none; }
+#footer .footer-columns .footer-links a:hover,#footer .footer-columns .footer-links a:focus-visible { color:var(--portfolio-accent); }
+#footer .footer-columns .footer-contact-list { list-style:none; margin:0; padding:0; }
+#footer .footer-columns .footer-contact-list li { align-items:center; color:var(--portfolio-muted); display:flex; font-size:.86rem; gap:.7rem; margin:0 0 .9rem; min-width:0; padding:0; }
+#footer .footer-columns .footer-contact-list .icon { color:var(--portfolio-accent); flex:none; text-align:center; width:1rem; }
+#footer .footer-columns .footer-contact-list a { border-bottom:0 !important; color:inherit; overflow-wrap:anywhere; text-decoration:none; }
+#footer .footer-columns .footer-contact-list a:hover,#footer .footer-columns .footer-contact-list a:focus-visible { color:var(--portfolio-accent); }
 #footer .footer-columns .icons { margin:1.15rem 0 0; }
 #footer .footer-columns .icons li { padding-right:.55rem; }
 #footer .footer-columns .icons li .icon:before { box-shadow:none; font-size:18px; height:20px; line-height:20px; width:20px; }
-#footer .footer-columns .footer-email-button { background:var(--portfolio-accent); border-color:var(--portfolio-accent); border-radius:999px; color:#fff !important; font-size:.74rem; margin-top:.35rem; }
-#footer .footer-columns .footer-email-button:hover { background:var(--portfolio-text); border-color:var(--portfolio-text); color:var(--portfolio-surface) !important; }
 #copyright { border-top:1px solid var(--portfolio-border); box-sizing:border-box; font-size:.7rem; line-height:1.4; margin:0; max-width:none; padding:1rem 1.25rem; width:100%; }
 #copyright ul { align-items:center; display:flex; flex-wrap:wrap; gap:.25rem 1rem; justify-content:center; }
 #copyright ul li,#copyright ul li:first-child { border:0; display:inline-flex; margin:0; padding:0; }
