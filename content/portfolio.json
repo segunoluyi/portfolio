@@ -197,6 +197,9 @@
     "linkedin_url": "https://www.linkedin.com/in/segun-oluyi/",
     "primary_cta_label": "Email me",
     "primary_cta_url": "https://mail.google.com/mail/?view=cm&fs=1&to=oluyisegun@gmail.com&su=Portfolio%20enquiry",
+    "footer_heading": "Let's work together",
+    "footer_message": "Tell me what you are working on, and I will get back to you.",
+    "footer_button_label": "Email me",
     "social_links": [
       {
         "platform": "email",
@@ -248,6 +251,24 @@
       { "title": "Plan", "description": "Agree on the approach, scope, and deliverables." },
       { "title": "Execute", "description": "Research, analyse, and develop the solution." },
       { "title": "Deliver", "description": "Present results, recommendations, and next steps." }
+    ]
+  },
+  "why_work": {
+    "heading": "Why Work With Me",
+    "panel_heading": "Proven Impact",
+    "impact_value": "150K+",
+    "impact_caption": "Rows analysed",
+    "benefits": [
+      { "title": "Business-Focused Approach", "description": "I start with the problem, not just the tools." },
+      { "title": "Practical, Actionable Insights", "description": "Clear findings that support real decisions." },
+      { "title": "Clear Communication", "description": "Complex information explained simply." },
+      { "title": "End-to-End Support", "description": "From understanding the challenge to delivering results." }
+    ],
+    "expertise_heading": "Selected expertise",
+    "expertise": [
+      { "title": "Analytics & BI", "description": "Dashboards and reporting", "icon": "fa-chart-bar" },
+      { "title": "Business Research", "description": "Planning and analysis", "icon": "fa-search" },
+      { "title": "Training", "description": "Practical, project-based learning", "icon": "fa-chalkboard-teacher" }
     ]
   },
   "services": [

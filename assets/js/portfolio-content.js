@@ -323,6 +323,49 @@
       }
       renderServiceOverview(serviceOverview, content);
       renderWorkflow(content.workflow);
+      var whyWork = content.why_work || {};
+      setText(document.querySelector("[data-why-heading]"), whyWork.heading);
+      setText(document.querySelector("[data-impact-heading]"), whyWork.panel_heading);
+      setText(document.querySelector("[data-impact-value]"), whyWork.impact_value);
+      setText(document.querySelector("[data-impact-caption]"), whyWork.impact_caption);
+      setText(document.querySelector("[data-expertise-heading]"), whyWork.expertise_heading);
+      var benefitsList = document.querySelector("[data-why-benefits]");
+      if (benefitsList && Array.isArray(whyWork.benefits) && whyWork.benefits.length) {
+        benefitsList.replaceChildren();
+        whyWork.benefits.slice(0, 4).forEach(function (benefit) {
+          var card = document.createElement("article");
+          var check = document.createElement("span");
+          var content = document.createElement("div");
+          var title = document.createElement("h3");
+          var description = document.createElement("p");
+          card.className = "why-benefit";
+          check.className = "why-check icon solid fa-check";
+          check.setAttribute("aria-hidden", "true");
+          title.textContent = benefit.title || "";
+          description.textContent = benefit.description || "";
+          content.append(title, description);
+          card.append(check, content);
+          benefitsList.appendChild(card);
+        });
+      }
+      var expertiseList = document.querySelector("[data-expertise-list]");
+      if (expertiseList && Array.isArray(whyWork.expertise) && whyWork.expertise.length) {
+        expertiseList.replaceChildren();
+        whyWork.expertise.slice(0, 3).forEach(function (area) {
+          var item = document.createElement("li");
+          var icon = document.createElement("span");
+          var content = document.createElement("div");
+          var title = document.createElement("strong");
+          var description = document.createElement("span");
+          icon.className = "expertise-icon icon solid " + (["fa-chart-bar", "fa-search", "fa-chalkboard-teacher"].indexOf(area.icon) >= 0 ? area.icon : "fa-chart-bar");
+          icon.setAttribute("aria-hidden", "true");
+          title.textContent = area.title || "";
+          description.textContent = area.description || "";
+          content.append(title, description);
+          item.append(icon, content);
+          expertiseList.appendChild(item);
+        });
+      }
 
       if (window.portfolioTheme) window.portfolioTheme.applyDefault(site.default_theme);
 
@@ -424,6 +467,14 @@
       }
 
       renderSocialLinks(document.querySelector("[data-footer-social-links]"), socialLinks(contact, profile));
+      setText(document.querySelector("[data-footer-tagline]"), profile.headline || profile.primary_title);
+      setText(document.querySelector("[data-footer-heading]"), contact.footer_heading);
+      setText(document.querySelector("[data-footer-message]"), contact.footer_message);
+      var footerEmailButton = document.querySelector("[data-footer-email-button]");
+      if (footerEmailButton && contact.email) {
+        footerEmailButton.href = "mailto:" + contact.email + "?subject=Portfolio%20enquiry";
+        setText(footerEmailButton, contact.footer_button_label || contact.primary_cta_label || "Email me");
+      }
 
       var location = document.querySelector("[data-contact-location]");
       var phone = document.querySelector("[data-contact-phone]");

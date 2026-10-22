@@ -117,6 +117,34 @@ collections:
                 fields:
                   - { label: Step title, name: title, widget: string }
                   - { label: Step description, name: description, widget: text }
+          - label: Why Work With Me
+            name: why_work
+            widget: object
+            required: false
+            hint: "The benefit cards and right-hand panel below How I Work. Use only figures you can support with your work."
+            fields:
+              - { label: Section heading, name: heading, widget: string, required: false }
+              - { label: Right panel heading, name: panel_heading, widget: string, required: false }
+              - { label: Large value, name: impact_value, widget: string, required: false }
+              - { label: Value caption, name: impact_caption, widget: string, required: false }
+              - label: Benefit cards
+                name: benefits
+                widget: list
+                required: false
+                max: 4
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - { label: Expertise panel heading, name: expertise_heading, widget: string, required: false }
+              - label: Expertise areas
+                name: expertise
+                widget: list
+                required: false
+                max: 3
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: string }
+                  - { label: Icon, name: icon, widget: select, options: [{ label: Analytics, value: "fa-chart-bar" }, { label: Research, value: "fa-search" }, { label: Training, value: "fa-chalkboard-teacher" }] }
           - label: Services
             name: services
             widget: list
@@ -178,6 +206,9 @@ collections:
               - { label: Email, name: email, widget: string, required: false }
               - { label: Main contact button label, name: primary_cta_label, widget: string, required: false, hint: "For example: Email me, Message me, or Book a call." }
               - { label: Main contact button URL, name: primary_cta_url, widget: string, required: false, hint: "Paste a complete link. You can use a Gmail compose link, a WhatsApp wa.me link, a booking link, or mailto:address@example.com." }
+              - { label: Footer contact heading, name: footer_heading, widget: string, required: false }
+              - { label: Footer contact message, name: footer_message, widget: text, required: false }
+              - { label: Footer email button label, name: footer_button_label, widget: string, required: false, hint: "The button opens a new message to the email above." }
               - label: Social links
                 name: social_links
                 widget: list
