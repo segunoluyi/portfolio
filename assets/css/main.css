@@ -5882,10 +5882,11 @@ body, input, select, textarea, button,
 .home-section { border-top:0; padding:5.5rem 0; }
 .services-section { max-width:1200px !important; }
 .service-overview { border-top:1px solid var(--portfolio-border); display:grid; gap:.6rem; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0 0 3.5rem; padding-top:1.1rem; }
-.service-overview a { align-items:center; background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:.65rem; color:var(--portfolio-text); display:flex; flex-direction:column; justify-content:center; min-height:4.2rem; padding:.55rem .4rem; text-align:center; text-decoration:none; transition:border-color .25s ease,transform .25s ease; }
+.service-overview a { align-items:center; background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:.65rem; color:var(--portfolio-text); display:flex; flex-direction:column; justify-content:center; min-height:5.3rem; padding:1rem .6rem; text-align:center; text-decoration:none; transition:border-color .25s ease,transform .25s ease; }
 .service-overview a:hover,.service-overview a:focus-visible { border-color:var(--portfolio-accent); transform:translateY(-.15rem); }
-.service-overview strong { color:var(--portfolio-text); font-size:.82rem; font-weight:700; line-height:1.3; }
-.service-overview span { color:var(--portfolio-muted); font-size:.62rem; font-weight:400; letter-spacing:.06em; line-height:1.4; margin-top:.28rem; text-transform:uppercase; }
+.service-overview strong { color:var(--portfolio-text); font-size:1.15rem; font-weight:700; letter-spacing:-.025em; line-height:1.2; }
+.service-overview a > span { color:var(--portfolio-muted); font-size:.62rem; font-weight:400; letter-spacing:.075em; line-height:1.3; margin-top:.5rem; text-transform:uppercase; }
+.service-overview strong .highlight-figure { color:var(--portfolio-accent); }
 .home-section-header { margin:0 auto 2.5rem; max-width:42rem; text-align:center; }
 .home-section-header > span { color:var(--portfolio-accent); display:block; font-size:.72rem; font-weight:700; letter-spacing:.12em; margin-bottom:.55rem; text-transform:uppercase; }
 .home-section-header h2 { font-size:2.35rem; letter-spacing:-.035em; margin:0 0 .85rem; text-transform:none; }

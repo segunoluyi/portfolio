@@ -89,7 +89,7 @@ collections:
             widget: list
             required: false
             max: 4
-            hint: "The four small tiles above Services. Choose a custom value for a verified figure or claim, and update it when your work changes."
+            hint: "The four tiles above Services. Keep them in service order: Analytics, Research, Planning, Training. Each value, caption, and destination can be edited here; use verified figures and update them when your work changes."
             fields:
               - label: Value source
                 name: source
