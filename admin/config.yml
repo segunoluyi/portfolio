@@ -89,7 +89,7 @@ collections:
             widget: list
             required: false
             max: 4
-            hint: "The four small tiles above Services. The first three values can count published content automatically; use a custom label only when you have verified the figure or claim."
+            hint: "The four small tiles above Services. Choose a custom value for a verified figure or claim, and update it when your work changes."
             fields:
               - label: Value source
                 name: source

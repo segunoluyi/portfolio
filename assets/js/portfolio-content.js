@@ -197,10 +197,10 @@
     }).length;
     var services = Array.isArray(content.services) ? content.services.length : 0;
     var defaults = [
-      { source: "custom", label_override: "13 PLANS & PROPOSALS", caption: "CLIENT PLANNING WORK", url: "samples/" },
-      { source: "custom", label_override: "10+ COHORTS", caption: "TRAINING & WORKSHOPS", url: "#services" },
-      { source: "custom", label_override: "10+ DASHBOARDS", caption: "POWER BI REPORTING WORK", url: "projects/" },
-      { source: "plan_samples", caption: "PUBLIC WORK SAMPLES", url: "samples/" }
+      { source: "custom", label_override: "60+ PLANS & PROPOSALS", caption: "BUSINESS PLANNING & DEVELOPMENT", url: "samples/" },
+      { source: "custom", label_override: "10 TRAINING COHORTS", caption: "TRAINING & WORKSHOPS", url: "#services" },
+      { source: "custom", label_override: "150K+ ROWS ANALYSED", caption: "BI & DATA ANALYTICS", url: "projects/" },
+      { source: "custom", label_override: "11+ INDUSTRIES ANALYSED", caption: "MARKET RESEARCH & BUSINESS ANALYSIS", url: "#services" }
     ];
     var highlights = Array.isArray(content.home_highlights) && content.home_highlights.length ? content.home_highlights : defaults;
     container.replaceChildren();
