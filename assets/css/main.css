@@ -5801,8 +5801,6 @@ body,
   margin:0 0 1.35rem;
 }
 
-.about-page-actions { margin:2.5rem 0 0; }
-.about-page-actions .button { border-radius:999px; }
 
 /* About: a concise introduction, capability cards, and a CV-grounded journey. */
 #main > .post.featured.about-page {
@@ -5843,7 +5841,6 @@ body,
 .about-timeline p { color:var(--portfolio-muted); font-size:.82rem; line-height:1.65; margin:0; text-align:left; }
 .about-timeline-tasks { color:var(--portfolio-muted); font-size:.82rem; line-height:1.6; list-style:disc; margin:.35rem 0 0; padding-left:1.05rem; }
 .about-timeline-tasks li { padding:0 0 .25rem; }
-.about-page-actions { margin-top:3.5rem; text-align:left; }
 @media screen and (max-width:980px) {
   .about-details-grid { gap:2rem; }
   .about-skill-grid { grid-template-columns:1fr; }
@@ -5853,6 +5850,7 @@ body,
   .about-intro-card { gap:1.25rem; grid-template-columns:1fr; padding:1.4rem; }
   .about-portrait { height:7rem; width:7rem; }
   .about-details-grid { gap:3rem; grid-template-columns:1fr; margin-top:3.5rem; }
+  .about-journey { order:-1; }
   .about-skill-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media screen and (max-width:480px) {
