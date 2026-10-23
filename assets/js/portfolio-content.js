@@ -422,8 +422,13 @@
         var aboutLabel = about.querySelector("[data-about-label]");
         var aboutHeading = about.querySelector("h1, h2");
         var aboutSummary = about.querySelector("[data-about-summary]");
+        var aboutImage = about.querySelector("[data-about-image]");
         setText(aboutLabel, aboutContent.label);
         setText(aboutHeading, aboutContent.heading);
+        if (aboutImage && profile.headshot) {
+          aboutImage.src = versionedUrl(assetUrl(profile.headshot));
+          aboutImage.alt = profile.headshot_alt || "Segun Oluyi";
+        }
         if (aboutSummary) {
           aboutSummary.replaceChildren();
           String(aboutContent.summary || "").split(/\n\s*\n/).filter(Boolean).forEach(function (paragraphText) {

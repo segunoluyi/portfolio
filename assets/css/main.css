@@ -5804,6 +5804,64 @@ body,
 .about-page-actions { margin:2.5rem 0 0; }
 .about-page-actions .button { border-radius:999px; }
 
+/* About: a concise introduction, capability cards, and a CV-grounded journey. */
+#main > .post.featured.about-page {
+  box-sizing:border-box;
+  margin:0 auto;
+  max-width:1080px;
+  min-height:0;
+  padding:5rem 0 7rem;
+  width:calc(100% - (var(--portfolio-page-gutter) * 2));
+}
+#main > .post.featured.about-page header.major { margin-bottom:2rem; max-width:none; }
+#main > .post.featured.about-page h1 { font-size:clamp(2.4rem,4vw,3.3rem); max-width:none; padding-bottom:.8rem; position:relative; }
+#main > .post.featured.about-page h1::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.22rem; left:0; position:absolute; width:4rem; }
+.about-intro-card { align-items:center; background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1.25rem; display:grid; gap:2rem; grid-template-columns:8.5rem minmax(0,1fr); padding:1.75rem 2rem; text-align:left; }
+.about-portrait { aspect-ratio:1; border:3px solid color-mix(in srgb,var(--portfolio-accent) 35%,var(--portfolio-surface)); border-radius:50%; display:block; height:8.5rem; object-fit:cover; width:8.5rem; }
+.about-intro-card .about-page-copy { margin:0; max-width:none; }
+.about-intro-card .about-page-copy p { color:var(--portfolio-text) !important; font-family:"Montserrat","Segoe UI",sans-serif; font-size:1rem; line-height:1.75; margin:0 0 .85rem; text-align:left; }
+.about-intro-card .about-page-copy p:last-child { margin-bottom:0; }
+.about-details-grid { display:grid; gap:3.5rem; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); margin-top:4.5rem; text-align:left; }
+.about-details-grid > section { min-width:0; }
+.about-details-grid h2,.about-strengths h2 { color:var(--portfolio-text); font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:1.65rem; font-weight:800; letter-spacing:-.035em; line-height:1.2; margin:0 0 .55rem; text-align:left; text-transform:none; }
+.about-details-grid .about-section-lead { color:var(--portfolio-muted); font-size:.9rem; line-height:1.6; margin:0 0 1.5rem; text-align:left; }
+.about-skill-grid { display:grid; gap:1rem; grid-template-columns:repeat(2,minmax(0,1fr)); }
+.about-skill-card { background:var(--portfolio-surface); border:1px solid color-mix(in srgb,var(--portfolio-text) 12%,var(--portfolio-surface)); border-radius:1rem; min-width:0; padding:1.3rem; transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease; }
+.about-skill-card:hover { border-color:var(--portfolio-accent); box-shadow:0 .7rem 1.5rem color-mix(in srgb,var(--portfolio-accent) 12%,transparent); transform:translateY(-.2rem); }
+.about-skill-card h3 { color:var(--portfolio-accent); font-size:.78rem; font-weight:800; letter-spacing:.07em; line-height:1.35; margin:0 0 1rem; text-align:left; text-transform:uppercase; }
+.about-skill-card ul { list-style:none; margin:0; padding:0; }
+.about-skill-card li { border-top:1px solid var(--portfolio-border); color:var(--portfolio-text); font-size:.82rem; line-height:1.45; padding:.55rem 0; }
+.about-skill-card li:first-child { border-top:0; padding-top:0; }
+.about-skill-card li:last-child { padding-bottom:0; }
+.about-timeline { border-left:2px solid color-mix(in srgb,var(--portfolio-accent) 40%,var(--portfolio-border)); list-style:none; margin:0 0 0 .42rem; padding:0 0 0 1.6rem; }
+.about-timeline li { margin:0 0 1.75rem; padding:0 0 0 .2rem; position:relative; }
+.about-timeline li:last-child { margin-bottom:0; }
+.about-timeline li::before { background:var(--portfolio-accent); border:3px solid var(--portfolio-page); border-radius:50%; box-shadow:0 0 0 1px var(--portfolio-accent); content:""; height:.78rem; left:-2.12rem; position:absolute; top:.18rem; width:.78rem; }
+.about-timeline-date { color:var(--portfolio-accent); display:block; font-size:.7rem; font-weight:800; letter-spacing:.1em; margin-bottom:.3rem; text-transform:uppercase; }
+.about-timeline h3 { color:var(--portfolio-text); font-size:1rem; font-weight:800; line-height:1.35; margin:0 0 .25rem; text-align:left; text-transform:none; }
+.about-timeline .about-timeline-place { color:var(--portfolio-muted); font-size:.78rem; font-style:italic; margin:0 0 .45rem; }
+.about-timeline p { color:var(--portfolio-muted); font-size:.82rem; line-height:1.65; margin:0; text-align:left; }
+.about-strengths { align-items:start; border-top:1px solid var(--portfolio-border); display:grid; gap:2rem; grid-template-columns:1fr 1fr; margin-top:4.5rem; padding-top:2rem; text-align:left; }
+.about-strengths p { color:var(--portfolio-muted); font-size:.9rem; line-height:1.65; margin:0; }
+.about-strengths ul { display:flex; flex-wrap:wrap; gap:.65rem; list-style:none; margin:0; padding:0; }
+.about-strengths li { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:999px; color:var(--portfolio-text); font-size:.76rem; font-weight:700; line-height:1.35; padding:.55rem .8rem; }
+.about-page-actions { margin-top:2.5rem; text-align:left; }
+@media screen and (max-width:980px) {
+  .about-details-grid { gap:2rem; }
+  .about-skill-grid { grid-template-columns:1fr; }
+}
+@media screen and (max-width:736px) {
+  #main > .post.featured.about-page { padding:4rem 0 5rem; width:calc(100% - 2.5rem); }
+  .about-intro-card { gap:1.25rem; grid-template-columns:1fr; padding:1.4rem; }
+  .about-portrait { height:7rem; width:7rem; }
+  .about-details-grid { gap:3rem; grid-template-columns:1fr; margin-top:3.5rem; }
+  .about-skill-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .about-strengths { gap:1.25rem; grid-template-columns:1fr; margin-top:3.5rem; }
+}
+@media screen and (max-width:480px) {
+  .about-skill-grid { grid-template-columns:1fr; }
+}
+
 /* Projects gallery: image-led cards with focused hover actions. */
 .projects-page { background:var(--portfolio-page); margin:0 auto; max-width:1080px !important; padding:0 0 6rem !important; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
 .projects-page .project-page-header { margin:0; max-width:38rem; padding:5rem 0 2rem; text-align:left; }
