@@ -6029,7 +6029,7 @@ body, input, select, textarea, button,
 @media screen and (max-width:736px) { #main > #insights.insights-section { padding:4rem 0 1.5rem !important; } #insights .major { width:calc(100% - 2.25rem); } #main > #insights-grid { gap:1.25rem !important; grid-template-columns:1fr !important; } #main > .collection-actions { padding-bottom:7rem; } #footer > section.split.contact.footer-grid.footer-columns { grid-template-columns:1fr; padding-top:3rem; padding-bottom:3rem; width:calc(100% - 2.5rem); } }
 @media (prefers-reduced-motion:reduce) { .why-benefit,.expertise-panel,.workflow-grid strong { transition:none; } .workflow-grid li:hover strong { transform:none; } }
 
-.projects-page { max-width:1080px !important; padding-left:0 !important; padding-right:0 !important; width:calc(100% - 3rem); }
+#main > .post.projects-page { margin-left:auto; margin-right:auto; max-width:1080px !important; padding-left:0 !important; padding-right:0 !important; width:calc(100% - 3rem); }
 .projects-page .project-page-header h1 { font-size:2.15rem; }
 .projects-page .project-page-header p { font-size:.86rem; }
 .showcase-project-card .project-card-content { padding:1.35rem; }
