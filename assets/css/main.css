@@ -6021,3 +6021,29 @@ body, input, select, textarea, button,
 #main > .collection-actions .button:hover,#main > .collection-actions .button:focus-visible { background:color-mix(in srgb,var(--portfolio-accent) 9%,var(--portfolio-surface)); border-color:var(--portfolio-accent); box-shadow:none; color:var(--portfolio-accent) !important; transform:none; }
 @media screen and (max-width:1100px) { #main > #project-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; } }
 @media screen and (max-width:736px) { #projects { padding:4.5rem 0 1.8rem !important; } #projects .major, #project-grid { width:calc(100% - (var(--portfolio-page-gutter) * 2)); } #project-grid { gap:1.25rem !important; grid-template-columns:1fr !important; padding-bottom:3rem !important; } }
+
+/* Mobile introduction and menu: compact actions and a contained brand mark. */
+@media screen and (max-width:736px) {
+  #intro,#nav.top-navigation + #intro { min-height:0; padding:3.5rem 0 2.5rem; }
+  #main > .services-section { padding-top:2rem; }
+  #intro .hero-shell { gap:1.5rem; }
+  #intro .image.avatar { height:min(50vw,12.5rem); width:min(50vw,12.5rem); }
+  #intro .hero-kicker { box-sizing:border-box; display:inline-block; font-size:.72rem; letter-spacing:.12em; line-height:1.4; max-width:100%; padding:.4rem .65rem; white-space:normal; }
+  #intro .hero-summary { margin-bottom:1.25rem; }
+  #intro .hero-actions { display:grid; gap:.75rem; grid-template-columns:repeat(2,minmax(0,1fr)); width:100%; }
+  #intro .hero-actions li,#intro .hero-actions .button { min-width:0; width:100%; }
+  #intro .hero-actions .button { font-size:.78rem; height:44px; line-height:44px; padding:0 .35rem; }
+  #intro .hero-contact-actions { margin-top:1.25rem; }
+  #intro .hero-contact-actions a.icon { align-items:center; display:inline-flex; justify-content:center; min-height:44px; min-width:44px; }
+}
+@media screen and (max-width:365px) {
+  #intro .hero-actions { grid-template-columns:1fr; max-width:16rem; }
+}
+@media screen and (max-width:980px) {
+  #navPanelToggle,#navPanelToggle.alt { align-items:center; background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:.5rem; box-shadow:0 2px 10px rgba(0,0,0,.08); color:var(--portfolio-text); display:flex; font-size:.8rem; min-height:44px; padding:0 .75rem; }
+  #navPanelToggle:hover,#navPanelToggle:focus-visible,#navPanelToggle.alt:hover { background:var(--portfolio-surface); border-color:var(--portfolio-accent); color:var(--portfolio-accent); }
+  #navPanel .nav-brand { align-items:center; border:0; display:inline-flex; height:2.75rem; margin-bottom:1.5rem; max-width:100%; }
+  #navPanel .nav-brand-logo { align-items:center; display:inline-flex; height:2.5rem; justify-content:center; overflow:hidden; width:2.5rem; }
+  #navPanel .nav-brand-logo img { display:block; height:100%; max-height:100%; max-width:100%; object-fit:contain; width:100%; }
+  #navPanel .nav-brand-logo img[hidden],#navPanel .nav-brand-mark[hidden] { display:none; }
+}
