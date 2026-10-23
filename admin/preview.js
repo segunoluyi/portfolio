@@ -38,8 +38,24 @@
     .portfolio-preview__simple-card p { color:var(--muted); font-size:12px; line-height:1.55; }
     .portfolio-preview__contact { color:var(--muted); display:grid; font-size:12px; gap:16px; grid-template-columns:repeat(3,1fr); }
     .portfolio-preview__label { color:var(--accent); display:block; font-size:9px; font-weight:800; letter-spacing:.08em; margin-bottom:5px; text-transform:uppercase; }
+    .about-preview { background:#f4f7f8; color:#18242d; margin:0 auto; max-width:1050px; min-height:100vh; padding:42px; }
+    .about-preview h1 { font-size:36px; margin:0 0 24px; }
+    .about-preview h2 { font-size:24px; margin:0 0 16px; }
+    .about-preview__intro { align-items:center; background:#fff; border:1px solid #dbe4e8; border-radius:18px; display:grid; gap:24px; grid-template-columns:110px 1fr; padding:24px; }
+    .about-preview__intro img { border-radius:50%; height:110px; object-fit:cover; width:110px; }
+    .about-preview__intro p { line-height:1.65; margin:0; white-space:pre-line; }
+    .about-preview__columns { display:grid; gap:32px; grid-template-columns:1fr 1fr; margin-top:40px; }
+    .about-preview__cards { display:grid; gap:12px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .about-preview__card { background:#fff; border:1px solid #dbe4e8; border-radius:14px; padding:16px; }
+    .about-preview__card h3,.about-preview__job h3 { font-size:14px; margin:0 0 10px; }
+    .about-preview__card ul,.about-preview__job ul { color:#667581; font-size:12px; line-height:1.6; margin:0; padding-left:18px; }
+    .about-preview__job { border-left:2px solid #1496ad; margin-bottom:16px; padding:0 0 0 16px; }
+    .about-preview__date { color:#1496ad; display:block; font-size:11px; font-weight:800; margin-bottom:5px; }
+    .about-preview__place { color:#667581; font-size:12px; margin:0 0 8px; }
     @media (max-width:760px) { .portfolio-preview__grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:520px) { .portfolio-preview__grid,.portfolio-preview__contact { grid-template-columns:1fr; } .portfolio-preview__section,.portfolio-preview__hero { padding:28px 20px; } }
+    @media (max-width:760px) { .about-preview__columns,.about-preview__cards { grid-template-columns:1fr; } .about-preview { padding:24px; } }
+    @media (max-width:520px) { .about-preview__intro { grid-template-columns:1fr; } }
   `, { raw: true });
 
   function value(object, key, fallback) {
@@ -120,4 +136,53 @@
   });
 
   CMS.registerPreviewTemplate("portfolio", PortfolioPreview);
+
+  var AboutPreview = createClass({
+    render: function () {
+      var data = this.props.entry.get("data");
+      var h = window.h;
+      var groups = listValues(data.get("skill_groups"));
+      var jobs = listValues(data.get("jobs"));
+      var portrait = value(data, "portrait");
+      return h("main", { className:"about-preview" }, [
+        h("span", { className:"portfolio-preview__eyebrow" }, value(data, "label", "About")),
+        h("h1", {}, value(data, "heading", "About Me")),
+        h("section", { className:"about-preview__intro" }, [
+          portrait ? h("img", { src:this.props.getAsset(portrait).toString(), alt:value(data, "portrait_alt", "Profile portrait") }) : null,
+          h("p", {}, value(data, "summary"))
+        ]),
+        h("div", { className:"about-preview__columns" }, [
+          h("section", {}, [
+            h("h2", {}, value(data, "skills_heading", "Technical proficiency")),
+            h("p", {}, value(data, "skills_intro")),
+            h("div", { className:"about-preview__cards" }, groups.map(function (group, index) {
+              return h("article", { className:"about-preview__card", key:index }, [
+                h("h3", {}, value(group, "title")),
+                h("ul", {}, listValues(group.get("skills")).map(function (skill, skillIndex) {
+                  return h("li", { key:skillIndex }, typeof skill === "string" ? skill : value(skill, "skill"));
+                }))
+              ]);
+            }))
+          ]),
+          h("section", {}, [
+            h("h2", {}, value(data, "journey_heading", "My journey")),
+            h("p", {}, value(data, "journey_intro")),
+            jobs.map(function (job, index) {
+              var date = value(job, "date_label") || [value(job, "start_date"), value(job, "current") ? "present" : value(job, "end_date")].filter(Boolean).join("–");
+              return h("article", { className:"about-preview__job", key:index }, [
+                h("span", { className:"about-preview__date" }, date),
+                h("h3", {}, value(job, "role")),
+                h("p", { className:"about-preview__place" }, [value(job, "company"), value(job, "location")].filter(Boolean).join(" · ")),
+                h("ul", {}, listValues(job.get("tasks")).map(function (task, taskIndex) {
+                  return h("li", { key:taskIndex }, typeof task === "string" ? task : value(task, "task"));
+                }))
+              ]);
+            })
+          ])
+        ])
+      ]);
+    }
+  });
+
+  CMS.registerPreviewTemplate("about", AboutPreview);
 }());

@@ -11,6 +11,55 @@ media_folder: images/uploads
 public_folder: images/uploads
 
 collections:
+  - name: about_page
+    label: About page
+    files:
+      - name: about
+        label: Edit About page
+        file: content/about.json
+        fields:
+          - { label: Small section label, name: label, widget: string, required: false }
+          - { label: Page heading, name: heading, widget: string }
+          - { label: Profile photo, name: portrait, widget: image, required: false }
+          - { label: Photo description, name: portrait_alt, widget: string, required: false, hint: "Describe the portrait for screen-reader users." }
+          - { label: Introduction, name: summary, widget: text, hint: "Separate paragraphs with a blank line." }
+          - { label: Skills section heading, name: skills_heading, widget: string }
+          - { label: Skills section introduction, name: skills_intro, widget: text, required: false }
+          - label: Skill cards
+            name: skill_groups
+            widget: list
+            required: false
+            hint: "Add a card for any major skill area, including soft skills. Drag cards to change their order."
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Card heading, name: title, widget: string }
+              - label: Skills in this card
+                name: skills
+                widget: list
+                required: false
+                field: { label: Skill, name: skill, widget: string }
+          - { label: Journey section heading, name: journey_heading, widget: string, default: "My journey" }
+          - { label: Journey section introduction, name: journey_intro, widget: text, required: false }
+          - label: Jobs and experience
+            name: jobs
+            widget: list
+            required: false
+            hint: "Add as many roles as needed and drag to reorder. Around four concise task bullets per role usually reads best."
+            summary: "{{fields.role}} — {{fields.company}}"
+            fields:
+              - { label: Role or job title, name: role, widget: string }
+              - { label: Start date, name: start_date, widget: string, required: false, hint: "Use YYYY-MM for month and year, or YYYY when only the year is known." }
+              - { label: End date, name: end_date, widget: string, required: false, hint: "Use YYYY-MM or YYYY. Leave blank for a current role." }
+              - { label: I currently hold this role, name: current, widget: boolean, required: false, default: false }
+              - { label: Date label override, name: date_label, widget: string, required: false, hint: "Optional. Use only when exact dates are uncertain, for example: Freelance consulting." }
+              - { label: Company or organization, name: company, widget: string, required: false }
+              - { label: Location, name: location, widget: string, required: false, hint: "For example: Lagos, Nigeria or Remote." }
+              - label: Tasks and achievements
+                name: tasks
+                widget: list
+                required: false
+                hint: "Add one concise task or achievement per box. You can add more than four when needed."
+                field: { label: Task or achievement, name: task, widget: string }
   - name: portfolio_content
     label: Portfolio Content
     files:
@@ -53,14 +102,6 @@ collections:
               - { label: Legacy headline, name: headline, widget: string, required: false }
               - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
               - { label: LinkedIn label, name: linkedin_label, widget: string, required: false }
-          - label: About section
-            name: about
-            widget: object
-            fields:
-              - { label: Section label, name: label, widget: string, required: false }
-              - { label: Heading, name: heading, widget: string }
-              - { label: Subtitle, name: subtitle, widget: string, required: false }
-              - { label: Summary, name: summary, widget: text }
           - label: Project cards
             name: projects
             widget: list

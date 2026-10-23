@@ -303,7 +303,6 @@
     .then(function (content) {
       var intro = document.querySelector("[data-portfolio-intro]");
       var grid = document.querySelector("#project-grid");
-      var about = document.querySelector("[data-about]");
       var samplePreviewGrid = document.querySelector("#sample-preview-grid");
       var insightsGrid = document.querySelector("#insights-grid");
       var servicesGrid = document.querySelector("[data-services-grid]");
@@ -312,7 +311,6 @@
       var projectCardsSection = document.querySelector("[data-project-cards-section]");
       var site = content.site || {};
       var profile = content.profile || {};
-      var aboutContent = content.about || {};
       var contact = content.contact || {};
 
       if (servicesGrid && Array.isArray(content.services) && content.services.length) {
@@ -417,27 +415,6 @@
          }
        });
       document.querySelectorAll("[data-site-brand-mark]").forEach(function (element) { setText(element, site.brand_mark); });
-
-      if (about) {
-        var aboutLabel = about.querySelector("[data-about-label]");
-        var aboutHeading = about.querySelector("h1, h2");
-        var aboutSummary = about.querySelector("[data-about-summary]");
-        var aboutImage = about.querySelector("[data-about-image]");
-        setText(aboutLabel, aboutContent.label);
-        setText(aboutHeading, aboutContent.heading);
-        if (aboutImage && profile.headshot) {
-          aboutImage.src = versionedUrl(assetUrl(profile.headshot));
-          aboutImage.alt = profile.headshot_alt || "Segun Oluyi";
-        }
-        if (aboutSummary) {
-          aboutSummary.replaceChildren();
-          String(aboutContent.summary || "").split(/\n\s*\n/).filter(Boolean).forEach(function (paragraphText) {
-            var paragraph = document.createElement("p");
-            paragraph.textContent = paragraphText.trim();
-            aboutSummary.appendChild(paragraph);
-          });
-        }
-      }
 
       if (grid && Array.isArray(content.projects)) {
         grid.replaceChildren();

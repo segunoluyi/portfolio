@@ -13,11 +13,6 @@
     "headshot": "images/uploads/segun-oluyi-profile-pics.png",
     "primary_title": "Data & Business Analyst"
   },
-  "about": {
-    "heading": "About Me",
-    "summary": "I’m a data and business analyst who brings research, business planning, and clear communication to analytical work. I use data to understand problems, identify opportunities, and turn findings into practical recommendations.\n\nMy path began in content and business writing, where I learned to make complex information useful to different audiences. Today, I combine that foundation with dashboards, data analysis, and training content that help people make better-informed decisions.",
-    "label": "About"
-  },
   "projects": [
     {
       "published_at": "2026-09-15",

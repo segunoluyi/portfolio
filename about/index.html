@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" data-content-path="../content/portfolio.json" data-asset-prefix="../">
+<html lang="en" data-content-path="../content/portfolio.json" data-about-content-path="../content/about.json" data-asset-prefix="../">
   <head>
     <title>About | Segun Oluyi</title>
     <meta charset="utf-8" />
@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://segunoluyi.github.io/portfolio/about/" />
     <link rel="icon" data-site-favicon href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" />
-    <link rel="stylesheet" href="../assets/css/main.css?v=about-layout-20261023" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=about-cms-20261023" />
   </head>
   <body class="is-preload">
     <div id="wrapper">
@@ -36,7 +36,7 @@
         <article class="post featured about-page" data-about>
           <header class="major">
             <span class="about-page-eyebrow" data-about-label>About</span>
-            <h1>About Me</h1>
+            <h1 data-about-heading>About Me</h1>
           </header>
           <section class="about-intro-card" aria-label="Introduction">
             <img class="about-portrait" data-about-image src="../images/uploads/segun-oluyi-profile-pics.png" alt="Segun Oluyi" />
@@ -47,9 +47,9 @@
 
           <div class="about-details-grid">
             <section class="about-skills" aria-labelledby="about-skills-heading">
-              <h2 id="about-skills-heading">Technical proficiency</h2>
-              <p class="about-section-lead">The tools and methods I use to move from a question to a useful answer.</p>
-              <div class="about-skill-grid">
+              <h2 id="about-skills-heading" data-about-skills-heading>Technical proficiency</h2>
+              <p class="about-section-lead" data-about-skills-intro>The tools and methods I use to move from a question to a useful answer.</p>
+              <div class="about-skill-grid" data-about-skill-groups>
                 <section class="about-skill-card"><h3>Analytics &amp; BI</h3><ul><li>Power BI &amp; DAX</li><li>Excel analysis &amp; reporting</li><li>Dashboard design</li></ul></section>
                 <section class="about-skill-card"><h3>Data preparation</h3><ul><li>SQL</li><li>Power Query</li><li>Python &amp; Pandas</li></ul></section>
                 <section class="about-skill-card"><h3>Business research</h3><ul><li>Market &amp; competitor research</li><li>Financial projections</li><li>Business plans &amp; proposals</li></ul></section>
@@ -58,21 +58,16 @@
             </section>
 
             <section class="about-journey" aria-labelledby="about-journey-heading">
-              <h2 id="about-journey-heading">Journey</h2>
-              <p class="about-section-lead">Experience that connects research, operations, and analysis.</p>
-              <ol class="about-timeline">
-                <li><span class="about-timeline-date">2024–present</span><h3>Data analyst &amp; educational content developer</h3><p class="about-timeline-place">ECR Technology Services / ECR Academy</p><p>Build analytics dashboards and develop practical learning resources across Excel, Power BI, SQL, and Python.</p></li>
-                <li><span class="about-timeline-date">Freelance consulting</span><h3>Business planning &amp; proposal work</h3><p>Developed market research, financial projections, business plans, and funding proposals for clients across several industries.</p></li>
-                <li><span class="about-timeline-date">2021–2023</span><h3>Website &amp; data operations specialist</h3><p class="about-timeline-place">JFRoyale Logistics</p><p>Organized operational records and maintained digital content, improving the clarity and accessibility of business information.</p></li>
-                <li><span class="about-timeline-date">2016–2021</span><h3>Business writer &amp; content writer</h3><p class="about-timeline-place">Freelance</p><p>Turned research and complex topics into reports, business content, and clear writing for different audiences.</p></li>
+              <h2 id="about-journey-heading" data-about-journey-heading>My journey</h2>
+              <p class="about-section-lead" data-about-journey-intro>Experience that connects research, operations, and analysis.</p>
+              <ol class="about-timeline" data-about-jobs>
+                <li><span class="about-timeline-date">2024–present</span><h3>Data analyst &amp; educational content developer</h3><p class="about-timeline-place">ECR Technology Services / ECR Academy · Remote</p><ul class="about-timeline-tasks"><li>Build analytics dashboards for reporting and decision-making.</li><li>Develop practical learning resources across Excel, Power BI, SQL, and Python.</li></ul></li>
+                <li><span class="about-timeline-date">Freelance consulting</span><h3>Business planning &amp; proposal consultant</h3><p class="about-timeline-place">Freelance · Remote</p><ul class="about-timeline-tasks"><li>Developed market research, financial projections, and business plans.</li><li>Prepared funding proposals for clients across several industries.</li></ul></li>
+                <li><span class="about-timeline-date">2021–2023</span><h3>Website &amp; data operations specialist</h3><p class="about-timeline-place">JFRoyale Logistics · Akure, Nigeria</p><ul class="about-timeline-tasks"><li>Organized operational records and digitized business information.</li><li>Maintained website content and supported structured reporting.</li></ul></li>
+                <li><span class="about-timeline-date">2016–2021</span><h3>Business writer &amp; content writer</h3><p class="about-timeline-place">Freelance · Remote</p><ul class="about-timeline-tasks"><li>Turned research and complex topics into reports and business content.</li><li>Wrote for audiences across business, education, logistics, agriculture, and technology.</li></ul></li>
               </ol>
             </section>
           </div>
-
-          <section class="about-strengths" aria-labelledby="about-strengths-heading">
-            <div><h2 id="about-strengths-heading">What I bring to the work</h2><p>Analysis is most useful when the question is clear and the findings are easy to act on.</p></div>
-            <ul><li>Business context</li><li>Structured problem-solving</li><li>Clear communication</li><li>Practical delivery</li></ul>
-          </section>
           <div class="about-page-actions"><a href="../#projects" class="button primary">View projects</a></div>
         </article>
       </main>
@@ -95,6 +90,7 @@
     <script src="../assets/js/util.js"></script>
     <script src="../assets/js/site-navigation.js?v=nav-hero-repair"></script>
     <script src="../assets/js/main.js?v=mobile-center-top-20261023"></script><script src="../assets/js/site-theme.js"></script>
-    <script src="../assets/js/portfolio-content.js?v=about-layout-20261023"></script>
+    <script src="../assets/js/portfolio-content.js?v=about-cms-20261023"></script>
+    <script src="../assets/js/about-page.js?v=about-cms-20261023"></script>
   </body>
 </html>

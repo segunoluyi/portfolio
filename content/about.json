@@ -1,0 +1,59 @@
+{
+  "label": "About",
+  "heading": "About Me",
+  "portrait": "images/uploads/segun-oluyi-profile-pics.png",
+  "portrait_alt": "Professional headshot of Segun Oluyi",
+  "summary": "I’m a data and business analyst who brings research, business planning, and clear communication to analytical work. I use data to understand problems, identify opportunities, and turn findings into practical recommendations.\n\nMy path began in content and business writing, where I learned to make complex information useful to different audiences. Today, I combine that foundation with dashboards, data analysis, and training content that help people make better-informed decisions.",
+  "skills_heading": "Technical proficiency",
+  "skills_intro": "The tools and methods I use to move from a question to a useful answer.",
+  "skill_groups": [
+    { "title": "Analytics & BI", "skills": ["Power BI & DAX", "Excel analysis & reporting", "Dashboard design"] },
+    { "title": "Data preparation", "skills": ["SQL", "Power Query", "Python & Pandas"] },
+    { "title": "Business research", "skills": ["Market & competitor research", "Financial projections", "Business plans & proposals"] },
+    { "title": "Learning & communication", "skills": ["Analytics training content", "Clear stakeholder reporting", "Practical recommendations"] }
+  ],
+  "journey_heading": "My journey",
+  "journey_intro": "Experience that connects research, operations, and analysis.",
+  "jobs": [
+    {
+      "role": "Data analyst & educational content developer",
+      "start_date": "2024-07",
+      "end_date": "",
+      "current": true,
+      "date_label": "",
+      "company": "ECR Technology Services / ECR Academy",
+      "location": "Remote",
+      "tasks": ["Build analytics dashboards for reporting and decision-making.", "Develop practical learning resources across Excel, Power BI, SQL, and Python."]
+    },
+    {
+      "role": "Business planning & proposal consultant",
+      "start_date": "",
+      "end_date": "",
+      "current": false,
+      "date_label": "Freelance consulting",
+      "company": "Freelance",
+      "location": "Remote",
+      "tasks": ["Developed market research, financial projections, and business plans.", "Prepared funding proposals for clients across several industries."]
+    },
+    {
+      "role": "Website & data operations specialist",
+      "start_date": "2021-12",
+      "end_date": "2023-02",
+      "current": false,
+      "date_label": "",
+      "company": "JFRoyale Logistics",
+      "location": "Akure, Nigeria",
+      "tasks": ["Organized operational records and digitized business information.", "Maintained website content and supported structured reporting."]
+    },
+    {
+      "role": "Business writer & content writer",
+      "start_date": "2016",
+      "end_date": "2021",
+      "current": false,
+      "date_label": "",
+      "company": "Freelance",
+      "location": "Remote",
+      "tasks": ["Turned research and complex topics into reports and business content.", "Wrote for audiences across business, education, logistics, agriculture, and technology."]
+    }
+  ]
+}
