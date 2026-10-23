@@ -5907,7 +5907,8 @@ body, input, select, textarea, button,
 .workflow-grid { display:grid; gap:clamp(.75rem,2vw,1.5rem); grid-template-columns:repeat(4,minmax(0,1fr)); list-style:none; margin:0; padding:0; position:relative; }
 .workflow-grid::before { background:var(--portfolio-accent); content:""; height:1px; left:12.5%; opacity:.55; position:absolute; right:12.5%; top:1.5rem; }
 .workflow-grid li { min-width:0; position:relative; text-align:center; }
-.workflow-grid strong { align-items:center; background:var(--portfolio-page); border:2px solid var(--portfolio-accent); border-radius:50%; color:var(--portfolio-accent); display:flex; font-size:.9rem; height:3rem; justify-content:center; margin:0 auto 1.15rem; position:relative; width:3rem; z-index:1; }
+.workflow-grid strong { align-items:center; background:var(--portfolio-page); border:2px solid var(--portfolio-accent); border-radius:50%; color:var(--portfolio-accent); display:flex; font-size:.9rem; height:3rem; justify-content:center; margin:0 auto 1.15rem; position:relative; transition:background-color .25s ease,border-color .25s ease,box-shadow .25s ease,color .25s ease,transform .25s ease; width:3rem; z-index:1; }
+@media (hover:hover) { .workflow-grid li:hover strong { background:var(--portfolio-accent); box-shadow:0 0 0 .3rem color-mix(in srgb,var(--portfolio-accent) 18%,transparent),0 0 1.25rem color-mix(in srgb,var(--portfolio-accent) 45%,transparent); color:#fff; transform:scale(1.08); } }
 .workflow-grid h3 { font-size:1.05rem; font-weight:800; margin:0 0 .5rem; text-align:center; text-transform:none; }
 .workflow-grid p { color:var(--portfolio-muted); font-size:max(.88rem,14px); font-weight:400; line-height:1.6; margin:0 auto; max-width:14rem; overflow-wrap:anywhere; text-align:center; }
 #main > .why-section { padding-top:2rem; }
@@ -5971,7 +5972,7 @@ body, input, select, textarea, button,
 #copyright ul li,#copyright ul li:first-child { border:0; display:inline-flex; margin:0; padding:0; }
 @media screen and (max-width:1100px) { #main > #insights-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; } #footer > section.split.contact.footer-grid.footer-columns { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media screen and (max-width:736px) { #main > #insights.insights-section { padding:4rem 0 1.5rem !important; } #insights .major { width:calc(100% - 2.25rem); } #main > #insights-grid { gap:1.25rem !important; grid-template-columns:1fr !important; } #main > .collection-actions { padding-bottom:7rem; } #footer > section.split.contact.footer-grid.footer-columns { grid-template-columns:1fr; padding-top:3rem; padding-bottom:3rem; width:calc(100% - 2.5rem); } }
-@media (prefers-reduced-motion:reduce) { .why-benefit,.expertise-panel { transition:none; } }
+@media (prefers-reduced-motion:reduce) { .why-benefit,.expertise-panel,.workflow-grid strong { transition:none; } .workflow-grid li:hover strong { transform:none; } }
 
 .projects-page { max-width:1080px !important; padding-left:0 !important; padding-right:0 !important; width:calc(100% - 3rem); }
 .projects-page .project-page-header h1 { font-size:2.15rem; }
