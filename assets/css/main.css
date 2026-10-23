@@ -5521,7 +5521,7 @@ body,
   border-radius: 50%;
   bottom: 1.5rem;
   box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.22);
-  color: #aebbc6;
+  color: #ffffff;
   cursor: pointer;
   display: flex;
   font-size: 1rem;
@@ -5544,6 +5544,8 @@ body,
   background: #18bfef;
   color: #212931;
 }
+
+.back-to-top svg { display: block; height: 1.35rem; width: 1.35rem; }
 
 .back-to-top.is-visible {
   opacity: 1;
@@ -6027,6 +6029,10 @@ body, input, select, textarea, button,
   #intro,#nav.top-navigation + #intro { min-height:0; padding:3.5rem 0 2.5rem; }
   #main > .services-section { padding-top:2rem; }
   #intro .hero-shell { gap:1.5rem; }
+  #intro .hero-content { max-width:none; width:100%; }
+  #intro .hero-visual { justify-self:center; }
+  #intro .hero-content .hero-kicker { display:table; margin-left:auto; margin-right:auto; text-align:center; }
+  #intro .hero-content h1,#intro .hero-content .hero-title { margin-left:auto; margin-right:auto; text-align:center; }
   #intro .image.avatar { height:min(50vw,12.5rem); width:min(50vw,12.5rem); }
   #intro .hero-kicker { box-sizing:border-box; display:inline-block; font-size:.72rem; letter-spacing:.12em; line-height:1.4; max-width:100%; padding:.4rem .65rem; white-space:normal; }
   #intro .hero-summary { margin-bottom:1.25rem; }
