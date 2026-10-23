@@ -237,8 +237,8 @@
   "home_highlights": [
     { "source": "custom", "label_override": "150K+ ROWS ANALYSED", "caption": "BI & DATA ANALYTICS", "url": "projects/" },
     { "source": "custom", "label_override": "11+ INDUSTRIES ANALYSED", "caption": "MARKET RESEARCH & BUSINESS ANALYSIS", "url": "#services" },
-    { "source": "custom", "label_override": "60+ PLANS & PROPOSALS", "caption": "BUSINESS PLANNING & DEVELOPMENT", "url": "samples/" },
-    { "source": "custom", "label_override": "10 TRAINING COHORTS", "caption": "TRAINING & WORKSHOPS", "url": "#services" }
+    { "source": "custom", "label_override": "60+ PLANS & PROPOSALS", "caption": "DEVELOPED FOR CLIENTS", "url": "samples/" },
+    { "source": "custom", "label_override": "10 COHORTS TRAINED", "caption": "TRAINING & WORKSHOPS", "url": "#services" }
   ],
   "workflow": {
     "label": "From question to delivery",
@@ -248,7 +248,7 @@
       { "title": "Understand", "description": "Define goals, challenges, and project requirements." },
       { "title": "Plan", "description": "Agree on the approach, scope, and deliverables." },
       { "title": "Execute", "description": "Research, analyse, and develop the solution." },
-      { "title": "Deliver", "description": "Present results, recommendations, and next steps." }
+      { "title": "Deliver", "description": "Present results and recommendations." }
     ]
   },
   "why_work": {

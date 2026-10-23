@@ -4203,12 +4203,13 @@ input, select, textarea {
 			color: #18bfef;
 		}
 
-		#footer ul.icons.alt li .icon:before {
-			box-shadow: inset 0 0 0 2px #e2e2e2;
-		}
-
-		#footer ul.icons.alt li a.icon:hover:before {
-			box-shadow: inset 0 0 0 2px #18bfef;
+		#footer ul.icons.alt li .icon:before,
+		#footer ul.icons.alt li a.icon:hover:before,
+		#footer ul.icons.alt li a.icon:focus-visible:before {
+			background: none;
+			border: 0;
+			border-radius: 0;
+			box-shadow: none;
 		}
 
 		#footer header.major .date:before, #footer header.major .date:after {
