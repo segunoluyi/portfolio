@@ -13,7 +13,6 @@
   var allSamples = [];
   var grid = document.querySelector("#samples-grid");
   var searchInput = document.querySelector("#sample-search");
-  var documentTypeFilter = document.querySelector("#document-type-filter");
   var industryFilter = document.querySelector("#industry-filter");
   var resultsLabel = document.querySelector("#sample-results");
   var pagination = document.querySelector("#sample-pagination");
@@ -86,11 +85,10 @@
 
   function getFilteredSamples() {
     var term = (searchInput.value || "").trim().toLowerCase();
-    var documentType = documentTypeFilter.value;
     var industry = industryFilter.value;
     return allSamples.filter(function (sample) {
       var haystack = [sample.title, sample.content_type, sample.industry, sample.summary].concat(Array.isArray(sample.tags) ? sample.tags : []).join(" ").toLowerCase();
-      return (!documentType || sample.content_type === documentType) && (!industry || sample.industry === industry) && (!term || haystack.indexOf(term) !== -1);
+      return (!industry || sample.industry === industry) && (!term || haystack.indexOf(term) !== -1);
     });
   }
 
@@ -140,12 +138,6 @@
         if (!isNaN(secondDate)) return 1;
         return secondEntry.index - firstEntry.index;
       }).map(function (entry) { return entry.item; });
-      Array.from(new Set(allSamples.map(function (sample) { return sample.content_type; }).filter(Boolean))).sort().forEach(function (type) {
-        var option = document.createElement("option");
-        option.value = type;
-        option.textContent = type;
-        documentTypeFilter.appendChild(option);
-      });
       Array.from(new Set(allSamples.map(function (sample) { return sample.industry; }).filter(Boolean))).sort().forEach(function (industry) {
         var option = document.createElement("option");
         option.value = industry;
@@ -153,7 +145,6 @@
         industryFilter.appendChild(option);
       });
       searchInput.addEventListener("input", function () { currentPage = 1; render(); });
-      documentTypeFilter.addEventListener("change", function () { currentPage = 1; render(); });
       industryFilter.addEventListener("change", function () { currentPage = 1; render(); });
       render();
     })
