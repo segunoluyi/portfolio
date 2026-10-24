@@ -114,6 +114,10 @@
       for (var page = 1; page <= totalPages; page += 1) pagination.appendChild(makeButton(String(page), page, page === currentPage));
       pagination.appendChild(makeButton("Next", Math.min(totalPages, currentPage + 1), currentPage === totalPages));
     }
+    grid.classList.add("is-loaded");
+    try {
+      sessionStorage.setItem("portfolio-projects-grid-layout", JSON.stringify({ width: innerWidth, height: Math.ceil(grid.getBoundingClientRect().height) }));
+    } catch (error) { /* Rendering does not depend on storage. */ }
   }
 
   fetch("../content/portfolio.json?cb=" + contentRevision, { cache: "no-store" })
@@ -132,5 +136,5 @@
       }).map(function (entry) { return entry.item; });
       render();
     })
-    .catch(function () { grid.textContent = "Projects could not be loaded."; });
+    .catch(function () { grid.classList.add("is-loaded"); grid.textContent = "Projects could not be loaded."; });
 }());
