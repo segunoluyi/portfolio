@@ -6036,18 +6036,27 @@ body, input, select, textarea, button,
 /* Project cards use a roomier editorial layout; insight cards keep their compact treatment. */
 #main #projects-grid > article.showcase-project-card,
 #main #project-grid > article.showcase-project-card { border-radius:1.25rem; }
+#main #projects-grid > article.showcase-project-card:hover,
+#main #project-grid > article.showcase-project-card:hover { border-color:transparent; }
 #projects-grid .showcase-project-card .project-card-visual,
 #project-grid .showcase-project-card .project-card-visual { aspect-ratio:3 / 2; height:auto; }
+#projects-grid .showcase-project-card .project-card-visual img,
+#project-grid .showcase-project-card .project-card-visual img { transform:scale(1.015); }
+#projects-grid .showcase-project-card:hover .project-card-visual img,
+#project-grid .showcase-project-card:hover .project-card-visual img { transform:scale(1.06); }
 #projects-grid .showcase-project-card .project-card-content,
-#project-grid .showcase-project-card .project-card-content { min-height:18rem; padding:1.5rem; }
+#project-grid .showcase-project-card .project-card-content { min-height:18rem; padding:1.65rem; }
+#projects-grid .showcase-project-card .project-card-content { min-height:24.75rem; }
 #projects-grid .showcase-project-card h2,
-#project-grid .showcase-project-card h2 { font-size:1.2rem !important; line-height:1.28 !important; }
+#project-grid .showcase-project-card h2 { font-size:1.25rem !important; line-height:1.28 !important; }
 #projects-grid .showcase-project-card .project-card-content > p,
-#project-grid .showcase-project-card .project-card-content > p { font-size:.88rem; line-height:1.58; margin:.9rem 0 1.5rem; text-align:left; }
+#project-grid .showcase-project-card .project-card-content > p { font-size:.95rem; line-height:1.58; margin:.9rem 0 1.5rem; text-align:left; }
 #projects-grid .showcase-project-card .project-card-tools,
 #project-grid .showcase-project-card .project-card-tools { gap:.4rem; }
 #projects-grid .showcase-project-card .project-card-tools li,
-#project-grid .showcase-project-card .project-card-tools li { background:color-mix(in srgb,var(--portfolio-accent) 7%,var(--portfolio-surface)); border-color:color-mix(in srgb,var(--portfolio-accent) 16%,var(--portfolio-border)); color:var(--portfolio-muted); font-size:.82rem; padding:.3rem .55rem; }
+#project-grid .showcase-project-card .project-card-tools li { background:color-mix(in srgb,var(--portfolio-accent) 7%,var(--portfolio-surface)); border-color:color-mix(in srgb,var(--portfolio-accent) 16%,var(--portfolio-border)); color:var(--portfolio-muted); font-size:.72rem; font-weight:600; letter-spacing:0; padding:.24rem .5rem; text-transform:none; }
+#projects-grid .project-card-overlay-button.button,
+#project-grid .project-card-overlay-button.button { font-size:.7rem; height:2.4rem; line-height:2.3rem; min-width:9.5rem; }
 @media screen and (max-width:736px) {
   #projects-grid .showcase-project-card .project-card-content,
   #project-grid .showcase-project-card .project-card-content { min-height:0; padding:1.35rem; }
