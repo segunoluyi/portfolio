@@ -4887,6 +4887,8 @@ input, select, textarea {
   --portfolio-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.25);
 }
 
+html { background: var(--portfolio-page); }
+
 body,
 #wrapper {
   background: var(--portfolio-page);

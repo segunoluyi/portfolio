@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <script>
       try {
+        var savedPortfolioTheme = localStorage.getItem("portfolio-colour-theme");
+        document.documentElement.dataset.theme = savedPortfolioTheme === "dark" ? "dark" : "light";
+      } catch (error) { document.documentElement.dataset.theme = "light"; }
+      try {
         var projectsLayout = JSON.parse(sessionStorage.getItem("portfolio-projects-grid-layout"));
         if (projectsLayout && Math.abs(projectsLayout.width - innerWidth) < 40 && projectsLayout.height > 0) {
           document.documentElement.style.setProperty("--projects-grid-loading-height", projectsLayout.height + "px");
@@ -16,7 +20,7 @@
     <link rel="canonical" href="https://segunoluyi.github.io/portfolio/projects/" />
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" />
-    <link rel="stylesheet" href="../assets/css/main.css?v=projects-stable-reload-20261024" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=projects-theme-reload-20261024" />
   </head>
   <body class="is-preload" data-hide-theme-toggle>
     <div id="wrapper">
