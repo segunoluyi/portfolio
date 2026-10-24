@@ -6033,6 +6033,25 @@ body, input, select, textarea, button,
 .showcase-project-card h2 { font-size:1rem !important; line-height:1.25 !important; }
 .showcase-project-card .project-card-content > p { font-size:.74rem; line-height:1.58; margin:.75rem 0 1rem; }
 .showcase-project-card .project-card-visual { height:11rem; }
+/* Project cards use a roomier editorial layout; insight cards keep their compact treatment. */
+#main #projects-grid > article.showcase-project-card,
+#main #project-grid > article.showcase-project-card { border-radius:1.25rem; }
+#projects-grid .showcase-project-card .project-card-visual,
+#project-grid .showcase-project-card .project-card-visual { aspect-ratio:3 / 2; height:auto; }
+#projects-grid .showcase-project-card .project-card-content,
+#project-grid .showcase-project-card .project-card-content { min-height:17rem; padding:1.5rem; }
+#projects-grid .showcase-project-card h2,
+#project-grid .showcase-project-card h2 { font-size:1.2rem !important; line-height:1.28 !important; }
+#projects-grid .showcase-project-card .project-card-content > p,
+#project-grid .showcase-project-card .project-card-content > p { font-size:.88rem; line-height:1.58; margin:.9rem 0 1.5rem; text-align:left; }
+#projects-grid .showcase-project-card .project-card-tools,
+#project-grid .showcase-project-card .project-card-tools { gap:.4rem; }
+#projects-grid .showcase-project-card .project-card-tools li,
+#project-grid .showcase-project-card .project-card-tools li { background:color-mix(in srgb,var(--portfolio-accent) 7%,var(--portfolio-surface)); border-color:color-mix(in srgb,var(--portfolio-accent) 16%,var(--portfolio-border)); color:var(--portfolio-muted); font-size:.82rem; padding:.3rem .55rem; }
+@media screen and (max-width:736px) {
+  #projects-grid .showcase-project-card .project-card-content,
+  #project-grid .showcase-project-card .project-card-content { min-height:0; padding:1.35rem; }
+}
 #samples-grid { align-items:stretch; display:grid; gap:1.25rem; grid-template-columns:repeat(3,minmax(0,1fr)); }
 #samples-grid > .sample-showcase-card { height:100%; }
 #samples-grid .sample-cover.has-image { aspect-ratio:auto; background:var(--portfolio-surface-soft); height:11rem; min-height:0; }

@@ -42,7 +42,7 @@
     }).map(function (entry) { return entry.item; });
   }
 
-  function createProject(project) {
+  function createProject(project, showEyebrow) {
     var article = document.createElement("article");
     var content = document.createElement("div");
     var eyebrow = document.createElement("span");
@@ -98,7 +98,8 @@
       media.appendChild(overlay);
     }
     summary.textContent = project.summary || "";
-    content.append(eyebrow, heading, summary);
+    if (showEyebrow) content.appendChild(eyebrow);
+    content.append(heading, summary);
     if (Array.isArray(project.tools) && project.tools.length) {
       var tools = document.createElement("ul");
       tools.className = "project-card-tools";
@@ -430,7 +431,7 @@
 
       if (insightsGrid && Array.isArray(content.insights)) {
         insightsGrid.replaceChildren();
-        newestFirst(content.insights).slice(0, 6).forEach(function (insight) { insightsGrid.appendChild(createProject(insight)); });
+        newestFirst(content.insights).slice(0, 6).forEach(function (insight) { insightsGrid.appendChild(createProject(insight, true)); });
       }
 
       if (newsletterSection) {

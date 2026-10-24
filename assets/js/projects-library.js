@@ -16,7 +16,6 @@
   function createProjectCard(project) {
     var article = document.createElement("article");
     var content = document.createElement("div");
-    var eyebrow = document.createElement("span");
     var heading = document.createElement("h2");
     var title = document.createElement("a");
     var media = document.createElement("div");
@@ -36,8 +35,6 @@
 
     article.className = "project-card showcase-project-card";
     content.className = "project-card-content";
-    eyebrow.className = "project-card-eyebrow";
-    eyebrow.textContent = project.eyebrow || "Project";
     title.href = primaryUrl || "#";
     if (!primaryUrl) title.removeAttribute("href");
     title.textContent = project.title || "Untitled project";
@@ -74,7 +71,7 @@
     }
 
     summary.textContent = project.summary || "";
-    content.append(eyebrow, heading, summary);
+    content.append(heading, summary);
     if (Array.isArray(project.tools) && project.tools.length) {
       var tools = document.createElement("ul");
       tools.className = "project-card-tools";
