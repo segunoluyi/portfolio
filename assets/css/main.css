@@ -5864,7 +5864,7 @@ body,
 
 /* Projects gallery: image-led cards with focused hover actions. */
 .projects-page { background:var(--portfolio-page); margin:0 auto; max-width:1152px !important; padding:0 0 6rem !important; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
-.projects-page .project-page-header { margin:0; max-width:38rem; padding:5rem 0 2rem; text-align:left; }
+.projects-page .project-page-header { margin:0; max-width:38rem; padding:8rem 0 2rem; text-align:left; }
 .projects-page .project-page-header h1 { color:var(--portfolio-text); font-size:2.8rem; letter-spacing:-.045em; line-height:1; margin:0; padding-bottom:1rem; position:relative; text-align:left; }
 .projects-page .project-page-header h1::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.25rem; left:0; position:absolute; width:4.5rem; }
 #main #projects-grid.projects-showcase-grid { align-items:stretch; display:grid; gap:2rem; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; max-width:1152px; }
@@ -5923,7 +5923,7 @@ body, input, select, textarea, button,
   width:calc(100% - 3rem);
 }
 
-#nav.top-navigation { box-sizing:border-box; margin:0; max-width:none; padding:.65rem max(1.5rem,calc((100% - 1080px)/2)); width:100%; }
+#nav.top-navigation { box-sizing:border-box; margin:0; max-width:none; padding:.65rem max(1.5rem,calc((100% - 1152px)/2)); width:100%; }
 #nav.top-navigation ul.links { margin-left:auto; }
 #nav.top-navigation ul.links li a { font-size:.84rem; letter-spacing:.02em; padding:.7rem .9rem; }
 #nav.top-navigation .theme-toggle { height:2rem; justify-content:center; margin-left:.45rem; padding:0; width:2rem; }
@@ -6062,6 +6062,12 @@ body, input, select, textarea, button,
 #project-grid .showcase-project-card .project-card-tools li { background:color-mix(in srgb,var(--portfolio-accent) 7%,var(--portfolio-surface)); border-color:color-mix(in srgb,var(--portfolio-accent) 16%,var(--portfolio-border)); color:var(--portfolio-muted); font-size:.72rem; font-weight:600; letter-spacing:0; padding:.24rem .5rem; text-transform:none; }
 #projects-grid .project-card-overlay-button.button,
 #project-grid .project-card-overlay-button.button { font-size:.7rem; height:2.4rem; line-height:2.3rem; min-width:9.5rem; }
+#projects-grid .project-card-overlay-button.button,
+#project-grid .project-card-overlay-button.button { border:0; box-shadow:none; line-height:2.4rem; }
+#projects-grid .project-card-overlay-button.button:hover,
+#projects-grid .project-card-overlay-button.button:focus-visible,
+#project-grid .project-card-overlay-button.button:hover,
+#project-grid .project-card-overlay-button.button:focus-visible { box-shadow:0 0 .9rem color-mix(in srgb,var(--portfolio-accent) 55%,transparent); }
 @media screen and (max-width:736px) {
   #projects-grid .showcase-project-card .project-card-content,
   #project-grid .showcase-project-card .project-card-content { min-height:0; padding:1.35rem; }
@@ -6129,6 +6135,11 @@ body, input, select, textarea, button,
   #intro .hero-actions .button { font-size:.69rem; letter-spacing:.04em; padding:0 .15rem; }
 }
 @media screen and (max-width:980px) {
+  #navPanel { background:var(--portfolio-surface); color:var(--portfolio-text); }
+  #navPanel .links li { border-color:var(--portfolio-border); }
+  #navPanel .links li a,#navPanel .close { color:var(--portfolio-text); }
+  #navPanel .close:hover,#navPanel .links li a:hover { color:var(--portfolio-accent); }
+  #navPanel .theme-toggle { display:inline-flex; margin:1rem 0 0; position:static; }
   #navPanelToggle,#navPanelToggle.alt { align-items:center; background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:.5rem; box-shadow:0 2px 10px rgba(0,0,0,.08); color:var(--portfolio-text); display:flex; font-size:.8rem; min-height:44px; padding:0 .75rem; }
   #navPanelToggle:hover,#navPanelToggle:focus-visible,#navPanelToggle.alt:hover { background:var(--portfolio-surface); border-color:var(--portfolio-accent); color:var(--portfolio-accent); }
   #navPanel .nav-brand { align-items:center; border:0; display:inline-flex; height:2.75rem; margin-bottom:1.5rem; max-width:100%; }
