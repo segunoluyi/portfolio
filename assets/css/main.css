@@ -5864,9 +5864,10 @@ body,
 
 /* Projects gallery: image-led cards with focused hover actions. */
 .projects-page { background:var(--portfolio-page); margin:0 auto; max-width:1152px !important; padding:0 0 6rem !important; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
-.projects-page .project-page-header { margin:0; max-width:38rem; padding:8rem 0 2rem; text-align:left; }
+.projects-page .project-page-header { margin:0; max-width:38rem; padding:8rem 0 7rem; text-align:left; }
 .projects-page .project-page-header h1 { color:var(--portfolio-text); font-size:2.8rem; letter-spacing:-.045em; line-height:1; margin:0; padding-bottom:1rem; position:relative; text-align:left; }
 .projects-page .project-page-header h1::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.25rem; left:0; position:absolute; width:4.5rem; }
+.projects-page .project-page-header p { color:var(--portfolio-muted); font-size:1rem; line-height:1.6; margin:1.5rem 0 0; max-width:38rem; }
 #main #projects-grid.projects-showcase-grid { align-items:stretch; display:grid; gap:2rem; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; max-width:1152px; }
 .projects-showcase-grid > .showcase-project-card { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1.25rem; box-shadow:0 1rem 2.2rem rgba(15,32,42,.1); display:flex; flex-direction:column; height:100%; min-width:0; overflow:hidden; padding:0; text-align:left; transition:border-color .45s ease,box-shadow .5s ease,transform .5s cubic-bezier(.2,.75,.25,1); }
 .projects-showcase-grid > .showcase-project-card:hover { border-color:transparent; box-shadow:0 1.25rem 2.8rem rgba(15,32,42,.15),0 0 1.15rem color-mix(in srgb,var(--portfolio-accent) 20%,transparent); transform:translateY(-.35rem); }
@@ -5892,7 +5893,7 @@ body,
 .showcase-project-card .project-card-tools li { background:color-mix(in srgb,var(--portfolio-accent) 10%,var(--portfolio-surface)); border:1px solid color-mix(in srgb,var(--portfolio-accent) 20%,var(--portfolio-border)); color:var(--portfolio-accent); font-size:calc(.5rem + 1px); line-height:1.15; padding:.22rem .42rem; white-space:nowrap; }
 .projects-page .sample-pagination { margin-top:2.5rem; }
 @media screen and (max-width:1100px) { #main #projects-grid.projects-showcase-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media screen and (max-width:736px) { .projects-page { padding-bottom:4rem !important; } .projects-page .project-page-header { padding:4.5rem 0 1.8rem; } #main #projects-grid.projects-showcase-grid { grid-template-columns:1fr; } .showcase-project-card .project-card-visual { height:14rem; } .project-card-overlay { opacity:1; pointer-events:auto; } .project-card-overlay-actions { display:flex; transform:none; } .showcase-project-card .project-card-content { padding:1.35rem; } }
+@media screen and (max-width:736px) { .projects-page { padding-bottom:4rem !important; } .projects-page .project-page-header { padding:4.5rem 0 2.5rem; } #main #projects-grid.projects-showcase-grid { grid-template-columns:1fr; } .showcase-project-card .project-card-visual { height:14rem; } .project-card-overlay { opacity:1; pointer-events:auto; } .project-card-overlay-actions { display:flex; transform:none; } .showcase-project-card .project-card-content { padding:1.35rem; } }
 
 /* The home-page preview uses the same gallery component as the Projects page. */
 #projects { background:var(--portfolio-page); padding:5rem 0 2rem !important; }
@@ -5923,7 +5924,7 @@ body, input, select, textarea, button,
   width:calc(100% - 3rem);
 }
 
-#nav.top-navigation { box-sizing:border-box; margin:0; max-width:none; padding:.65rem max(1.5rem,calc((100% - 1152px)/2)); width:100%; }
+#nav.top-navigation { box-sizing:border-box; height:auto; margin:0; max-width:none; overflow:visible; padding:2.25rem max(1.5rem,calc((100% - 1152px)/2)) .65rem; width:100%; }
 #nav.top-navigation ul.links { margin-left:auto; }
 #nav.top-navigation ul.links li a { font-size:.84rem; letter-spacing:.02em; padding:.7rem .9rem; }
 #nav.top-navigation .theme-toggle { height:2rem; justify-content:center; margin-left:.45rem; padding:0; width:2rem; }

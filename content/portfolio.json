@@ -13,6 +13,9 @@
     "headshot": "images/uploads/segun-oluyi-profile-pics.png",
     "primary_title": "Data & Business Analyst"
   },
+  "project_page": {
+    "intro": "Projects that turn complex data and business questions into clear findings, useful tools, and practical recommendations."
+  },
   "projects": [
     {
       "published_at": "2026-09-15",

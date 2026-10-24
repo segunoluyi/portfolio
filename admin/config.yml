@@ -102,6 +102,11 @@ collections:
               - { label: Legacy headline, name: headline, widget: string, required: false }
               - { label: LinkedIn URL, name: linkedin_url, widget: string, required: false }
               - { label: LinkedIn label, name: linkedin_label, widget: string, required: false }
+          - label: Projects page
+            name: project_page
+            widget: object
+            fields:
+              - { label: Projects page introduction, name: intro, widget: text, required: false, hint: "A short sentence beneath the Projects heading and above the cards." }
           - label: Project cards
             name: projects
             widget: list

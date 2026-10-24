@@ -120,6 +120,8 @@
     .then(function (response) { if (!response.ok) throw new Error(); return response.json(); })
     .then(function (content) {
       if (window.portfolioTheme) window.portfolioTheme.applyDefault((content.site || {}).default_theme);
+      var intro = document.querySelector("[data-project-page-intro]");
+      if (intro && content.project_page && content.project_page.intro) intro.textContent = content.project_page.intro;
       allProjects = (Array.isArray(content.projects) ? content.projects : []).map(function (item, index) {
         return { item: item, index: index };
       }).sort(function (firstEntry, secondEntry) {
