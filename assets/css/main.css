@@ -6258,7 +6258,7 @@ body, input, select, textarea, button,
 #contact-form .contact-form-status:empty { display:none; }
 #contact-form .contact-form-status.is-success { color:#16835d; }
 #contact-form .contact-form-status.is-error { color:#d25353; }
-@media screen and (max-width:900px) { .contact-page-grid { grid-template-columns:1fr; } }
+@media screen and (max-width:900px) { .contact-page-grid { grid-template-columns:1fr; } .contact-form-card { order:-1; } }
 @media screen and (max-width:736px) {
   #main > .post.contact-page { padding:4.5rem 0 6rem !important; width:calc(100% - 2.5rem); }
   .contact-page-grid { gap:1.25rem; grid-template-columns:1fr; }
