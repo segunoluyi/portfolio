@@ -190,6 +190,7 @@
     }
   ],
   "contact": {
+    "form_endpoint": "https://formspree.io/f/xdeekbon",
     "location": "Lagos, Nigeria",
     "phone": "+2348153051701",
     "email": "oluyisegun@gmail.com",

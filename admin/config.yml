@@ -263,6 +263,7 @@ collections:
             name: contact
             widget: object
             fields:
+              - { label: Contact form endpoint, name: form_endpoint, widget: string, required: false, hint: "Paste the Formspree URL for the contact page, for example https://formspree.io/f/your-form-id." }
               - { label: Location, name: location, widget: string, required: false }
               - { label: Phone, name: phone, widget: string, required: false }
               - { label: Email, name: email, widget: string, required: false }

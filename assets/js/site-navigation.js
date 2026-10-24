@@ -20,7 +20,7 @@
     { label: "Projects", path: "projects/", activePath: "projects/" },
     { label: "Samples", path: "samples/", activePath: "samples/" },
     { label: "Insights", path: "insights/", activePath: "insights/" },
-    { label: "Contact", path: "#footer", activePath: null }
+    { label: "Contact", path: "contact/", activePath: "contact/" }
   ];
 
   nav.className = "top-navigation";
