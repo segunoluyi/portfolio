@@ -2,9 +2,15 @@
   "use strict";
 
   var storageKey = "portfolio-colour-theme";
+  var hideToggle = document.body.hasAttribute("data-hide-theme-toggle");
   var toggle = document.querySelector("#theme-toggle");
 
-  if (!toggle) {
+  if (hideToggle && toggle) {
+    toggle.remove();
+    toggle = null;
+  }
+
+  if (!toggle && !hideToggle) {
     toggle = document.createElement("button");
     toggle.id = "theme-toggle";
     toggle.className = "theme-toggle";
@@ -14,7 +20,7 @@
   }
 
   var navigation = document.querySelector("#nav");
-  if (navigation && !navigation.contains(toggle)) navigation.appendChild(toggle);
+  if (navigation && toggle && !navigation.contains(toggle)) navigation.appendChild(toggle);
 
   function normaliseTheme(value) {
     return value === "dark" ? "dark" : "light";

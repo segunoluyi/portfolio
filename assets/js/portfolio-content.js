@@ -102,7 +102,7 @@
     if (Array.isArray(project.tools) && project.tools.length) {
       var tools = document.createElement("ul");
       tools.className = "project-card-tools";
-      project.tools.forEach(function (tool) { var item = document.createElement("li"); item.textContent = tool; tools.appendChild(item); });
+      project.tools.slice(0, 5).forEach(function (tool) { var item = document.createElement("li"); item.textContent = tool; tools.appendChild(item); });
       content.appendChild(tools);
     }
     article.append(media, content);

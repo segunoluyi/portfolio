@@ -112,11 +112,13 @@ collections:
               - { label: Image, name: image, widget: image, required: false }
               - { label: Image description, name: image_alt, widget: string, required: false, hint: "Describe the project cover for screen-reader users." }
               - { label: Project status, name: status, widget: string, required: false, hint: "Use only when the project has no cover or public link yet, for example: Documentation in preparation." }
-              - label: Tools used
+              - label: Card tags
                 name: tools
                 widget: list
                 required: false
-                field: { label: Tool, name: tool, widget: string }
+                max: 5
+                hint: "Add up to five short, verified tags for this project. These appear on its cards."
+                field: { label: Tag, name: tag, widget: string }
               - { label: Legacy documentation URL, name: url, widget: string, required: false, hint: "Existing cards can keep using this for documentation. New projects should use the GitHub repository field." }
               - { label: Alternative documentation URL, name: case_study_url, widget: string, required: false, hint: "Use when the documentation is hosted somewhere other than GitHub." }
               - { label: Documentation button label, name: case_study_label, widget: string, required: false, hint: "Optional. Defaults to View documentation when there is no GitHub repository." }

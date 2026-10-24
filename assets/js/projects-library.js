@@ -6,7 +6,6 @@
   var currentPage = 1;
   var allProjects = [];
   var grid = document.querySelector("#projects-grid");
-  var resultsLabel = document.querySelector("#project-results");
   var pagination = document.querySelector("#project-pagination");
 
   function versionedUrl(value) {
@@ -79,7 +78,7 @@
     if (Array.isArray(project.tools) && project.tools.length) {
       var tools = document.createElement("ul");
       tools.className = "project-card-tools";
-      project.tools.forEach(function (tool) {
+      project.tools.slice(0, 5).forEach(function (tool) {
         var toolItem = document.createElement("li");
         toolItem.textContent = tool;
         tools.appendChild(toolItem);
@@ -111,7 +110,6 @@
     allProjects.slice((currentPage - 1) * pageSize, currentPage * pageSize).forEach(function (project) {
       grid.appendChild(createProjectCard(project));
     });
-    if (resultsLabel) resultsLabel.textContent = allProjects.length + (allProjects.length === 1 ? " project" : " projects") + " selected";
     if (!pagination) return;
     pagination.replaceChildren();
     if (totalPages > 1) {
@@ -137,5 +135,5 @@
       }).map(function (entry) { return entry.item; });
       render();
     })
-    .catch(function () { if (resultsLabel) resultsLabel.textContent = "Projects could not be loaded."; });
+    .catch(function () { grid.textContent = "Projects could not be loaded."; });
 }());

@@ -50,14 +50,16 @@
   });
   nav.appendChild(links);
 
-  var toggle = document.createElement("button");
-  toggle.id = "theme-toggle";
-  toggle.className = "theme-toggle";
-  toggle.type = "button";
-  toggle.setAttribute("aria-pressed", "false");
-  toggle.setAttribute("aria-label", "Switch to dark theme");
-  toggle.innerHTML = '<span class="icon solid fa-moon" aria-hidden="true"></span><span data-theme-toggle-label>Dark theme</span>';
-  nav.appendChild(toggle);
+  if (!document.body.hasAttribute("data-hide-theme-toggle")) {
+    var toggle = document.createElement("button");
+    toggle.id = "theme-toggle";
+    toggle.className = "theme-toggle";
+    toggle.type = "button";
+    toggle.setAttribute("aria-pressed", "false");
+    toggle.setAttribute("aria-label", "Switch to dark theme");
+    toggle.innerHTML = '<span class="icon solid fa-moon" aria-hidden="true"></span><span data-theme-toggle-label>Dark theme</span>';
+    nav.appendChild(toggle);
+  }
 
   fetch(pageUrl("content/portfolio.json") + "?navigation=" + Date.now(), { cache: "no-store" })
     .then(function (response) { return response.ok ? response.json() : null; })
