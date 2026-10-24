@@ -224,6 +224,13 @@ collections:
               - { label: Page slug, name: slug, widget: string, required: true }
               - { label: Document type, name: content_type, widget: select, options: ["Business plan", "Proposal", "Pitch deck", "Market research", "Financial model", "Other work sample"], required: false }
               - { label: Industry, name: industry, widget: string, required: false }
+              - label: Additional card tags
+                name: tags
+                widget: list
+                required: false
+                max: 3
+                hint: "Add up to three extra tags. Industry and document type appear automatically, for a maximum of five tags on each card."
+                field: { label: Tag, name: tag, widget: string }
               - { label: Public document URL, name: url, widget: string }
               - { label: Cover image, name: cover_image, widget: image, required: false }
               - { label: Cover-image description, name: cover_alt, widget: string, required: false }

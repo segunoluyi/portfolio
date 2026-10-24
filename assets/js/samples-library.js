@@ -21,7 +21,6 @@
   function createSampleCard(sample) {
     var article = document.createElement("article");
     var content = document.createElement("div");
-    var industry = document.createElement("span");
     var heading = document.createElement("h2");
     var link = document.createElement("a");
     var cover = document.createElement("div");
@@ -32,8 +31,6 @@
 
     article.className = "project-card showcase-project-card sample-showcase-card";
     content.className = "project-card-content";
-    industry.className = "project-card-eyebrow";
-    industry.textContent = sample.industry || "Work sample";
     link.href = detailUrl;
     link.textContent = sample.title || "Untitled sample";
     heading.appendChild(link);
@@ -68,13 +65,19 @@
     overlay.appendChild(actions);
     cover.appendChild(overlay);
     summary.textContent = sample.summary || "";
-    content.append(industry, heading, summary);
-    if (sample.content_type) {
+    content.append(heading, summary);
+    var tagLabels = [sample.industry, sample.content_type].concat(Array.isArray(sample.tags) ? sample.tags : [])
+      .map(function (tag) { return String(tag || "").trim(); })
+      .filter(function (tag, index, labels) { return tag && labels.findIndex(function (value) { return value.toLowerCase() === tag.toLowerCase(); }) === index; })
+      .slice(0, 5);
+    if (tagLabels.length) {
       var tags = document.createElement("ul");
       tags.className = "project-card-tools";
-      var tag = document.createElement("li");
-      tag.textContent = sample.content_type;
-      tags.appendChild(tag);
+      tagLabels.forEach(function (label) {
+        var tag = document.createElement("li");
+        tag.textContent = label;
+        tags.appendChild(tag);
+      });
       content.appendChild(tags);
     }
     article.append(cover, content);
@@ -86,7 +89,7 @@
     var documentType = documentTypeFilter.value;
     var industry = industryFilter.value;
     return allSamples.filter(function (sample) {
-      var haystack = [sample.title, sample.content_type, sample.industry, sample.summary].join(" ").toLowerCase();
+      var haystack = [sample.title, sample.content_type, sample.industry, sample.summary].concat(Array.isArray(sample.tags) ? sample.tags : []).join(" ").toLowerCase();
       return (!documentType || sample.content_type === documentType) && (!industry || sample.industry === industry) && (!term || haystack.indexOf(term) !== -1);
     });
   }
@@ -97,6 +100,7 @@
     button.className = "button small";
     button.textContent = label;
     button.disabled = disabled;
+    if (disabled && /^\d+$/.test(label)) button.setAttribute("aria-current", "page");
     button.addEventListener("click", function () { currentPage = page; render(); });
     return button;
   }
