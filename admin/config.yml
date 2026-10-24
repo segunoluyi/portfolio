@@ -246,6 +246,13 @@ collections:
             widget: list
             fields:
               - { label: Category or format, name: eyebrow, widget: string, required: false }
+              - label: Additional card tags
+                name: tags
+                widget: list
+                required: false
+                max: 4
+                field: { label: Tag, name: tag, widget: string }
+                hint: "Add up to four tags. The category appears automatically, for a maximum of five tags on each card."
               - { label: Title, name: title, widget: string }
               - { label: Summary, name: summary, widget: text }
               - { label: Image, name: image, widget: image, required: false }

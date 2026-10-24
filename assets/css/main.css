@@ -6186,3 +6186,40 @@ body, input, select, textarea, button,
   #main #samples-grid.projects-showcase-grid { grid-template-columns:1fr; }
   #samples-grid .sample-showcase-card .project-card-content { min-height:0; padding:1.35rem; }
 }
+
+/* Insights uses the same page axis, card proportions, and controls as Samples. */
+#main > .post.insights-page { box-sizing:border-box; margin:0 auto; max-width:1152px !important; padding:0 0 7rem !important; width:calc(100% - 3rem); }
+.insights-page .project-page-header { margin:0; max-width:38rem; padding:8rem 0 3rem; text-align:left; }
+.insights-page .project-page-header h1 { color:var(--portfolio-text); font-size:2.15rem; letter-spacing:-.045em; line-height:1; margin:0; padding-bottom:1rem; position:relative; text-align:left; }
+.insights-page .project-page-header h1::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.25rem; left:0; position:absolute; width:4.5rem; }
+.insights-page .project-page-header p { color:var(--portfolio-muted); font-size:1rem; font-style:normal; line-height:1.6; margin:1.5rem 0 0; max-width:38rem; text-align:left; }
+.insights-page .sample-filters { align-items:end; gap:1rem; grid-template-columns:minmax(0,21rem) minmax(0,17rem); margin:0 0 1rem; }
+.insights-page .sample-filters .field { margin:0; min-width:0; }
+.insights-page .sample-filters label { color:var(--portfolio-muted); font-size:.7rem; letter-spacing:.06em; margin-bottom:.4rem; }
+.insights-page .sample-filters input,.insights-page .sample-filters select { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); color:var(--portfolio-text); font-size:.75rem; height:2.5rem; line-height:2.5rem; min-width:0; padding:0 .7rem; width:100%; }
+.insights-page .sample-filters select { appearance:auto; }
+:root[data-theme="dark"] .insights-page .sample-filters select { color-scheme:dark; }
+.insights-page .sample-results { color:var(--portfolio-muted); font-size:.7rem; margin:.9rem 0 1.5rem; }
+#main #insights-grid.projects-showcase-grid { align-items:stretch; display:grid; gap:2rem; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; max-width:1152px; }
+#main #insights-grid > article.insight-showcase-card { border:1px solid var(--portfolio-border); border-radius:1.25rem; box-shadow:0 1rem 2.2rem rgba(15,32,42,.1); padding:0; text-align:left; width:auto; }
+#insights-grid .insight-cover { aspect-ratio:3 / 2; background:var(--portfolio-surface-soft); height:auto; min-height:0; }
+#insights-grid .insight-cover.has-image img { height:100%; object-fit:cover; width:100%; }
+#insights-grid .insight-showcase-card .project-card-content { min-height:24.75rem; padding:1.65rem; }
+#main #insights-grid .insight-showcase-card h2 { font-size:1.25rem !important; line-height:1.28 !important; margin:0; }
+#insights-grid .insight-showcase-card .project-card-content > p { font-size:.95rem; line-height:1.58; margin:.9rem 0 1.5rem; text-align:left; }
+#insights-grid .insight-showcase-card .project-card-tools { gap:.4rem; }
+#insights-grid .insight-showcase-card .project-card-tools li { background:color-mix(in srgb,var(--portfolio-accent) 7%,var(--portfolio-surface)); border-color:color-mix(in srgb,var(--portfolio-accent) 16%,var(--portfolio-border)); color:var(--portfolio-muted); font-size:.72rem; font-weight:600; letter-spacing:0; padding:.24rem .5rem; text-transform:none; }
+#insights-grid .project-card-overlay-button.button { border:0; box-shadow:none; font-size:.7rem; height:2.4rem; line-height:2.4rem; min-width:9.5rem; }
+#insights-grid .project-card-overlay-button.button:hover,#insights-grid .project-card-overlay-button.button:focus-visible { box-shadow:0 0 .9rem color-mix(in srgb,var(--portfolio-accent) 55%,transparent); }
+#insight-pagination.sample-pagination { gap:.6rem; margin:3rem 0 0; }
+#insight-pagination .button { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:999px; box-shadow:none; color:var(--portfolio-text) !important; font-size:.72rem; height:2.5rem; line-height:2.4rem; min-width:2.5rem; padding:0 .9rem; }
+#insight-pagination .button:hover:not([disabled]),#insight-pagination .button:focus-visible:not([disabled]) { border-color:var(--portfolio-accent); color:var(--portfolio-accent) !important; }
+#insight-pagination .button[disabled] { opacity:.72; }
+#insight-pagination .button[aria-current="page"] { background:var(--portfolio-accent); border-color:var(--portfolio-accent); color:var(--portfolio-page) !important; opacity:1; }
+@media screen and (max-width:1100px) { #main #insights-grid.projects-showcase-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media screen and (max-width:736px) {
+  .insights-page .project-page-header { padding:4.5rem 0 2.5rem; }
+  .insights-page .sample-filters { grid-template-columns:1fr; }
+  #main #insights-grid.projects-showcase-grid { grid-template-columns:1fr; }
+  #insights-grid .insight-showcase-card .project-card-content { min-height:0; padding:1.35rem; }
+}
