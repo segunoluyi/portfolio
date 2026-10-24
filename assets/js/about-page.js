@@ -120,5 +120,6 @@
         content.jobs.filter(function (job) { return job && job.role; }).forEach(function (job) { jobs.appendChild(renderJob(job)); });
       }
     })
-    .catch(function () { /* Keep the readable HTML fallback when offline. */ });
+    .catch(function () { /* Keep the readable HTML fallback when offline. */ })
+    .finally(function () { if (window.portfolioContentReady) window.portfolioContentReady(); });
 }());

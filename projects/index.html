@@ -4,23 +4,12 @@
     <title>Projects | Segun Oluyi</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <script>
-      try {
-        var savedPortfolioTheme = localStorage.getItem("portfolio-colour-theme");
-        document.documentElement.dataset.theme = savedPortfolioTheme === "dark" ? "dark" : "light";
-      } catch (error) { document.documentElement.dataset.theme = "light"; }
-      try {
-        var projectsLayout = JSON.parse(sessionStorage.getItem("portfolio-projects-grid-layout"));
-        if (projectsLayout && Math.abs(projectsLayout.width - innerWidth) < 40 && projectsLayout.height > 0) {
-          document.documentElement.style.setProperty("--projects-grid-loading-height", projectsLayout.height + "px");
-        }
-      } catch (error) { /* Storage may be unavailable in private browsing. */ }
-    </script>
+    <script src="../assets/js/site-boot.js?v=site-boot-20261024"></script>
     <meta name="description" content="Selected data, business, and analytical projects by Segun Oluyi." />
     <link rel="canonical" href="https://segunoluyi.github.io/portfolio/projects/" />
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" />
-    <link rel="stylesheet" href="../assets/css/main.css?v=projects-theme-reload-20261024" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=site-boot-20261024" />
   </head>
   <body class="is-preload" data-hide-theme-toggle>
     <div id="wrapper">
@@ -81,7 +70,7 @@
       <div id="copyright"><ul><li>&copy; 2026 Designed by Segun Oluyi.</li></ul></div>
     </div>
     <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/jquery.scrollex.min.js"></script><script src="../assets/js/jquery.scrolly.min.js"></script><script src="../assets/js/browser.min.js"></script><script src="../assets/js/breakpoints.min.js"></script><script src="../assets/js/util.js"></script><script src="../assets/js/site-navigation.js?v=projects-no-toggle-20261024"></script>
-    <script src="../assets/js/main.js?v=mobile-center-top-20261023"></script><script src="../assets/js/site-theme.js?v=projects-no-toggle-20261024"></script><script src="../assets/js/projects-library.js?v=projects-stable-reload-20261024"></script>
+    <script src="../assets/js/main.js?v=mobile-center-top-20261023"></script><script src="../assets/js/site-theme.js?v=projects-no-toggle-20261024"></script><script src="../assets/js/projects-library.js?v=site-boot-20261024"></script>
     <script src="../assets/js/site-footer.js?v=shared-footer-20261023"></script>
   </body>
 </html>

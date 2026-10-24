@@ -69,5 +69,6 @@
     .catch(function () {
       if (title) title.textContent = "Sample unavailable";
       if (documentLink) documentLink.hidden = true;
-    });
+    })
+    .finally(function () { if (window.portfolioContentReady) window.portfolioContentReady(); });
 }());

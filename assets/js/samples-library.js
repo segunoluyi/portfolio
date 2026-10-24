@@ -155,5 +155,6 @@
     })
     .catch(function () {
       resultsLabel.textContent = "Samples could not be loaded.";
-    });
+    })
+    .finally(function () { if (window.portfolioContentReady) window.portfolioContentReady(); });
 }());

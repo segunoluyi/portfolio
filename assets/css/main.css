@@ -4888,6 +4888,9 @@ input, select, textarea {
 }
 
 html { background: var(--portfolio-page); }
+html.portfolio-content-loading #main { min-height:var(--portfolio-loading-main-height, 100vh); overflow-anchor:none; }
+#insights-grid .image.fit { aspect-ratio:16 / 9; display:block; overflow:hidden; }
+#insights-grid .image.fit img { height:100%; object-fit:cover; width:100%; }
 
 body,
 #wrapper {
@@ -5271,14 +5274,14 @@ body,
   background: #f1f3f4;
   display: flex;
   justify-content: center;
-  min-height: 20rem;
+  height: clamp(20rem, 38vw, 28rem);
+  overflow: hidden;
 }
 
 .sample-detail-cover-image {
   background: #f1f3f4;
   display: block;
-  height: auto;
-  max-height: 28rem;
+  height: 100%;
   object-fit: contain;
   width: 100%;
 }
@@ -5296,7 +5299,7 @@ body,
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  min-height: 20rem;
+  height: 100%;
 }
 
 .sample-detail-facts {
@@ -5865,7 +5868,6 @@ body,
 .projects-page .project-page-header h1 { color:var(--portfolio-text); font-size:2.8rem; letter-spacing:-.045em; line-height:1; margin:0; padding-bottom:1rem; position:relative; text-align:left; }
 .projects-page .project-page-header h1::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.25rem; left:0; position:absolute; width:4.5rem; }
 #main #projects-grid.projects-showcase-grid { align-items:stretch; display:grid; gap:2rem; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; max-width:1152px; }
-#main #projects-grid.projects-showcase-grid:not(.is-loaded) { min-height:var(--projects-grid-loading-height, 80vh); }
 .projects-showcase-grid > .showcase-project-card { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1.25rem; box-shadow:0 1rem 2.2rem rgba(15,32,42,.1); display:flex; flex-direction:column; height:100%; min-width:0; overflow:hidden; padding:0; text-align:left; transition:border-color .45s ease,box-shadow .5s ease,transform .5s cubic-bezier(.2,.75,.25,1); }
 .projects-showcase-grid > .showcase-project-card:hover { border-color:transparent; box-shadow:0 1.25rem 2.8rem rgba(15,32,42,.15),0 0 1.15rem color-mix(in srgb,var(--portfolio-accent) 20%,transparent); transform:translateY(-.35rem); }
 .showcase-project-card .project-card-visual { background:var(--portfolio-surface-soft); border-radius:0; height:12.5rem; margin:0; overflow:hidden; position:relative; width:100%; }

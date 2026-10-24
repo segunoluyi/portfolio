@@ -474,5 +474,6 @@
     })
     .catch(function (error) {
       console.warn(error.message);
-    });
+    })
+    .finally(function () { if (window.portfolioContentReady) window.portfolioContentReady(); });
 }());
