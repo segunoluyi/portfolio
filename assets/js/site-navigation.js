@@ -33,6 +33,15 @@
   brand.innerHTML = '<span class="nav-brand-logo"><img data-site-brand-logo src="" alt="" hidden /><span class="nav-brand-mark" data-site-brand-mark>LOGO</span></span>';
   nav.appendChild(brand);
 
+  // The desktop navigation moves into the mobile drawer. Keep a separate
+  // brand in the visible mobile header so it stays on screen while scrolling.
+  var mobileHeader = document.createElement("div");
+  mobileHeader.className = "mobile-site-header";
+  var mobileBrand = brand.cloneNode(true);
+  mobileBrand.className = "mobile-site-brand";
+  mobileHeader.appendChild(mobileBrand);
+  nav.parentNode.insertBefore(mobileHeader, nav);
+
   var links = document.createElement("ul");
   links.className = "links";
   pages.forEach(function (page) {
@@ -67,16 +76,18 @@
       var site = content && content.site ? content.site : {};
       // main.js may move the shared navigation into its responsive panel.
       // Look from the document so the CMS logo is applied in either location.
-      var image = document.querySelector("[data-site-brand-logo]");
-      var fallback = document.querySelector("[data-site-brand-mark]");
+      var images = document.querySelectorAll("[data-site-brand-logo]");
+      var fallbacks = document.querySelectorAll("[data-site-brand-mark]");
       var favicon = document.querySelector("[data-site-favicon]");
-      if (site.brand_logo && image) {
-        image.src = pageUrl(site.brand_logo) + "?v=" + Date.now();
-        image.alt = site.brand_logo_alt || (site.brand_name ? site.brand_name + " logo" : "Portfolio logo");
-        image.hidden = false;
-        if (fallback) fallback.hidden = true;
-      } else if (fallback && site.brand_mark) {
-        fallback.textContent = site.brand_mark;
+      if (site.brand_logo) {
+        images.forEach(function (image) {
+          image.src = pageUrl(site.brand_logo) + "?v=" + Date.now();
+          image.alt = site.brand_logo_alt || (site.brand_name ? site.brand_name + " logo" : "Portfolio logo");
+          image.hidden = false;
+        });
+        fallbacks.forEach(function (fallback) { fallback.hidden = true; });
+      } else if (site.brand_mark) {
+        fallbacks.forEach(function (fallback) { fallback.textContent = site.brand_mark; });
       }
       if (favicon && site.favicon) {
         favicon.href = pageUrl(site.favicon) + "?v=" + Date.now();

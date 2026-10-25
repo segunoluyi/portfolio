@@ -127,9 +127,9 @@
 
 		// Toggle.
 			$navPanelToggle = $(
-				'<a href="#navPanel" id="navPanelToggle">Menu</a>'
+				'<a href="#navPanel" id="navPanelToggle" aria-label="Open navigation" aria-controls="navPanel" aria-expanded="false"><span class="mobile-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span></a>'
 			)
-				.appendTo($wrapper);
+				.appendTo($('.mobile-site-header').length ? $('.mobile-site-header') : $wrapper);
 
 			// Change toggle styling once we've scrolled past the header.
 				$header.scrollex({
@@ -161,6 +161,13 @@
 					target: $body,
 					visibleClass: 'is-navPanel-visible'
 				});
+
+			// Keep the menu button's announced state in sync with the panel.
+			new MutationObserver(function() {
+				var open = $body.hasClass('is-navPanel-visible');
+				$navPanelToggle.attr('aria-expanded', String(open));
+				$navPanelToggle.attr('aria-label', open ? 'Close navigation' : 'Open navigation');
+			}).observe($body[0], { attributes: true, attributeFilter: ['class'] });
 
 			// Get inner.
 				$navPanelInner = $navPanel.children('nav');

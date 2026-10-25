@@ -6114,6 +6114,22 @@ body, input, select, textarea, button,
 @media screen and (max-width:736px) { #projects { padding:4.5rem 0 1.8rem !important; } #projects .major, #project-grid { width:calc(100% - (var(--portfolio-page-gutter) * 2)); } #project-grid { gap:1.25rem !important; grid-template-columns:1fr !important; padding-bottom:3rem !important; } }
 
 /* Mobile introduction and menu: compact actions and a contained brand mark. */
+.mobile-site-header { display:none; }
+@media screen and (max-width:980px) {
+  #wrapper { padding-top:4rem; }
+  .mobile-site-header { align-items:center; background:var(--portfolio-page); border-bottom:1px solid var(--portfolio-border); box-sizing:border-box; display:flex; height:4rem; justify-content:space-between; left:0; padding:0 1.25rem; position:fixed; right:0; top:0; width:100%; z-index:10001; }
+  .mobile-site-brand { align-items:center; border:0; display:inline-flex; height:44px; justify-content:center; width:44px; }
+  .mobile-site-brand .nav-brand-logo { align-items:center; display:inline-flex; height:2.1rem; justify-content:center; width:2.1rem; }
+  .mobile-site-brand img { display:block; height:100%; object-fit:contain; width:100%; }
+  .mobile-site-brand img[hidden],.mobile-site-brand .nav-brand-mark[hidden] { display:none; }
+  .mobile-site-brand .nav-brand-mark { color:var(--portfolio-text); font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:1.25rem; font-weight:800; letter-spacing:-.08em; }
+  :root[data-theme="dark"] .mobile-site-brand img { filter:brightness(0) invert(1); opacity:.92; }
+  #navPanelToggle,#navPanelToggle.alt { align-items:center; background:transparent; border:0; border-radius:.5rem; box-shadow:none; color:var(--portfolio-text); display:inline-flex; height:44px; justify-content:center; min-height:44px; padding:0; position:static; width:44px; }
+  #navPanelToggle:before { content:none; }
+  #navPanelToggle:hover,#navPanelToggle:focus-visible,#navPanelToggle.alt:hover { background:color-mix(in srgb,var(--portfolio-accent) 10%,var(--portfolio-page)); border:0; color:var(--portfolio-accent); }
+  .mobile-menu-icon { display:flex; flex-direction:column; gap:4px; width:19px; }
+  .mobile-menu-icon span { background:currentColor; border-radius:2px; display:block; height:2px; width:100%; }
+}
 @media screen and (max-width:736px) {
   #intro,#nav.top-navigation + #intro { min-height:0; padding:3.5rem 0 2.5rem; }
   #main > .services-section { padding-top:2rem; }
