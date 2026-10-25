@@ -30,7 +30,7 @@
   brand.className = "nav-brand";
   brand.href = pageUrl("");
   brand.setAttribute("aria-label", "Segun Oluyi home");
-  brand.innerHTML = '<span class="nav-brand-logo"><img data-site-brand-logo src="" alt="" hidden /><span class="nav-brand-mark" data-site-brand-mark>LOGO</span></span>';
+  brand.innerHTML = '<span class="nav-brand-logo"><img data-site-brand-logo src="' + pageUrl("images/uploads/segun-oluyi-logo.png") + '" alt="Segun Oluyi logo" /><span class="nav-brand-mark" data-site-brand-mark hidden>SO</span></span>';
   nav.appendChild(brand);
 
   // The desktop navigation moves into the mobile drawer. Keep a separate
@@ -41,6 +41,14 @@
   mobileBrand.className = "mobile-site-brand";
   mobileHeader.appendChild(mobileBrand);
   nav.parentNode.insertBefore(mobileHeader, nav);
+
+  document.querySelectorAll("[data-site-brand-logo]").forEach(function (image) {
+    image.addEventListener("error", function () {
+      image.hidden = true;
+      var fallback = image.parentNode.querySelector("[data-site-brand-mark]");
+      if (fallback) fallback.hidden = false;
+    });
+  });
 
   var links = document.createElement("ul");
   links.className = "links";
@@ -87,7 +95,9 @@
         });
         fallbacks.forEach(function (fallback) { fallback.hidden = true; });
       } else if (site.brand_mark) {
+        images.forEach(function (image) { image.hidden = true; });
         fallbacks.forEach(function (fallback) { fallback.textContent = site.brand_mark; });
+        fallbacks.forEach(function (fallback) { fallback.hidden = false; });
       }
       if (favicon && site.favicon) {
         favicon.href = pageUrl(site.favicon) + "?v=" + Date.now();
