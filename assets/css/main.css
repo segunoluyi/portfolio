@@ -5550,7 +5550,10 @@ body,
   color: #212931;
 }
 
-.back-to-top svg { display: block; height: 1.35rem; width: 1.35rem; }
+.back-to-top svg { display: block; height: 1.35rem; opacity:1; visibility:visible; width: 1.35rem; }
+.back-to-top svg path { fill:none !important; stroke:#ffffff !important; stroke-width:2.5px; }
+.back-to-top:hover svg path,
+.back-to-top:focus svg path { stroke:#212931 !important; }
 
 .back-to-top.is-visible {
   opacity: 1;
@@ -5811,10 +5814,10 @@ body,
 #main > .post.featured.about-page {
   box-sizing:border-box;
   margin:0 auto;
-  max-width:1080px;
+  max-width:1152px;
   min-height:0;
   padding:5rem 0 7rem;
-  width:calc(100% - (var(--portfolio-page-gutter) * 2));
+  width:calc(100% - 3rem);
 }
 #main > .post.featured.about-page header.major { margin-bottom:2rem; max-width:none; }
 #main > .post.featured.about-page h1 { font-size:clamp(2.4rem,4vw,3.3rem); max-width:none; padding-bottom:.8rem; position:relative; }
@@ -5920,7 +5923,7 @@ body, input, select, textarea, button,
   box-sizing:border-box;
   margin-left:auto;
   margin-right:auto;
-  max-width:1080px;
+  max-width:1152px;
   width:calc(100% - 3rem);
 }
 
@@ -5938,13 +5941,13 @@ body, input, select, textarea, button,
 #intro .hero-actions .button { font-size:.9rem; }
 #intro .image.avatar { height:min(27vw,19rem); width:min(27vw,19rem); }
 
-#main > .home-section { border-top:0; padding:5.5rem 0; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
-.services-section { max-width:1080px !important; }
+#main > .home-section { border-top:0; padding:5.5rem 0; width:calc(100% - 3rem); }
+.services-section { max-width:1152px !important; }
 .service-overview { border-top:1px solid var(--portfolio-border); display:grid; gap:.6rem; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0 0 3.5rem; padding-top:1.1rem; }
-.service-overview a { align-items:center; background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:.65rem; color:var(--portfolio-text); display:flex; flex-direction:column; justify-content:center; min-height:5.3rem; padding:1rem .6rem; text-align:center; text-decoration:none; transition:border-color .25s ease,transform .25s ease; }
+.service-overview a { align-items:center; background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:.65rem; color:var(--portfolio-text); display:flex; flex-direction:column; justify-content:center; min-height:5.3rem; min-width:0; padding:1rem .6rem; text-align:center; text-decoration:none; transition:border-color .25s ease,transform .25s ease; }
 .service-overview a:hover,.service-overview a:focus-visible { border-color:var(--portfolio-accent); transform:translateY(-.15rem); }
-.service-overview strong { color:var(--portfolio-text); font-size:1.15rem; font-weight:700; letter-spacing:-.025em; line-height:1.2; }
-.service-overview a:nth-child(2) strong { font-size:clamp(.75rem,1.1vw,1.05rem); white-space:nowrap; }
+.service-overview strong { color:var(--portfolio-text); font-size:clamp(.9rem,1.1vw,1.15rem); font-weight:700; letter-spacing:-.025em; line-height:1.2; max-width:100%; overflow-wrap:normal; }
+.service-overview a:nth-child(2) strong { white-space:normal; }
 .service-overview a > span { color:var(--portfolio-muted); font-size:.62rem; font-weight:400; letter-spacing:.075em; line-height:1.3; margin-top:.5rem; text-transform:uppercase; }
 .service-overview strong .highlight-figure { color:var(--portfolio-accent); }
 .home-section-header { margin:0 auto 2.5rem; max-width:42rem; text-align:center; }
@@ -5995,17 +5998,17 @@ body, input, select, textarea, button,
 
 /* Insights shares the project gallery treatment. */
 #main > #insights.insights-section { max-width:none; padding:5rem 0 2rem !important; width:100%; }
-#insights .major { margin:0 auto; max-width:1080px; text-align:left; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
+#insights .major { margin:0 auto; max-width:1152px; text-align:left; width:calc(100% - 3rem); }
 #insights .section-divider { border:0 !important; color:var(--portfolio-text); display:block; font-family:"Plus Jakarta Sans","Segoe UI",sans-serif; font-size:2.35rem !important; font-weight:800; letter-spacing:-.035em; line-height:1.1; margin:0; padding:0 0 1rem; position:relative; text-align:left; text-transform:none; }
 #insights .section-divider::before { content:none !important; display:none !important; }
 #insights .section-divider::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.25rem; left:0; position:absolute; width:4.5rem; }
-#main > #insights-grid { display:grid !important; gap:2rem !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important; margin-left:auto !important; margin-right:auto !important; max-width:1080px !important; padding:0 0 4rem !important; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
+#main > #insights-grid { display:grid !important; gap:2rem !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important; margin-left:auto !important; margin-right:auto !important; max-width:1152px !important; padding:0 0 4rem !important; width:calc(100% - 3rem); }
 #main #insights-grid > .showcase-project-card { border:1px solid var(--portfolio-border); border-radius:1.25rem; display:flex; flex-direction:column; height:100%; min-width:0; overflow:hidden; padding:0 !important; text-align:left; width:100% !important; }
 #main #insights-grid > .showcase-project-card:hover { border-color:transparent; }
 #main > .collection-actions { padding-bottom:11rem; }
 
 /* Footer columns use the same palette in both themes. */
-#footer > section.split.contact.footer-grid.footer-columns { border:0; display:grid; gap:clamp(1.5rem,3vw,3rem); grid-template-columns:1.15fr .85fr 1fr 1.25fr; margin:0 auto; max-width:1080px; padding:4rem 0; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
+#footer > section.split.contact.footer-grid.footer-columns { border:0; display:grid; gap:clamp(1.5rem,3vw,3rem); grid-template-columns:1.15fr .85fr 1fr 1.25fr; margin:0 auto; max-width:1152px; padding:4rem 0; width:calc(100% - 3rem); }
 #footer > section.split.contact.footer-grid.footer-columns > section { border:0; min-width:0; padding:0; }
 #footer .footer-brand { color:var(--portfolio-text); display:inline-block; font-size:1.8rem; font-weight:800; letter-spacing:-.07em; line-height:1; margin-bottom:1rem; text-decoration:none; }
 #footer .footer-brand:hover { color:var(--portfolio-accent); }
