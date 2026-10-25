@@ -6243,6 +6243,31 @@ body, input, select, textarea, button,
   #insights-grid .insight-showcase-card .project-card-content { min-height:0; padding:1.35rem; }
 }
 
+/* Blog cards: two equal columns, with the reading link visible without hover. */
+.insights-page .project-page-header { max-width:44rem; padding-bottom:2.6rem; }
+.insights-page .project-page-header h1 { font-size:clamp(2.2rem,3.2vw,3.25rem); line-height:1.12; }
+.insights-page .project-page-header p { font-style:italic; }
+#main .insights-blog-grid { display:grid; gap:2rem; grid-template-columns:repeat(2,minmax(0,1fr)); margin:0; }
+#main .insight-blog-card { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1.2rem; box-shadow:var(--portfolio-shadow); display:flex; flex-direction:column; min-width:0; overflow:hidden; text-align:left; }
+.insight-blog-cover { align-items:center; aspect-ratio:16 / 9; background:var(--portfolio-surface-soft); color:var(--portfolio-muted); display:flex; justify-content:center; overflow:hidden; }
+.insight-blog-cover img { display:block; height:100%; object-fit:cover; width:100%; }
+.insight-blog-content { display:flex; flex:1; flex-direction:column; min-width:0; padding:1.5rem 1.6rem 1.25rem; }
+.insight-blog-category { color:var(--portfolio-accent); font-size:.72rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+#main .insight-blog-card h2 { color:var(--portfolio-text); font-size:1.5rem; line-height:1.32; margin:.65rem 0 .75rem; text-align:left; text-transform:none; }
+#main .insight-blog-card h2 a { border:0; color:inherit; text-decoration:none; }
+#main .insight-blog-card h2 a:hover { color:var(--portfolio-accent); }
+#main .insight-blog-card p { color:var(--portfolio-muted); font-size:.95rem; line-height:1.65; margin:0 0 1.6rem; text-align:left; }
+.insight-blog-footer { align-items:center; border-top:1px solid var(--portfolio-border); display:flex; flex-wrap:wrap; gap:.6rem; justify-content:space-between; margin-top:auto; padding-top:1rem; }
+.insight-blog-read-more { border:0; color:var(--portfolio-text); font-size:.88rem; font-weight:700; text-decoration:none; }
+.insight-blog-read-more:hover { color:var(--portfolio-accent); }
+.insight-blog-meta { color:var(--portfolio-muted); display:flex; flex-wrap:wrap; font-size:.72rem; gap:.45rem; }
+.insight-blog-meta time::after { content:" ·"; }
+@media screen and (max-width:736px) {
+  #main .insights-blog-grid { gap:1.25rem; grid-template-columns:1fr; }
+  .insight-blog-content { padding:1.25rem; }
+  #main .insight-blog-card h2 { font-size:1.25rem; }
+}
+
 /* Contact page: two balanced panels with a compact, accessible form. */
 #main > .post.contact-page { box-sizing:border-box; margin:0 auto; max-width:1152px !important; min-height:calc(100vh - 8rem); padding:7rem 0 8rem !important; width:calc(100% - 3rem); }
 .contact-page-header { margin:0 0 2.5rem; text-align:left; }
