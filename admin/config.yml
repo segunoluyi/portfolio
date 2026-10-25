@@ -198,7 +198,7 @@ collections:
             name: services
             widget: list
             required: false
-            hint: "Homepage service cards display three across on desktop and wrap to the next row. Each card can link to email or a verified booking or freelance profile. Only add a pricing link when its packages are published and current."
+            hint: "Homepage service cards link to dedicated service pages. Keep the title and points aligned with the detail page."
             fields:
               - { label: Service title, name: title, widget: string }
               - label: Icon
@@ -215,8 +215,8 @@ collections:
                 name: points
                 widget: list
                 field: { label: Point, name: point, widget: string }
-              - { label: Order or contact URL, name: url, widget: string, required: false, hint: "Paste the exact service destination. Leave blank to use the main contact button. Use a public freelance package URL only when the offer and price are ready." }
-              - { label: Button label, name: button_label, widget: string, required: false, default: "Request service", hint: "Use a specific action for this service, such as Request Analysis or Arrange Training." }
+              - { label: Service page path, name: url, widget: string, required: false, hint: "Use services/analytics/, services/research/, services/planning/, or services/training/." }
+              - { label: Button label, name: button_label, widget: string, required: false, default: "Explore service", hint: "Use a short action such as Explore BI Services or Explore Training." }
           - label: Work samples library
             name: samples
             widget: list

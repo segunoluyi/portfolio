@@ -3,6 +3,32 @@
 
   var script = document.currentScript;
   var contentUrl = new URL("../../content/portfolio.json", script.src);
+  var root = new URL("../../", script.src);
+  var footer = document.querySelector("#footer");
+  if (footer) {
+    if (!footer.querySelector(".footer-columns")) {
+      footer.innerHTML = '<section class="split contact footer-grid footer-columns"><section><a class="footer-brand" aria-label="Segun Oluyi home">SO</a><p data-footer-tagline>Data &amp; Business Analyst</p><ul class="icons alt" aria-label="Social links" data-footer-social-links></ul></section><section><h3>Explore</h3><ul class="footer-links" data-footer-explore></ul></section><section><h3>Services</h3><ul class="footer-links" data-footer-services></ul></section><section><h3 data-footer-heading>Contact</h3><ul class="footer-contact-list"><li><span class="icon solid fa-envelope" aria-hidden="true"></span><a data-contact-email href="mailto:oluyisegun@gmail.com">oluyisegun@gmail.com</a></li><li><span class="icon solid fa-phone" aria-hidden="true"></span><a data-contact-phone href="tel:+2348153051701">+2348153051701</a></li><li><span class="icon solid fa-map-marker-alt" aria-hidden="true"></span><span data-contact-location>Lagos, Nigeria</span></li></ul></section></section>';
+    }
+    var footerBrand = footer.querySelector(".footer-brand");
+    if (footerBrand) footerBrand.href = new URL("", root).href;
+    var footerSections = footer.querySelectorAll(".footer-columns > section");
+    function setLinks(section, entries) {
+      if (!section) return;
+      var list = section.querySelector(".footer-links");
+      if (!list) return;
+      list.replaceChildren();
+      entries.forEach(function (entry) {
+        var item = document.createElement("li");
+        var link = document.createElement("a");
+        link.href = new URL(entry[1], root).href;
+        link.textContent = entry[0];
+        item.appendChild(link);
+        list.appendChild(item);
+      });
+    }
+    setLinks(footerSections[1], [["Home", ""], ["About", "about/"], ["Services", "services/"], ["Projects", "projects/"], ["Samples", "samples/"], ["Insights", "insights/"]]);
+    setLinks(footerSections[2], [["BI & Data Analytics", "services/analytics/"], ["Market Research", "services/research/"], ["Business Planning", "services/planning/"], ["Training & Workshops", "services/training/"]]);
+  }
   var icons = {
     email: "solid fa-envelope",
     linkedin: "brands fa-linkedin-in",

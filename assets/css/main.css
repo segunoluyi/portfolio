@@ -6033,6 +6033,45 @@ body, input, select, textarea, button,
 #copyright ul li,#copyright ul li:first-child { border:0; display:inline-flex; margin:0; padding:0; }
 @media screen and (max-width:1100px) { #main > #insights-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; } #footer > section.split.contact.footer-grid.footer-columns { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media screen and (max-width:736px) { #main > #insights.insights-section { padding:4rem 0 1.5rem !important; } #insights .major { width:calc(100% - 2.25rem); } #main > #insights-grid { gap:1.25rem !important; grid-template-columns:1fr !important; } #main > .collection-actions { padding-bottom:7rem; } #footer > section.split.contact.footer-grid.footer-columns { grid-template-columns:1fr; padding-top:3rem; padding-bottom:3rem; width:calc(100% - 2.5rem); } }
+
+/* Dedicated services pages */
+.service-page-shell { box-sizing:border-box; color:var(--portfolio-text); margin:0 auto; max-width:none; padding:5rem 0 7rem; width:calc(100% - (var(--portfolio-page-gutter) * 2)); }
+.service-page-header { margin:0 0 1.4rem; }
+.service-page-header .service-kicker { color:var(--portfolio-accent); font-size:.73rem; font-weight:800; letter-spacing:.16em; margin:0 0 .6rem; text-transform:uppercase; }
+.service-page-header h1 { color:var(--portfolio-text); font-size:clamp(2.1rem,4vw,3.4rem); letter-spacing:-.04em; line-height:1.15; margin:0; padding:0 0 .85rem; position:relative; text-transform:none; }
+.service-page-header h1::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.22rem; left:0; position:absolute; width:4rem; }
+.service-page-lead { color:var(--portfolio-muted); font-family:"Montserrat","Segoe UI",sans-serif; font-size:clamp(1rem,2vw,1.25rem); line-height:1.7; margin:0 0 3rem; max-width:48rem; }
+.service-directory-grid,.service-deliverable-grid { display:grid; gap:2rem; grid-template-columns:repeat(2,minmax(0,1fr)); }
+.service-directory-card,.service-deliverable,.service-page-intro,.service-page-cta { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1rem; box-shadow:var(--portfolio-shadow); }
+.service-directory-card { display:flex; flex-direction:column; padding:2rem; }
+.service-directory-icon { color:var(--portfolio-accent); font-size:1.4rem; margin-bottom:1.2rem; }
+.service-directory-card h2,.service-page-section h2,.service-page-cta h2 { color:var(--portfolio-text); font-size:clamp(1.35rem,2vw,1.7rem); letter-spacing:-.025em; margin:0 0 .85rem; text-transform:none; }
+.service-directory-card p,.service-deliverable p,.service-page-intro p,.service-page-cta p,.service-scope-note { color:var(--portfolio-muted); font-family:"Montserrat","Segoe UI",sans-serif; font-size:.96rem; line-height:1.7; margin:0 0 1.25rem; text-align:left; }
+.service-page-link,.service-proof-link { border:0; color:var(--portfolio-accent); font-size:.85rem; font-weight:800; margin-top:auto; text-decoration:none; }
+.service-page-link:hover,.service-proof-link:hover { color:var(--portfolio-text); }
+.service-page-intro { align-items:center; display:flex; gap:2rem; justify-content:space-between; margin-bottom:4rem; padding:2rem; }
+.service-page-intro p { margin:0; max-width:40rem; }
+.service-page-intro .button,.service-page-cta .button { background:var(--portfolio-accent); border:0; border-radius:99px; color:var(--portfolio-page) !important; flex:none; margin:0; text-transform:none; }
+.service-page-section { margin:0 0 4rem; }
+.service-page-section h2 { margin-bottom:1.5rem; }
+.service-deliverable { padding:1.7rem; }
+.service-deliverable h3 { color:var(--portfolio-text); font-size:1.05rem; margin:0 0 .55rem; text-transform:none; }
+.service-deliverable p { margin:0; }
+.service-process { counter-reset:service-step; display:grid; gap:1rem; grid-template-columns:repeat(3,minmax(0,1fr)); list-style:none; margin:0; padding:0; }
+.service-process li { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1rem; color:var(--portfolio-text); font-family:"Montserrat","Segoe UI",sans-serif; font-size:.94rem; line-height:1.6; padding:1.5rem; }
+.service-process li::before { color:var(--portfolio-accent); content:"0" counter(service-step); counter-increment:service-step; display:block; font-size:.8rem; font-weight:800; margin-bottom:.8rem; }
+.service-scope-note { margin:0 0 3rem; max-width:50rem; }
+.service-page-cta { margin-top:3rem; padding:2rem; }
+.service-page-cta p { max-width:42rem; }
+.service-proof-link { display:inline-block; margin-left:1.5rem; }
+@media screen and (max-width:736px) {
+  .service-page-shell { padding:5.5rem 0 4rem; }
+  .service-directory-grid,.service-deliverable-grid,.service-process { gap:1.25rem; grid-template-columns:1fr; }
+  .service-directory-card,.service-deliverable,.service-page-intro,.service-page-cta { padding:1.4rem; }
+  .service-page-intro { align-items:stretch; flex-direction:column; gap:1.4rem; }
+  .service-page-intro .button,.service-page-cta .button { width:100%; }
+  .service-proof-link { display:block; margin:1rem 0 0; }
+}
 @media (prefers-reduced-motion:reduce) { .why-benefit,.expertise-panel,.workflow-grid strong { transition:none; } .workflow-grid li:hover strong { transform:none; } }
 
 #main > .post.projects-page { margin-left:auto; margin-right:auto; max-width:1152px !important; padding-left:0 !important; padding-right:0 !important; width:calc(100% - 3rem); }

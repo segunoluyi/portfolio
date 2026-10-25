@@ -281,7 +281,7 @@
         "Interactive dashboards & KPI tracking",
         "Trend analysis & data storytelling"
       ],
-      "url": "mailto:oluyisegun@gmail.com?subject=Data%20analysis%20service",
+      "url": "services/analytics/",
       "button_label": "Explore BI Services"
     },
     {
@@ -292,7 +292,7 @@
         "Business needs & opportunity analysis",
         "Research insights & recommendations"
       ],
-      "url": "mailto:oluyisegun@gmail.com?subject=Research%20and%20business%20insight%20service",
+      "url": "services/research/",
       "button_label": "Explore Research"
     },
     {
@@ -303,7 +303,7 @@
         "Financial projections & modelling",
         "Business strategy & growth planning"
       ],
-      "url": "mailto:oluyisegun@gmail.com?subject=Business%20plan%20or%20proposal%20service",
+      "url": "services/planning/",
       "button_label": "Explore Planning"
     },
     {
@@ -314,7 +314,7 @@
         "Corporate & team workshops",
         "Project-based learning & mentorship"
       ],
-      "url": "mailto:oluyisegun@gmail.com?subject=Analytics%20training%20service",
+      "url": "services/training/",
       "button_label": "Explore Training"
     }
   ]

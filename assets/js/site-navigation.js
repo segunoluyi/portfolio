@@ -11,12 +11,14 @@
 
   function pageUrl(path) { return new URL(path, root).href; }
   function isCurrent(path) {
-    return currentPath === new URL(path, root).pathname.replace(/index\.html$/, "");
+    var target = new URL(path, root).pathname.replace(/index\.html$/, "");
+    return path === "services/" ? currentPath.indexOf(target) === 0 : currentPath === target;
   }
 
   var pages = [
     { label: "Home", path: "", activePath: "" },
     { label: "About", path: "about/", activePath: "about/" },
+    { label: "Services", path: "services/", activePath: "services/" },
     { label: "Projects", path: "projects/", activePath: "projects/" },
     { label: "Samples", path: "samples/", activePath: "samples/" },
     { label: "Insights", path: "insights/", activePath: "insights/" },

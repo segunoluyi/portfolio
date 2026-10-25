@@ -5,6 +5,9 @@
   if (!form) return;
   var status = document.querySelector("#contact-form-status");
   var submit = form.querySelector('button[type="submit"]');
+  var requestedService = new URLSearchParams(window.location.search).get("service");
+  var subject = form.querySelector('[name="subject"]');
+  if (requestedService && subject && requestedService.length <= 100) subject.value = "Enquiry: " + requestedService;
 
   function safeEndpoint(value) {
     try {
