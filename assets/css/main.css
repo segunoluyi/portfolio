@@ -6153,12 +6153,14 @@ body, input, select, textarea, button,
 }
 @media screen and (max-width:980px) {
   #navPanel { background:var(--portfolio-surface); color:var(--portfolio-text); }
-  #navPanel { padding-top:4.5rem; }
+  #navPanel { padding-top:3.5rem; }
   #navPanel .nav-brand { display:none; }
+  #navPanel .links { margin:0; }
   #navPanel .links li { border-color:var(--portfolio-border); }
   #navPanel .links li a,#navPanel .close { color:var(--portfolio-text); }
   #navPanel .close:hover,#navPanel .links li a:hover { color:var(--portfolio-accent); }
-  #navPanel .theme-toggle { display:inline-flex; margin:1rem 0 0; position:static; }
+  #navPanel .theme-toggle { align-items:center; background:transparent; border:0; border-radius:0; box-shadow:none; color:var(--portfolio-text); display:flex; font-size:.9rem; font-weight:900; gap:.55rem; height:auto; justify-content:flex-start; letter-spacing:.075em; line-height:1.5; margin:0; min-height:3.6rem; padding:.75rem 0; position:static; text-align:left; width:100%; }
+  #navPanel .theme-toggle:hover,#navPanel .theme-toggle:focus-visible { background:transparent; color:var(--portfolio-accent); }
   #navPanelToggle,#navPanelToggle.alt { align-items:center; background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:.5rem; box-shadow:0 2px 10px rgba(0,0,0,.08); color:var(--portfolio-text); display:flex; font-size:.8rem; min-height:44px; padding:0 .75rem; }
   #navPanelToggle:hover,#navPanelToggle:focus-visible,#navPanelToggle.alt:hover { background:var(--portfolio-surface); border-color:var(--portfolio-accent); color:var(--portfolio-accent); }
 }
