@@ -132,6 +132,7 @@ collections:
               - { label: Project button label, name: project_label, widget: string, required: false, hint: "Optional. Examples: View dashboard, Open app, View report, View workbook." }
               - { label: Live project URL, name: live_url, widget: string, required: false, hint: "Preferred published destination, such as Power BI Service, Tableau Public, Streamlit, GitHub Pages, or a public workbook." }
               - { label: Published date, name: published_at, widget: datetime, required: false, date_format: "YYYY-MM-DD", time_format: false }
+              - { label: Reading time (minutes), name: read_minutes, widget: number, required: false, value_type: int, min: 1, hint: "Use the reading time shown on the published article. Leave blank if it is unavailable." }
           - label: Homepage highlights
             name: home_highlights
             widget: list

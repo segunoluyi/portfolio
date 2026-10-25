@@ -6261,7 +6261,7 @@ body, input, select, textarea, button,
 .insight-blog-read-more { border:0; color:var(--portfolio-text); font-size:.88rem; font-weight:700; text-decoration:none; }
 .insight-blog-read-more:hover { color:var(--portfolio-accent); }
 .insight-blog-meta { color:var(--portfolio-muted); display:flex; flex-wrap:wrap; font-size:.72rem; gap:.45rem; }
-.insight-blog-meta time::after { content:" ·"; }
+.insight-blog-meta > :not(:first-child)::before { content:"·"; margin-right:.45rem; }
 @media screen and (max-width:736px) {
   #main .insights-blog-grid { gap:1.25rem; grid-template-columns:1fr; }
   .insight-blog-content { padding:1.25rem; }

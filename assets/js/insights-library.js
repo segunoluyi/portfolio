@@ -43,6 +43,9 @@
     if (insight.published_at && !isNaN(Date.parse(insight.published_at))) {
       var date = document.createElement("time"); date.dateTime = insight.published_at; date.textContent = new Date(insight.published_at).toLocaleDateString("en-GB", { year:"numeric", month:"short", day:"numeric", timeZone:"UTC" }); meta.appendChild(date);
     }
+    if (Number.isInteger(Number(insight.read_minutes)) && Number(insight.read_minutes) > 0) {
+      var readingTime = document.createElement("span"); readingTime.textContent = Number(insight.read_minutes) + " min read"; meta.appendChild(readingTime);
+    }
     var author = document.createElement("span"); author.textContent = "By Segun Oluyi"; meta.appendChild(author);
     footer.className = "insight-blog-footer"; footer.appendChild(meta);
     content.append(heading, summary, footer); article.append(cover, content); return article;
