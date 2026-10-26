@@ -6040,6 +6040,10 @@ body, input, select, textarea, button,
 .service-page-header h1 { color:var(--portfolio-text); font-size:clamp(2.1rem,4vw,3.4rem); letter-spacing:-.04em; line-height:1.15; margin:0; padding:0 0 .85rem; position:relative; text-transform:none; }
 .service-page-header h1::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.22rem; left:0; position:absolute; width:4rem; }
 .service-page-lead { color:var(--portfolio-muted); font-family:"Montserrat","Segoe UI",sans-serif; font-size:1rem; line-height:1.6; margin:0 0 3rem; max-width:48rem; }
+@media screen and (min-width:901px) {
+  .projects-page .project-page-header,.samples-page .project-page-header,.insights-page .project-page-header { max-width:none; }
+  .projects-page .project-page-header p,.samples-page .project-page-header p,.insights-page .project-page-header p,.service-page-lead { max-width:none; }
+}
 .service-directory-grid,.service-deliverable-grid { display:grid; gap:2rem; grid-template-columns:repeat(2,minmax(0,1fr)); }
 .service-directory-card,.service-deliverable,.service-page-intro,.service-page-cta { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1rem; box-shadow:var(--portfolio-shadow); }
 .service-directory-card { display:flex; flex-direction:column; padding:2rem; }

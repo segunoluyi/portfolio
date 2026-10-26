@@ -22,8 +22,16 @@
       var contact = content && content.contact ? content.contact : {};
       var email = document.querySelector("[data-page-contact-email]");
       var location = document.querySelector("[data-page-contact-location]");
+      var whatsapp = document.querySelector("[data-page-contact-whatsapp]");
       if (contact.email && email) { email.textContent = contact.email; email.href = "mailto:" + contact.email; }
       if (contact.location && location) location.textContent = contact.location;
+      if (contact.phone && whatsapp) {
+        var digits = contact.phone.replace(/\D/g, "");
+        if (/^[1-9]\d{7,14}$/.test(digits)) {
+          whatsapp.textContent = contact.phone;
+          whatsapp.href = "https://wa.me/" + digits;
+        }
+      }
       if (safeEndpoint(contact.form_endpoint)) form.action = safeEndpoint(contact.form_endpoint);
     })
     .catch(function () { /* Static contact details and endpoint remain available. */ });

@@ -6,7 +6,7 @@
   var root = new URL("../../", script.src);
   var services = [
     {
-      slug: "analytics", icon: "fa-chart-bar", title: "Business Intelligence & Data Analytics",
+      slug: "analytics", icon: "fa-chart-bar", title: "Business Intelligence & Data Analytics", cardCta: "See analytics services",
       lead: "Turn scattered data into clear reporting and decisions you can act on.",
       audience: "For teams that need reliable numbers, useful dashboards, or a clearer view of performance.",
       deliverables: [
@@ -19,7 +19,7 @@
       note: "The scope depends on the quality and accessibility of your data. I will confirm the outputs before work begins."
     },
     {
-      slug: "research", icon: "fa-search", title: "Market Research & Business Analysis",
+      slug: "research", icon: "fa-search", title: "Market Research & Business Analysis", cardCta: "See research services",
       lead: "Understand a market, customer need, or business opportunity before you commit resources.",
       audience: "For founders and teams assessing an idea, entering a market, or trying to understand customers and competitors.",
       deliverables: [
@@ -32,7 +32,7 @@
       note: "Research findings are tied to the available evidence; they are not a guarantee of market results."
     },
     {
-      slug: "planning", icon: "fa-file-alt", title: "Business Planning & Development",
+      slug: "planning", icon: "fa-file-alt", title: "Business Planning & Development", cardCta: "See planning services",
       lead: "Build a business plan or proposal that explains the opportunity and the numbers behind it.",
       audience: "For businesses preparing a launch, an internal plan, a funding conversation, or a growth decision.",
       deliverables: [
@@ -45,7 +45,7 @@
       note: "Financial projections are scenarios based on stated assumptions, not promises of future performance."
     },
     {
-      slug: "training", icon: "fa-chalkboard-teacher", title: "Training & Workshops",
+      slug: "training", icon: "fa-chalkboard-teacher", title: "Training & Workshops", cardCta: "See training options",
       lead: "Help people learn analytics tools through guided practice and real business questions.",
       audience: "For individuals and teams developing practical Excel, Power BI, SQL, or reporting skills.",
       deliverables: [
@@ -79,7 +79,7 @@
     article.appendChild(make("span", "service-directory-icon icon solid " + service.icon));
     article.appendChild(make("h2", "", service.title));
     article.appendChild(make("p", "", service.lead));
-    article.appendChild(link("Explore service", "services/" + service.slug + "/", "service-page-link"));
+    article.appendChild(link(service.cardCta, "services/" + service.slug + "/", "service-page-link"));
     return article;
   }
   var slug = main.getAttribute("data-service-page");
@@ -88,7 +88,7 @@
   var wrap = make("article", "service-page-shell");
   if (!service) {
     wrap.appendChild(heading("Services"));
-    wrap.appendChild(make("p", "service-page-lead", "Practical analysis, research, planning, and training shaped around the decision you need to make."));
+    wrap.appendChild(make("p", "service-page-lead", "Analysis, research, planning, and training for better business decisions."));
     var grid = make("div", "service-directory-grid");
     services.forEach(function (item) { grid.appendChild(card(item)); });
     wrap.appendChild(grid);
