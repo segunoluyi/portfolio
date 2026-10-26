@@ -6,7 +6,7 @@
   var root = new URL("../../", script.src);
   var services = [
     {
-      slug: "analytics", icon: "fa-chart-bar", title: "Business Intelligence & Data Analytics", cardCta: "See analytics services",
+      slug: "analytics", icon: "fa-chart-bar", title: "Business Intelligence & Data Analytics", cardCta: "View analytics",
       lead: "Turn scattered data into clear reporting and decisions you can act on.",
       audience: "For teams that need reliable numbers, useful dashboards, or a clearer view of performance.",
       deliverables: [
@@ -19,7 +19,7 @@
       note: "The scope depends on the quality and accessibility of your data. I will confirm the outputs before work begins."
     },
     {
-      slug: "research", icon: "fa-search", title: "Market Research & Business Analysis", cardCta: "See research services",
+      slug: "research", icon: "fa-search", title: "Market Research & Business Analysis", cardCta: "View research",
       lead: "Understand a market, customer need, or business opportunity before you commit resources.",
       audience: "For founders and teams assessing an idea, entering a market, or trying to understand customers and competitors.",
       deliverables: [
@@ -32,7 +32,7 @@
       note: "Research findings are tied to the available evidence; they are not a guarantee of market results."
     },
     {
-      slug: "planning", icon: "fa-file-alt", title: "Business Planning & Development", cardCta: "See planning services",
+      slug: "planning", icon: "fa-file-alt", title: "Business Planning & Development", cardCta: "View planning",
       lead: "Build a business plan or proposal that explains the opportunity and the numbers behind it.",
       audience: "For businesses preparing a launch, an internal plan, a funding conversation, or a growth decision.",
       deliverables: [
@@ -45,7 +45,7 @@
       note: "Financial projections are scenarios based on stated assumptions, not promises of future performance."
     },
     {
-      slug: "training", icon: "fa-chalkboard-teacher", title: "Training & Workshops", cardCta: "See training options",
+      slug: "training", icon: "fa-chalkboard-teacher", title: "Training & Workshops", cardCta: "View training",
       lead: "Help people learn analytics tools through guided practice and real business questions.",
       audience: "For individuals and teams developing practical Excel, Power BI, SQL, or reporting skills.",
       deliverables: [
