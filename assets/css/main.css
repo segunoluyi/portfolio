@@ -6050,8 +6050,10 @@ body, input, select, textarea, button,
 .service-directory-icon { color:var(--portfolio-accent); font-size:1.4rem; margin-bottom:1.2rem; }
 .service-directory-card h2,.service-page-section h2,.service-page-cta h2 { color:var(--portfolio-text); font-size:clamp(1.35rem,2vw,1.7rem); letter-spacing:-.025em; margin:0 0 .85rem; text-transform:none; }
 .service-directory-card p,.service-deliverable p,.service-page-intro p,.service-page-cta p,.service-scope-note { color:var(--portfolio-muted); font-family:"Montserrat","Segoe UI",sans-serif; font-size:.96rem; line-height:1.7; margin:0 0 1.25rem; text-align:left; }
-.service-page-link,.service-proof-link { border:0; color:var(--portfolio-accent); font-size:.85rem; font-weight:800; margin-top:auto; text-decoration:none; }
-.service-page-link:hover,.service-proof-link:hover { color:var(--portfolio-text); }
+.service-page-link,.service-proof-link { color:var(--portfolio-accent); font-size:.85rem; font-weight:800; margin-top:auto; text-decoration:none; }
+.service-page-link { align-self:flex-start; background:rgba(22,125,147,.08); border:1px solid var(--portfolio-accent); border-radius:999px; display:inline-flex; align-items:center; justify-content:center; min-height:2.65rem; padding:.55rem 1.1rem; transition:background-color .2s ease,color .2s ease,box-shadow .2s ease; }
+.service-page-link:hover,.service-page-link:focus-visible { background:var(--portfolio-accent); color:var(--portfolio-page); box-shadow:0 0 0 3px rgba(89,201,220,.2); }
+.service-proof-link:hover { color:var(--portfolio-text); }
 .service-page-intro { align-items:center; display:flex; gap:2rem; justify-content:space-between; margin-bottom:4rem; padding:2rem; }
 .service-page-intro p { margin:0; max-width:40rem; }
 .service-page-intro .button,.service-page-cta .button { background:var(--portfolio-accent); border:0; border-radius:99px; color:var(--portfolio-page) !important; flex:none; margin:0; text-transform:none; }
