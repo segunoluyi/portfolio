@@ -69,9 +69,8 @@
     node.href = new URL(href, root).href;
     return node;
   }
-  function heading(label, title) {
+  function heading(title) {
     var header = make("header", "service-page-header");
-    header.appendChild(make("p", "service-kicker", label));
     header.appendChild(make("h1", "", title));
     return header;
   }
@@ -88,7 +87,7 @@
   main.replaceChildren();
   var wrap = make("article", "service-page-shell");
   if (!service) {
-    wrap.appendChild(heading("SERVICES", "Services"));
+    wrap.appendChild(heading("Services"));
     wrap.appendChild(make("p", "service-page-lead", "Practical analysis, research, planning, and training shaped around the decision you need to make."));
     var grid = make("div", "service-directory-grid");
     services.forEach(function (item) { grid.appendChild(card(item)); });
@@ -99,7 +98,7 @@
     overviewCta.appendChild(link("Get in touch", "contact/", "button primary"));
     wrap.appendChild(overviewCta);
   } else {
-    wrap.appendChild(heading("SERVICES", service.title));
+    wrap.appendChild(heading(service.title));
     wrap.appendChild(make("p", "service-page-lead", service.lead));
     var hero = make("div", "service-page-intro");
     hero.appendChild(make("p", "", service.audience));
