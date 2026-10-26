@@ -182,6 +182,7 @@
   "insights": [
     {
       "eyebrow": "Power BI case study",
+      "tags": ["Power BI"],
       "title": "Customer Complaints Analysis in Power BI",
       "summary": "A walkthrough of the customer complaints dashboard, the questions it answers, and the decisions it helps support.",
       "published_at": "2026-01-14",

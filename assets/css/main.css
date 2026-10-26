@@ -6039,7 +6039,7 @@ body, input, select, textarea, button,
 .service-page-header { margin:0 0 1.4rem; }
 .service-page-header h1 { color:var(--portfolio-text); font-size:clamp(2.1rem,4vw,3.4rem); letter-spacing:-.04em; line-height:1.15; margin:0; padding:0 0 .85rem; position:relative; text-transform:none; }
 .service-page-header h1::after { background:var(--portfolio-accent); border-radius:99px; bottom:0; content:""; height:.22rem; left:0; position:absolute; width:4rem; }
-.service-page-lead { color:var(--portfolio-muted); font-family:"Montserrat","Segoe UI",sans-serif; font-size:clamp(1rem,2vw,1.25rem); line-height:1.7; margin:0 0 3rem; max-width:48rem; }
+.service-page-lead { color:var(--portfolio-muted); font-family:"Montserrat","Segoe UI",sans-serif; font-size:1rem; line-height:1.6; margin:0 0 3rem; max-width:48rem; }
 .service-directory-grid,.service-deliverable-grid { display:grid; gap:2rem; grid-template-columns:repeat(2,minmax(0,1fr)); }
 .service-directory-card,.service-deliverable,.service-page-intro,.service-page-cta { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:1rem; box-shadow:var(--portfolio-shadow); }
 .service-directory-card { display:flex; flex-direction:column; padding:2rem; }
@@ -6346,4 +6346,12 @@ body, input, select, textarea, button,
   .contact-page-grid { gap:1.25rem; grid-template-columns:1fr; }
   .contact-info-card,.contact-form-card { padding:1.35rem; }
   #contact-form .contact-form-pair { grid-template-columns:1fr; }
+}
+
+/* Keep library controls on the same outer edges as their cards. */
+.samples-page .sample-filters,.insights-page .sample-filters { grid-template-columns:minmax(0,21rem) minmax(0,17rem); justify-content:space-between; width:100%; }
+.insight-blog-content { padding:1.25rem 1.2rem 1.1rem; }
+@media screen and (max-width:736px) {
+  .samples-page .sample-filters,.insights-page .sample-filters { grid-template-columns:1fr; }
+  .insight-blog-content { padding:1.15rem; }
 }
