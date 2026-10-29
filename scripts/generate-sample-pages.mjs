@@ -62,12 +62,12 @@ function createPage(sample) {
     "      <div id=\"main\">",
     "        <section class=\"post sample-detail\">",
     "          <header class=\"sample-detail-page-header\">",
-    "            <span class=\"sample-detail-eyebrow\">Work sample</span>",
-    "            <h1 data-sample-title>" + title + "</h1>",
+
+    "            <h1>Work Samples</h1><p>Business, research, and strategy in practice.</p>",
     "          </header>",
     "          <div class=\"sample-detail-shell\">",
     "            <article class=\"sample-detail-overview\" id=\"overview\">",
-    "              <nav class=\"sample-detail-tabs\" aria-label=\"Sample details\"><a href=\"#overview\" aria-current=\"page\">Overview</a></nav>",
+    "              <header class=\"sample-document-heading\"><h2 data-sample-title>" + title + "</h2></header>",
     "              <section class=\"sample-detail-about\">",
     "                <h2>About this sample</h2>",
     "                <p class=\"sample-detail-summary\" data-sample-summary>" + detailSummary + "</p>",
@@ -76,6 +76,7 @@ function createPage(sample) {
     "                <h2>What this work covers</h2>",
     "                <ul data-sample-deliverables></ul>",
     "              </section>",
+    "              <ul class=\"sample-topic-tags\" aria-label=\"Topics covered\" data-sample-tags></ul>",
     "            </article>",
     "            <aside class=\"sample-detail-sidebar\">",
     "              <div class=\"sample-detail-card\">",
@@ -118,8 +119,8 @@ function createPage(sample) {
     .replace('</head>', '<script src="../../assets/js/site-boot.js"></script></head>')
     .replace(/<nav id="nav"[\s\S]*?<\/nav>/, '<nav id="nav" class="top-navigation"><a href="../../">Home</a></nav>')
     .replace(/<footer id="footer">[\s\S]*?<\/footer>/, '<footer id="footer"></footer>')
-    .replace('<script src="../../assets/js/main.js"></script>', '<script src="../../assets/js/site-navigation.js?v=20261029"></script><script src="../../assets/js/main.js"></script><script src="../../assets/js/site-theme.js"></script><script src="../../assets/js/site-footer.js?v=20261029"></script>')
-    .replace('assets/css/main.css"', 'assets/css/main.css?v=20261029"');
+    .replace('<script src="../../assets/js/main.js"></script>', '<script src="../../assets/js/site-navigation.js?v=20261029b"></script><script src="../../assets/js/main.js"></script><script src="../../assets/js/site-theme.js"></script><script src="../../assets/js/site-footer.js?v=20261029b"></script>')
+    .replace('assets/css/main.css"', 'assets/css/main.css?v=20261029b"');
 }
 
 for (const sample of samples) {

@@ -36,6 +36,16 @@
 
       document.title = (sample.title || "Work sample") + " | Segun Oluyi";
       if (title) title.textContent = sample.title || "Work sample";
+      var tags = document.querySelector('[data-sample-tags]');
+      if (tags) {
+        tags.replaceChildren();
+        var topics = Array.isArray(sample.tags) ? sample.tags : [sample.content_type, sample.industry, 'Market research', 'Business strategy', 'Financial planning'];
+        topics.filter(Boolean).slice(0, 5).forEach(function (topic) {
+          var tag = document.createElement('li');
+          tag.textContent = topic;
+          tags.appendChild(tag);
+        });
+      }
       if (type) type.textContent = sample.content_type || "Work sample";
       if (industry) industry.textContent = sample.industry || "";
       if (summary) summary.textContent = sample.detail_summary || sample.summary || "";
