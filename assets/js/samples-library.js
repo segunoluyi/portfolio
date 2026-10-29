@@ -79,6 +79,9 @@
       });
       content.appendChild(tags);
     }
+    var mobileActions = actions.cloneNode(true);
+    mobileActions.className = "sample-mobile-actions";
+    content.appendChild(mobileActions);
     article.append(cover, content);
     return article;
   }

@@ -6395,3 +6395,14 @@ body, input, select, textarea, button,
   #samples-grid .sample-showcase-card .project-card-overlay { position:static; inset:auto; opacity:1; backdrop-filter:none; background:var(--portfolio-surface); padding:1rem; }
   #samples-grid .sample-showcase-card .project-card-overlay-actions { opacity:1; transform:none; display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem; }
 }
+/* Touch cards: uninterrupted cover and actions after the content. */
+.sample-mobile-actions { display:none; }
+@media (hover:none), (pointer:coarse), (max-width:736px) {
+  #samples-grid .sample-showcase-card .project-card-overlay { display:none !important; }
+  #samples-grid .sample-showcase-card .project-card-visual { display:block; position:relative; aspect-ratio:3 / 2; height:auto; padding:0; overflow:hidden; }
+  #samples-grid .sample-showcase-card .project-card-visual img { display:block; position:static; width:100%; height:100%; aspect-ratio:3 / 2; object-fit:cover; }
+  #samples-grid .sample-mobile-actions { display:grid; grid-template-columns:1fr; gap:.65rem; margin-top:1.25rem; width:100%; }
+  #samples-grid .sample-mobile-actions .button { box-sizing:border-box; display:flex; align-items:center; justify-content:center; width:100%; min-width:0; min-height:44px; height:auto; line-height:1.4; padding:.75rem 1rem; margin:0; font-size:.75rem; letter-spacing:.025em; white-space:normal; border:1px solid var(--portfolio-border); background:transparent; color:var(--portfolio-text) !important; box-shadow:none; }
+  #samples-grid .sample-mobile-actions .button:first-child { background:var(--portfolio-accent); border-color:var(--portfolio-accent); color:var(--portfolio-page) !important; }
+  #samples-grid .sample-showcase-card .project-card-content { min-height:0; }
+}
