@@ -26,7 +26,7 @@
         list.appendChild(item);
       });
     }
-    setLinks(footerSections[1], [["Home", ""], ["About", "about/"], ["Services", "services/"], ["Projects", "projects/"], ["Samples", "samples/"], ["Insights", "insights/"], ["Contact", "contact/"]]);
+    setLinks(footerSections[1], [["Home", ""], ["About", "about/"], ["Services", "services/"], ["Projects", "projects/"], ["Samples", "samples/"], ["Insights", "insights/"]]);
     setLinks(footerSections[2], [["BI & Data Analytics", "services/analytics/"], ["Market Research", "services/research/"], ["Business Planning", "services/planning/"], ["Training & Workshops", "services/training/"]]);
   }
   var icons = {

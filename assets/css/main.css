@@ -6385,3 +6385,13 @@ body, input, select, textarea, button,
 .sample-detail-summary { text-align:left; }
 .sample-topic-tags { display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; padding:1.5rem 0 0; margin:1.5rem 0 0; border-top:1px solid var(--portfolio-border); }
 .sample-topic-tags li { padding:.35rem .7rem; border:1px solid var(--portfolio-border); border-radius:999px; background:var(--portfolio-surface-soft); color:var(--portfolio-muted); font-size:.8rem; line-height:1.4; max-width:100%; overflow-wrap:anywhere; }
+/* Align journey markers and begin the connector at the first marker. */
+.about-timeline { border-left:0; margin-left:0; padding-left:1.8rem; position:relative; }
+.about-timeline::before { content:''; position:absolute; left:.4rem; top:.4rem; bottom:0; width:2px; background:color-mix(in srgb,var(--portfolio-accent) 40%,var(--portfolio-border)); }
+.about-timeline > li::before { box-sizing:border-box; left:calc(-1.4rem + 1px); transform:translateX(-50%); top:0; height:.8rem; width:.8rem; }
+@media (hover:none), (pointer:coarse), (max-width:736px) {
+  #samples-grid .sample-showcase-card .project-card-visual { height:auto; display:flex; flex-direction:column; }
+  #samples-grid .sample-showcase-card .project-card-visual img { position:static; width:100%; height:auto; aspect-ratio:3 / 2; object-fit:cover; transform:none; filter:none; }
+  #samples-grid .sample-showcase-card .project-card-overlay { position:static; inset:auto; opacity:1; backdrop-filter:none; background:var(--portfolio-surface); padding:1rem; }
+  #samples-grid .sample-showcase-card .project-card-overlay-actions { opacity:1; transform:none; display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem; }
+}

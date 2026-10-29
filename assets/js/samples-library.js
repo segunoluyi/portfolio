@@ -52,7 +52,7 @@
 
     summary.textContent = sample.summary || "";
     actions.className = "project-card-overlay-actions";
-    [{ url: detailUrl, label: "View details" }, { url: sample.url, label: sample.button_label || "View document" }].filter(function (item) { return item.url; }).forEach(function (item) {
+    [{ url: detailUrl, label: "View details" }, { url: sample.url, label: "View document" }].filter(function (item) { return item.url; }).forEach(function (item) {
       var button = document.createElement("a");
       button.className = "button small project-card-overlay-button";
       button.href = item.url;
