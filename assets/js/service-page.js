@@ -131,4 +131,5 @@
     wrap.appendChild(cta);
   }
   main.appendChild(wrap);
+  if (window.portfolioContentReady) window.portfolioContentReady();
 }());
