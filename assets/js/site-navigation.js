@@ -12,7 +12,7 @@
   function pageUrl(path) { return new URL(path, root).href; }
   function isCurrent(path) {
     var target = new URL(path, root).pathname.replace(/index\.html$/, "");
-    return path === "services/" ? currentPath.indexOf(target) === 0 : currentPath === target;
+    return (path === "services/" || path === "samples/") ? currentPath.indexOf(target) === 0 : currentPath === target;
   }
 
   var pages = [

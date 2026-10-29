@@ -6361,3 +6361,17 @@ body, input, select, textarea, button,
   .samples-page .sample-filters,.insights-page .sample-filters { grid-template-columns:1fr; }
   .insight-blog-content { padding:1.15rem; }
 }
+/* Sample detail pages share the current portfolio surface and controls. */
+#main .sample-detail { max-width:1152px; width:calc(100% - 3rem); margin:auto; padding:5rem 0 6rem; color:var(--portfolio-text); }
+.sample-detail-page-header h1 { text-transform:none; letter-spacing:-.04em; font-size:clamp(2rem,4vw,3rem); }
+.sample-detail-page-header { border-color:var(--portfolio-border); }
+.sample-detail-overview, .sample-detail-card { background:var(--portfolio-surface); border:1px solid var(--portfolio-border); border-radius:18px; box-shadow:0 12px 30px rgba(0,0,0,.06); overflow:hidden; }
+.sample-detail-overview { padding:2rem; min-width:0; }
+.sample-detail-card { color:var(--portfolio-text); }
+.sample-detail-summary, .sample-detail-facts dd, .sample-deliverables li { color:var(--portfolio-muted); }
+.sample-detail-cover-image { width:100%; height:auto; object-fit:contain; }
+.sample-detail-actions .button { border-radius:999px; text-transform:none; letter-spacing:0; white-space:normal; height:auto; line-height:1.4; padding:.85rem 1rem; color:var(--portfolio-text) !important; box-shadow:inset 0 0 0 1px var(--portfolio-border); }
+.sample-detail-actions .button.primary { background:var(--portfolio-accent); color:#102029 !important; box-shadow:none; }
+@media(max-width:736px) { #main .sample-detail { width:calc(100% - 2.5rem); padding:5rem 0 3rem; } .sample-detail-overview { padding:1.25rem; } .sample-detail-shell { display:flex; flex-direction:column; gap:1.5rem; } .sample-detail-sidebar { margin-top:0; width:100%; } }
+
+:root:not([data-theme=dark]) .sample-detail-actions .button.primary { color:#fff !important; }

@@ -113,7 +113,13 @@ function createPage(sample) {
     "  </body>",
     "</html>",
     ""
-  ].join("\n");
+  ].join("\n")
+    .replace(', user-scalable=no', '')
+    .replace('</head>', '<script src="../../assets/js/site-boot.js"></script></head>')
+    .replace(/<nav id="nav"[\s\S]*?<\/nav>/, '<nav id="nav" class="top-navigation"><a href="../../">Home</a></nav>')
+    .replace(/<footer id="footer">[\s\S]*?<\/footer>/, '<footer id="footer"></footer>')
+    .replace('<script src="../../assets/js/main.js"></script>', '<script src="../../assets/js/site-navigation.js?v=20261029"></script><script src="../../assets/js/main.js"></script><script src="../../assets/js/site-theme.js"></script><script src="../../assets/js/site-footer.js?v=20261029"></script>')
+    .replace('assets/css/main.css"', 'assets/css/main.css?v=20261029"');
 }
 
 for (const sample of samples) {
