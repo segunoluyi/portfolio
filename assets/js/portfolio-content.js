@@ -106,6 +106,11 @@
       project.tools.slice(0, 5).forEach(function (tool) { var item = document.createElement("li"); item.textContent = tool; tools.appendChild(item); });
       content.appendChild(tools);
     }
+    if (actions.children.length) {
+      var mobileActions = actions.cloneNode(true);
+      mobileActions.className = "project-mobile-actions";
+      content.appendChild(mobileActions);
+    }
     article.append(media, content);
     return article;
   }

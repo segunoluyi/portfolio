@@ -6411,3 +6411,14 @@ body, input, select, textarea, button,
   #navPanelToggle, #navPanelToggle.alt, #navPanelToggle:hover, #navPanelToggle:focus-visible, #navPanelToggle.alt:hover { background:transparent !important; border:0 !important; box-shadow:none !important; border-radius:0; }
   #navPanelToggle:focus-visible { outline:2px solid var(--portfolio-accent); outline-offset:2px; }
 }
+/* Project cards use the same clear touch layout as samples. */
+.project-mobile-actions { display:none; }
+@media (hover:none), (pointer:coarse), (max-width:736px) {
+  #projects-grid .project-card-overlay, #project-grid .project-card-overlay { display:none !important; }
+  #projects-grid .project-card-visual, #project-grid .project-card-visual { display:block; position:relative; aspect-ratio:3 / 2; height:auto; padding:0; overflow:hidden; }
+  #projects-grid .project-card-visual img, #project-grid .project-card-visual img { display:block; position:static; width:100%; height:100%; aspect-ratio:3 / 2; object-fit:cover; transform:none; filter:none; }
+  #projects-grid .project-card-placeholder, #project-grid .project-card-placeholder { display:flex; align-items:center; justify-content:center; padding:1rem; }
+  .project-mobile-actions { display:grid; grid-template-columns:1fr; gap:.65rem; margin-top:1.25rem; width:100%; }
+  .project-mobile-actions .button { box-sizing:border-box; display:flex; align-items:center; justify-content:center; width:100%; min-width:0; min-height:44px; height:auto; line-height:1.4; padding:.75rem 1rem; margin:0; font-size:.75rem; letter-spacing:.025em; white-space:normal; border:1px solid var(--portfolio-border); background:transparent; color:var(--portfolio-text) !important; box-shadow:none; }
+  .project-mobile-actions .button:first-child { background:var(--portfolio-accent); border-color:var(--portfolio-accent); color:var(--portfolio-page) !important; }
+}
