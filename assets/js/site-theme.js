@@ -19,7 +19,9 @@
     document.body.appendChild(toggle);
   }
 
-  var navigation = document.querySelector("#nav");
+  var navigation = window.matchMedia("(max-width: 980px)").matches
+    ? document.querySelector("#navPanel > nav") || document.querySelector("#nav")
+    : document.querySelector("#nav");
   if (navigation && toggle && !navigation.contains(toggle)) navigation.appendChild(toggle);
 
   function normaliseTheme(value) {

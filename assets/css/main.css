@@ -6406,3 +6406,8 @@ body, input, select, textarea, button,
   #samples-grid .sample-mobile-actions .button:first-child { background:var(--portfolio-accent); border-color:var(--portfolio-accent); color:var(--portfolio-page) !important; }
   #samples-grid .sample-showcase-card .project-card-content { min-height:0; }
 }
+/* Keep the mobile menu control visually minimal, with its full touch target. */
+@media screen and (max-width:980px) {
+  #navPanelToggle, #navPanelToggle.alt, #navPanelToggle:hover, #navPanelToggle:focus-visible, #navPanelToggle.alt:hover { background:transparent !important; border:0 !important; box-shadow:none !important; border-radius:0; }
+  #navPanelToggle:focus-visible { outline:2px solid var(--portfolio-accent); outline-offset:2px; }
+}
